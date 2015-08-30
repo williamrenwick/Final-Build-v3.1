@@ -11,11 +11,8 @@ var menuActions = {
 	},
 	isClicked: function() {
 		MenuCursor.set('isOpen', true)
-<<<<<<< HEAD
 
-=======
 		//need to refactor to improve maintainability
->>>>>>> origin/bodge-job
 		$('body').addClass('noScroll');
 	},
 	notClicked: function() {
@@ -26,10 +23,7 @@ var menuActions = {
 		if (projSideStatus) {
 			MenuCursor.set('projSideOpen', false);
 		}
-<<<<<<< HEAD
-=======
 		//need to refactor to improve maintainability
->>>>>>> origin/bodge-job
 		$('body').removeClass('noScroll');
 	},
 	projSideOpen: function() {
