@@ -50,10 +50,6 @@ var ProjectHdr = React.createClass({
 	},
 	render: function() {
 		var activeProject = this.props.activeProject;
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/bodge-job
 		return (
 			<div id="project-hdr">
 				<div id="project-hdr-img" className={ classNames({ loadAnim: this.state.loadAnimation }) } style={{backgroundImage: 'url(' + activeProject.images.header + ')'}}></div>
