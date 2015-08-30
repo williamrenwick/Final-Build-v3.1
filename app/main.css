@@ -1,0 +1,1488 @@
+/* HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+/* line 7, preprocessor/main.scss */
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+/* line 11, preprocessor/main.scss */
+html {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/* line 15, preprocessor/main.scss */
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* line 19, preprocessor/main.scss */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 24, preprocessor/main.scss */
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 29, preprocessor/main.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 41, preprocessor/main.scss */
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
+
+/* line 45, preprocessor/main.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 51, preprocessor/main.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 55, preprocessor/main.scss */
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* line 65, preprocessor/main.scss */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* line 75, preprocessor/main.scss */
+* {
+  font-family: 'apercu';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 79, preprocessor/main.scss */
+section {
+  position: relative;
+}
+
+/* line 82, preprocessor/main.scss */
+.noScroll {
+  overflow-y: hidden;
+}
+
+/* line 85, preprocessor/main.scss */
+.neutralTransform {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+/* line 92, preprocessor/main.scss */
+.menuHover {
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  -o-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* line 99, preprocessor/main.scss */
+.sideMenuActive {
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  -o-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+/* line 154, preprocessor/main.scss */
+.fixedNav {
+  -webkit-transform: translateZ(0);
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 100;
+  -webkit-transition: -webkit-transform .2s;
+  -moz-transition: -moz-transform .2s;
+  -o-transition: -o-transform .2s;
+  -ms-transition: -ms-transform .2s;
+  transition: transform .2s;
+}
+
+/* line 168, preprocessor/main.scss */
+.fixedNav.menuActive .site-title {
+  opacity: 0;
+}
+
+/* line 172, preprocessor/main.scss */
+.fixedNav > * {
+  display: inline-block;
+}
+
+/* line 175, preprocessor/main.scss */
+#menu-button {
+  position: relative;
+  left: 30px;
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+  transition: width .2s;
+}
+/* line 183, preprocessor/main.scss */
+#menu-button::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 100%;
+  background-color: #000000;
+  -webkit-transition: width .2s;
+  -moz-transition: width .2s;
+  -o-transition: width .2s;
+  -ms-transition: width .2s;
+  transition: width .2s;
+}
+/* line 197, preprocessor/main.scss */
+#menu-button::before {
+  position: absolute;
+  content: 'close';
+  top: 2px;
+  left: 10px;
+  font-size: 11px;
+  vertical-align: middle;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  opacity: 0;
+  -webkit-transition: -webkit-transform .2s, opacity .2s;
+  -moz-transition: -moz-transform .2s, opacity .2s;
+  -o-transition: -o-transform .2s, opacity .2s;
+  -ms-transition: -ms-transform .2s, opacity .2s;
+  transition: transform .2s, opacity .2s;
+}
+
+/* line 217, preprocessor/main.scss */
+#menu-button:hover {
+  width: 20px;
+}
+
+/* line 220, preprocessor/main.scss */
+#menu-button:hover .menu-line::before {
+  width: 100%;
+}
+
+/* line 223, preprocessor/main.scss */
+.menu-line {
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  height: 2px;
+  width: 100%;
+  background-color: #000000;
+  -webkit-transition: width .2s;
+  -moz-transition: width .2s;
+  -o-transition: width .2s;
+  -ms-transition: width .2s;
+  transition: width .2s;
+}
+/* line 237, preprocessor/main.scss */
+.menu-line::before {
+  position: absolute;
+  content: "";
+  top: -6px;
+  width: 80%;
+  height: 2px;
+  background-color: #000000;
+  -webkit-transition: width .2s;
+  -moz-transition: width .2s;
+  -o-transition: width .2s;
+  -ms-transition: width .2s;
+  transition: width .2s;
+}
+/* line 250, preprocessor/main.scss */
+.menu-line::after {
+  position: absolute;
+  content: "";
+  top: 6px;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  -webkit-transition: width .2s;
+  -moz-transition: width .2s;
+  -o-transition: width .2s;
+  -ms-transition: width .2s;
+  transition: width .2s;
+}
+
+/* line 265, preprocessor/main.scss */
+.fixedNav.menuActive #menu-button::after {
+  width: 2px;
+}
+/* line 268, preprocessor/main.scss */
+.fixedNav.menuActive #menu-button::before {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -o-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* line 277, preprocessor/main.scss */
+.fixedNav.menuActive .menu-line {
+  width: 0;
+  opacity: 0;
+  background-color: #000000;
+}
+/* line 282, preprocessor/main.scss */
+.fixedNav.menuActive .menu-line::after {
+  width: 0;
+  opacity: 0;
+  background-color: #000000;
+}
+/* line 287, preprocessor/main.scss */
+.fixedNav.menuActive .menu-line::before {
+  width: 0;
+  opacity: 0;
+  background-color: #000000;
+}
+
+/* line 294, preprocessor/main.scss */
+.site-title {
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 1;
+  -webkit-transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  -ms-transition: opacity .2s;
+  transition: opacity .2s;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+/* line 307, preprocessor/main.scss */
+.fixedNav.onDark .menu-line {
+  background-color: #ffffff;
+}
+/* line 310, preprocessor/main.scss */
+.fixedNav.onDark .menu-line::before {
+  background-color: #ffffff;
+}
+/* line 313, preprocessor/main.scss */
+.fixedNav.onDark .menu-line::after {
+  background-color: #ffffff;
+}
+
+/* line 317, preprocessor/main.scss */
+.fixedNav.onDark .site-title {
+  color: #ffffff;
+}
+
+/* line 320, preprocessor/main.scss */
+#side-nav {
+  position: fixed;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100vh;
+  font-size: 20px;
+  font-weight: 400;
+  -webkit-transition: left .2s;
+  -moz-transition: left .2s;
+  -o-transition: left .2s;
+  -ms-transition: left .2s;
+  transition: left .2s;
+  -webkit-transform: translateZ(0);
+  z-index: 50;
+}
+
+/* line 337, preprocessor/main.scss */
+#side-nav > div {
+  float: left;
+}
+
+/* line 340, preprocessor/main.scss */
+#main-side {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #F7F7F7;
+}
+
+/* line 346, preprocessor/main.scss */
+#project-side {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  -webkit-transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  -ms-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+/* line 358, preprocessor/main.scss */
+#side-nav.menu-clicked {
+  left: 0;
+}
+
+/* line 361, preprocessor/main.scss */
+#side-nav.projectMenu {
+  width: 100%;
+}
+
+/* line 364, preprocessor/main.scss */
+#side-nav.projectMenu #project-side {
+  opacity: 1;
+}
+
+/* line 367, preprocessor/main.scss */
+#side-nav.projectMenu #main-side {
+  width: 50%;
+}
+
+/* line 370, preprocessor/main.scss */
+#main-side ul {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0 10px 0 30px;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+/* line 379, preprocessor/main.scss */
+#side-nav li {
+  position: relative;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+/* line 384, preprocessor/main.scss */
+#side-nav li:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 60%;
+  width: 0;
+  height: 1px;
+  background-color: #000000;
+  z-index: 2;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -ms-transition: all .2s;
+  transition: all .2s;
+}
+
+/* line 401, preprocessor/main.scss */
+#side-nav li.active:before {
+  width: 120px;
+}
+
+/* line 405, preprocessor/main.scss */
+#side-nav.menu-clicked {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -o-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+/* line 412, preprocessor/main.scss */
+#view-all-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  height: 20px;
+  width: 20px;
+  margin-top: -10px;
+  z-index: 100;
+  cursor: pointer;
+  -webkit-transition: all ease .4s;
+  -moz-transition: all ease .4s;
+  -o-transition: all ease .4s;
+  -ms-transition: all ease .4s;
+  transition: all ease .4s;
+  -webkit-backface-visibility: hidden;
+}
+/* line 427, preprocessor/main.scss */
+#view-all-btn:before, #view-all-btn:after {
+  content: '';
+  position: absolute;
+  background-color: #000000;
+}
+/* line 432, preprocessor/main.scss */
+#view-all-btn:before {
+  left: 50%;
+  margin-left: -1px;
+  width: 2px;
+  height: 100%;
+}
+/* line 438, preprocessor/main.scss */
+#view-all-btn:after {
+  top: 50%;
+  margin-top: -1px;
+  height: 2px;
+  width: 100%;
+}
+/* line 444, preprocessor/main.scss */
+#view-all-btn.close {
+  transform: rotate(-135deg);
+}
+
+/* line 448, preprocessor/main.scss */
+#project-side ul {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+/* line 455, preprocessor/main.scss */
+#project-side li {
+  width: 100%;
+  min-height: 100px;
+  height: 100px;
+  padding: 10% 20%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #222222;
+  -webkit-transition: -webkit-transform ease .1s, opacity .1s;
+  -moz-transition: -moz-transform ease .1s, opacity .1s;
+  -o-transition: -o-transform ease .1s, opacity .1s;
+  -ms-transition: -ms-transform ease .1s, opacity .1s;
+  transition: transform ease .1s, opacity .1s;
+}
+
+/* line 471, preprocessor/main.scss */
+.projLi {
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+/* line 475, preprocessor/main.scss */
+.projLink:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* line 487, preprocessor/main.scss */
+.projLink h1 {
+  position: relative;
+  top: 50%;
+  margin: 0;
+  font-weight: 200;
+  text-align: center;
+  color: #ffffff;
+  -webkit-transform: translate(-20px, -50%);
+  -ms-transform: translate(-20px, -50%);
+  transform: translate(-20px, -50%);
+  opacity: 0;
+  -webkit-transition: all .2s .25s;
+  -moz-transition: all .2s .25s;
+  -o-transition: all .2s .25s;
+  -ms-transition: all .2s .25s;
+  transition: all .2s .25s;
+  z-index: 2;
+}
+
+/* line 505, preprocessor/main.scss */
+.projLink .strikethrough {
+  display: inline-block;
+  position: relative;
+}
+/* line 509, preprocessor/main.scss */
+.projLink .strikethrough:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 1px;
+  width: 0;
+  transition: width 0s ease, background .2s ease;
+}
+/* line 519, preprocessor/main.scss */
+.projLink .strikethrough:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  width: 0;
+  background: #FFFFB0;
+  transition: width .2s ease;
+}
+
+/* line 532, preprocessor/main.scss */
+.projLink:hover .strikethrough:before {
+  width: 100%;
+  background: #FFFFB0;
+  transition: width .2s ease;
+}
+/* line 537, preprocessor/main.scss */
+.projLink:hover .strikethrough:after {
+  width: 100%;
+  background: transparent;
+  transition: all 0s ease;
+}
+
+/* line 543, preprocessor/main.scss */
+.projectMenu .projLink h1 {
+  -webkit-transform: translate(0px, -50%);
+  -ms-transform: translate(0px, -50%);
+  transform: translate(0px, -50%);
+  opacity: 1;
+}
+
+/* line 549, preprocessor/main.scss */
+.projLink .view-proj {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  display: block;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  -webkit-transition: all ease .3s;
+  -moz-transition: all ease .3s;
+  -o-transition: all ease .3s;
+  -ms-transition: all ease .3s;
+  transition: all ease .3s;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+/* line 572, preprocessor/main.scss */
+.projLink:hover .view-proj {
+  -webkit-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+}
+
+/* line 577, preprocessor/main.scss */
+.projLink .view-plus {
+  position: absolute;
+  float: left;
+  width: 18px;
+  height: 18px;
+  -webkit-transition: all ease .3s;
+  -moz-transition: all ease .3s;
+  -o-transition: all ease .3s;
+  -ms-transition: all ease .3s;
+  transition: all ease .3s;
+}
+/* line 589, preprocessor/main.scss */
+.projLink .view-plus:after, .projLink .view-plus:before {
+  position: absolute;
+  content: '';
+  background-color: #ffffff;
+}
+/* line 594, preprocessor/main.scss */
+.projLink .view-plus:after {
+  top: 50%;
+  left: 0px;
+  width: 18px;
+  height: 1px;
+  margin-top: -1px;
+}
+/* line 601, preprocessor/main.scss */
+.projLink .view-plus:before {
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 17px;
+}
+
+/* line 608, preprocessor/main.scss */
+.projLink:hover .view-plus {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+/* line 613, preprocessor/main.scss */
+.projLink .view-proj p {
+  margin-top: 0;
+  margin-left: 30px;
+  margin-bottom: 0;
+}
+
+/* line 618, preprocessor/main.scss */
+.number-wrap {
+  font-size: 0.6em;
+  vertical-align: 1.4em;
+}
+
+/* line 628, preprocessor/main.scss */
+#wrap {
+  height: 100%;
+  width: 100%;
+  -webkit-transition: -webkit-transform .2s;
+  -moz-transition: -moz-transform .2s;
+  -o-transition: -o-transform .2s;
+  -ms-transition: -ms-transform .2s;
+  transition: transform .2s;
+}
+
+/* line 638, preprocessor/main.scss */
+#intro {
+  height: 100vh;
+  width: 100%;
+}
+
+/* line 642, preprocessor/main.scss */
+#intro-text {
+  position: relative;
+  width: 50%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+/* line 650, preprocessor/main.scss */
+#intro-text h1 {
+  font-weight: 400;
+  margin: 0;
+}
+
+/* line 654, preprocessor/main.scss */
+#intro-arrow {
+  position: absolute;
+  width: 12px;
+  height: 20px;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  background-image: url(../img/intro-down-arrow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* line 669, preprocessor/main.scss */
+.hp-work-item {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* line 677, preprocessor/main.scss */
+.work-info {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  left: 50%;
+  -webkit-transition: background-color .2s;
+  -moz-transition: background-color .2s;
+  -o-transition: background-color .2s;
+  -ms-transition: background-color .2s;
+  transition: background-color .2s;
+}
+
+/* line 688, preprocessor/main.scss */
+.work-text {
+  position: relative;
+  width: 61.4%;
+  margin: 0 auto;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+/* line 110, preprocessor/main.scss */
+.work-text:before, .work-text:after {
+  content: "";
+  display: table;
+}
+/* line 114, preprocessor/main.scss */
+.work-text:after {
+  clear: both;
+}
+
+/* line 696, preprocessor/main.scss */
+.worktext-appear-wrap {
+  opacity: 0;
+  -webkit-transform: translateX(50px);
+  -moz-transform: translateX(50px);
+  -o-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+  -webkit-transition: opacity .5s .2s, -webkit-transform .6s .2s;
+  -moz-transition: opacity .5s .2s, -moz-transform .6s .2s;
+  -o-transition: opacity .5s .2s, -o-transform .6s .2s;
+  -ms-transition: opacity .5s .2s, -ms-transform .6s .2s;
+  transition: opacity .5s .2s, transform .6s .2s;
+}
+
+/* line 709, preprocessor/main.scss */
+.worktext-appear-wrap * {
+  margin: 0;
+}
+
+/* line 712, preprocessor/main.scss */
+.work-text h2 {
+  margin-bottom: 1rem;
+  margin-top: 0;
+  text-transform: lowercase;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+/* line 719, preprocessor/main.scss */
+.work-text h1 {
+  margin-bottom: 3rem;
+  margin-top: 0;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1.2em;
+}
+
+/* line 726, preprocessor/main.scss */
+.work-text h3 {
+  font-size: 12px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* line 731, preprocessor/main.scss */
+.hp-work-item .view-proj {
+  position: relative;
+  display: block;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 743, preprocessor/main.scss */
+.hp-work-item .view-plus {
+  position: absolute;
+  float: left;
+  width: 18px;
+  height: 18px;
+}
+/* line 750, preprocessor/main.scss */
+.hp-work-item .view-plus:after, .hp-work-item .view-plus:before {
+  position: absolute;
+  content: '';
+  background-color: #000000;
+}
+/* line 755, preprocessor/main.scss */
+.hp-work-item .view-plus:after {
+  top: 50%;
+  left: 0px;
+  width: 18px;
+  height: 1px;
+  margin-top: -1px;
+}
+/* line 762, preprocessor/main.scss */
+.hp-work-item .view-plus:before {
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 17px;
+}
+
+/* line 769, preprocessor/main.scss */
+.hp-work-item .view-proj p {
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+/*#work-1 .work-info {
+    background-color: #EAFFFF;
+}
+#work-2 .work-info {
+    background-color: #DDEDFF;
+}
+#work-3*/
+/* line 779, preprocessor/main.scss */
+.work-info {
+  background-color: #E7F1FF;
+}
+
+/* line 782, preprocessor/main.scss */
+#work-1 {
+  background-image: url(../img/work1.jpg);
+}
+
+/* line 785, preprocessor/main.scss */
+#work-2 {
+  background-image: url(../img/work2.jpg);
+}
+
+/* line 788, preprocessor/main.scss */
+#work-3 {
+  background-image: url(../img/work3.jpg);
+}
+
+/* line 792, preprocessor/main.scss */
+.hp-work-item.active .worktext-appear-wrap {
+  -webkit-transform: translateX(0) !important;
+  -moz-transform: translateX(0) !important;
+  -o-transform: translateX(0) !important;
+  -ms-transform: translateX(0) !important;
+  transform: translateX(0) !important;
+  opacity: 1;
+}
+
+/* line 803, preprocessor/main.scss */
+#projectWrap {
+  height: 100%;
+  width: 100%;
+  background-color: #222222;
+  -webkit-transition: -webkit-transform .2s;
+  -moz-transition: -moz-transform .2s;
+  -o-transition: -o-transform .2s;
+  -ms-transition: -ms-transform .2s;
+  transition: transform .2s;
+}
+
+/* line 813, preprocessor/main.scss */
+#project-hdr {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* line 818, preprocessor/main.scss */
+#project-hdr-text {
+  position: absolute;
+  left: 7%;
+  bottom: 15%;
+  width: 30%;
+  color: #ffffff;
+  opacity: 0;
+  -webkit-transition: opacity ease .2s .5s;
+  -moz-transition: opacity ease .2s .5s;
+  -o-transition: opacity ease .2s .5s;
+  -ms-transition: opacity ease .2s .5s;
+  transition: opacity ease .2s .5s;
+}
+
+/* line 831, preprocessor/main.scss */
+.project-nav {
+  position: fixed;
+  top: 50%;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  cursor: pointer;
+  -webkit-transition: border-bottom ease .2s;
+  -moz-transition: border-bottom ease .2s;
+  -o-transition: border-bottom ease .2s;
+  -ms-transition: border-bottom ease .2s;
+  transition: border-bottom ease .2s;
+  padding-bottom: 0.2rem;
+  z-index: 100;
+}
+
+/* line 845, preprocessor/main.scss */
+.project-nav h1 {
+  font-size: 12px;
+  margin: 0;
+}
+
+/* line 849, preprocessor/main.scss */
+.project-nav:hover {
+  border-bottom: 2px solid white;
+}
+
+/* line 852, preprocessor/main.scss */
+#next-project {
+  right: 0;
+  -webkit-transform: rotate(90deg) translateX(-50%);
+  -moz-transform: rotate(90deg) translateX(-50%);
+  -o-transform: rotate(90deg) translateX(-50%);
+  -ms-transform: rotate(90deg) translateX(-50%);
+  transform: rotate(90deg) translateX(-50%);
+}
+
+/* line 860, preprocessor/main.scss */
+#prev-project {
+  left: 0;
+  -webkit-transform: rotate(-90deg) translateX(50%);
+  -moz-transform: rotate(-90deg) translateX(50%);
+  -o-transform: rotate(-90deg) translateX(50%);
+  -ms-transform: rotate(-90deg) translateX(50%);
+  transform: rotate(-90deg) translateX(50%);
+}
+
+/* line 868, preprocessor/main.scss */
+#project-hdr-text * {
+  margin: 0;
+}
+
+/* line 871, preprocessor/main.scss */
+#project-hdr-text.loadAnim {
+  opacity: 1;
+}
+
+/* line 874, preprocessor/main.scss */
+#project-hdr-img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: all .2s .3s;
+  -moz-transition: all .2s .3s;
+  -o-transition: all .2s .3s;
+  -ms-transition: all .2s .3s;
+  transition: all .2s .3s;
+}
+
+/* line 889, preprocessor/main.scss */
+#project-hdr-img.loadAnim {
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+}
+
+/* line 895, preprocessor/main.scss */
+#project-hdr-text h1 {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1.2em;
+  margin-bottom: 2.2rem;
+}
+
+/* line 901, preprocessor/main.scss */
+#project-hdr-text h2 {
+  text-transform: lowercase;
+  font-weight: 100;
+  font-size: 18px;
+  margin-bottom: 1.2rem;
+}
+
+/* line 907, preprocessor/main.scss */
+#project-hdr-text h3 {
+  font-size: 12px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* line 912, preprocessor/main.scss */
+.close-proj {
+  font-family: inherit;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+/* line 917, preprocessor/main.scss */
+.project-section {
+  position: relative;
+  padding: 0 10%;
+}
+/* line 110, preprocessor/main.scss */
+.project-section:before, .project-section:after {
+  content: "";
+  display: table;
+}
+/* line 114, preprocessor/main.scss */
+.project-section:after {
+  clear: both;
+}
+
+/* line 922, preprocessor/main.scss */
+#section1, #section2 {
+  margin-top: 7%;
+}
+
+/* line 925, preprocessor/main.scss */
+#section3 {
+  margin: 7% 0 10% 0;
+}
+
+/* line 928, preprocessor/main.scss */
+.project-subhead {
+  position: relative;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-left: 30px;
+}
+/* line 936, preprocessor/main.scss */
+.project-subhead::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 50%;
+  width: 16px;
+  height: 1px;
+  background-color: #ffffff;
+}
+
+/* line 946, preprocessor/main.scss */
+.project-section p {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* line 951, preprocessor/main.scss */
+#overview-text {
+  position: absolute;
+  float: left;
+  left: 10%;
+  top: 0;
+  margin-top: 40px;
+  width: 30%;
+  z-index: 2;
+}
+
+/* line 960, preprocessor/main.scss */
+.overview-img-wrap {
+  position: relative;
+  float: right;
+  width: 60%;
+}
+
+/* line 965, preprocessor/main.scss */
+#overview-img {
+  position: relative;
+  float: right;
+  width: 100%;
+  padding-bottom: 65%;
+}
+
+/* line 972, preprocessor/main.scss */
+#overview-img > div,
+#s2-img1 > div, #s2-img2 > div, #s3-img > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 981, preprocessor/main.scss */
+.s2-img-wrap {
+  width: 45%;
+}
+
+/* line 984, preprocessor/main.scss */
+#s3-img-wrap {
+  width: 100%;
+}
+
+/* line 988, preprocessor/main.scss */
+#s2-img1-wrap {
+  position: relative;
+  float: left;
+}
+
+/* line 992, preprocessor/main.scss */
+#s2-img2-wrap {
+  position: relative;
+  float: right;
+  margin-top: 10%;
+}
+
+/* line 997, preprocessor/main.scss */
+#s2-img1, #s2-img2 {
+  position: relative;
+  width: 100%;
+  padding-bottom: 60%;
+}
+
+/* line 1002, preprocessor/main.scss */
+#s3-img {
+  position: relative;
+  width: 100%;
+  padding-bottom: 60%;
+}
+
+/* line 1007, preprocessor/main.scss */
+#brief-text {
+  position: absolute;
+  float: left;
+  left: 30%;
+  top: 0;
+  margin-top: 40px;
+  width: 32%;
+  z-index: 2;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* line 1021, preprocessor/main.scss */
+#contact {
+  width: 100%;
+  height: 100vh;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -ms-transition: all .2s;
+  transition: all .2s;
+}
+
+/* line 1030, preprocessor/main.scss */
+#contact-wrap {
+  width: 100%;
+  height: 60%;
+  top: 50%;
+  position: relative;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 1041, preprocessor/main.scss */
+#contact-left {
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -ms-transition: all .2s;
+  transition: all .2s;
+}
+
+/* line 1048, preprocessor/main.scss */
+#contact-right {
+  -webkit-transition: all .2s .2s;
+  -moz-transition: all .2s .2s;
+  -o-transition: all .2s .2s;
+  -ms-transition: all .2s .2s;
+  transition: all .2s .2s;
+}
+
+/* line 1056, preprocessor/main.scss */
+#contact-left,
+#contact-right {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 100%;
+  padding-left: 8%;
+  opacity: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+  -o-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  transform: translateY(50px);
+}
+
+/* line 1071, preprocessor/main.scss */
+#contact.active #contact-left,
+#contact.active #contact-right {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+/* line 1080, preprocessor/main.scss */
+#contact h1 {
+  position: relative;
+  margin-top: 0;
+  font-size: 60px;
+  font-weight: 200;
+}
+/* line 1086, preprocessor/main.scss */
+#contact h1::before {
+  position: absolute;
+  content: '';
+  bottom: -20px;
+  width: 100px;
+  height: 1px;
+  margin-left: 0.1em;
+  background-color: #000000;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -ms-transition: all .2s;
+  transition: all .2s;
+}
+
+/* line 1101, preprocessor/main.scss */
+#contact h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 40px 0;
+}
+
+/* line 1106, preprocessor/main.scss */
+#contact h3 {
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* line 1111, preprocessor/main.scss */
+#contact ul {
+  padding: 0;
+  margin-top: 0;
+  list-style: none;
+}
+
+/* line 1116, preprocessor/main.scss */
+#contact li {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* line 1120, preprocessor/main.scss */
+#contact-right p {
+  position: absolute;
+  bottom: 0;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/* line 1145, preprocessor/main.scss */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  *text-indent: -9999px;
+}
+
+/* line 1152, preprocessor/main.scss */
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/* line 1159, preprocessor/main.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* line 1164, preprocessor/main.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* line 1176, preprocessor/main.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* line 1185, preprocessor/main.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* line 1190, preprocessor/main.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+/* line 1195, preprocessor/main.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 1199, preprocessor/main.scss */
+.clearfix {
+  *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+@media print {
+  /* line 1208, preprocessor/main.scss */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 1216, preprocessor/main.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 1220, preprocessor/main.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 1224, preprocessor/main.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /* line 1230, preprocessor/main.scss */
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  /* line 1235, preprocessor/main.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 1240, preprocessor/main.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 1245, preprocessor/main.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 1249, preprocessor/main.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 1259, preprocessor/main.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 1265, preprocessor/main.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
