@@ -3,6 +3,7 @@ var ProjectHeader = require('./ProjectHeader.js');
 var SectionOne = require('./SectionOne.js');
 var SectionTwo = require('./SectionTwo.js');
 var SectionThree = require('./SectionThree.js');
+var Contact = require('../../common/Contact.js');
 
 var mixin = require('baobab-react/mixins').branch;
 var ProjectActions = require('../../../actions/projectActions.js');
@@ -34,20 +35,6 @@ var ProjectWrap = React.createClass({
 		}
 	},
 	componentWillMount: function() {
-<<<<<<< HEAD
-=======
-		console.log('roche','componentWillMount');
-		$('body').removeClass('noScroll')
-	},
-	componentWillUnmount: function() {
-		console.log('roche','componentWillUnmount');
-	},
-	componentDidMount: function() {
-		var scrollTop = $(window).scrollTop();
-
-		console.log('project mounted')
-
->>>>>>> origin/bodge-job
 		MenuActions.isOnDark();
 		ProjectActions.isInProjects();
 		ProjectActions.hasAnimated();
@@ -67,6 +54,7 @@ var ProjectWrap = React.createClass({
 				<SectionOne activeProject={activeProject}/>
 				<SectionTwo activeProject={activeProject}/>
 				<SectionThree activeProject={activeProject}/>
+				<Contact />
 			</div>
 		)
 	}

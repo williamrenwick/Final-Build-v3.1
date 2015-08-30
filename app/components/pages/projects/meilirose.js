@@ -32,16 +32,6 @@ var ProjectWrap = React.createClass({
 		}
 	},
 	componentWillMount: function() {
-<<<<<<< HEAD
-=======
-		console.log('mei','componentWillMount');
-	},
-	componentDidMount: function() {
-		var scrollTop = $(window).scrollTop();
-
-		console.log('project mounted')
-
->>>>>>> origin/bodge-job
 		MenuActions.isOnDark();
 		ProjectActions.isInProjects();
 		ProjectActions.hasAnimated();
@@ -54,18 +44,14 @@ var ProjectWrap = React.createClass({
 	render: function() {
 		var idx = this.getDataIdx(),
 			activeProject = this.props.projects[idx];
-<<<<<<< HEAD
 			
-=======
-
->>>>>>> origin/bodge-job
 		return (
 			<div id="projectWrap" className={ classNames({ menuHover: this.state.menuHover, sideMenuActive: this.state.menuActive }) }>
 				<ProjectHeader projects={this.props.projects} activeProject={activeProject}/>
 				<SectionOne activeProject={activeProject}/>
 				<SectionTwo activeProject={activeProject}/>
 				<SectionThree activeProject={activeProject}/>
-
+				<Contact />
 			</div>
 		)
 	}
