@@ -34,6 +34,8 @@ var menuActions = {
 	},
 	isOnDark: function() {
 		MenuCursor.set('isOnDark', true)
+		StateTree.commit();
+		console.log('inside action', MenuCursor.get('isOnDark'))
 	},
 	isOnLight: function() {
 		MenuCursor.set('isOnDark', false)

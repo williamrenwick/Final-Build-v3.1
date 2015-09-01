@@ -1,10 +1,27 @@
-var React = require('react')
+var React = require('react');
 
+var mixin = require('baobab-react/mixins').branch
+var classNames = require('classnames');
 
 var Contact = React.createClass({
+	mixins: [mixin],
+	cursors: {
+		isInProjects: ['project', 'isInProjects'],
+		scrollPos: ['scrolling', 'scrollPosition']
+	},
+	willBeActive: function() {
+		var windowH = $(window).height();
+		var docH = $(document).height();
+
+		if (this.state.scrollPos + windowH < docH - (windowH/2)) {
+			return false
+		} else if (this.state.scrollPos + windowH >= docH - (windowH/2)) {
+			return true
+		}
+	},
 	render: function() {
 		return (
-			<section id="contact">
+			<section id="contact" className={ classNames({isInProjects: this.state.isInProjects, active: this.willBeActive() }) }>
 			    <div id="contact-wrap">
 			        <div id="contact-left">
 			            <h3>Telephone</h3>

@@ -1,6 +1,12 @@
 var Baobab = require('baobab');
 
 var stateTree = new Baobab({
+	resize: {
+		currentWidth: null,
+		isMobile: null,
+		isTablet: null,
+		isDesktop: null
+	},
 	menu: {
 		isHovering: false,
 		isOpen: false,
@@ -18,7 +24,6 @@ var stateTree = new Baobab({
 	},
 	project: {
 		isInProjects: null,
-		loadAnimation: false,
 		nextProjectLink: null,
 		prevProjectLink: null
 	}

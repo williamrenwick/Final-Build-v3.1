@@ -15,7 +15,7 @@ var ProjectHdr = React.createClass({
 		textTranslate: ['scrolling', 'textTranslateAmount'],
 		menuHover: ['menu', 'isHovering'],
 		menuActive: ['menu', 'isOpen'],
-		loadAnimation: ['project', 'loadAnimation']
+		isInProjects: ['project', 'isInProjects'],
 	},
 	componentWillMount: function() {
 		var scrollPos = $(window).scrollTop();
@@ -52,10 +52,10 @@ var ProjectHdr = React.createClass({
 		var activeProject = this.props.activeProject;
 		return (
 			<div id="project-hdr">
-				<div id="project-hdr-img" className={ classNames({ loadAnim: this.state.loadAnimation }) } style={{backgroundImage: 'url(' + activeProject.images.header + ')'}}></div>
+				<div id="project-hdr-img" className={ classNames({ loadAnim: this.state.isInProjects }) } style={{backgroundImage: 'url(' + activeProject.images.header + ')'}}></div>
 				<PrevProject projects={this.props.projects} activeProject={activeProject}/>
 				<NextProject projects={this.props.projects} activeProject={activeProject}/>
-				<div id="project-hdr-text" className={ classNames({ loadAnim: this.state.loadAnimation }) } style={ this.getStyles() }>
+				<div id="project-hdr-text" className={ classNames({ loadAnim: this.state.isInProjects }) } style={ this.getStyles() }>
 				    <div className="close-proj">
 				        <div className="view-close"></div>
 				        <Link to="home"><p>Close Project</p></Link>

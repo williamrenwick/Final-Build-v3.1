@@ -1,32 +1,38 @@
 var React = require('react');
-var mixin = require('baobab-react/mixins').branch
 var Intro = require('./HomepageIntro.react.js')
-var classNames = require('classnames');
 var WorkItems = require('./HomepageProjects.react.js')
 var Contact = require('../../common/Contact.js')
+
+var mixin = require('baobab-react/mixins').branch
+var classNames = require('classnames');
 var Animations = require('../../../animations/animations.js')
 var HomepageActions = require('../../../actions/hpActions.js');
-var menuActions = require('../../../actions/actions.js');
-var PROJECTS = require('../../../data/projects.js');
+var MenuActions = require('../../../actions/actions.js');
+var ProjectActions = require('../../../actions/projectActions.js');
 var ScrollActions = require('../../../actions/scrollActions.js');
 
+var PROJECTS = require('../../../data/projects.js');
 var totalProjAmount = PROJECTS.length;
 
 var HomepageWrap = React.createClass({
 	mixins: [mixin],
 	cursors: {
+		isInHomepage: ['homepage', 'isInHomepage'],
+		isInProjects: ['project', 'isInProjects'],
 		scrollPos: ['scrolling', 'scrollPosition'],
 		menuHover: ['menu', 'isHovering'],
-		menuActive: ['menu', 'isOpen'],
-		isInHomepage: ['homepage', 'isInHomepage']
+		menuActive: ['menu', 'isOpen']
 	},
 	componentWillMount: function() {
-		var scrollTop = $(window).scrollTop();
-
-		ScrollActions.scrollPosUpdate(scrollTop);
 		HomepageActions.isInHomepage();
-		this.whereInHomepage();
+		ProjectActions.notInProjects();
 
+		console.log(this.state.isInProjects)
+
+		var scrollTop = $(window).scrollTop();
+		ScrollActions.scrollPosUpdate(scrollTop);
+
+		this.whereInHomepage();
 		Animations.init();
 
 		$(window).on('scroll', this.handleScroll);
@@ -60,9 +66,9 @@ var HomepageWrap = React.createClass({
 			};
 
 		if (this.state.scrollPos < workCoord.top || this.state.scrollPos > workCoord.bottom) {
-			menuActions.isOnLight();
+			MenuActions.isOnLight();
 		} else {
-			menuActions.isOnDark();
+			MenuActions.isOnDark();
 		}
 	},
 	render: function() {

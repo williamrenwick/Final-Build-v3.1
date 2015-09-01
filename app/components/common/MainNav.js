@@ -66,7 +66,7 @@ var MainNav = React.createClass({
 	render: function() {
 
 		return (
-			<nav className={ classNames({fixedNav: true, menuActive: this.state.isClicked, onDark: this.state.isOnDark }) } style={ this.getStyles() }>
+			<nav className={ classNames({fixedNav: true, menuActive: this.state.isClicked, onDark: this.state.isOnDark || this.state.isInProjects }) } style={ this.getStyles() }>
 	          <div id="menu-button" onMouseEnter={this.teaseMenu} onMouseLeave={this.unteaseMenu} onClick={this.menuToggle} ref="menu-btn">     
 	              <span className="menu-line"></span>
 	          </div>

@@ -6,6 +6,7 @@ var SectionThree = require('./SectionThree.js');
 var Contact = require('../../common/Contact.js');
 
 var mixin = require('baobab-react/mixins').branch;
+var StateTree = require('../../../data/stateTree.js');
 var ProjectActions = require('../../../actions/projectActions.js');
 var classNames = require('classnames');
 var ScrollActions = require('../../../actions/scrollActions.js');
@@ -15,10 +16,12 @@ var Router = require('react-router');
 
 
 var ProjectWrap = React.createClass({
-	mixins: [mixin, Router.State],
+	mixins: [mixin],
 	cursors: {
+		isOnDark: ['menu', 'isOnDark'],
 		menuHover: ['menu', 'isHovering'],
-		menuActive: ['menu', 'isOpen']
+		menuActive: ['menu', 'isOpen'],
+		isInProjects: ['project', 'isInProjects']
 	},
 	getDataIdx: function() {
 		var currentPath = '/forward';
@@ -33,19 +36,18 @@ var ProjectWrap = React.createClass({
 		}
 	},
 	componentWillMount: function() {
-		MenuActions.isOnDark();
-		ProjectActions.isInProjects();
-		ProjectActions.hasAnimated();
+		setTimeout(function () {
+			ProjectActions.isInProjects();
+		}, 200)		
 	},
 	componentDidMount: function() {
 		var scrollTop = $(window).scrollTop();
-
 		ScrollActions.scrollPosUpdate(scrollTop);
 	},
 	render: function() {
 		var idx = this.getDataIdx(),
 			activeProject = this.props.projects[idx];
-			
+		
 		return (
 			<div id="projectWrap" className={ classNames({ menuHover: this.state.menuHover, sideMenuActive: this.state.menuActive }) }>
 				<ProjectHeader projects={this.props.projects} activeProject={activeProject}/>

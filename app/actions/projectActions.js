@@ -13,15 +13,11 @@ var projectActions = {
 	},
 	isInProjects: function() {
 		ProjectCursor.set('isInProjects', true);
+		StateTree.commit();
 	},
 	notInProjects: function() {
 		ProjectCursor.set('isInProjects', false);
-	},
-	willAnimate:function() {
-		ProjectCursor.set('loadAnimation', false);
-	},
-	hasAnimated: function() {
-		ProjectCursor.set('loadAnimation', true);
+		StateTree.commit();
 	}
 }
 

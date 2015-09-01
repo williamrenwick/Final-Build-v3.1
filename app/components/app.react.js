@@ -1,13 +1,15 @@
-var stateTree = require('../data/stateTree.js');
-var rootMixin = require('baobab-react/mixins').root;
 var React = require('react');
-var Router = require('react-router');
+var styles = require('../main.css');
 var MainNav = require('./common/MainNav.js');
 var SideNav = require('./common/SideNav.js');
-var styles = require('../main.css');
-var PROJECTS = require('../data/projects.js');
-var ScrollActions = require('../actions/scrollActions.js');
+
+var rootMixin = require('baobab-react/mixins').root;
+var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
+
+var PROJECTS = require('../data/projects.js');
+var ScrollActions = require('../actions/scrollActions.js')
+var Resize = require('../event-controllers/ResizeFns.js');
 
 var App = React.createClass({
 	mixins: [rootMixin], 
@@ -15,6 +17,9 @@ var App = React.createClass({
 		menuIsActive: ['menu', 'isOpen'],
 		isInHomepage: ['homepage', 'isInHomepage'],
 		scrollPos: ['scrolling', 'scrollPosition']
+	},
+	componentWillMount: function() {
+		Resize.init();
 	},
 	componentDidMount: function() {
 		var scrollTop = $(window).scrollTop();
