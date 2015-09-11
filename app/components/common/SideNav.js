@@ -16,12 +16,16 @@ var SideNav = React.createClass({
 	},
 	mobileStyles: function() {
 		var styleObj = {
-			left: null
+			left: null,
+			opacity: null
 		}
 
 		if (!this.state.menuIsActive) {
-			styleObj.left = '-90%'
+			styleObj.left = '-90%';
+			styleObj.opacity = 0;
 		} else if (this.state.menuIsActive) {
+
+			styleObj.opacity = 1;
 
 			if (!this.state.projSideOpen) {
 				styleObj.left = '0%'
@@ -35,12 +39,15 @@ var SideNav = React.createClass({
 	},
 	tabletStyles: function() {
 		var styleObj = {
-			left: null
+			left: null,
+			opacity: null
 		}
 
 		if (!this.state.isHovering && !this.state.menuIsActive) {
 			styleObj.left = '-50%'
+			styleObj.opacity = 0;
 		} else if (this.state.menuIsActive) {
+			styleObj.opacity = 1;
 			styleObj.left = '0%'
 		}
 
@@ -48,16 +55,15 @@ var SideNav = React.createClass({
 	},
 	desktopStyles: function() {
 		var styleObj = {
-			left: null
+			left: null,
+			opacity: null
 		}
 
 		if (!this.state.isHovering && !this.state.menuIsActive) {
+			styleObj.opacity = 0;
 			styleObj.left = '-50%'
-		} else if (this.state.isHovering && !this.state.menuIsActive) {
-			var moveAmount = (-100 + (20 / (window.innerWidth/2) * 100))/2 ;
-
-			styleObj.left = moveAmount + '%';
 		} else if (this.state.menuIsActive) {
+			styleObj.opacity = 1;
 			styleObj.left = '0%'
 		}
 
