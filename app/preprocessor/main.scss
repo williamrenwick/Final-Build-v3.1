@@ -1170,7 +1170,7 @@ section {
    Media Queries
    ========================================================================== */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (min-width: 421px) {
     .sideMenuActive {
         -webkit-transform: translateX(90%);
         -moz-transform: translateX(90%);
@@ -1382,8 +1382,214 @@ section {
 }
 
 
+@media screen and (max-width: 420px) {
+    .sideMenuActive {
+        -webkit-transform: translateX(90%);
+        -moz-transform: translateX(90%);
+        -o-transform: translateX(90%);
+        -ms-transform: translateX(90%);
+        transform: translateX(90%);   
+    }
+    #side-nav {
+        left: -90%;
+        width: 90%;
+        font-size: 20px;
+    }
+    #side-nav.projectMenu {
+        width: 180%;
+    }
+    #side-nav.projectMenu #project-side{
+        opacity: 1;
+    }
+    #side-nav.projectMenu #main-side {
+        width: 50%;
+    }
+    #view-all-btn {
+        right: 0px;
+        height: 20px;
+        width: 20px;
+    }
 
-@media only screen and (min-width: 35em) {
+    #intro-text {
+        position: relative;
+        width: 80%;
+    }
+    #intro-text h1 {
+        font-size: 14px;
+    }
+    .work-info {
+        width: 68%;
+        height: 76%;
+        top: 12%;
+        left: 16%;
+        right: 16%;
+        bottom: 12%;
+    }
+    .work-text {
+        width: 80%;
+        margin: 0 auto;
+        top: 50%;
+    }
+    .work-text h1 {
+        margin-bottom: 3rem;
+        font-weight: 400;
+        font-size: 38px;
+        line-height: 1.2em;
+    }
+    .work-text h2 {
+        font-size: 14px;
+    }
+    .work-text h3 {
+        font-size: 10px;
+
+    }
+
+
+    #project-hdr-text {
+        left: 13%;
+        bottom: 15%;
+        width: 60%;
+        -webkit-transition: opacity ease .2s .5s;
+        -moz-transition: opacity ease .2s .5s;
+        -o-transition: opacity ease .2s .5s;
+        -ms-transition: opacity ease .2s .5s;
+        transition: opacity ease .2s .5s;
+    }
+    #project-wrap.loadAnim #project-hdr-img {
+        top: 12%;
+        left: 16%;
+        right: 16%;
+        bottom: 12%;
+    }
+    #next-project {
+        right: -14px;
+
+    }
+    #prev-project {
+        left: -14px;
+    }
+    #project-hdr-text h1 {
+        font-size: 38px;
+        line-height: 1.2em;
+        margin-bottom: 2.2rem;
+    }
+    #project-hdr-text h2 {
+        text-transform: lowercase;
+        font-weight: 100;
+        font-size: 14px;
+        margin-bottom: 1.2rem;
+    }
+    #project-hdr-text h3 {
+        font-size: 10px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+    #overview-text {
+        position: relative;
+        float: none;
+        left: 0;
+        margin-top: 20px;
+        padding: 0 5%;
+        width: 100%;
+        @include box-sizing(border-box)
+    }
+    .overview-img-wrap {
+        position: relative;
+        float: none;
+        width: 100%;
+    }
+    .project-section {
+        padding: 0 10%;
+    }
+    #solution-text {
+        position: relative;
+        float: none;
+        left: 0;
+        top: 140px;
+        margin-top: 40px;
+        width: 100%;
+    }
+    #s2-img1-wrap {
+        position: relative;
+        float: none;
+    }
+    .s2-img-wrap {
+        width: 100%;
+    }
+    #s2-img2-wrap {
+        position: relative;
+        float: none;
+    }
+
+
+
+
+
+    #contact-wrap {
+        top: 0;
+        width: 100%;
+        height:100%;
+        padding: 0 14%;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -o-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        @include box-sizing(border-box)
+    }
+    #contact-left, #contact-right {
+        position: relative;
+        display: block;
+        height: 50%;
+        @include box-sizing(border-box)
+    }
+    #contact-left {
+        float: right;
+        top: 50%;
+        width: 100%;
+        -webkit-transition: all .2s .2s;
+        -moz-transition: all .2s .2s;
+        -o-transition: all .2s .2s;
+        -ms-transition: all .2s .2s;
+        transition: all .2s .2s;
+    }
+    #contact-right {
+        float: left;
+        top: -50%;
+        width: 100%;
+        padding-top: 41%;
+        -webkit-transition: all .2s;
+        -moz-transition: all .2s;
+        -o-transition: all .2s;
+        -ms-transition: all .2s;
+        transition: all .2s;
+    }
+    #contact-right p {
+        display: none;
+    }
+    #contact h1 {
+        font-size: 40px;
+
+        &::before {
+            bottom: -10px;
+            width:80px;
+        }
+    }
+    #contact h2 {
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0 0 40px 0;
+    }
+    #contact h3 {
+        margin: 0;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    #contact li {
+        font-size: 14px;
+        margin-bottom: 0.2rem;
+    } 
 
 }
 
