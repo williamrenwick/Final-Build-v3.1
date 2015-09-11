@@ -292,7 +292,7 @@ section {
   width: 51.5px;
   height: 26px;
   opacity: 1;
-  background-image: url(../img/wire-logo.png);
+  background-image: url(../public/img/wire-logo.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -322,7 +322,7 @@ section {
 
 /* line 318, preprocessor/main.scss */
 .fixedNav.onDark .site-title {
-  background-image: url(../img/wire-logo-white.png);
+  background-image: url(../public/img/wire-logo-white.png);
 }
 
 /* line 321, preprocessor/main.scss */
