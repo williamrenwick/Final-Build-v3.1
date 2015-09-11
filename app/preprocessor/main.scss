@@ -528,6 +528,7 @@ section {
     position: relative;
     top: 50%;
     margin: 0;
+    font-family: 'apercu-light';
     font-weight: 200;
     text-align: center;
     color: #ffffff;
@@ -780,6 +781,7 @@ section {
     margin-bottom: 1rem;
     margin-top: 0;
     text-transform: lowercase;
+    font-family: 'apercu-light';
     font-weight: 100;
     font-size: 18px;
 }
@@ -951,6 +953,7 @@ section {
 }
 #project-hdr-text h2 {
     text-transform: lowercase;
+    font-weight: 'apercu-light';
     font-weight: 100;
     font-size: 18px;
     margin-bottom: 1.2rem;
@@ -1013,6 +1016,7 @@ section {
 .project-subhead {
     position: relative;
     color: #ffffff;
+    font-family: 'apercu-bold'
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
@@ -1181,6 +1185,7 @@ section {
     position: relative;
     margin-top: 0;
     font-size: 60px;
+    font-family: 'apercu-light';
     font-weight: 200;
 
     &::before {
@@ -1328,7 +1333,6 @@ section {
     }
     #project-hdr-text h2 {
         text-transform: lowercase;
-        font-weight: 100;
         font-size: 14px;
         margin-bottom: 1.2rem;
     }
@@ -1430,7 +1434,6 @@ section {
     }
     #contact h2 {
         font-size: 14px;
-        font-weight: 400;
         margin: 0 0 40px 0;
     }
     #contact h3 {
@@ -1497,7 +1500,6 @@ section {
     }
     .work-text h1 {
         margin-bottom: 3rem;
-        font-weight: 400;
         font-size: 38px;
         line-height: 1.2em;
     }
@@ -1540,7 +1542,6 @@ section {
     }
     #project-hdr-text h2 {
         text-transform: lowercase;
-        font-weight: 100;
         font-size: 14px;
         margin-bottom: 1.2rem;
     }
@@ -1642,7 +1643,6 @@ section {
     }
     #contact h2 {
         font-size: 14px;
-        font-weight: 400;
         margin: 0 0 40px 0;
     }
     #contact h3 {
