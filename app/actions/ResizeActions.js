@@ -5,6 +5,9 @@ var ResizeActions = {
 	updateWidth: function(windowWidth) {
 		ResizeCursor.set('currentWidth', windowWidth);
 	},
+	updateHeight: function(windowHeight) {
+		ResizeCursor.set('currentHeight', windowHeight);
+	},
 	isMobile: function(value) {
 		var self = this;
 

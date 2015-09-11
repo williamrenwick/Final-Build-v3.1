@@ -2,6 +2,7 @@ var ResizeActions = require('../actions/ResizeActions.js');
 
 var $window = $(window);
 
+
 function debounce(func, wait, immediate) {
 	var timeout;
 	return function() {
@@ -19,8 +20,10 @@ function debounce(func, wait, immediate) {
 
 var resizeFn = debounce(function() {
 	var windowW = $window.width();
+	var windowH = $window.height();
 
 	ResizeActions.updateWidth(windowW);
+	ResizeActions.updateHeight(windowH);
 	
 	if (windowW > 1024) {
 		ResizeActions.isDesktop(true);
@@ -36,7 +39,7 @@ var resizeFn = debounce(function() {
 		ResizeActions.isMobile(true);
 	}
 
-}, 250);
+}, 100);
 
 
 var init = function() {

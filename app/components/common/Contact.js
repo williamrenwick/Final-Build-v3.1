@@ -6,6 +6,7 @@ var classNames = require('classnames');
 var Contact = React.createClass({
 	mixins: [mixin],
 	cursors: {
+		windowHeight: ['resize', 'currentHeight'],
 		isInProjects: ['project', 'isInProjects'],
 		scrollPos: ['scrolling', 'scrollPosition']
 	},
@@ -25,7 +26,7 @@ var Contact = React.createClass({
 		var isActive = this.willBeActive();
 
 		return (
-			<section id="contact" className={ classNames({isInProjects: this.state.isInProjects, notActive: !isActive }) }>
+			<section id="contact" className={ classNames({isInProjects: this.state.isInProjects, notActive: !isActive }) } style={{height: this.state.windowHeight}}>
 			    <div id="contact-wrap">
 			        <div id="contact-left">
 			            <h3>Telephone</h3>

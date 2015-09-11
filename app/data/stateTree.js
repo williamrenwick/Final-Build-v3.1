@@ -3,6 +3,7 @@ var Baobab = require('baobab');
 var stateTree = new Baobab({
 	resize: {
 		currentWidth: null,
+		currentHeight: null,
 		isMobile: null,
 		isTablet: null,
 		isDesktop: null

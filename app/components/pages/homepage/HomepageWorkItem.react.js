@@ -9,6 +9,7 @@ var HPActions = require('../../../actions/hpActions.js');
 var HpWorkItem = React.createClass({
 	mixins: [mixin],
 	cursors: {
+		windowHeight: ['resize', 'currentHeight'],
 		scrollPos: ['scrolling', 'scrollPosition'],
 		workBGColor: ['homepage', 'workBGColor']
 	},
@@ -23,9 +24,16 @@ var HpWorkItem = React.createClass({
 
  		HPActions.updateBGColor(colorData);
 	},
+	getStyles: function() {
+		var styleObj = {
+			backgroundImage: 'url(' + this.props.project.images.header + ')',
+			height: this.state.windowHeight
+		}
+		return styleObj
+	},
 	render: function() {	
 		return (
-			<section className="hp-work-item" style={{'background-image': 'url(' + this.props.project.images.header + ')' }}>
+			<section className="hp-work-item" style={this.getStyles()}>
 			  <div className="work-info" style={{ 'background-color': this.state.workBGColor }} ref="workInfo">
 				  <div className="work-text js-fade-text">
 					  <div className="worktext-appear-wrap">
