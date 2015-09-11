@@ -10,15 +10,21 @@ var ProjectActions = require('../../../actions/projectActions.js');
 var classNames = require('classnames');
 var ScrollActions = require('../../../actions/scrollActions.js');
 var MenuActions = require('../../../actions/actions.js');
+var ScrollFns = require('../../../event-controllers/ScrollFns.js');
 
 var Router = require('react-router');
 
 var ProjectWrap = React.createClass({
 	mixins: [mixin, Router.State],
 	cursors: {
+		isOnDark: ['menu', 'isOnDark'],
 		menuHover: ['menu', 'isHovering'],
 		menuActive: ['menu', 'isOpen'],
-		isOnDark: ['menu', 'isOnDark']
+		isInProjects: ['project', 'isInProjects'],
+		projSideOpen: ['menu', 'projSideOpen'],
+		isMobile: ['resize', 'isMobile'],
+		isTablet: ['resize', 'isTablet'],
+		isDesktop: ['resize', 'isDesktop']
 	},
 	getDataIdx: function() {
 		var currentPath = '/roche-cms';
@@ -33,21 +39,45 @@ var ProjectWrap = React.createClass({
 			}
 		}
 	},
-	componentWillMount: function() {
-		setTimeout(function () {
-			ProjectActions.isInProjects();
-		}, 200)
-	},
 	componentDidMount: function() {
-		var scrollTop = $(window).scrollTop();
-		ScrollActions.scrollPosUpdate(scrollTop);
-	},	
+		setTimeout(function () {
+			ScrollActions.scrollPosUpdate($(window).scrollTop());
+			ProjectActions.isInProjects();
+		}, 20)	
+	},
+	mobileStyles: function() {
+		var styleObj = {
+			transform: null
+		}
+
+		if (this.state.projSideOpen) {
+			styleObj.transform = 'translateX(10%)'
+		}
+		return styleObj;
+	},
+	getStyles: function() {
+		if (this.state.isMobile) {
+			var mobileStyles = this.mobileStyles();
+
+			console.log(mobileStyles)
+
+			return mobileStyles
+		}
+	},
+	getClasses: function() {
+		var classes = {
+			menuHover: this.state.menuHover,
+			sideMenuActive: this.state.menuActive,
+			loadAnim: this.state.isInProjects
+		}
+		return classes
+	},
 	render: function() {
 		var idx = this.getDataIdx(),
 			activeProject = this.props.projects[idx];
 
 		return (
-			<div id="projectWrap" className={ classNames({ menuHover: this.state.menuHover, sideMenuActive: this.state.menuActive }) }>
+			<div id="projectWrap" className={ classNames( this.getClasses() ) } style={this.getStyles()}>
 				<ProjectHeader projects={this.props.projects} activeProject={activeProject}/>
 				<SectionOne activeProject={activeProject}/>
 				<SectionTwo activeProject={activeProject}/>

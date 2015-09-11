@@ -13,13 +13,19 @@ var MainNav = React.createClass({
 		isClicked: ['menu', 'isOpen'],
 		isHovering: ['menu', 'isHovering'],
 		isOnDark: ['menu', 'isOnDark'],
+		projSideOpen: ['menu', 'projSideOpen'],
 		scrollPos: ['scrolling', 'scrollPosition'],
 		isInHomepage: ['homepage', 'isInHomepage'],
 		isInProjects: ['project', 'isInProjects'],
+		isMobile: ['resize', 'isMobile'],
+		isTablet: ['resize', 'isTablet'],
+		isDesktop: ['resize', 'isDesktop']
 	},
 	teaseMenu: function(e) {
-		menuActions.isHovering();
-		bumpAmount = this.inAmount(e);
+		if (!this.state.isMobile) {
+			menuActions.isHovering();
+			bumpAmount = this.inAmount(e);
+		}
 	},
 	unteaseMenu: function(e) {
 		menuActions.notHovering();	
@@ -41,6 +47,9 @@ var MainNav = React.createClass({
 		var btnX = getOffset( button ).left;
 		var relX = (e.pageX - btnX) / 1.5;
 
+  		if (relX <= 0) {
+  			relX = 1;
+  		}
 		return relX;
 	},
 	menuToggle: function() {
@@ -50,27 +59,54 @@ var MainNav = React.createClass({
 			menuActions.notClicked();
 		}
 	},
-	getStyles: function() {
+	mobileStyles: function() {
 		var styleObj = {
 			transform: null
 		}
-
+		if (this.state.isClicked && this.state.projSideOpen) {
+			styleObj.transform = 'translateX(' + -80 + '%)';
+		} 
+		return styleObj;
+	},
+	tabletStyles: function() {
+		var styleObj = {
+			transform: null
+		}
+		if (!this.state.isHovering && !this.state.isClicked) {
+			styleObj.transform = 'translateX(' + 0 + 'px)';
+		}
+		return styleObj;
+	},
+	desktopStyles: function() {
+		var styleObj = {
+			transform: null
+		}
 		if (!this.state.isHovering && !this.state.isClicked) {
 			styleObj.transform = 'translateX(' + 0 + 'px)';
 		} else if (this.state.isHovering && !this.state.isClicked) {
 			styleObj.transform = 'translateX(' + bumpAmount + 'px)';
 		}
-
 		return styleObj;
 	},
+	getStyles: function() {
+		if (this.state.isDesktop) {
+			var desktopStyles = this.desktopStyles();
+			return desktopStyles
+		} else if (this.state.isTablet) {
+			var tabletStyles = this.tabletStyles();
+			return tabletStyles
+		} else if (this.state.isMobile) {
+			var mobileStyles = this.mobileStyles();
+			return mobileStyles
+		}
+	},
 	render: function() {
-
 		return (
 			<nav className={ classNames({fixedNav: true, menuActive: this.state.isClicked, onDark: this.state.isOnDark || this.state.isInProjects }) } style={ this.getStyles() }>
-	          <div id="menu-button" onMouseEnter={this.teaseMenu} onMouseLeave={this.unteaseMenu} onClick={this.menuToggle} ref="menu-btn">     
+	          <div id="menu-button" onClick={this.menuToggle} ref="menu-btn">     
 	              <span className="menu-line"></span>
 	          </div>
-	          <span className="site-title">Lorem Ipsum</span>
+	          <div className="site-title"></div>
 	        </nav>
 		)
 	}

@@ -31,9 +31,6 @@ var NextProject = React.createClass({
 
 		var nextLink = this.props.projects[nextIdx].link;
 
-
-		console.log(currentIdx, nextIdx, nextLink)
-
 		return nextLink
 	},
 	setLink: function() {

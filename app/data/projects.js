@@ -1,8 +1,13 @@
-var Forward = require('./forwarddata.js');
+var Summit = require('./summitdata.js');
 var Mei = require('./meidata.js');
 var Roche = require('./rochedata.js');
+var Mount = require('./mountdata.js');
+var Snap = require('./snapdata.js');
+var Prism = require('./prismdata.js');
+var Design = require('./designteamdata.js');
 
-var DATA = [Forward, Roche, Mei];
+
+var DATA = [Summit, Roche, Mei, Mount, Snap, Prism, Design];
 var PROJECTS = [];
 
 //Define Project Class

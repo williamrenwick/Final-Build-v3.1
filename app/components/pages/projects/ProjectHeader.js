@@ -20,17 +20,21 @@ var ProjectHdr = React.createClass({
 	componentWillMount: function() {
 		var scrollPos = $(window).scrollTop();
 
-		ScrollActions.scrollPosUpdate(scrollPos);
-		this.calcTranslate();
-
 		$(window).on('scroll', this.handleScroll)
 	},
 	componentWillUnmount: function() {
 		$(window).off('scroll', this.handleScroll)
 	},
+	componentDidMount: function() {
+		var self = this;
+
+		setTimeout(function() {
+			self.calcTranslate();
+		}, 30)
+	},
 	calcTranslate: function() {
 		var scrollPos = this.state.scrollPos,
-			translateAmount = -(scrollPos / 10);
+			translateAmount = -( scrollPos / 10 );
 
 		ScrollActions.textTranslateAmount(translateAmount);
 	},
@@ -52,10 +56,10 @@ var ProjectHdr = React.createClass({
 		var activeProject = this.props.activeProject;
 		return (
 			<div id="project-hdr">
-				<div id="project-hdr-img" className={ classNames({ loadAnim: this.state.isInProjects }) } style={{backgroundImage: 'url(' + activeProject.images.header + ')'}}></div>
+				<div id="project-hdr-img" style={{backgroundImage: 'url(' + activeProject.images.header + ')'}}></div>
 				<PrevProject projects={this.props.projects} activeProject={activeProject}/>
 				<NextProject projects={this.props.projects} activeProject={activeProject}/>
-				<div id="project-hdr-text" className={ classNames({ loadAnim: this.state.isInProjects }) } style={ this.getStyles() }>
+				<div id="project-hdr-text" style={ this.getStyles() }>
 				    <div className="close-proj">
 				        <div className="view-close"></div>
 				        <Link to="home"><p>Close Project</p></Link>

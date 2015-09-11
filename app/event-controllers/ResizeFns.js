@@ -26,22 +26,21 @@ var resizeFn = debounce(function() {
 		ResizeActions.isDesktop(true);
 		ResizeActions.isTablet(false);
 		ResizeActions.isMobile(false);
-	} else if (windowW <= 1024 && windowW >= 768) {
+	} else if (windowW <= 1024 && windowW > 768) {
 		ResizeActions.isDesktop(false);
 		ResizeActions.isTablet(true);
 		ResizeActions.isMobile(false);
-	} else if (windowW < 768) {
+	} else if (windowW <= 768) {
 		ResizeActions.isDesktop(false);
 		ResizeActions.isTablet(false);
 		ResizeActions.isMobile(true);
-
 	}
 
 }, 250);
 
 
 var init = function() {
-	console.log('window resize initiated')
+	resizeFn();
 	$window.on('resize', resizeFn);
 }
 

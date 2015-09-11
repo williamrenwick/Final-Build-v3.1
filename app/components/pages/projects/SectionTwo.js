@@ -2,7 +2,7 @@ var React = require('react');
 var mixin = require('baobab-react/mixins').branch;
 var classNames = require('classnames');
 var Overview = require('./Overview.js');
-var Brief = require('./Brief.js')
+var Solution = require('./Solution.js')
 
 
 var SectionTwo = React.createClass({
@@ -24,7 +24,7 @@ var SectionTwo = React.createClass({
 					</div>
 				</div>
 
-				<Brief activeProject={activeProject}/>
+				<Solution activeProject={activeProject}/>
 
 				<div id="s2-img2-wrap" className="s2-img-wrap">
 					<div id="s2-img2">

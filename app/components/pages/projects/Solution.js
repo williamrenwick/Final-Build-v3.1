@@ -4,7 +4,7 @@ var classNames = require('classnames');
 var ScrollActions = require('../../../actions/scrollActions.js');
 
 
-var Brief = React.createClass({
+var Solution = React.createClass({
 	mixins: [mixin],
 	cursors: {
 		scrollPos: ['scrolling', 'scrollPosition'],
@@ -28,12 +28,12 @@ var Brief = React.createClass({
 		var activeProject = this.props.activeProject;
 
 		return (
-			<div id="brief-text" style={ this.getStyles() } >
-				<h2 className="project-subhead">Brief</h2>
-				<p>{this.props.activeProject.text.brief}</p>
+			<div id="solution-text" style={ this.getStyles() } >
+				<h2 className="project-subhead">Solution</h2>
+				<p>{this.props.activeProject.text.solution}</p>
 			</div>
 		)
 	}
 });
 
-module.exports = Brief;
+module.exports = Solution;

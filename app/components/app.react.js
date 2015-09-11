@@ -10,6 +10,7 @@ var RouteHandler = Router.RouteHandler;
 var PROJECTS = require('../data/projects.js');
 var ScrollActions = require('../actions/scrollActions.js')
 var Resize = require('../event-controllers/ResizeFns.js');
+var ScrollFns = require('../event-controllers/ScrollFns.js');
 
 var App = React.createClass({
 	mixins: [rootMixin], 
@@ -22,18 +23,10 @@ var App = React.createClass({
 		Resize.init();
 	},
 	componentDidMount: function() {
-		var scrollTop = $(window).scrollTop();
-		window.addEventListener('scroll', this.handleScroll);
-
-		ScrollActions.scrollPosUpdate(scrollTop);
+		ScrollFns.init();
 	},
 	componentDidUnmount: function() {
-		window.removeEventListener('scroll', this.handleScroll);
-	},
-	handleScroll: function(event) {
-		var scrollTop = event.srcElement.body.scrollTop;
-
-		ScrollActions.scrollPosUpdate(scrollTop);
+		ScrollFns.destroy();
 	},
 	render: function() {
 		return (

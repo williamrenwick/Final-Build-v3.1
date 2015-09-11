@@ -28,8 +28,8 @@ var Overview = React.createClass({
 		
 		return (
 			<div id="overview-text" style={ this.getStyles() }>
-				<h2 className="project-subhead">Overview</h2>
-				<p>{activeProject.text.overview}</p>
+				<h2 className="project-subhead">Brief</h2>
+				<p>{activeProject.text.brief}</p>
 			</div>
 		)
 	}

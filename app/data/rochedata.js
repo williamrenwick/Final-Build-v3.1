@@ -1,23 +1,23 @@
 var directory = 'img/roche/';
 
 var images = {
-	header: directory + 'work2.jpg',
-	overview: directory + 'overview.jpg',
-	brief1: directory + 'brief1.jpg',
-	brief2: directory + 'brief2.jpg',
-	section3: directory + 'section3.jpg'
+	header: directory + 'main.jpg',
+	overview: directory + '1.jpg',
+	brief1: directory + '2.jpg',
+	brief2: directory + '3.jpg',
+	section3: directory + '4.jpg'
 }
 
 
-var overview = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat nulla lectus, quis euismod diam euismod vel. Donec imperdiet vehicula fermentum. Ut nec quam eu tellus congue rhoncus non in sapien. '
 var brief = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat nulla lectus, quis euismod diam euismod vel. Donec imperdiet vehicula fermentum. Ut nec quam eu tellus congue rhoncus non in sapien. '
+var solution = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat nulla lectus, quis euismod diam euismod vel. Donec imperdiet vehicula fermentum. Ut nec quam eu tellus congue rhoncus non in sapien. '
 
 var text = {
 	title: 'Roche CMS',
 	client: 'Innocellence',
 	fields: 'UX, Design',
-	overview: overview,
-	brief: brief
+	brief: brief,
+	solution: solution
 }
 
 module.exports = {

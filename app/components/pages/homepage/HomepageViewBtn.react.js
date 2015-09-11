@@ -1,17 +1,17 @@
 var React = require('react');
-var Routes = require('../../../routing/routes.js');
-
+var Router = require('react-router')
+var Link = Router.Link;
 
 
 var ViewBtn = React.createClass({
 	render: function() {
 		return (
-			<div className="view-proj">
-			  
-			    <div className="view-plus"></div>
-			    <p>View Project</p>
-			  
-			</div>
+			<Link to={this.props.project.link}>
+				<div className="view-proj">
+				    <div className="view-plus"></div>
+				    <p>View Project</p>
+				</div>
+			</Link>
 		)
 	}
 });

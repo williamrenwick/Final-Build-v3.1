@@ -10,6 +10,7 @@ var HomepageActions = require('../../../actions/hpActions.js');
 var MenuActions = require('../../../actions/actions.js');
 var ProjectActions = require('../../../actions/projectActions.js');
 var ScrollActions = require('../../../actions/scrollActions.js');
+var ScrollFns = require('../../../event-controllers/ScrollFns.js');
 
 var PROJECTS = require('../../../data/projects.js');
 var totalProjAmount = PROJECTS.length;
@@ -21,25 +22,25 @@ var HomepageWrap = React.createClass({
 		isInProjects: ['project', 'isInProjects'],
 		scrollPos: ['scrolling', 'scrollPosition'],
 		menuHover: ['menu', 'isHovering'],
-		menuActive: ['menu', 'isOpen']
+		menuActive: ['menu', 'isOpen'],
+		projSideOpen: ['menu', 'projSideOpen'],
+		isMobile: ['resize', 'isMobile'],
+		isTablet: ['resize', 'isTablet'],
+		isDesktop: ['resize', 'isDesktop']
 	},
 	componentWillMount: function() {
 		HomepageActions.isInHomepage();
 		ProjectActions.notInProjects();
-
-		console.log(this.state.isInProjects)
-
-		var scrollTop = $(window).scrollTop();
-		ScrollActions.scrollPosUpdate(scrollTop);
-
-		this.whereInHomepage();
-		Animations.init();
-
 		$(window).on('scroll', this.handleScroll);
 	},
 	componentWillUnmount: function() {
 		$(window).off('scroll', this.handleScroll);
-
+	},
+	componentDidMount: function() {
+		this.whereInHomepage();
+		Animations.init();
+	},
+	componentDidUnmount: function() {
 		Animations.destroy();
 	},
 	handleScroll: function() {
@@ -71,9 +72,26 @@ var HomepageWrap = React.createClass({
 			MenuActions.isOnDark();
 		}
 	},
+	mobileStyles: function() {
+		var styleObj = {
+			transform: null
+		}
+
+		if (this.state.projSideOpen) {
+			styleObj.transform = 'translateX(10%)'
+		}
+		return styleObj;
+	},
+	getStyles: function() {
+		if (this.state.isMobile) {
+			var mobileStyles = this.mobileStyles();
+
+			return mobileStyles
+		}
+	},
 	render: function() {
 		return (
-			<div data-page='hp' id="wrap" className={ classNames({ menuHover: this.state.menuHover, sideMenuActive: this.state.menuActive }) }>
+			<div data-page='hp' id="wrap" className={ classNames({ menuHover: this.state.menuHover, sideMenuActive: this.state.menuActive }) } style={ this.getStyles() }>
 				<Intro />
 				<WorkItems projects={this.props.projects}/>
 				<Contact />

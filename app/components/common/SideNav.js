@@ -9,12 +9,46 @@ var SideNav = React.createClass({
 	cursors: {
 		isHovering: ['menu', 'isHovering'],
 		menuIsActive: ['menu', 'isOpen'],
-		projSideOpen: ['menu', 'projSideOpen']
+		projSideOpen: ['menu', 'projSideOpen'],
+		isMobile: ['resize', 'isMobile'],
+		isTablet: ['resize', 'isTablet'],
+		isDesktop: ['resize', 'isDesktop']
 	},
-	getStyles: function() {
+	mobileStyles: function() {
 		var styleObj = {
-			left: null,
-			width: null
+			left: null
+		}
+
+		if (!this.state.menuIsActive) {
+			styleObj.left = '-90%'
+		} else if (this.state.menuIsActive) {
+
+			if (!this.state.projSideOpen) {
+				styleObj.left = '0%'
+			} else {
+				styleObj.left = '-80%'
+			}
+			
+		}
+		
+		return styleObj
+	},
+	tabletStyles: function() {
+		var styleObj = {
+			left: null
+		}
+
+		if (!this.state.isHovering && !this.state.menuIsActive) {
+			styleObj.left = '-50%'
+		} else if (this.state.menuIsActive) {
+			styleObj.left = '0%'
+		}
+
+		return styleObj
+	},
+	desktopStyles: function() {
+		var styleObj = {
+			left: null
 		}
 
 		if (!this.state.isHovering && !this.state.menuIsActive) {
@@ -28,6 +62,18 @@ var SideNav = React.createClass({
 		}
 
 		return styleObj
+	},
+	getStyles: function() {
+		if (this.state.isDesktop) {
+			var desktopStyles = this.desktopStyles();
+			return desktopStyles
+		} else if (this.state.isTablet) {
+			var tabletStyles = this.tabletStyles();
+			return tabletStyles
+		} else if (this.state.isMobile) {
+			var mobileStyles = this.mobileStyles();
+			return mobileStyles
+		}
 	},
 	getClasses: function() {
 		var classObj = {

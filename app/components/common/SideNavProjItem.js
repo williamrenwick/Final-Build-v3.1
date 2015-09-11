@@ -32,7 +32,7 @@ var LiProjItem = React.createClass({
     	}
 
         function heightCalc(totalLiAmount) {
-            var originalHeight = 100;
+            var originalHeight = 170;
             var totalLiHeight = totalLiAmount * originalHeight;
 
             if (totalLiHeight < window.innerHeight) {

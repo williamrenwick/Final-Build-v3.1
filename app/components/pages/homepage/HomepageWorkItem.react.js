@@ -29,7 +29,7 @@ var HpWorkItem = React.createClass({
 			  <div className="work-info" style={{ 'background-color': this.state.workBGColor }} ref="workInfo">
 				  <div className="work-text js-fade-text">
 					  <div className="worktext-appear-wrap">
-						<ViewBtn />
+						<ViewBtn project={this.props.project}/>
 				  	    <h1>{this.props.project.text.title}</h1>
                         <h3>Client</h3>
                         <h2>{this.props.project.text.client}</h2>

@@ -8,23 +8,35 @@ var Link = Router.Link;
 var MainSide = React.createClass({
     mixins: [mixin],
     cursors: {
-        projSideOpen: ['menu', 'projSideOpen']
+        projSideOpen: ['menu', 'projSideOpen'],
+        isMobile: ['resize', 'isMobile'],
+        isTablet: ['resize', 'isTablet'],
+        isDesktop: ['resize', 'isDesktop']
     },
     homeClick: function() {
-        var homeTop = 0;
-
         menuActions.notClicked();
-
-        $(window).scrollTop(homeTop);
     },
-    projectsClick: function() {
+    mobileEvents: function() {
         if (!this.state.projSideOpen) {
-
+            menuActions.projSideOpen();
+        } else if (this.state.projSideOpen) {
+            menuActions.projSideClose();
+        }  
+    },
+    desktopEvents: function() {
+        if (!this.state.projSideOpen) {
             menuActions.projSideOpen();
         } else if (this.state.projSideOpen) {
             menuActions.projSideClose();
             menuActions.notClicked();
         }  
+    },
+    projectsClick: function() {
+        if (this.state.isMobile) {
+            this.mobileEvents();
+        } else {
+            this.desktopEvents();
+        }
     },
     contactClick: function() {
         var contactTop = $(document).height() - $(window).height();
@@ -32,16 +44,30 @@ var MainSide = React.createClass({
         menuActions.notClicked();
         $(window).scrollTop(contactTop);
     },
+    mobileUlStyles: function() {
+        var styleObj = {
+            paddingRight: '2%'
+        }
+
+        return styleObj
+    },
+    getUlStyles: function() {
+        if (this.state.isMobile && this.state.projSideOpen) {
+            return this.mobileUlStyles()
+        }
+    },
 	render: function() {
 		return (
             <div id="main-side" >
-    			<ul>
-                    <li id="homeLi" onClick={this.homeClick} >
-                        <span className="number-wrap">
-                            <span className="page-number">1</span>/<span className="total-number">3</span>
-                        </span>
-                        <span className="page-title">About</span>
-                    </li>
+    			<ul style={ this.getUlStyles() }>
+                    <Link to='home'>
+                        <li id="homeLi" onClick={this.homeClick} >
+                            <span className="number-wrap">
+                                <span className="page-number">1</span>/<span className="total-number">3</span>
+                            </span>
+                            <span className="page-title">About</span>
+                        </li>
+                    </Link>
                     <li id="projLi" onClick={this.projectsClick}>
                         <span className="number-wrap">
                             <span className="page-number">2</span>/<span className="total-number">3</span>

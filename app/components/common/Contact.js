@@ -12,16 +12,20 @@ var Contact = React.createClass({
 	willBeActive: function() {
 		var windowH = $(window).height();
 		var docH = $(document).height();
+		var scrollBtmPos = this.state.scrollPos + windowH;
+		var btmTrigger = docH - (windowH/2);
 
-		if (this.state.scrollPos + windowH < docH - (windowH/2)) {
+		if (scrollBtmPos < btmTrigger) {
 			return false
-		} else if (this.state.scrollPos + windowH >= docH - (windowH/2)) {
+		} else if (scrollBtmPos > btmTrigger) {
 			return true
 		}
 	},
 	render: function() {
+		var isActive = this.willBeActive();
+
 		return (
-			<section id="contact" className={ classNames({isInProjects: this.state.isInProjects, active: this.willBeActive() }) }>
+			<section id="contact" className={ classNames({isInProjects: this.state.isInProjects, notActive: !isActive }) }>
 			    <div id="contact-wrap">
 			        <div id="contact-left">
 			            <h3>Telephone</h3>
