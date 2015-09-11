@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "main": "app/main.js",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "postinstall": "node deploy"
   },
   "author": "",
   "license": "ISC",
