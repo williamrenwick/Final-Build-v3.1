@@ -22,8 +22,7 @@ module.exports = {
         exclude: [nodeModulesPath],
       }, {
         test: /\.css$/,
-        loaders: ['style', 'css'],
-        include: path.resolve(__dirname, 'app')
+        loader: 'style!css'
       }, {
         test: /\.(png|jpg)$/,
         loader: 'url?limit=25000'
