@@ -85,42 +85,40 @@ a:active {
    Author's custom styles
    ========================================================================== */
 @font-face {
-  font-family: 'apercu-regular';
-  src: url("../public/fonts/apercu-webfont.eot") format("eot"), url("../public/fonts/apercu-webfont.woff") format("woff"), url("../public/fonts/apercu-webfont.ttf") format("truetype");
+  font-family: 'apercu';
+  font-weight: 400;
+  src: url("~public/fonts/apercu-webfont.eot") format("eot"), url("~public/fonts/apercu-webfont.woff") format("woff"), url("~public/fonts/apercu-webfont.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'apercu-bold';
-  src: url("../public/fonts/apercu-bold-webfont.eot") format("eot"), url("../public/fonts/apercu-bold-webfont.woff") format("woff"), url("../public/fonts/apercu-bold-webfont.ttf") format("truetype");
+  font-family: 'apercu';
+  font-weight: 100;
+  src: url("~public/fonts/apercu-light-webfont.eot") format("eot"), url("~public/fonts/apercu-light-webfont.woff") format("woff"), url("~public/fonts/apercu-light-webfont.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'apercu-light';
-  src: url("../public/fonts/apercu-light-webfont.eot") format("eot"), url("../public/fonts/apercu-light-webfont.woff") format("woff"), url("../public/fonts/apercu-light-webfont.ttf") format("truetype");
+  font-family: 'apercu';
+  font-weight: 600;
+  src: url("~public/fonts/apercu-medium-webfont.eot") format("eot"), url("~public/fonts/apercu-medium-webfont.woff") format("woff"), url("~public/fonts/apercu-medium-webfont.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: 'apercu-medium';
-  src: url("../public/fonts/apercu-medium-webfont.eot") format("eot"), url("../public/fonts/apercu-medium-webfont.woff") format("woff"), url("../public/fonts/apercu-medium-webfont.ttf") format("truetype");
-}
-
-/* line 94, preprocessor/main.scss */
+/* line 93, preprocessor/main.scss */
 * {
-  font-family: 'apercu-regular';
+  font-family: 'apercu';
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 98, preprocessor/main.scss */
+/* line 97, preprocessor/main.scss */
 section {
   position: relative;
 }
 
-/* line 101, preprocessor/main.scss */
+/* line 100, preprocessor/main.scss */
 .noScroll {
   overflow-y: hidden;
 }
 
-/* line 104, preprocessor/main.scss */
+/* line 103, preprocessor/main.scss */
 .neutralTransform {
   -webkit-transform: translateX(0px);
   -moz-transform: translateX(0px);
@@ -129,7 +127,7 @@ section {
   transform: translateX(0px);
 }
 
-/* line 111, preprocessor/main.scss */
+/* line 110, preprocessor/main.scss */
 .menuHover {
   -webkit-transform: translateX(20px);
   -moz-transform: translateX(20px);
@@ -138,7 +136,7 @@ section {
   transform: translateX(20px);
 }
 
-/* line 118, preprocessor/main.scss */
+/* line 117, preprocessor/main.scss */
 .sideMenuActive {
   -webkit-transform: translateX(50%);
   -moz-transform: translateX(50%);
@@ -147,7 +145,7 @@ section {
   transform: translateX(50%);
 }
 
-/* line 177, preprocessor/main.scss */
+/* line 176, preprocessor/main.scss */
 .fixedNav {
   position: fixed;
   width: 100%;
@@ -168,17 +166,17 @@ section {
   transition: transform .2s;
 }
 
-/* line 195, preprocessor/main.scss */
+/* line 194, preprocessor/main.scss */
 .fixedNav.menuActive .site-title {
   opacity: 0;
 }
 
-/* line 199, preprocessor/main.scss */
+/* line 198, preprocessor/main.scss */
 .fixedNav > * {
   display: inline-block;
 }
 
-/* line 202, preprocessor/main.scss */
+/* line 201, preprocessor/main.scss */
 #menu-button {
   position: relative;
   left: 30px;
@@ -191,7 +189,7 @@ section {
   -ms-transition: width .2s;
   transition: width .2s;
 }
-/* line 214, preprocessor/main.scss */
+/* line 213, preprocessor/main.scss */
 #menu-button::after {
   position: absolute;
   content: '';
@@ -206,7 +204,7 @@ section {
   -ms-transition: width .2s;
   transition: width .2s;
 }
-/* line 228, preprocessor/main.scss */
+/* line 227, preprocessor/main.scss */
 #menu-button::before {
   position: absolute;
   content: 'close';
@@ -227,17 +225,17 @@ section {
   transition: transform .2s, opacity .2s;
 }
 
-/* line 248, preprocessor/main.scss */
+/* line 247, preprocessor/main.scss */
 #menu-button:hover {
   width: 20px;
 }
 
-/* line 251, preprocessor/main.scss */
+/* line 250, preprocessor/main.scss */
 #menu-button:hover .menu-line::before {
   width: 100%;
 }
 
-/* line 254, preprocessor/main.scss */
+/* line 253, preprocessor/main.scss */
 .menu-line {
   display: block;
   position: absolute;
@@ -252,7 +250,7 @@ section {
   -ms-transition: width .2s;
   transition: width .2s;
 }
-/* line 268, preprocessor/main.scss */
+/* line 267, preprocessor/main.scss */
 .menu-line::before {
   position: absolute;
   content: "";
@@ -266,7 +264,7 @@ section {
   -ms-transition: width .2s;
   transition: width .2s;
 }
-/* line 281, preprocessor/main.scss */
+/* line 280, preprocessor/main.scss */
 .menu-line::after {
   position: absolute;
   content: "";
@@ -281,11 +279,11 @@ section {
   transition: width .2s;
 }
 
-/* line 296, preprocessor/main.scss */
+/* line 295, preprocessor/main.scss */
 .fixedNav.menuActive #menu-button::after {
   width: 2px;
 }
-/* line 299, preprocessor/main.scss */
+/* line 298, preprocessor/main.scss */
 .fixedNav.menuActive #menu-button::before {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
@@ -295,26 +293,26 @@ section {
   opacity: 1;
 }
 
-/* line 308, preprocessor/main.scss */
+/* line 307, preprocessor/main.scss */
 .fixedNav.menuActive .menu-line {
   width: 0;
   opacity: 0;
   background-color: #000000;
 }
-/* line 313, preprocessor/main.scss */
+/* line 312, preprocessor/main.scss */
 .fixedNav.menuActive .menu-line::after {
   width: 0;
   opacity: 0;
   background-color: #000000;
 }
-/* line 318, preprocessor/main.scss */
+/* line 317, preprocessor/main.scss */
 .fixedNav.menuActive .menu-line::before {
   width: 0;
   opacity: 0;
   background-color: #000000;
 }
 
-/* line 324, preprocessor/main.scss */
+/* line 323, preprocessor/main.scss */
 .site-title {
   position: absolute;
   width: 51.5px;
@@ -337,25 +335,25 @@ section {
   transform: translate(-50%, 0);
 }
 
-/* line 339, preprocessor/main.scss */
+/* line 338, preprocessor/main.scss */
 .fixedNav.onDark .menu-line {
   background-color: #ffffff;
 }
-/* line 342, preprocessor/main.scss */
+/* line 341, preprocessor/main.scss */
 .fixedNav.onDark .menu-line::before {
   background-color: #ffffff;
 }
-/* line 345, preprocessor/main.scss */
+/* line 344, preprocessor/main.scss */
 .fixedNav.onDark .menu-line::after {
   background-color: #ffffff;
 }
 
-/* line 349, preprocessor/main.scss */
+/* line 348, preprocessor/main.scss */
 .fixedNav.onDark .site-title {
   background-image: url(../public/img/wire-logo-white.png);
 }
 
-/* line 352, preprocessor/main.scss */
+/* line 351, preprocessor/main.scss */
 #side-nav {
   position: fixed;
   top: 0;
@@ -377,12 +375,12 @@ section {
   z-index: 50;
 }
 
-/* line 373, preprocessor/main.scss */
+/* line 372, preprocessor/main.scss */
 #side-nav > div {
   float: left;
 }
 
-/* line 376, preprocessor/main.scss */
+/* line 375, preprocessor/main.scss */
 #main-side {
   position: relative;
   width: 100%;
@@ -390,7 +388,7 @@ section {
   background-color: #F7F7F7;
 }
 
-/* line 382, preprocessor/main.scss */
+/* line 381, preprocessor/main.scss */
 #project-side {
   position: relative;
   width: 50%;
@@ -404,27 +402,27 @@ section {
   transition: opacity .2s;
 }
 
-/* line 394, preprocessor/main.scss */
+/* line 393, preprocessor/main.scss */
 #side-nav.menu-clicked {
   left: 0;
 }
 
-/* line 397, preprocessor/main.scss */
+/* line 396, preprocessor/main.scss */
 #side-nav.projectMenu {
   width: 100%;
 }
 
-/* line 400, preprocessor/main.scss */
+/* line 399, preprocessor/main.scss */
 #side-nav.projectMenu #project-side {
   opacity: 1;
 }
 
-/* line 403, preprocessor/main.scss */
+/* line 402, preprocessor/main.scss */
 #side-nav.projectMenu #main-side {
   width: 50%;
 }
 
-/* line 406, preprocessor/main.scss */
+/* line 405, preprocessor/main.scss */
 #main-side ul {
   position: relative;
   width: 100%;
@@ -442,13 +440,13 @@ section {
   transform: translate(0, -50%);
 }
 
-/* line 415, preprocessor/main.scss */
+/* line 414, preprocessor/main.scss */
 #side-nav li {
   position: relative;
   margin-bottom: 40px;
   cursor: pointer;
 }
-/* line 420, preprocessor/main.scss */
+/* line 419, preprocessor/main.scss */
 #side-nav li:before {
   position: absolute;
   content: '';
@@ -465,12 +463,12 @@ section {
   transition: all .2s;
 }
 
-/* line 437, preprocessor/main.scss */
+/* line 436, preprocessor/main.scss */
 #side-nav li.active:before {
   width: 120px;
 }
 
-/* line 441, preprocessor/main.scss */
+/* line 440, preprocessor/main.scss */
 #side-nav.menu-clicked {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
@@ -479,7 +477,7 @@ section {
   transform: translateX(0);
 }
 
-/* line 448, preprocessor/main.scss */
+/* line 447, preprocessor/main.scss */
 #view-all-btn {
   position: absolute;
   right: 10px;
@@ -496,27 +494,27 @@ section {
   transition: all ease .4s;
   -webkit-backface-visibility: hidden;
 }
-/* line 463, preprocessor/main.scss */
+/* line 462, preprocessor/main.scss */
 #view-all-btn:before, #view-all-btn:after {
   content: '';
   position: absolute;
   background-color: #000000;
 }
-/* line 468, preprocessor/main.scss */
+/* line 467, preprocessor/main.scss */
 #view-all-btn:before {
   left: 50%;
   margin-left: -1px;
   width: 2px;
   height: 100%;
 }
-/* line 474, preprocessor/main.scss */
+/* line 473, preprocessor/main.scss */
 #view-all-btn:after {
   top: 50%;
   margin-top: -1px;
   height: 2px;
   width: 100%;
 }
-/* line 480, preprocessor/main.scss */
+/* line 479, preprocessor/main.scss */
 #view-all-btn.close {
   -webkit-transform: rotate(-135deg);
   -moz-transform: rotate(-135deg);
@@ -525,7 +523,7 @@ section {
   transform: rotate(-135deg);
 }
 
-/* line 488, preprocessor/main.scss */
+/* line 487, preprocessor/main.scss */
 #project-side ul {
   height: 100%;
   width: 100%;
@@ -534,7 +532,7 @@ section {
   overflow-y: scroll;
 }
 
-/* line 495, preprocessor/main.scss */
+/* line 494, preprocessor/main.scss */
 #project-side li {
   width: 100%;
   min-height: 170px;
@@ -555,7 +553,7 @@ section {
   transition: transform ease .1s, opacity .1s;
 }
 
-/* line 511, preprocessor/main.scss */
+/* line 510, preprocessor/main.scss */
 .projLi {
   -webkit-transform: translateX(-100%);
   -moz-transform: translateX(-100%);
@@ -565,7 +563,7 @@ section {
   opacity: 0;
 }
 
-/* line 515, preprocessor/main.scss */
+/* line 514, preprocessor/main.scss */
 .projLink:after {
   content: '';
   display: block;
@@ -578,12 +576,11 @@ section {
   z-index: 1;
 }
 
-/* line 527, preprocessor/main.scss */
+/* line 526, preprocessor/main.scss */
 .projLink h1 {
   position: relative;
   top: 50%;
   margin: 0;
-  font-family: 'apercu-light';
   font-weight: 200;
   text-align: center;
   color: #ffffff;
@@ -601,12 +598,12 @@ section {
   z-index: 2;
 }
 
-/* line 548, preprocessor/main.scss */
+/* line 546, preprocessor/main.scss */
 .projLink .strikethrough {
   display: inline-block;
   position: relative;
 }
-/* line 552, preprocessor/main.scss */
+/* line 550, preprocessor/main.scss */
 .projLink .strikethrough:before {
   content: '';
   display: block;
@@ -621,7 +618,7 @@ section {
   -o-transition: width 0s ease, background .2s ease;
   transition: width 0s ease, background .2s ease;
 }
-/* line 566, preprocessor/main.scss */
+/* line 564, preprocessor/main.scss */
 .projLink .strikethrough:after {
   content: '';
   display: block;
@@ -638,7 +635,7 @@ section {
   transition: width .2s ease;
 }
 
-/* line 583, preprocessor/main.scss */
+/* line 581, preprocessor/main.scss */
 .projLink:hover .strikethrough:before {
   width: 100%;
   background: #FFFFB0;
@@ -648,7 +645,7 @@ section {
   -o-transition: width .2s ease;
   transition: width .2s ease;
 }
-/* line 592, preprocessor/main.scss */
+/* line 590, preprocessor/main.scss */
 .projLink:hover .strikethrough:after {
   width: 100%;
   background: transparent;
@@ -659,7 +656,7 @@ section {
   transition: width .0s ease;
 }
 
-/* line 602, preprocessor/main.scss */
+/* line 600, preprocessor/main.scss */
 .projectMenu .projLink h1 {
   -webkit-transform: translate(0px, -50%);
   -moz-transform: translate(0px, -50%);
@@ -669,7 +666,7 @@ section {
   opacity: 1;
 }
 
-/* line 610, preprocessor/main.scss */
+/* line 608, preprocessor/main.scss */
 .projLink .view-proj {
   position: absolute;
   left: 50%;
@@ -698,7 +695,7 @@ section {
   z-index: 2;
 }
 
-/* line 635, preprocessor/main.scss */
+/* line 633, preprocessor/main.scss */
 .projLink:hover .view-proj {
   -webkit-transform: translate(-50%, -100%);
   -moz-transform: translate(-50%, -100%);
@@ -707,7 +704,7 @@ section {
   transform: translate(-50%, -100%);
 }
 
-/* line 642, preprocessor/main.scss */
+/* line 640, preprocessor/main.scss */
 .projLink .view-plus {
   position: absolute;
   float: left;
@@ -719,13 +716,13 @@ section {
   -ms-transition: all ease .3s;
   transition: all ease .3s;
 }
-/* line 654, preprocessor/main.scss */
+/* line 652, preprocessor/main.scss */
 .projLink .view-plus:after, .projLink .view-plus:before {
   position: absolute;
   content: '';
   background-color: #ffffff;
 }
-/* line 659, preprocessor/main.scss */
+/* line 657, preprocessor/main.scss */
 .projLink .view-plus:after {
   top: 50%;
   left: 0px;
@@ -733,7 +730,7 @@ section {
   height: 1px;
   margin-top: -1px;
 }
-/* line 666, preprocessor/main.scss */
+/* line 664, preprocessor/main.scss */
 .projLink .view-plus:before {
   top: 0;
   left: 50%;
@@ -741,7 +738,7 @@ section {
   height: 17px;
 }
 
-/* line 673, preprocessor/main.scss */
+/* line 671, preprocessor/main.scss */
 .projLink:hover .view-plus {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -750,20 +747,20 @@ section {
   transform: rotate(90deg);
 }
 
-/* line 680, preprocessor/main.scss */
+/* line 678, preprocessor/main.scss */
 .projLink .view-proj p {
   margin-top: 0;
   margin-left: 30px;
   margin-bottom: 0;
 }
 
-/* line 685, preprocessor/main.scss */
+/* line 683, preprocessor/main.scss */
 .number-wrap {
   font-size: 0.6em;
   vertical-align: 1.4em;
 }
 
-/* line 695, preprocessor/main.scss */
+/* line 693, preprocessor/main.scss */
 #wrap {
   height: 100%;
   width: 100%;
@@ -774,13 +771,13 @@ section {
   transition: transform .2s;
 }
 
-/* line 705, preprocessor/main.scss */
+/* line 703, preprocessor/main.scss */
 #intro {
   height: 100vh;
   width: 100%;
 }
 
-/* line 709, preprocessor/main.scss */
+/* line 707, preprocessor/main.scss */
 #intro-text {
   position: relative;
   width: 50%;
@@ -795,14 +792,14 @@ section {
   transform: translate(0, -50%);
 }
 
-/* line 717, preprocessor/main.scss */
+/* line 715, preprocessor/main.scss */
 #intro-text h1 {
   font-size: 20px;
   font-weight: 400;
   margin: 0;
 }
 
-/* line 722, preprocessor/main.scss */
+/* line 720, preprocessor/main.scss */
 #intro-arrow {
   position: absolute;
   width: 12px;
@@ -820,7 +817,7 @@ section {
   background-size: contain;
 }
 
-/* line 737, preprocessor/main.scss */
+/* line 735, preprocessor/main.scss */
 .hp-work-item {
   width: 100%;
   height: 100vh;
@@ -831,7 +828,7 @@ section {
   background-attachment: fixed;
 }
 
-/* line 745, preprocessor/main.scss */
+/* line 743, preprocessor/main.scss */
 .work-info {
   position: relative;
   width: 50%;
@@ -844,7 +841,7 @@ section {
   transition: background-color .2s;
 }
 
-/* line 756, preprocessor/main.scss */
+/* line 754, preprocessor/main.scss */
 .work-text {
   position: relative;
   width: 61.4%;
@@ -856,17 +853,17 @@ section {
   -o-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
-/* line 129, preprocessor/main.scss */
+/* line 128, preprocessor/main.scss */
 .work-text:before, .work-text:after {
   content: "";
   display: table;
 }
-/* line 133, preprocessor/main.scss */
+/* line 132, preprocessor/main.scss */
 .work-text:after {
   clear: both;
 }
 
-/* line 764, preprocessor/main.scss */
+/* line 762, preprocessor/main.scss */
 .worktext-appear-wrap {
   opacity: 0;
   -webkit-transform: translateX(50px);
@@ -881,22 +878,21 @@ section {
   transition: opacity .5s .2s, transform .6s .2s;
 }
 
-/* line 777, preprocessor/main.scss */
+/* line 775, preprocessor/main.scss */
 .worktext-appear-wrap * {
   margin: 0;
 }
 
-/* line 780, preprocessor/main.scss */
+/* line 778, preprocessor/main.scss */
 .work-text h2 {
   margin-bottom: 1rem;
   margin-top: 0;
   text-transform: lowercase;
-  font-family: 'apercu-light';
   font-weight: 100;
   font-size: 18px;
 }
 
-/* line 788, preprocessor/main.scss */
+/* line 785, preprocessor/main.scss */
 .work-text h1 {
   margin-bottom: 3rem;
   margin-top: 0;
@@ -905,14 +901,14 @@ section {
   line-height: 1.2em;
 }
 
-/* line 795, preprocessor/main.scss */
+/* line 792, preprocessor/main.scss */
 .work-text h3 {
   font-size: 12px;
   margin: 0;
   text-transform: uppercase;
 }
 
-/* line 800, preprocessor/main.scss */
+/* line 797, preprocessor/main.scss */
 .hp-work-item .view-proj {
   position: relative;
   display: block;
@@ -928,20 +924,20 @@ section {
   box-sizing: border-box;
 }
 
-/* line 812, preprocessor/main.scss */
+/* line 809, preprocessor/main.scss */
 .hp-work-item .view-plus {
   position: absolute;
   float: left;
   width: 18px;
   height: 18px;
 }
-/* line 819, preprocessor/main.scss */
+/* line 816, preprocessor/main.scss */
 .hp-work-item .view-plus:after, .hp-work-item .view-plus:before {
   position: absolute;
   content: '';
   background-color: #000000;
 }
-/* line 824, preprocessor/main.scss */
+/* line 821, preprocessor/main.scss */
 .hp-work-item .view-plus:after {
   top: 50%;
   left: 0px;
@@ -949,7 +945,7 @@ section {
   height: 1px;
   margin-top: -1px;
 }
-/* line 831, preprocessor/main.scss */
+/* line 828, preprocessor/main.scss */
 .hp-work-item .view-plus:before {
   top: 0;
   left: 50%;
@@ -957,18 +953,18 @@ section {
   height: 17px;
 }
 
-/* line 838, preprocessor/main.scss */
+/* line 835, preprocessor/main.scss */
 .hp-work-item .view-proj p {
   margin-left: 30px;
   margin-bottom: 20px;
 }
 
-/* line 842, preprocessor/main.scss */
+/* line 839, preprocessor/main.scss */
 .work-info {
   background-color: #E7F1FF;
 }
 
-/* line 845, preprocessor/main.scss */
+/* line 842, preprocessor/main.scss */
 .hp-work-item.active .worktext-appear-wrap {
   -webkit-transform: translateX(0) !important;
   -moz-transform: translateX(0) !important;
@@ -978,7 +974,7 @@ section {
   opacity: 1;
 }
 
-/* line 856, preprocessor/main.scss */
+/* line 853, preprocessor/main.scss */
 #projectWrap {
   height: 100%;
   width: 100%;
@@ -990,14 +986,14 @@ section {
   transition: transform .2s;
 }
 
-/* line 867, preprocessor/main.scss */
+/* line 864, preprocessor/main.scss */
 #project-hdr {
   position: relative;
   width: 100%;
   height: 100vh;
 }
 
-/* line 872, preprocessor/main.scss */
+/* line 869, preprocessor/main.scss */
 #project-hdr-text {
   position: absolute;
   left: 7%;
@@ -1006,7 +1002,7 @@ section {
   color: #ffffff;
 }
 
-/* line 879, preprocessor/main.scss */
+/* line 876, preprocessor/main.scss */
 #project-hdr-text, #overview-text, #brief-text {
   opacity: 0;
   -webkit-transition: opacity ease .2s .5s;
@@ -1016,7 +1012,7 @@ section {
   transition: opacity ease .2s .5s;
 }
 
-/* line 887, preprocessor/main.scss */
+/* line 884, preprocessor/main.scss */
 .project-nav {
   position: fixed;
   top: 50%;
@@ -1032,18 +1028,18 @@ section {
   z-index: 100;
 }
 
-/* line 901, preprocessor/main.scss */
+/* line 898, preprocessor/main.scss */
 .project-nav h1 {
   font-size: 12px;
   margin: 0;
 }
 
-/* line 905, preprocessor/main.scss */
+/* line 902, preprocessor/main.scss */
 .project-nav:hover {
   border-bottom: 2px solid white;
 }
 
-/* line 908, preprocessor/main.scss */
+/* line 905, preprocessor/main.scss */
 #next-project {
   right: 0;
   -webkit-transform: rotate(90deg) translateX(-50%);
@@ -1053,7 +1049,7 @@ section {
   transform: rotate(90deg) translateX(-50%);
 }
 
-/* line 916, preprocessor/main.scss */
+/* line 913, preprocessor/main.scss */
 #prev-project {
   left: 0;
   -webkit-transform: rotate(-90deg) translateX(50%);
@@ -1063,17 +1059,17 @@ section {
   transform: rotate(-90deg) translateX(50%);
 }
 
-/* line 924, preprocessor/main.scss */
+/* line 921, preprocessor/main.scss */
 #project-hdr-text * {
   margin: 0;
 }
 
-/* line 927, preprocessor/main.scss */
+/* line 924, preprocessor/main.scss */
 #projectWrap.loadAnim #project-hdr-text {
   opacity: 1;
 }
 
-/* line 930, preprocessor/main.scss */
+/* line 927, preprocessor/main.scss */
 #project-hdr-img {
   display: block;
   position: absolute;
@@ -1091,12 +1087,12 @@ section {
   transition: all .2s .3s;
 }
 
-/* line 945, preprocessor/main.scss */
+/* line 942, preprocessor/main.scss */
 #projectWrap.loadAnim #project-hdr-img {
   transform: scale(0.8);
 }
 
-/* line 948, preprocessor/main.scss */
+/* line 945, preprocessor/main.scss */
 #project-hdr-text h1 {
   font-weight: 400;
   font-size: 50px;
@@ -1104,23 +1100,22 @@ section {
   margin-bottom: 2.2rem;
 }
 
-/* line 954, preprocessor/main.scss */
+/* line 951, preprocessor/main.scss */
 #project-hdr-text h2 {
   text-transform: lowercase;
-  font-weight: 'apercu-light';
   font-weight: 100;
   font-size: 18px;
   margin-bottom: 1.2rem;
 }
 
-/* line 961, preprocessor/main.scss */
+/* line 957, preprocessor/main.scss */
 #project-hdr-text h3 {
   font-size: 12px;
   margin: 0;
   text-transform: uppercase;
 }
 
-/* line 966, preprocessor/main.scss */
+/* line 962, preprocessor/main.scss */
 .close-proj {
   position: relative;
   font-family: inherit;
@@ -1129,7 +1124,7 @@ section {
   padding-left: 20px;
   z-index: 1000;
 }
-/* line 974, preprocessor/main.scss */
+/* line 970, preprocessor/main.scss */
 .close-proj:before, .close-proj:after {
   content: '';
   position: absolute;
@@ -1145,7 +1140,7 @@ section {
   transition: transform ease .2s;
 }
 
-/* line 990, preprocessor/main.scss */
+/* line 986, preprocessor/main.scss */
 .close-proj:hover:before {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -1153,7 +1148,7 @@ section {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 997, preprocessor/main.scss */
+/* line 993, preprocessor/main.scss */
 .close-proj:hover:after {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -1162,42 +1157,41 @@ section {
   transform: rotate(-45deg);
 }
 
-/* line 1005, preprocessor/main.scss */
+/* line 1001, preprocessor/main.scss */
 .project-section {
   position: relative;
   padding: 0 10%;
 }
-/* line 129, preprocessor/main.scss */
+/* line 128, preprocessor/main.scss */
 .project-section:before, .project-section:after {
   content: "";
   display: table;
 }
-/* line 133, preprocessor/main.scss */
+/* line 132, preprocessor/main.scss */
 .project-section:after {
   clear: both;
 }
 
-/* line 1010, preprocessor/main.scss */
+/* line 1006, preprocessor/main.scss */
 #section1, #section2 {
   margin-top: 7%;
 }
 
-/* line 1013, preprocessor/main.scss */
+/* line 1009, preprocessor/main.scss */
 #section3 {
   margin: 7% 0 10% 0;
 }
 
-/* line 1016, preprocessor/main.scss */
+/* line 1012, preprocessor/main.scss */
 .project-subhead {
   position: relative;
   color: #ffffff;
-  font-family: 'apercu-bold';
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   padding-left: 30px;
 }
-/* line 1025, preprocessor/main.scss */
+/* line 1020, preprocessor/main.scss */
 .project-subhead::after {
   position: absolute;
   content: '';
@@ -1208,14 +1202,14 @@ section {
   background-color: #ffffff;
 }
 
-/* line 1035, preprocessor/main.scss */
+/* line 1030, preprocessor/main.scss */
 .project-section p {
   color: #ffffff;
   font-size: 14px;
   font-weight: 400;
 }
 
-/* line 1040, preprocessor/main.scss */
+/* line 1035, preprocessor/main.scss */
 #overview-text {
   position: absolute;
   float: left;
@@ -1226,19 +1220,19 @@ section {
   z-index: 2;
 }
 
-/* line 1049, preprocessor/main.scss */
+/* line 1044, preprocessor/main.scss */
 #projectWrap.loadAnim #overview-text {
   opacity: 1;
 }
 
-/* line 1052, preprocessor/main.scss */
+/* line 1047, preprocessor/main.scss */
 .overview-img-wrap {
   position: relative;
   float: right;
   width: 60%;
 }
 
-/* line 1057, preprocessor/main.scss */
+/* line 1052, preprocessor/main.scss */
 #overview-img {
   position: relative;
   float: right;
@@ -1246,7 +1240,7 @@ section {
   padding-bottom: 65%;
 }
 
-/* line 1064, preprocessor/main.scss */
+/* line 1059, preprocessor/main.scss */
 #overview-img > div,
 #s2-img1 > div, #s2-img2 > div, #s3-img > div {
   position: absolute;
@@ -1259,44 +1253,44 @@ section {
   background-size: cover;
 }
 
-/* line 1073, preprocessor/main.scss */
+/* line 1068, preprocessor/main.scss */
 .s2-img-wrap {
   width: 45%;
 }
 
-/* line 1076, preprocessor/main.scss */
+/* line 1071, preprocessor/main.scss */
 #s3-img-wrap {
   width: 100%;
 }
 
-/* line 1080, preprocessor/main.scss */
+/* line 1075, preprocessor/main.scss */
 #s2-img1-wrap {
   position: relative;
   float: left;
 }
 
-/* line 1084, preprocessor/main.scss */
+/* line 1079, preprocessor/main.scss */
 #s2-img2-wrap {
   position: relative;
   float: right;
   margin-top: 10%;
 }
 
-/* line 1089, preprocessor/main.scss */
+/* line 1084, preprocessor/main.scss */
 #s2-img1, #s2-img2 {
   position: relative;
   width: 100%;
   padding-bottom: 70%;
 }
 
-/* line 1094, preprocessor/main.scss */
+/* line 1089, preprocessor/main.scss */
 #s3-img {
   position: relative;
   width: 100%;
   padding-bottom: 70%;
 }
 
-/* line 1099, preprocessor/main.scss */
+/* line 1094, preprocessor/main.scss */
 #solution-text {
   position: absolute;
   float: left;
@@ -1308,12 +1302,12 @@ section {
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* line 1109, preprocessor/main.scss */
+/* line 1104, preprocessor/main.scss */
 #projectWrap.loadAnim #brief-text {
   opacity: 1;
 }
 
-/* line 1117, preprocessor/main.scss */
+/* line 1112, preprocessor/main.scss */
 #contact {
   width: 100%;
   height: 100vh;
@@ -1323,17 +1317,17 @@ section {
   -ms-transition: all .2s;
   transition: all .2s;
 }
-/* line 129, preprocessor/main.scss */
+/* line 128, preprocessor/main.scss */
 #contact:before, #contact:after {
   content: "";
   display: table;
 }
-/* line 133, preprocessor/main.scss */
+/* line 132, preprocessor/main.scss */
 #contact:after {
   clear: both;
 }
 
-/* line 1131, preprocessor/main.scss */
+/* line 1126, preprocessor/main.scss */
 #contact.isInProjects h1,
 #contact.isInProjects h2,
 #contact.isInProjects h3,
@@ -1342,7 +1336,7 @@ section {
   color: #ffffff;
 }
 
-/* line 1134, preprocessor/main.scss */
+/* line 1129, preprocessor/main.scss */
 #contact-wrap {
   width: 100%;
   height: 60%;
@@ -1355,7 +1349,7 @@ section {
   transform: translateY(-50%);
 }
 
-/* line 1145, preprocessor/main.scss */
+/* line 1140, preprocessor/main.scss */
 #contact-left {
   -webkit-transition: all .2s;
   -moz-transition: all .2s;
@@ -1364,7 +1358,7 @@ section {
   transition: all .2s;
 }
 
-/* line 1152, preprocessor/main.scss */
+/* line 1147, preprocessor/main.scss */
 #contact-right {
   -webkit-transition: all .2s .2s;
   -moz-transition: all .2s .2s;
@@ -1373,7 +1367,7 @@ section {
   transition: all .2s .2s;
 }
 
-/* line 1160, preprocessor/main.scss */
+/* line 1155, preprocessor/main.scss */
 #contact-left,
 #contact-right {
   display: block;
@@ -1392,7 +1386,7 @@ section {
   transform: translateY(0px);
 }
 
-/* line 1175, preprocessor/main.scss */
+/* line 1170, preprocessor/main.scss */
 #contact.notActive #contact-left,
 #contact.notActive #contact-right {
   opacity: 0;
@@ -1403,15 +1397,14 @@ section {
   transform: translateY(50px);
 }
 
-/* line 1184, preprocessor/main.scss */
+/* line 1179, preprocessor/main.scss */
 #contact h1 {
   position: relative;
   margin-top: 0;
   font-size: 60px;
-  font-family: 'apercu-light';
   font-weight: 200;
 }
-/* line 1191, preprocessor/main.scss */
+/* line 1185, preprocessor/main.scss */
 #contact h1::before {
   position: absolute;
   content: '';
@@ -1427,44 +1420,44 @@ section {
   transition: all .2s;
 }
 
-/* line 1207, preprocessor/main.scss */
+/* line 1201, preprocessor/main.scss */
 #contact.isInProjects h1::before {
   background-color: #ffffff;
 }
 
-/* line 1211, preprocessor/main.scss */
+/* line 1205, preprocessor/main.scss */
 #contact h2 {
   font-size: 18px;
   font-weight: 400;
   margin: 0 0 40px 0;
 }
 
-/* line 1216, preprocessor/main.scss */
+/* line 1210, preprocessor/main.scss */
 #contact h3 {
   margin: 0;
   font-size: 12px;
   text-transform: uppercase;
 }
 
-/* line 1221, preprocessor/main.scss */
+/* line 1215, preprocessor/main.scss */
 #contact p {
   font-size: 12px;
 }
 
-/* line 1224, preprocessor/main.scss */
+/* line 1218, preprocessor/main.scss */
 #contact ul {
   padding: 0;
   margin-top: 0;
   list-style: none;
 }
 
-/* line 1229, preprocessor/main.scss */
+/* line 1223, preprocessor/main.scss */
 #contact li {
   font-size: 18px;
   font-weight: 400;
 }
 
-/* line 1233, preprocessor/main.scss */
+/* line 1227, preprocessor/main.scss */
 #contact-right p {
   position: absolute;
   bottom: 0;
@@ -1474,7 +1467,7 @@ section {
    Media Queries
    ========================================================================== */
 @media screen and (max-width: 768px) and (min-width: 421px) {
-  /* line 1244, preprocessor/main.scss */
+  /* line 1238, preprocessor/main.scss */
   .sideMenuActive {
     -webkit-transform: translateX(90%);
     -moz-transform: translateX(90%);
@@ -1483,47 +1476,47 @@ section {
     transform: translateX(90%);
   }
 
-  /* line 1251, preprocessor/main.scss */
+  /* line 1245, preprocessor/main.scss */
   #side-nav {
     left: -90%;
     width: 90%;
     font-size: 20px;
   }
 
-  /* line 1256, preprocessor/main.scss */
+  /* line 1250, preprocessor/main.scss */
   #side-nav.projectMenu {
     width: 180%;
   }
 
-  /* line 1259, preprocessor/main.scss */
+  /* line 1253, preprocessor/main.scss */
   #side-nav.projectMenu #project-side {
     opacity: 1;
   }
 
-  /* line 1262, preprocessor/main.scss */
+  /* line 1256, preprocessor/main.scss */
   #side-nav.projectMenu #main-side {
     width: 50%;
   }
 
-  /* line 1265, preprocessor/main.scss */
+  /* line 1259, preprocessor/main.scss */
   #view-all-btn {
     right: 0px;
     height: 20px;
     width: 20px;
   }
 
-  /* line 1271, preprocessor/main.scss */
+  /* line 1265, preprocessor/main.scss */
   #intro-text {
     position: relative;
     width: 80%;
   }
 
-  /* line 1275, preprocessor/main.scss */
+  /* line 1269, preprocessor/main.scss */
   #intro-text h1 {
     font-size: 18px;
   }
 
-  /* line 1278, preprocessor/main.scss */
+  /* line 1272, preprocessor/main.scss */
   .work-info {
     width: 68%;
     height: 76%;
@@ -1533,14 +1526,14 @@ section {
     bottom: 12%;
   }
 
-  /* line 1286, preprocessor/main.scss */
+  /* line 1280, preprocessor/main.scss */
   .work-text {
     width: 80%;
     margin: 0 auto;
     top: 50%;
   }
 
-  /* line 1291, preprocessor/main.scss */
+  /* line 1285, preprocessor/main.scss */
   .work-text h1 {
     margin-bottom: 3rem;
     font-weight: 400;
@@ -1548,17 +1541,17 @@ section {
     line-height: 1.2em;
   }
 
-  /* line 1297, preprocessor/main.scss */
+  /* line 1291, preprocessor/main.scss */
   .work-text h2 {
     font-size: 14px;
   }
 
-  /* line 1300, preprocessor/main.scss */
+  /* line 1294, preprocessor/main.scss */
   .work-text h3 {
     font-size: 10px;
   }
 
-  /* line 1306, preprocessor/main.scss */
+  /* line 1300, preprocessor/main.scss */
   #project-hdr-text {
     left: 13%;
     bottom: 15%;
@@ -1570,7 +1563,7 @@ section {
     transition: opacity ease .2s .5s;
   }
 
-  /* line 1316, preprocessor/main.scss */
+  /* line 1310, preprocessor/main.scss */
   #project-wrap.loadAnim #project-hdr-img {
     top: 12%;
     left: 16%;
@@ -1578,38 +1571,38 @@ section {
     bottom: 12%;
   }
 
-  /* line 1322, preprocessor/main.scss */
+  /* line 1316, preprocessor/main.scss */
   #next-project {
     right: -14px;
   }
 
-  /* line 1326, preprocessor/main.scss */
+  /* line 1320, preprocessor/main.scss */
   #prev-project {
     left: -14px;
   }
 
-  /* line 1329, preprocessor/main.scss */
+  /* line 1323, preprocessor/main.scss */
   #project-hdr-text h1 {
     font-size: 38px;
     line-height: 1.2em;
     margin-bottom: 2.2rem;
   }
 
-  /* line 1334, preprocessor/main.scss */
+  /* line 1328, preprocessor/main.scss */
   #project-hdr-text h2 {
     text-transform: lowercase;
     font-size: 14px;
     margin-bottom: 1.2rem;
   }
 
-  /* line 1339, preprocessor/main.scss */
+  /* line 1333, preprocessor/main.scss */
   #project-hdr-text h3 {
     font-size: 10px;
     margin: 0;
     text-transform: uppercase;
   }
 
-  /* line 1344, preprocessor/main.scss */
+  /* line 1338, preprocessor/main.scss */
   #overview-text {
     position: relative;
     float: none;
@@ -1622,19 +1615,19 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 1353, preprocessor/main.scss */
+  /* line 1347, preprocessor/main.scss */
   .overview-img-wrap {
     position: relative;
     float: none;
     width: 100%;
   }
 
-  /* line 1358, preprocessor/main.scss */
+  /* line 1352, preprocessor/main.scss */
   .project-section {
     padding: 0 10%;
   }
 
-  /* line 1361, preprocessor/main.scss */
+  /* line 1355, preprocessor/main.scss */
   #solution-text {
     position: relative;
     float: none;
@@ -1644,24 +1637,24 @@ section {
     width: 100%;
   }
 
-  /* line 1369, preprocessor/main.scss */
+  /* line 1363, preprocessor/main.scss */
   #s2-img1-wrap {
     position: relative;
     float: none;
   }
 
-  /* line 1373, preprocessor/main.scss */
+  /* line 1367, preprocessor/main.scss */
   .s2-img-wrap {
     width: 100%;
   }
 
-  /* line 1376, preprocessor/main.scss */
+  /* line 1370, preprocessor/main.scss */
   #s2-img2-wrap {
     position: relative;
     float: none;
   }
 
-  /* line 1385, preprocessor/main.scss */
+  /* line 1379, preprocessor/main.scss */
   #contact-wrap {
     top: 0;
     width: 100%;
@@ -1677,7 +1670,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 1397, preprocessor/main.scss */
+  /* line 1391, preprocessor/main.scss */
   #contact-left, #contact-right {
     position: relative;
     display: block;
@@ -1687,7 +1680,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 1403, preprocessor/main.scss */
+  /* line 1397, preprocessor/main.scss */
   #contact-left {
     float: right;
     top: 50%;
@@ -1699,7 +1692,7 @@ section {
     transition: all .2s .2s;
   }
 
-  /* line 1413, preprocessor/main.scss */
+  /* line 1407, preprocessor/main.scss */
   #contact-right {
     float: left;
     top: -50%;
@@ -1712,42 +1705,42 @@ section {
     transition: all .2s;
   }
 
-  /* line 1424, preprocessor/main.scss */
+  /* line 1418, preprocessor/main.scss */
   #contact-right p {
     display: none;
   }
 
-  /* line 1427, preprocessor/main.scss */
+  /* line 1421, preprocessor/main.scss */
   #contact h1 {
     font-size: 40px;
   }
-  /* line 1430, preprocessor/main.scss */
+  /* line 1424, preprocessor/main.scss */
   #contact h1::before {
     bottom: -10px;
     width: 80px;
   }
 
-  /* line 1435, preprocessor/main.scss */
+  /* line 1429, preprocessor/main.scss */
   #contact h2 {
     font-size: 14px;
     margin: 0 0 40px 0;
   }
 
-  /* line 1439, preprocessor/main.scss */
+  /* line 1433, preprocessor/main.scss */
   #contact h3 {
     margin: 0;
     font-size: 10px;
     text-transform: uppercase;
   }
 
-  /* line 1445, preprocessor/main.scss */
+  /* line 1439, preprocessor/main.scss */
   #contact li {
     font-size: 14px;
     margin-bottom: 0.2rem;
   }
 }
 @media screen and (max-width: 420px) {
-  /* line 1454, preprocessor/main.scss */
+  /* line 1448, preprocessor/main.scss */
   .sideMenuActive {
     -webkit-transform: translateX(90%);
     -moz-transform: translateX(90%);
@@ -1756,47 +1749,47 @@ section {
     transform: translateX(90%);
   }
 
-  /* line 1461, preprocessor/main.scss */
+  /* line 1455, preprocessor/main.scss */
   #side-nav {
     left: -90%;
     width: 90%;
     font-size: 20px;
   }
 
-  /* line 1466, preprocessor/main.scss */
+  /* line 1460, preprocessor/main.scss */
   #side-nav.projectMenu {
     width: 180%;
   }
 
-  /* line 1469, preprocessor/main.scss */
+  /* line 1463, preprocessor/main.scss */
   #side-nav.projectMenu #project-side {
     opacity: 1;
   }
 
-  /* line 1472, preprocessor/main.scss */
+  /* line 1466, preprocessor/main.scss */
   #side-nav.projectMenu #main-side {
     width: 50%;
   }
 
-  /* line 1475, preprocessor/main.scss */
+  /* line 1469, preprocessor/main.scss */
   #view-all-btn {
     right: 0px;
     height: 20px;
     width: 20px;
   }
 
-  /* line 1481, preprocessor/main.scss */
+  /* line 1475, preprocessor/main.scss */
   #intro-text {
     position: relative;
     width: 80%;
   }
 
-  /* line 1485, preprocessor/main.scss */
+  /* line 1479, preprocessor/main.scss */
   #intro-text h1 {
     font-size: 14px;
   }
 
-  /* line 1488, preprocessor/main.scss */
+  /* line 1482, preprocessor/main.scss */
   .work-info {
     width: 68%;
     height: 76%;
@@ -1806,31 +1799,31 @@ section {
     bottom: 12%;
   }
 
-  /* line 1496, preprocessor/main.scss */
+  /* line 1490, preprocessor/main.scss */
   .work-text {
     width: 80%;
     margin: 0 auto;
     top: 50%;
   }
 
-  /* line 1501, preprocessor/main.scss */
+  /* line 1495, preprocessor/main.scss */
   .work-text h1 {
     margin-bottom: 3rem;
     font-size: 38px;
     line-height: 1.2em;
   }
 
-  /* line 1506, preprocessor/main.scss */
+  /* line 1500, preprocessor/main.scss */
   .work-text h2 {
     font-size: 14px;
   }
 
-  /* line 1509, preprocessor/main.scss */
+  /* line 1503, preprocessor/main.scss */
   .work-text h3 {
     font-size: 10px;
   }
 
-  /* line 1515, preprocessor/main.scss */
+  /* line 1509, preprocessor/main.scss */
   #project-hdr-text {
     left: 13%;
     bottom: 15%;
@@ -1842,7 +1835,7 @@ section {
     transition: opacity ease .2s .5s;
   }
 
-  /* line 1525, preprocessor/main.scss */
+  /* line 1519, preprocessor/main.scss */
   #project-wrap.loadAnim #project-hdr-img {
     top: 12%;
     left: 16%;
@@ -1850,38 +1843,38 @@ section {
     bottom: 12%;
   }
 
-  /* line 1531, preprocessor/main.scss */
+  /* line 1525, preprocessor/main.scss */
   #next-project {
     right: -14px;
   }
 
-  /* line 1535, preprocessor/main.scss */
+  /* line 1529, preprocessor/main.scss */
   #prev-project {
     left: -14px;
   }
 
-  /* line 1538, preprocessor/main.scss */
+  /* line 1532, preprocessor/main.scss */
   #project-hdr-text h1 {
     font-size: 38px;
     line-height: 1.2em;
     margin-bottom: 2.2rem;
   }
 
-  /* line 1543, preprocessor/main.scss */
+  /* line 1537, preprocessor/main.scss */
   #project-hdr-text h2 {
     text-transform: lowercase;
     font-size: 14px;
     margin-bottom: 1.2rem;
   }
 
-  /* line 1548, preprocessor/main.scss */
+  /* line 1542, preprocessor/main.scss */
   #project-hdr-text h3 {
     font-size: 10px;
     margin: 0;
     text-transform: uppercase;
   }
 
-  /* line 1553, preprocessor/main.scss */
+  /* line 1547, preprocessor/main.scss */
   #overview-text {
     position: relative;
     float: none;
@@ -1894,19 +1887,19 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 1562, preprocessor/main.scss */
+  /* line 1556, preprocessor/main.scss */
   .overview-img-wrap {
     position: relative;
     float: none;
     width: 100%;
   }
 
-  /* line 1567, preprocessor/main.scss */
+  /* line 1561, preprocessor/main.scss */
   .project-section {
     padding: 0 10%;
   }
 
-  /* line 1570, preprocessor/main.scss */
+  /* line 1564, preprocessor/main.scss */
   #solution-text {
     position: relative;
     float: none;
@@ -1916,24 +1909,24 @@ section {
     width: 100%;
   }
 
-  /* line 1578, preprocessor/main.scss */
+  /* line 1572, preprocessor/main.scss */
   #s2-img1-wrap {
     position: relative;
     float: none;
   }
 
-  /* line 1582, preprocessor/main.scss */
+  /* line 1576, preprocessor/main.scss */
   .s2-img-wrap {
     width: 100%;
   }
 
-  /* line 1585, preprocessor/main.scss */
+  /* line 1579, preprocessor/main.scss */
   #s2-img2-wrap {
     position: relative;
     float: none;
   }
 
-  /* line 1594, preprocessor/main.scss */
+  /* line 1588, preprocessor/main.scss */
   #contact-wrap {
     top: 0;
     width: 100%;
@@ -1949,7 +1942,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 1606, preprocessor/main.scss */
+  /* line 1600, preprocessor/main.scss */
   #contact-left, #contact-right {
     position: relative;
     display: block;
@@ -1959,7 +1952,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 1612, preprocessor/main.scss */
+  /* line 1606, preprocessor/main.scss */
   #contact-left {
     float: right;
     top: 50%;
@@ -1971,7 +1964,7 @@ section {
     transition: all .2s .2s;
   }
 
-  /* line 1622, preprocessor/main.scss */
+  /* line 1616, preprocessor/main.scss */
   #contact-right {
     float: left;
     top: -50%;
@@ -1984,35 +1977,35 @@ section {
     transition: all .2s;
   }
 
-  /* line 1633, preprocessor/main.scss */
+  /* line 1627, preprocessor/main.scss */
   #contact-right p {
     display: none;
   }
 
-  /* line 1636, preprocessor/main.scss */
+  /* line 1630, preprocessor/main.scss */
   #contact h1 {
     font-size: 40px;
   }
-  /* line 1639, preprocessor/main.scss */
+  /* line 1633, preprocessor/main.scss */
   #contact h1::before {
     bottom: -10px;
     width: 80px;
   }
 
-  /* line 1644, preprocessor/main.scss */
+  /* line 1638, preprocessor/main.scss */
   #contact h2 {
     font-size: 14px;
     margin: 0 0 40px 0;
   }
 
-  /* line 1648, preprocessor/main.scss */
+  /* line 1642, preprocessor/main.scss */
   #contact h3 {
     margin: 0;
     font-size: 10px;
     text-transform: uppercase;
   }
 
-  /* line 1654, preprocessor/main.scss */
+  /* line 1648, preprocessor/main.scss */
   #contact li {
     font-size: 14px;
     margin-bottom: 0.2rem;
@@ -2021,7 +2014,7 @@ section {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-/* line 1672, preprocessor/main.scss */
+/* line 1666, preprocessor/main.scss */
 .ir {
   background-color: transparent;
   border: 0;
@@ -2029,7 +2022,7 @@ section {
   *text-indent: -9999px;
 }
 
-/* line 1679, preprocessor/main.scss */
+/* line 1673, preprocessor/main.scss */
 .ir:before {
   content: "";
   display: block;
@@ -2037,13 +2030,13 @@ section {
   height: 150%;
 }
 
-/* line 1686, preprocessor/main.scss */
+/* line 1680, preprocessor/main.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
-/* line 1691, preprocessor/main.scss */
+/* line 1685, preprocessor/main.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -2055,7 +2048,7 @@ section {
   width: 1px;
 }
 
-/* line 1703, preprocessor/main.scss */
+/* line 1697, preprocessor/main.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -2066,24 +2059,24 @@ section {
   width: auto;
 }
 
-/* line 1712, preprocessor/main.scss */
+/* line 1706, preprocessor/main.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 1717, preprocessor/main.scss */
+/* line 1711, preprocessor/main.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
 
-/* line 1722, preprocessor/main.scss */
+/* line 1716, preprocessor/main.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 1726, preprocessor/main.scss */
+/* line 1720, preprocessor/main.scss */
 .clearfix {
   *zoom: 1;
 }
@@ -2092,7 +2085,7 @@ section {
    Print styles
    ========================================================================== */
 @media print {
-  /* line 1735, preprocessor/main.scss */
+  /* line 1729, preprocessor/main.scss */
   * {
     background: transparent !important;
     color: #000 !important;
@@ -2100,48 +2093,48 @@ section {
     text-shadow: none !important;
   }
 
-  /* line 1743, preprocessor/main.scss */
+  /* line 1737, preprocessor/main.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 1747, preprocessor/main.scss */
+  /* line 1741, preprocessor/main.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 1751, preprocessor/main.scss */
+  /* line 1745, preprocessor/main.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
-  /* line 1757, preprocessor/main.scss */
+  /* line 1751, preprocessor/main.scss */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
 
-  /* line 1762, preprocessor/main.scss */
+  /* line 1756, preprocessor/main.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 1767, preprocessor/main.scss */
+  /* line 1761, preprocessor/main.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 1772, preprocessor/main.scss */
+  /* line 1766, preprocessor/main.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 1776, preprocessor/main.scss */
+  /* line 1770, preprocessor/main.scss */
   img {
     max-width: 100% !important;
   }
@@ -2150,7 +2143,7 @@ section {
     margin: 0.5cm;
 }
 
-  /* line 1786, preprocessor/main.scss */
+  /* line 1780, preprocessor/main.scss */
   p,
   h2,
   h3 {
@@ -2158,7 +2151,7 @@ section {
     widows: 3;
   }
 
-  /* line 1792, preprocessor/main.scss */
+  /* line 1786, preprocessor/main.scss */
   h2,
   h3 {
     page-break-after: avoid;

@@ -74,25 +74,24 @@ a:active {
    ========================================================================== */
 
 @font-face {
-  font-family: 'apercu-regular';
-  src: url('../public/fonts/apercu-webfont.eot') format('eot'), url('../public/fonts/apercu-webfont.woff') format('woff'), url('../public/fonts/apercu-webfont.ttf') format('truetype');
+  font-family: 'apercu';
+  font-weight: 400;
+  src: url('~public/fonts/apercu-webfont.eot') format('eot'), url('~public/fonts/apercu-webfont.woff') format('woff'), url('~public/fonts/apercu-webfont.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'apercu-bold';
-  src: url('../public/fonts/apercu-bold-webfont.eot') format('eot'), url('../public/fonts/apercu-bold-webfont.woff') format('woff'), url('../public/fonts/apercu-bold-webfont.ttf') format('truetype');
+  font-family: 'apercu';
+  font-weight: 100;
+  src: url('~public/fonts/apercu-light-webfont.eot') format('eot'), url('~public/fonts/apercu-light-webfont.woff') format('woff'), url('~public/fonts/apercu-light-webfont.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'apercu-light';
-  src: url('../public/fonts/apercu-light-webfont.eot') format('eot'), url('../public/fonts/apercu-light-webfont.woff') format('woff'), url('../public/fonts/apercu-light-webfont.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'apercu-medium';
-  src: url('../public/fonts/apercu-medium-webfont.eot') format('eot'), url('../public/fonts/apercu-medium-webfont.woff') format('woff'), url('../public/fonts/apercu-medium-webfont.ttf') format('truetype');
+  font-family: 'apercu';
+  font-weight: 600;
+  src: url('~public/fonts/apercu-medium-webfont.eot') format('eot'), url('~public/fonts/apercu-medium-webfont.woff') format('woff'), url('~public/fonts/apercu-medium-webfont.ttf') format('truetype');
 }
 
 
 * {
-    font-family: 'apercu-regular';
+    font-family: 'apercu';
     -webkit-font-smoothing: antialiased;
 }
 section {
@@ -528,7 +527,6 @@ section {
     position: relative;
     top: 50%;
     margin: 0;
-    font-family: 'apercu-light';
     font-weight: 200;
     text-align: center;
     color: #ffffff;
@@ -781,7 +779,6 @@ section {
     margin-bottom: 1rem;
     margin-top: 0;
     text-transform: lowercase;
-    font-family: 'apercu-light';
     font-weight: 100;
     font-size: 18px;
 }
@@ -953,7 +950,6 @@ section {
 }
 #project-hdr-text h2 {
     text-transform: lowercase;
-    font-weight: 'apercu-light';
     font-weight: 100;
     font-size: 18px;
     margin-bottom: 1.2rem;
@@ -1016,7 +1012,6 @@ section {
 .project-subhead {
     position: relative;
     color: #ffffff;
-    font-family: 'apercu-bold';
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
@@ -1185,7 +1180,6 @@ section {
     position: relative;
     margin-top: 0;
     font-size: 60px;
-    font-family: 'apercu-light';
     font-weight: 200;
 
     &::before {
