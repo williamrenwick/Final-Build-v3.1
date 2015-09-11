@@ -66,6 +66,8 @@ var HomepageWrap = React.createClass({
 				bottom:  (windowH * totalProjAmount) + (windowH - delta)
 			};
 
+		console.log(this.state.scrollPos);
+
 		if (this.state.scrollPos < workCoord.top || this.state.scrollPos > workCoord.bottom) {
 			MenuActions.isOnLight();
 		} else {
