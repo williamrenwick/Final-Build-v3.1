@@ -8,6 +8,7 @@ var Link = Router.Link;
 var MainSide = React.createClass({
     mixins: [mixin],
     cursors: {
+        isInHomepage: ['homepage', 'isInHomepage'],
         projSideOpen: ['menu', 'projSideOpen'],
         isMobile: ['resize', 'isMobile'],
         isTablet: ['resize', 'isTablet'],
@@ -15,6 +16,10 @@ var MainSide = React.createClass({
     },
     homeClick: function() {
         menuActions.notClicked();
+
+        if (this.state.isInHomepage) {
+            $(window).scrollTop(0);
+        }
     },
     mobileEvents: function() {
         if (!this.state.projSideOpen) {
