@@ -76,17 +76,17 @@ a:active {
 @font-face {
   font-family: 'apercu';
   font-weight: 400;
-  src: url('~public/fonts/apercu-webfont.eot') format('eot'), url('~public/fonts/apercu-webfont.woff') format('woff'), url('~public/fonts/apercu-webfont.ttf') format('truetype');
+  src: url('../public/fonts/apercu-webfont.woff') format('woff');
 }
 @font-face {
   font-family: 'apercu';
   font-weight: 100;
-  src: url('~public/fonts/apercu-light-webfont.eot') format('eot'), url('~public/fonts/apercu-light-webfont.woff') format('woff'), url('~public/fonts/apercu-light-webfont.ttf') format('truetype');
+  src: url('../public/fonts/apercu-light-webfont.woff') format('woff');
 }
 @font-face {
   font-family: 'apercu';
   font-weight: 600;
-  src: url('~public/fonts/apercu-medium-webfont.eot') format('eot'), url('~public/fonts/apercu-medium-webfont.woff') format('woff'), url('~public/fonts/apercu-medium-webfont.ttf') format('truetype');
+  src: url('../public/fonts/apercu-medium-webfont.woff') format('woff');
 }
 
 

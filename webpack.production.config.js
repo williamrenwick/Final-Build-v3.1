@@ -26,6 +26,9 @@ module.exports = {
       }, {
         test: /\.(png|jpg)$/,
         loader: 'url?limit=25000'
+      }, {
+        test: /\.woff$/,
+        loader: 'url?limit=100000'
       }
     ]
   },
