@@ -72,8 +72,27 @@ a:active {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+@font-face {
+  font-family: 'apercu-regular';
+  src: url('/fonts/apercu-webfont.eot') format('eot'), url('/fonts/apercu-webfont.woff') format('woff'), url('/fonts/apercu-webfont.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'apercu-bold';
+  src: url('/fonts/apercu-bold-webfont.eot') format('eot'), url('/fonts/apercu-bold-webfont.woff') format('woff'), url('/fonts/apercu-bold-webfont.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'apercu-light';
+  src: url('/fonts/apercu-light-webfont.eot') format('eot'), url('/fonts/apercu-light-webfont.woff') format('woff'), url('/fonts/apercu-light-webfont.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'apercu-medium';
+  src: url('/fonts/apercu-medium-webfont.eot') format('eot'), url('/fonts/apercu-medium-webfont.woff') format('woff'), url('/fonts/apercu-medium-webfont.ttf') format('truetype');
+}
+
+
 * {
-    font-family: 'apercu';
+    font-family: 'apercu-regular';
     -webkit-font-smoothing: antialiased;
 }
 section {
@@ -186,6 +205,10 @@ section {
     height: 18px;
     width: 18px;
     cursor: pointer;
+    -webkit-transition: width .2s;
+    -moz-transition: width .2s;
+    -o-transition: width .2s;
+    -ms-transition: width .2s;
     transition: width .2s;
 
     &::after {
@@ -509,7 +532,9 @@ section {
     text-align: center;
     color: #ffffff;
     -webkit-transform: translate(-20px, -50%);
+    -moz-transform: translate(-20px, -50%);
     -ms-transform: translate(-20px, -50%);
+    -o-transform: translate(-20px, -50%);
     transform: translate(-20px, -50%);
     opacity: 0;
     -webkit-transition: all .2s .25s;
@@ -531,6 +556,10 @@ section {
         top: 50%;
         height: 1px;
         width: 0;
+        -webkit-transition: width 0s ease, background .2s ease;
+        -moz-transition: width 0s ease, background .2s ease;
+        -ms-transition: width 0s ease, background .2s ease;
+        -o-transition: width 0s ease, background .2s ease;
         transition: width 0s ease, background .2s ease;
     }
     &:after {
@@ -542,6 +571,10 @@ section {
         height: 1px;
         width: 0;
         background: #FFFFB0;
+        -webkit-transition: width .2s ease;
+        -moz-transition: width .2s ease;
+        -ms-transition: width .2s ease;
+        -o-transition: width .2s ease;
         transition: width .2s ease;
     }
 }
@@ -549,17 +582,27 @@ section {
     &:before {
         width: 100%;
         background: #FFFFB0;
+        -webkit-transition: width .2s ease;
+        -moz-transition: width .2s ease;
+        -ms-transition: width .2s ease;
+        -o-transition: width .2s ease;
         transition: width .2s ease;
     }
     &:after {
         width: 100%;
         background: transparent;
-        transition: all 0s ease;
+        -webkit-transition: width .0s ease;
+        -moz-transition: width .0s ease;
+        -ms-transition: width .0s ease;
+        -o-transition: width .0s ease;
+        transition: width .0s ease;
     }
 }
 .projectMenu .projLink h1 {
     -webkit-transform: translate(0px, -50%);
+    -moz-transform: translate(0px, -50%);
     -ms-transform: translate(0px, -50%);
+    -o-transform: translate(0px, -50%);
     transform: translate(0px, -50%);
     opacity: 1;
 }
@@ -576,7 +619,9 @@ section {
     color: #ffffff;
     cursor: pointer;
     -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
     -webkit-transition: all ease .3s;
     -moz-transition: all ease .3s;
@@ -588,7 +633,9 @@ section {
 }
 .projLink:hover .view-proj {
     -webkit-transform: translate(-50%, -100%);
+    -moz-transform: translate(-50%, -100%);
     -ms-transform: translate(-50%, -100%);
+    -o-transform: translate(-50%, -100%);
     transform: translate(-50%, -100%);
 }
 .projLink .view-plus {
@@ -624,7 +671,9 @@ section {
 }
 .projLink:hover .view-plus {
     -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
     transform: rotate(90deg);
 }
 .projLink .view-proj p {
