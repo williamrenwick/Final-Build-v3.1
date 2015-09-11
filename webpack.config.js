@@ -1,25 +1,32 @@
+var webpack = require('webpack');
 var path = require('path');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
-var webpack = require('webpack');
-
-var ROOT_PATH = path.resolve(__dirname);
+var nodeModulesPath = path.resolve(__dirname, 'node_modules');
+var buildPath = path.resolve(__dirname, 'public', 'build');
+var mainPath = path.resolve(__dirname, 'app', 'main.js');
 
 module.exports = {
-  entry: path.resolve(ROOT_PATH, 'app/main'),
+  devtool: 'eval',
+  entry: [
+    'webpack/hot/dev-server', 
+    'webpack-dev-server/client?http://localhost:8080', 
+    mainPath
+  ],
   output: {
-    path: path.resolve(ROOT_PATH, 'build'),
-    filename: 'bundle.js'
+    path: buildPath,
+    filename: 'bundle.js',
+    publicPath: '/build/'
   },
   module: {
     loaders: [
       { 
         test: /\.js$/, 
-        loader: 'babel-loader',
-        exclude: /node_modules/,
+        loader: 'babel',
+        exclude: [nodeModulesPath],
       }, {
         test: /\.css$/,
         loaders: ['style', 'css'],
-        include: path.resolve(ROOT_PATH, 'app')
+        include: path.resolve(__dirname, 'app')
       }, {
         test: /\.(png|jpg)$/,
         loader: 'url?limit=25000'
@@ -28,6 +35,7 @@ module.exports = {
   },
   plugins: [
       new HtmlwebpackPlugin({ title: 'Wire Design' }),
+      new webpack.HotModuleReplacementPlugin(),
       new webpack.ProvidePlugin({
         $ : "jquery",
         jQuery : "jquery",
