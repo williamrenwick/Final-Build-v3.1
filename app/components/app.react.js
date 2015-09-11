@@ -1,3 +1,5 @@
+var viewportUnitsBuggyfill = require('viewport-units-buggyfill');
+
 var React = require('react');
 var styles = require('../main.css');
 var MainNav = require('./common/MainNav.js');
@@ -20,6 +22,7 @@ var App = React.createClass({
 		scrollPos: ['scrolling', 'scrollPosition']
 	},
 	componentWillMount: function() {
+		viewportUnitsBuggyfill.init();
 		Resize.init();
 	},
 	componentDidMount: function() {

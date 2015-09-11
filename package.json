@@ -31,6 +31,7 @@
     "react": "^0.13.3",
     "react-router": "^0.13.3",
     "url-loader": "^0.5.6",
+    "viewport-units-buggyfill": "^0.5.5",
     "webpack": "^1.12.1",
     "webpack-merge": "^0.2.0"
   }
