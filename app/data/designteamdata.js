@@ -9,8 +9,8 @@ var images = {
 }
 
 
-var brief = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat nulla lectus, quis euismod diam euismod vel. Donec imperdiet vehicula fermentum. Ut nec quam eu tellus congue rhoncus non in sapien. '
-var solution = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat nulla lectus, quis euismod diam euismod vel. Donec imperdiet vehicula fermentum. Ut nec quam eu tellus congue rhoncus non in sapien. '
+var brief = "Whilst working at Catalysis, it quickly became clear that the account teams had little idea of each of the studio's talents. Our challenge was to create something that would give them and idea of what each of us specialised in, without being too confusing."
+var solution = "We decided to create a digital versions of 'Top Trumps' as it was something everyone would be familiar with and allows us to explain the areas of expertise each of us had. I designed and created animated playing card faces for us using SVGs and CSS animations to ensure they worked efficiently and smoothly on all modern browsers."
 
 var text = {
 	title: 'Design Team',
