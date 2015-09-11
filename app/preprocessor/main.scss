@@ -658,7 +658,7 @@ section {
     height: 20px;
     bottom: 20px;
     @include horizontal-align;
-    background-image: url(../img/intro-down-arrow.png);
+    background-image: url(../public/img/intro-down-arrow.png);
     @include bg-image(center);
     background-size: contain;
 }
@@ -771,25 +771,9 @@ section {
     margin-left: 30px;
     margin-bottom: 20px;
 }
-/*#work-1 .work-info {
-    background-color: #EAFFFF;
-}
-#work-2 .work-info {
-    background-color: #DDEDFF;
-}
-#work-3*/ .work-info {
+.work-info {
     background-color: #E7F1FF;
 }
-#work-1 {
-    background-image: url(../img/work1.jpg);
-}
-#work-2 {
-    background-image: url(../img/work2.jpg);
-}
-#work-3 {
-    background-image: url(../img/work3.jpg);
-}
-
 .hp-work-item.active .worktext-appear-wrap {
     -webkit-transform: translateX(0) !important;
     -moz-transform: translateX(0) !important;
