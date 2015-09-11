@@ -22,10 +22,10 @@ var App = React.createClass({
 		scrollPos: ['scrolling', 'scrollPosition']
 	},
 	componentWillMount: function() {
-		viewportUnitsBuggyfill.init();
 		Resize.init();
 	},
 	componentDidMount: function() {
+		viewportUnitsBuggyfill.init();
 		ScrollFns.init();
 	},
 	componentDidUnmount: function() {
