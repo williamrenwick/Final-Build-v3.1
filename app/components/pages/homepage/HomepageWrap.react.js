@@ -37,8 +37,8 @@ var HomepageWrap = React.createClass({
 		$(window).off('scroll', this.handleScroll);
 	},
 	componentDidMount: function() {
-		this.whereInHomepage();
 		Animations.init();
+		setTimeout(this.whereInHomepage, 20)
 	},
 	componentDidUnmount: function() {
 		Animations.destroy();
@@ -65,8 +65,6 @@ var HomepageWrap = React.createClass({
 				top: windowH - delta,
 				bottom:  (windowH * totalProjAmount) + (windowH - delta)
 			};
-
-		console.log(this.state.scrollPos);
 
 		if (this.state.scrollPos < workCoord.top || this.state.scrollPos > workCoord.bottom) {
 			MenuActions.isOnLight();
