@@ -1,7 +1,7 @@
 var React = require('react')
 var Data = require('../../../data/projects.js')
 
-var introText = 'WIRE Design is a studio founded and run by William Renwick, it offers bespoke and personal designs tailored to meet each clients needs. Specialised in producing high quality digital solutions';
+var introText = "WIRE Design is a studio founded and run by William Renwick. I offer bespoke and personal designs tailored to meet each clients needs, with several years experience working for clients ranging from start-ups to many Fortune 500 companies - there's no project to big or small. I specialise in producing high quality digital solutions with a heavy focus on usability and integration of modern web practises in both design and development.";
 
 var HomepageIntro = React.createClass({
 	render: function() {
