@@ -26,7 +26,8 @@ var HpWorkItem = React.createClass({
 	},
 	getStyles: function() {
 		var styleObj = {
-			backgroundImage: 'url(' + this.props.project.images.header + ')'
+			backgroundImage: 'url(' + this.props.project.images.header + ')',
+			height: this.state.windowHeight
 		}
 		return styleObj
 	},
