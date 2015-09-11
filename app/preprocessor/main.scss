@@ -295,7 +295,7 @@ section {
     width: 51.5px;
     height: 26px;
     opacity: 1;
-    background-image: url(../img/wire-logo.png);
+    background-image: url(../public/img/wire-logo.png);
     background-size: contain;
     @include bg-image(center);
     -webkit-transition: opacity .2s;
@@ -316,7 +316,7 @@ section {
     }
 }
 .fixedNav.onDark .site-title {
-    background-image: url(../img/wire-logo-white.png);
+    background-image: url(../public/img/wire-logo-white.png);
 }
 #side-nav {
     position: fixed;
