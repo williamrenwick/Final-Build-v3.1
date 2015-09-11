@@ -1269,6 +1269,11 @@ section {
     #intro-text h1 {
         font-size: 18px;
     }
+    .hp-work-item {
+        @include bg-image(center);
+        background-size: cover;
+        background-attachment: scroll;
+    }
     .work-info {
         width: 68%;
         height: 76%;
@@ -1478,6 +1483,11 @@ section {
     }
     #intro-text h1 {
         font-size: 14px;
+    }
+    .hp-work-item {
+        @include bg-image(center);
+        background-size: cover;
+        background-attachment: scroll;
     }
     .work-info {
         width: 68%;

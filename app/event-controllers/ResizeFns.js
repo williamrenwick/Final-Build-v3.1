@@ -39,7 +39,7 @@ var resizeFn = debounce(function() {
 		ResizeActions.isMobile(true);
 	}
 
-}, 100);
+}, 50);
 
 
 var init = function() {
