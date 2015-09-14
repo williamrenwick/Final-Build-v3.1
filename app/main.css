@@ -116,7 +116,7 @@ section {
 
 /* line 101, preprocessor/main.scss */
 .noScroll {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 /* line 104, preprocessor/main.scss */
