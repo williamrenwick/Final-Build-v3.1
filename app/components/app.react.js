@@ -1,5 +1,3 @@
-var viewportUnitsBuggyfill = require('viewport-units-buggyfill');
-
 var React = require('react');
 var styles = require('../main.css');
 var MainNav = require('./common/MainNav.js');
@@ -25,7 +23,6 @@ var App = React.createClass({
 		Resize.init();
 	},
 	componentDidMount: function() {
-		viewportUnitsBuggyfill.init();
 		ScrollFns.init();
 	},
 	componentDidUnmount: function() {
