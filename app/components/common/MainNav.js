@@ -61,30 +61,38 @@ var MainNav = React.createClass({
 	},
 	mobileStyles: function() {
 		var styleObj = {
-			transform: null
+			WebkitTransform: null,
+			MozTransform: null,
+			OTransform: null,
+			msTransform: null,
+			transform: null,
 		}
 		if (this.state.isClicked && this.state.projSideOpen) {
+			styleObj.WebkitTransform = 'translateX(' + -80 + '%)';
+			styleObj.MozTransform = 'translateX(' + -80 + '%)';
+			styleObj.OTransform = 'translateX(' + -80 + '%)';
+			styleObj.msTransform = 'translateX(' + -80 + '%)';
 			styleObj.transform = 'translateX(' + -80 + '%)';
 		} 
 		return styleObj;
 	},
 	tabletStyles: function() {
 		var styleObj = {
-			transform: null
-		}
-		if (!this.state.isHovering && !this.state.isClicked) {
-			styleObj.transform = 'translateX(' + 0 + 'px)';
+			WebkitTransform: 'translateX(' + 0 + 'px)',
+			MozTransform: 'translateX(' + 0 + 'px)',
+			OTransform: 'translateX(' + 0 + 'px)',
+			msTransform: 'translateX(' + 0 + 'px)',
+			transform: 'translateX(' + 0 + 'px)',
 		}
 		return styleObj;
 	},
 	desktopStyles: function() {
 		var styleObj = {
-			transform: null
-		}
-		if (!this.state.isHovering && !this.state.isClicked) {
-			styleObj.transform = 'translateX(' + 0 + 'px)';
-		} else if (this.state.isHovering && !this.state.isClicked) {
-			styleObj.transform = 'translateX(' + bumpAmount + 'px)';
+			WebkitTransform: 'translateX(' + 0 + 'px)',
+			MozTransform: 'translateX(' + 0 + 'px)',
+			OTransform: 'translateX(' + 0 + 'px)',
+			msTransform: 'translateX(' + 0 + 'px)',
+			transform: 'translateX(' + 0 + 'px)',
 		}
 		return styleObj;
 	},

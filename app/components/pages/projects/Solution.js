@@ -17,14 +17,14 @@ var Solution = React.createClass({
 		isDesktop: ['resize', 'isDesktop'],
 	},
 	mobileTabletStyles: function() {
+		var amount = -40;
 		var styleObj = {
-			WebkitTransform: 'translateY(' + -140 + 'px)',
-			MozTransform: 'translateY(' + -140 + 'px)',
-			OTransform: 'translateY(' + -140 + 'px)',
-			msTransform: 'translateY(' + -140 + 'px)',
-			transform: 'translateY(' + -140 + 'px)'
+			WebkitTransform: 'translateY(' + amount + 'px)',
+			MozTransform: 'translateY(' + amount + 'px)',
+			OTransform: 'translateY(' + amount + 'px)',
+			msTransform: 'translateY(' + amount + 'px)',
+			transform: 'translateY(' + amount + 'px)'
 		}
-
 		return styleObj		
 	},
 	desktopStyles: function() {
@@ -35,7 +35,6 @@ var Solution = React.createClass({
 			msTransform: 'translateY(' + this.state.textTranslate + 'px)',
 			transform: 'translateY(' + this.state.textTranslate + 'px)'
 		}
-
 		return styleObj
 	},
 	getTextStyles: function() {

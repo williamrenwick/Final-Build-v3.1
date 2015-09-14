@@ -7,6 +7,7 @@ var ProjectSide = require('./SideNavProj.js');
 var SideNav = React.createClass({
 	mixins: [mixin],
 	cursors: {
+		windowW: ['resize', 'currentWidth'],
 		isHovering: ['menu', 'isHovering'],
 		menuIsActive: ['menu', 'isOpen'],
 		projSideOpen: ['menu', 'projSideOpen'],
@@ -17,20 +18,24 @@ var SideNav = React.createClass({
 	mobileStyles: function() {
 		var styleObj = {
 			left: null,
+			width: null,
 			opacity: null
 		}
 
 		if (!this.state.menuIsActive) {
-			styleObj.left = '-90%';
+			styleObj.left = '-100%';
+			styleObj.width = '100%';
 			styleObj.opacity = 0;
 		} else if (this.state.menuIsActive) {
 
 			styleObj.opacity = 1;
 
 			if (!this.state.projSideOpen) {
-				styleObj.left = '0%'
+				styleObj.left = '0%';
+				styleObj.width = this.state.windowW * 0.9;
 			} else {
-				styleObj.left = '-80%'
+				styleObj.left = -(this.state.windowW * 0.8);
+				styleObj.width = this.state.windowW * 1.8;
 			}
 			
 		}

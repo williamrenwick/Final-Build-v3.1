@@ -171,6 +171,11 @@ section {
 //>>>>>>>>>>>>>>>>>>>>>>>>>> ---- MIXIN END---- <<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
+#reactWrap {
+    height: 100%;
+    overflow-x: hidden;
+}
+
 
 ////////////////////////////// ---- NAV ---- //////////////////////////////
 
@@ -1485,6 +1490,9 @@ section {
         right: 0px;
         height: 20px;
         width: 20px;
+    }
+    .projLink h1 {
+        font-size: 18px;
     }
 
     #intro-text {
