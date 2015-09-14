@@ -9,17 +9,16 @@ var ResizeActions = {
 		ResizeCursor.set('currentHeight', windowHeight);
 	},
 	isMobile: function(value) {
-		var self = this;
 
 		ResizeCursor.set('isMobile', value);
 	},
 	isTablet: function(value) {
-		var self = this;
+
 
 		ResizeCursor.set('isTablet', value);
 	},
 	isDesktop: function(value) {
-		var self = this;
+
 
 		ResizeCursor.set('isDesktop', value);
 	}

@@ -1,4 +1,4 @@
-/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+wr/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
 html,
 button,
@@ -14,6 +14,7 @@ html {
 }
 body {
     margin: 0;
+    height: 100vh;
     overflow-x: hidden; 
 }
 ::-moz-selection {
@@ -732,11 +733,12 @@ section {
 
 
 ////////////////////////////// ---- WORK ITEM ---- //////////////////////////////
-.hp-work-item {
+.hpWorkItem {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     @include bg-image(center);
+    @include clearfix;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -794,7 +796,7 @@ section {
     margin: 0;
     text-transform: uppercase;
 }
-.hp-work-item .view-proj {
+.hpWorkItem .view-proj {
     position: relative;
     display: block;
     border: none;
@@ -806,7 +808,7 @@ section {
     cursor: pointer;
     @include box-sizing(border-box);
 }
-.hp-work-item .view-plus {
+.hpWorkItem .view-plus {
     position: absolute;
     float: left;
     width: 18px;
@@ -832,14 +834,14 @@ section {
         height: 17px;
     }
 }
-.hp-work-item .view-proj p {
+.hpWorkItem .view-proj p {
     margin-left: 30px;
     margin-bottom: 20px;
 }
 .work-info {
     background-color: #E7F1FF;
 }
-.hp-work-item.active .worktext-appear-wrap {
+.hpWorkItem.active .worktext-appear-wrap {
     -webkit-transform: translateX(0) !important;
     -moz-transform: translateX(0) !important;
     -o-transform: translateX(0) !important;
@@ -1000,14 +1002,12 @@ section {
 }
 .project-section {
     position: relative;
-    padding: 0 10%;
+    padding: 7% 10% 0;
+    background-color: #222222;
     @include clearfix;
 }
-#section1, #section2 {
-    margin-top: 7%;
-}
 #section3 {
-    margin: 7% 0 10% 0;
+    padding: 7% 10% 10% 10%;
 }
 .project-subhead {
     position: relative;
@@ -1118,6 +1118,9 @@ section {
     -ms-transition: all .2s;
     transition: all .2s;
     @include clearfix;
+}
+#contact.isInProjects {
+    background-color: #222222;
 }
 #contact.isInProjects h1,
 #contact.isInProjects h2,
@@ -1269,7 +1272,7 @@ section {
     #intro-text h1 {
         font-size: 18px;
     }
-    .hp-work-item {
+    .hpWorkItem {
         @include bg-image(center);
         background-size: cover;
         background-attachment: scroll;
@@ -1355,7 +1358,7 @@ section {
         width: 100%;
     }
     .project-section {
-        padding: 0 10%;
+        padding: 7% 10% 0;
     }
     #solution-text {
         position: relative;
@@ -1484,7 +1487,7 @@ section {
     #intro-text h1 {
         font-size: 14px;
     }
-    .hp-work-item {
+    .hpWorkItem {
         @include bg-image(center);
         background-size: cover;
         background-attachment: scroll;
@@ -1569,7 +1572,7 @@ section {
         width: 100%;
     }
     .project-section {
-        padding: 0 10%;
+        padding: 7% 10% 0;
     }
     #solution-text {
         position: relative;

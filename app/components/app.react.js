@@ -33,7 +33,7 @@ var App = React.createClass({
 	},
 	render: function() {
 		return (
-			<div id="reactWrap">
+			<div id="reactWrap" style={{height: '100%'}}>
 				<MainNav ref="main-nav"/>
 				<SideNav projects={PROJECTS} ref="side-nav" />
 				<RouteHandler projects={PROJECTS} {...this.props} ref="content" />

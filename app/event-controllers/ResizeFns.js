@@ -1,4 +1,5 @@
 var ResizeActions = require('../actions/ResizeActions.js');
+var StateTree = require('../data/stateTree.js');
 
 var $window = $(window);
 

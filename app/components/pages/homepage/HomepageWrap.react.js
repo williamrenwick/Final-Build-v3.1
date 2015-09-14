@@ -31,17 +31,24 @@ var HomepageWrap = React.createClass({
 	componentWillMount: function() {
 		HomepageActions.isInHomepage();
 		ProjectActions.notInProjects();
-		$(window).on('scroll', this.handleScroll);
+		$(window).on('scroll', this.handleScroll)
 	},
 	componentWillUnmount: function() {
 		$(window).off('scroll', this.handleScroll);
 	},
 	componentDidMount: function() {
 		Animations.init();
-		setTimeout(this.whereInHomepage, 20)
+		this.initaliseAfterState();
 	},
 	componentDidUnmount: function() {
 		Animations.destroy();
+	},
+	initaliseAfterState: function() {
+		var self = this;
+		
+		setTimeout(function() {
+			self.whereInHomepage();
+		}, 20)
 	},
 	handleScroll: function() {
 		var timer = null,

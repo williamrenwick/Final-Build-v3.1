@@ -10,7 +10,7 @@ var HomepageWorkItems = React.createClass({
 		})
 
 		return (
-			<div id="workItems">
+			<div id="workItems" style={{height: '100%'}}>
 				{hpWorkItems}
 			</div>
 		)
