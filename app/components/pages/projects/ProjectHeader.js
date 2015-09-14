@@ -16,6 +16,9 @@ var ProjectHdr = React.createClass({
 		menuHover: ['menu', 'isHovering'],
 		menuActive: ['menu', 'isOpen'],
 		isInProjects: ['project', 'isInProjects'],
+		isMobile: ['resize', 'isMobile'],
+		isTablet: ['resize', 'isTablet'],
+		isDesktop: ['resize', 'isDesktop'],
 	},
 	componentWillMount: function() {
 		var scrollPos = $(window).scrollTop();
@@ -49,12 +52,11 @@ var ProjectHdr = React.createClass({
 			msTransform: 'translateY(' + this.state.textTranslate + 'px)',
 			transform: 'translateY(' + this.state.textTranslate + 'px)'
 		}
-
 		return styleObj
 	},
 	getTextStyles: function() {
 		if (this.state.isDesktop) {
-			var desktopStyles = this.desktopStyles;
+			var desktopStyles = this.desktopStyles();
 			return desktopStyles
 		}
 	},

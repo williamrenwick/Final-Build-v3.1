@@ -525,24 +525,25 @@ section {
     }
 }
 .projLink h1 {
-    position: relative;
+    position: absolute;
     top: 50%;
+    left: 50%;
     margin: 0;
     font-weight: 200;
     text-align: center;
     color: #ffffff;
-    -webkit-transform: translate(-20px, -50%);
-    -moz-transform: translate(-20px, -50%);
-    -ms-transform: translate(-20px, -50%);
-    -o-transform: translate(-20px, -50%);
-    transform: translate(-20px, -50%);
+    -webkit-transform: translate(-60%, -50%);
+    -moz-transform: translate(-60%, -50%);
+    -ms-transform: translate(-60%, -50%);
+    -o-transform: translate(-60%, -50%);
+    transform: translate(-60%, -50%);
     opacity: 0;
+    z-index: 2;
     -webkit-transition: all .2s .25s;
     -moz-transition: all .2s .25s;
     -o-transition: all .2s .25s;
     -ms-transition: all .2s .25s;
     transition: all .2s .25s;
-    z-index: 2;
 }
 .projLink .strikethrough {
     display: inline-block;
@@ -599,11 +600,11 @@ section {
     }
 }
 .projectMenu .projLink h1 {
-    -webkit-transform: translate(0px, -50%);
-    -moz-transform: translate(0px, -50%);
-    -ms-transform: translate(0px, -50%);
-    -o-transform: translate(0px, -50%);
-    transform: translate(0px, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     opacity: 1;
 }
 .projLink .view-proj {

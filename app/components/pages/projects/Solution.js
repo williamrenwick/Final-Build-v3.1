@@ -11,7 +11,10 @@ var Solution = React.createClass({
 		menuHover: ['menu', 'isHovering'],
 		menuActive: ['menu', 'isOpen'],
 		loadAnimation: ['project', 'loadAnimation'],
-		textTranslate: ['scrolling', 'textTranslateAmount']
+		textTranslate: ['scrolling', 'textTranslateAmount'],
+		isMobile: ['resize', 'isMobile'],
+		isTablet: ['resize', 'isTablet'],
+		isDesktop: ['resize', 'isDesktop'],
 	},
 	mobileTabletStyles: function() {
 		var styleObj = {

@@ -10,17 +10,20 @@ var Overview = React.createClass({
 		menuHover: ['menu', 'isHovering'],
 		menuActive: ['menu', 'isOpen'],
 		loadAnimation: ['project', 'loadAnimation'],
-		textTranslate: ['scrolling', 'textTranslateAmount']
+		textTranslate: ['scrolling', 'textTranslateAmount'],
+		isMobile: ['resize', 'isMobile'],
+		isTablet: ['resize', 'isTablet'],
+		isDesktop: ['resize', 'isDesktop'],
 	},
 	mobileTabletStyles: function() {
+		var amount = -40;
 		var styleObj = {
-			WebkitTransform: 'translateY(' + -40 + 'px)',
-			MozTransform: 'translateY(' + -40 + 'px)',
-			OTransform: 'translateY(' + -40 + 'px)',
-			msTransform: 'translateY(' + -40 + 'px)',
-			transform: 'translateY(' + -40 + 'px)'
+			WebkitTransform: 'translateY(' + amount + 'px)',
+			MozTransform: 'translateY(' + amount + 'px)',
+			OTransform: 'translateY(' + amount + 'px)',
+			msTransform: 'translateY(' + amount + 'px)',
+			transform: 'translateY(' + amount + 'px)'
 		}
-
 		return styleObj		
 	},
 	desktopStyles: function() {
@@ -31,7 +34,6 @@ var Overview = React.createClass({
 			msTransform: 'translateY(' + this.state.textTranslate + 'px)',
 			transform: 'translateY(' + this.state.textTranslate + 'px)'
 		}
-
 		return styleObj
 	},
 	getTextStyles: function() {
