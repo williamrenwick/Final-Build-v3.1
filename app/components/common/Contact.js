@@ -26,7 +26,7 @@ var Contact = React.createClass({
 		var isActive = this.willBeActive();
 
 		return (
-			<section id="contact" className={ classNames({isInProjects: this.state.isInProjects, notActive: !isActive }) } style={{height: this.state.windowHeight}}>
+			<section id="contact" className={ classNames({isInProjects: this.state.isInProjects, notActive: !isActive }) }>
 			    <div id="contact-wrap">
 			        <div id="contact-left">
 			            <h3>Telephone</h3>
