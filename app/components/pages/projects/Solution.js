@@ -17,7 +17,7 @@ var Solution = React.createClass({
 		isDesktop: ['resize', 'isDesktop'],
 	},
 	mobileTabletStyles: function() {
-		var amount = -40;
+		var amount = -150;
 		var styleObj = {
 			WebkitTransform: 'translateY(' + amount + 'px)',
 			MozTransform: 'translateY(' + amount + 'px)',
