@@ -1986,7 +1986,7 @@ section {
   #contact-left, #contact-right {
     position: relative;
     display: block;
-    height: 50%;
+    height: 40%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1995,7 +1995,7 @@ section {
   /* line 1628, preprocessor/main.scss */
   #contact-left {
     float: right;
-    top: 50%;
+    top: 43%;
     width: 100%;
     -webkit-transition: all .2s .2s;
     -moz-transition: all .2s .2s;
@@ -2007,9 +2007,9 @@ section {
   /* line 1638, preprocessor/main.scss */
   #contact-right {
     float: left;
-    top: -50%;
+    top: -40%;
     width: 100%;
-    padding-top: 41%;
+    padding-top: 34%;
     -webkit-transition: all .2s;
     -moz-transition: all .2s;
     -o-transition: all .2s;
