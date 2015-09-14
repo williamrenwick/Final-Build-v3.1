@@ -942,7 +942,11 @@ section {
     transition: all .2s .3s;
 }
 #projectWrap.loadAnim #project-hdr-img {
-    transform: scale(0.8)
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
 }
 #project-hdr-text h1 {
     font-weight: 400;
@@ -1007,7 +1011,7 @@ section {
     @include clearfix;
 }
 #section3 {
-    padding: 7% 10% 10% 10%;
+    padding-bottom: 7%;
 }
 .project-subhead {
     position: relative;
@@ -1364,9 +1368,11 @@ section {
         position: relative;
         float: none;
         left: 0;
+        padding: 0 5%;
         top: 140px;
         margin-top: 40px;
         width: 100%;
+        @include box-sizing(border-box);
     }
     #s2-img1-wrap {
         position: relative;
@@ -1572,15 +1578,17 @@ section {
         width: 100%;
     }
     .project-section {
-        padding: 7% 10% 0;
+        padding: 7% 15% 0;
     }
     #solution-text {
         position: relative;
         float: none;
         left: 0;
         top: 140px;
+        padding: 0 5%;
         margin-top: 40px;
         width: 100%;
+        @include box-sizing(border-box);
     }
     #s2-img1-wrap {
         position: relative;

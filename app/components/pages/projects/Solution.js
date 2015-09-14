@@ -13,7 +13,18 @@ var Solution = React.createClass({
 		loadAnimation: ['project', 'loadAnimation'],
 		textTranslate: ['scrolling', 'textTranslateAmount']
 	},
-	getStyles: function() {
+	mobileTabletStyles: function() {
+		var styleObj = {
+			WebkitTransform: 'translateY(' + -140 + 'px)',
+			MozTransform: 'translateY(' + -140 + 'px)',
+			OTransform: 'translateY(' + -140 + 'px)',
+			msTransform: 'translateY(' + -140 + 'px)',
+			transform: 'translateY(' + -140 + 'px)'
+		}
+
+		return styleObj		
+	},
+	desktopStyles: function() {
 		var styleObj = {
 			WebkitTransform: 'translateY(' + this.state.textTranslate + 'px)',
 			MozTransform: 'translateY(' + this.state.textTranslate + 'px)',
@@ -24,11 +35,20 @@ var Solution = React.createClass({
 
 		return styleObj
 	},
+	getTextStyles: function() {
+		if (this.state.isDesktop) {
+			var desktopStyles = this.desktopStyles();
+			return desktopStyles
+		} else if (!this.state.isDesktop) {
+			var mobileTabletStyles = this.mobileTabletStyles();
+			return mobileTabletStyles
+		}
+	},
 	render: function() {
 		var activeProject = this.props.activeProject;
 
 		return (
-			<div id="solution-text" style={ this.getStyles() } >
+			<div id="solution-text" style={ this.getTextStyles() } >
 				<h2 className="project-subhead">Solution</h2>
 				<p>{this.props.activeProject.text.solution}</p>
 			</div>

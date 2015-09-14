@@ -41,7 +41,7 @@ var ProjectHdr = React.createClass({
 	handleScroll: function() {
 		this.calcTranslate();
 	},
-	getStyles: function() {
+	desktopStyles: function() {
 		var styleObj = {
 			WebkitTransform: 'translateY(' + this.state.textTranslate + 'px)',
 			MozTransform: 'translateY(' + this.state.textTranslate + 'px)',
@@ -52,6 +52,12 @@ var ProjectHdr = React.createClass({
 
 		return styleObj
 	},
+	getTextStyles: function() {
+		if (this.state.isDesktop) {
+			var desktopStyles = this.desktopStyles;
+			return desktopStyles
+		}
+	},
 	render: function() {
 		var activeProject = this.props.activeProject;
 		return (
@@ -59,7 +65,7 @@ var ProjectHdr = React.createClass({
 				<div id="project-hdr-img" style={{backgroundImage: 'url(' + activeProject.images.header + ')'}}></div>
 				<PrevProject projects={this.props.projects} activeProject={activeProject}/>
 				<NextProject projects={this.props.projects} activeProject={activeProject}/>
-				<div id="project-hdr-text" style={ this.getStyles() }>
+				<div id="project-hdr-text" style={ this.getTextStyles() }>
 				    <div className="close-proj">
 				        <div className="view-close"></div>
 				        <Link to="home"><p>Close Project</p></Link>
