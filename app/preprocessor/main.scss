@@ -172,7 +172,6 @@ section {
 
 
 #reactWrap {
-    height: 100%;
     overflow-x: hidden;
 }
 
@@ -741,7 +740,7 @@ section {
 ////////////////////////////// ---- WORK ITEM ---- //////////////////////////////
 .hpWorkItem {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
     @include bg-image(center);
     @include clearfix;
@@ -1121,7 +1120,7 @@ section {
 ////////////////////////////// ---- CONTACT ---- //////////////////////////////
 #contact {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     -webkit-transition: all .2s;
     -moz-transition: all .2s;
     -o-transition: all .2s;
