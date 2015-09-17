@@ -33,14 +33,10 @@ function Color(colourString) {
 }
 
 function changeItemBg(scrollPos) {
-	var $window = $(window),
-        windowH = $window.height(),
-        firstPostTop = windowH,
-        lastPostTop = windowH * PROJECTS.length,
-        animationBeginPos = firstPostTop,
-		animationEndPos = lastPostTop+ windowH,
-		beginningColor = new Color('rgb(231, 241, 255)'),
-		endingColor = new Color('rgb(242, 231, 220)');
+	var animationBeginPos = 0,
+		animationEndPos = $(document).height(),
+		beginningColor = new Color('rgb(251, 242, 210)'),
+		endingColor = new Color('rgb(255, 228, 201)');
 
 
 	if (scrollPos >= animationBeginPos && scrollPos <= animationEndPos ) { 

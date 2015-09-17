@@ -13,9 +13,11 @@ var homePageActions = {
 	},
 	insideWorkPosts: function() {
 		HpCursor.set('insideWorkPosts', true)
+		StateTree.commit();
 	},
 	outsideWorkPosts: function() {
-		HpCursor.set('insideWorkPosts', false)
+		HpCursor.set('insideWorkPosts', false);
+		StateTree.commit();
 	}
 }
 

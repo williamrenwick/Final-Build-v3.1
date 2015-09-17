@@ -1,11 +1,13 @@
 var React = require('react');
 var Intro = require('./HomepageIntro.react.js')
 var WorkItems = require('./HomepageProjects.react.js')
+var HomepageNav = require('./HomepageNav.js')
 var Contact = require('../../common/Contact.js')
 
 var mixin = require('baobab-react/mixins').branch
 var classNames = require('classnames');
-var Animations = require('../../../animations/animations.js')
+var Animations = require('../../../animations/animations.js');
+var HpColorAnim = require('../../../animations/hpColorAnim.js');
 var HomepageActions = require('../../../actions/hpActions.js');
 var MenuActions = require('../../../actions/actions.js');
 var ProjectActions = require('../../../actions/projectActions.js');
@@ -18,10 +20,11 @@ var totalProjAmount = PROJECTS.length;
 var HomepageWrap = React.createClass({
 	mixins: [mixin],
 	cursors: {
+		windowHeight: ['resize', 'currentHeight'],
 		isInHomepage: ['homepage', 'isInHomepage'],
+		workBGColor: ['homepage', 'workBGColor'],
 		isInProjects: ['project', 'isInProjects'],
 		scrollPos: ['scrolling', 'scrollPosition'],
-		menuHover: ['menu', 'isHovering'],
 		menuActive: ['menu', 'isOpen'],
 		projSideOpen: ['menu', 'projSideOpen'],
 		isMobile: ['resize', 'isMobile'],
@@ -37,50 +40,41 @@ var HomepageWrap = React.createClass({
 		$(window).off('scroll', this.handleScroll);
 	},
 	componentDidMount: function() {
-		Animations.init();
-		this.initaliseAfterState();
+		this.changeBGColor();
+		setTimeout(this.initiateAfterState, 20)
 	},
-	componentDidUnmount: function() {
-		Animations.destroy();
+	initiateAfterState: function() {
+		this.whereInHomepage();
 	},
-	initaliseAfterState: function() {
-		var self = this;
-		
-		setTimeout(function() {
-			self.whereInHomepage();
-		}, 20)
+	changeBGColor: function() {
+		var colorData = HpColorAnim.workInfoBg(this.state.scrollPos);
+		HomepageActions.updateBGColor(colorData);
 	},
 	handleScroll: function() {
-		var timer = null,
-			self = this;
-
-		self.whereInHomepage();
-
-		$(window).on('scroll', function() {
-			if(timer !== null) {
-				clearTimeout(timer);
-			}
-			timer = setTimeout(function() {
-				self.whereInHomepage();
-			}, 150)
-		});
+		this.changeBGColor();
+		this.whereInHomepage();
 	},
 	whereInHomepage: function() {
-		var windowH = $(window).height(),
-			delta = 5,
-			workCoord = {
-				top: windowH - delta,
-				bottom:  (windowH * totalProjAmount) + (windowH - delta)
-			};
+		var triggerAmount = 150;
+		var topTrigger = this.state.windowHeight - triggerAmount;
+		var contactMid = $(document).height() - (this.state.windowHeight / 2);
+		var scrollBtm = this.state.scrollPos + this.state.windowHeight;
 
-		if (this.state.scrollPos < workCoord.top || this.state.scrollPos > workCoord.bottom) {
-			MenuActions.isOnLight();
-		} else {
-			MenuActions.isOnDark();
+        if ((this.state.scrollPos > topTrigger) && (scrollBtm < contactMid)) {
+            HomepageActions.insideWorkPosts();
+        } else {
+            HomepageActions.outsideWorkPosts();
+        }
+	},
+	otherStyles: function() {
+		var styleObj = {
+			backgroundColor: this.state.workBGColor
 		}
+		return styleObj;
 	},
 	mobileStyles: function() {
 		var styleObj = {
+			backgroundColor: this.state.workBGColor,
 			transform: null
 		}
 
@@ -94,6 +88,10 @@ var HomepageWrap = React.createClass({
 			var mobileStyles = this.mobileStyles();
 
 			return mobileStyles
+		} else {
+			var otherStyles = this.otherStyles();
+
+			return otherStyles
 		}
 	},
 	render: function() {

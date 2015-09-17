@@ -15,7 +15,7 @@ var solution = "We began by looking at recent trends within the market and quick
 var text = {
 	title: 'Summit',
 	client: 'Innocellence',
-	fields: 'UX, Design',
+	fields: 'Concept, UX, Design',
 	brief: brief,
 	solution: solution
 }

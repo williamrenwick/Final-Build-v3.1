@@ -19,7 +19,6 @@ var Contact = React.createClass({
 		if (scrollBtmPos < btmTrigger) {
 			return false
 		} else if (scrollBtmPos > btmTrigger) {
-			console.log('true', scrollBtmPos, btmTrigger, docH)
 			return true
 		}
 

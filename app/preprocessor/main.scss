@@ -381,7 +381,7 @@ section {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-color: #F7F7F7;
+    background-color: #F9F9F5;
 }
 #project-side {
     position: relative;
@@ -700,6 +700,7 @@ section {
     //overflow: hidden;
     height: 100%;
     width: 100%;
+    background-color: #F0F0F0;
     -webkit-transition: -webkit-transform .2s;
     -moz-transition: -moz-transform .2s;
     -o-transition: -o-transform .2s;
@@ -709,6 +710,7 @@ section {
 #intro {
     height: 100vh;
     width: 100%;
+    z-index: 99;
 }
 #intro-text {
     position: relative;
@@ -722,6 +724,17 @@ section {
     font-size: 20px;
     font-weight: 400;
     margin: 0;
+    color: #404040;
+}
+#projects-indicator {
+    position: absolute;
+    bottom: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #404040;
+    border-bottom: #404040 2px solid;
+    @include horizontal-align;
 }
 #intro-arrow {
     position: absolute;
@@ -733,54 +746,137 @@ section {
     @include bg-image(center);
     background-size: contain;
 }
+#projects-indicator, #intro-arrow {
+    -webkit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    -ms-transition: opacity .2s;
+    transition: opacity .2s;
+}
 //>>>>>>>>>>>>>>>>>>>>>>>>>> ---- INTRO END---- <<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+
+////////////////////////////// ---- HOMEPAGE NAV ---- //////////////////////////////
+
+#hp-projects-nav {
+    width: 100%;
+    padding: 19px 10%;
+    height: 60px;
+    background-color: #F0F0F0;
+    @include box-sizing(border-box);
+    z-index: 100;
+}
+#projects-nav-title {
+    position: absolute;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #404040;
+    border-bottom: #404040 2px solid;
+}
+#hp-projects-nav #next-prev {
+    position: relative;
+    float: right;
+    width: 46px;
+    height: 100%;
+}
+#hp-projects-nav #next,
+#hp-projects-nav #prev {
+    float: left;
+    width: 45%;
+    height: 100%;
+    background-color: #404040;
+}
+#hp-projects-nav #next {
+    margin-right: 5%;
+}
+#hp-project-title {
+    position: fixed;
+    top: 50%;
+    left: 2%;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #404040;
+    border-bottom: #404040 2px solid;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transition: opacity .2s .2s;
+    -moz-transition: opacity .2s .2s;
+    -o-transition: opacity .2s .2s;
+    -ms-transition: opacity .2s .2s;
+    transition: opacity .2s .2s;
+}
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>> ---- HOMEPAGE NAV END---- <<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 ////////////////////////////// ---- WORK ITEM ---- //////////////////////////////
 .hpWorkItem {
     width: 100%;
-    height: 100vh;
+    height: 25vh;
+    padding: 4%;
     overflow: hidden;
-    @include bg-image(center);
-    @include clearfix;
     background-size: cover;
     background-attachment: fixed;
+    @include bg-image(center);
+    @include box-sizing(border-box);
+    -webkit-transition: height ease .2s;
+    -moz-transition: height ease .2s;
+    -o-transition: height ease .2s;
+    -ms-transition: height ease .2s;
+    transition: height ease .2s;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height:101%;
+    }
+}
+.hpWorkItem.active {
+    height: 45vh;
+    &:before {
+        background-color: rgba(240,240,240,0);
+        z-index: 3;
+    }
+    &:after {
+        background-color: rgba(0,0,0,0.7);
+        z-index: 2;
+    }
 }
 .work-info {
     position: relative;
-    width: 50%;
+    width: 100%;
     height: 100%;
-    left: 50%;
+    left: 0%;
     -webkit-transition: background-color .2s;
     -moz-transition: background-color .2s;
     -o-transition: background-color .2s;
     -ms-transition: background-color .2s;
     transition: background-color .2s;
+    z-index: 4;
+
+    &:before {
+        content: '';
+
+    }
 }
 .work-text {
     position: relative;
-    width: 61.4%;
-    margin: 0 auto;
+    color: #404040;
     @include vertical-align;
     @include clearfix;
 }
-//margin reset
-.worktext-appear-wrap {
-    opacity: 0;
-    -webkit-transform: translateX(50px);
-    -moz-transform: translateX(50px);
-    -o-transform: translateX(50px);
-    -ms-transform: translateX(50px);
-    transform: translateX(50px);
-    -webkit-transition: opacity .5s .2s, -webkit-transform .6s .2s;
-    -moz-transition: opacity .5s .2s, -moz-transform .6s .2s;
-    -o-transition: opacity .5s .2s, -o-transform .6s .2s;
-    -ms-transition: opacity .5s .2s, -ms-transform .6s .2s;
-    transition: opacity .5s .2s, transform .6s .2s;
-}
-.worktext-appear-wrap  * {
-    margin: 0;
+.hpWorkItem.active .work-text {
+    color: #F0F0F0;
 }
 .work-text h2 {
     margin-bottom: 1rem;
@@ -790,26 +886,35 @@ section {
     font-size: 18px;
 }
 .work-text h1 {
-    margin-bottom: 3rem;
-    margin-top: 0;
+    margin-bottom: 2rem;
+    margin-top: 0px;
     font-weight: 400;
     font-size: 50px;
     line-height: 1.2em;
+    text-align: left;
 }
 .work-text h3 {
     font-size: 12px;
     margin: 0;
     text-transform: uppercase;
 }
+.project-number {
+    position: relative;
+    top: -1em;
+    margin-left: 0.6em;
+    font-weight: 600;
+    font-size: 0.5em;
+}
 .hpWorkItem .view-proj {
     position: relative;
     display: block;
+    width: 100px;
+    bottom: 0px;
     border: none;
     text-decoration: none;
     background-color: transparent;
     font-family: inherit;
     font-size: 12px;
-    margin-bottom: 20px;
     cursor: pointer;
     @include box-sizing(border-box);
 }
@@ -839,12 +944,18 @@ section {
         height: 17px;
     }
 }
+.hpWorkItem.active .view-plus {
+    &:after,
+    &:before {
+        background-color: #F0F0F0;
+    }
+}
 .hpWorkItem .view-proj p {
     margin-left: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 .work-info {
-    background-color: #E7F1FF;
+    background-color: rgba(255,255,255,0);
 }
 .hpWorkItem.active .worktext-appear-wrap {
     -webkit-transform: translateX(0) !important;

@@ -11,7 +11,6 @@ var MainNav = React.createClass({
 	mixins: [mixin],
 	cursors: {
 		isClicked: ['menu', 'isOpen'],
-		isHovering: ['menu', 'isHovering'],
 		isOnDark: ['menu', 'isOnDark'],
 		projSideOpen: ['menu', 'projSideOpen'],
 		scrollPos: ['scrolling', 'scrollPosition'],
@@ -20,37 +19,6 @@ var MainNav = React.createClass({
 		isMobile: ['resize', 'isMobile'],
 		isTablet: ['resize', 'isTablet'],
 		isDesktop: ['resize', 'isDesktop']
-	},
-	teaseMenu: function(e) {
-		if (!this.state.isMobile) {
-			menuActions.isHovering();
-			bumpAmount = this.inAmount(e);
-		}
-	},
-	unteaseMenu: function(e) {
-		menuActions.notHovering();	
-	},
-	inAmount: function(e) {
-		var button = e.target;
-
-		function getOffset( el ) {
-		    var _x = 0;
-		    var _y = 0;
-		    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-		        _x += el.offsetLeft - el.scrollLeft;
-		        _y += el.offsetTop - el.scrollTop;
-		        el = el.offsetParent;
-		    }
-		    return { top: _y, left: _x };
-		}
-
-		var btnX = getOffset( button ).left;
-		var relX = (e.pageX - btnX) / 1.5;
-
-  		if (relX <= 0) {
-  			relX = 1;
-  		}
-		return relX;
 	},
 	menuToggle: function() {
 		if (!this.state.isClicked) {

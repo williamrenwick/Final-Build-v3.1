@@ -7,6 +7,10 @@ var scrollingActions = {
 		ScrollCursor.set('scrollPosition', livePosition)
 		StateTree.commit();
 	},
+	isScrolling: function(bool) {
+		ScrollCursor.set('isScrolling', bool);
+		StateTree.commit();
+	},
 	textTranslateAmount: function(amount) {
 		ScrollCursor.set('textTranslateAmount', amount);
 		StateTree.commit();

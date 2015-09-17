@@ -21,7 +21,7 @@ var panelOptions = {
   	
   },
   directionThreshold: 0,
-  slideSpeed: 400,
+  slideSpeed: 200,
   delay: 50
 };	
 var hasEnabled = false;
