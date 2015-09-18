@@ -16,8 +16,7 @@ var App = React.createClass({
 	mixins: [rootMixin], 
 	cursors: {
 		menuIsActive: ['menu', 'isOpen'],
-		isInHomepage: ['homepage', 'isInHomepage'],
-		scrollPos: ['scrolling', 'scrollPosition']
+		isInHomepage: ['homepage', 'isInHomepage']
 	},
 	componentWillMount: function() {
 		Resize.init();

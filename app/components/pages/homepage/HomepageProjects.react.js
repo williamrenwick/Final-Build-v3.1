@@ -17,6 +17,7 @@ var HomepageWorkItems = React.createClass({
 		var styles = {
 			opacity: null
 		}
+		
 		if (this.state.insideWorkPosts) {
 			styles.opacity = 1;
 		} else {

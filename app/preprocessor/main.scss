@@ -824,11 +824,11 @@ section {
     background-attachment: fixed;
     @include bg-image(center);
     @include box-sizing(border-box);
-    -webkit-transition: height ease .2s;
-    -moz-transition: height ease .2s;
-    -o-transition: height ease .2s;
-    -ms-transition: height ease .2s;
-    transition: height ease .2s;
+    -webkit-transition: height ease .4s;
+    -moz-transition: height ease .4s;
+    -o-transition: height ease .4s;
+    -ms-transition: height ease .4s;
+    transition: height ease .4s;
 
     &:before, &:after {
         content: '';

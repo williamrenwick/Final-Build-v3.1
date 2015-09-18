@@ -4,7 +4,7 @@ var ViewBtn = require('./HomepageViewBtn.react.js');
 
 var classNames = require('classnames');
 var HpColorAnim = require('../../../animations/hpColorAnim.js');
-var HPActions = require('../../../actions/hpActions.js');
+var hpPostActions = require('../../../actions/hpPostActions.js');
 
 var HpWorkItem = React.createClass({
 	mixins: [mixin],
@@ -14,46 +14,71 @@ var HpWorkItem = React.createClass({
 		isTablet: ['resize', 'isTablet'],
 		isDesktop: ['resize', 'isDesktop'],
 		scrollPos: ['scrolling', 'scrollPosition'],
-		isScrolling: ['scrolling', 'isScrolling']
+		posts: ['posts']
 	},
 	getInitialState: function() {
 		return {
-			hovering: false,
 			isActive: false
 		}
 	},
+	componentWillMount: function() {
+		$(window).on({
+			scroll: this.handleScroll,
+			resize: this.pushPosToState
+		})
+	},
+	componentWillUnmount: function() {
+		$(window).off('scroll', this.handleScroll)
+	},
 	componentDidMount: function() {
-		this.getPositions();
+		this.pushPosToState();
+
+		var self = this;
+
+		setTimeout(function() {
+			self.checkPosition();
+		}, 300)
 	},
-	componentDidUpdate: function() {
-		if (!this.state.isScrolling) {
-			console.log('notScrolling')
-		}
+	handleScroll: function() {
+		var self = this;
+		var timer = null;
+
+		if (timer !== null) {
+	        clearTimeout(timer);        
+	    }
+	    timer = setTimeout(function() {
+	        self.checkPosition();
+	    }, 300);
 	},
-	hover: function() {
-		this.setState({hovering: true});
-	},
-	notHovering: function() {
-		this.setState({hovering: false});
-	},
-	getPositions: function() {
+	getPosForState: function() {
 		var node = React.findDOMNode(this.refs.hpWorkItem);
-		var height = node.offsetHeight;
+		var height = node.clientHeight;
 		var topPos = node.offsetTop;
 		var bottomPos = topPos + height;
 
-		this.checkPosition(topPos, bottomPos)
+		console.log('sending pos to state', this.state.posts)
 
+		return {
+			id: this.props.project.index,
+			height: height,
+			topPos: topPos,
+			bottomPos: bottomPos
+		}
 	},
-	checkPosition: function(topPos, bottomPos) {
+	pushPosToState: function() {
+		var liPosition = this.getPosForState();
+
+		hpPostActions.updatePosts(liPosition);
+	},
+	checkPosition: function() {
 		var midWindowScroll = this.state.scrollPos + (this.state.windowHeight / 2)
+		var myPosition = this.state.posts[this.props.project.index];
 
-		console.log(this.props.project.index, 'topPos', topPos, 'bottomPos', bottomPos)
-
-		if (midWindowScroll > topPos && midWindowScroll < bottomPos) {
-			this.setState({ isActive: true })
+		if (midWindowScroll > myPosition.topPos && midWindowScroll < myPosition.bottomPos) {
+			console.log(myPosition.id + 'is active');
+			this.setState({isActive: true});
 		} else {
-			this.setState({ isActive: false });
+			this.setState({isActive: false});
 		}
 	},
 	getStyles: function() {
@@ -61,7 +86,7 @@ var HpWorkItem = React.createClass({
 			backgroundImage: null
 		}
 
-		if (this.state.hovering) {
+		if (this.state.isActive) {
 			styles.backgroundImage ='url(' + this.props.project.images.header + ')'
 		} else {
 			styles.backgroundImage = 'none'
@@ -71,14 +96,14 @@ var HpWorkItem = React.createClass({
 	getClasses: function() {
 		var classes = {
 			hpWorkItem: true,
-			active: this.state.hovering
+			active: this.state.isActive
 		}
 		return classes
 	},
 	render: function() {
-		if (!this.state.hovering)	
+		if (!this.state.isActive)	
 			return (
-				<section ref="hpWorkItem" className={ classNames(this.getClasses()) } style={this.getStyles()} onMouseEnter={this.hover} onMouseLeave={this.notHovering}>
+				<section ref="hpWorkItem" className={ classNames(this.getClasses())} style={this.getStyles()} onMouseEnter={this.hover} onMouseLeave={this.notHovering}>
 				  <div className="work-info">
 					  <div className="work-text">
 					  	    <h1>{this.props.project.text.title}<span className="project-number">{(this.props.project.index + 1) + '/' + (this.props.totalProjects)}</span></h1>
@@ -88,9 +113,9 @@ var HpWorkItem = React.createClass({
 				  </div>
 				</section>
 			)
-		else if (this.state.hovering) {
+		else if (this.state.isActive) {
 			return (
-				<section ref="hpWorkItem" className={ classNames(this.getClasses()) } style={this.getStyles()} onMouseEnter={this.hover} onMouseLeave={this.notHovering}>
+				<section ref="hpWorkItem" className={ classNames(this.getClasses())} style={this.getStyles()} onMouseEnter={this.hover} onMouseLeave={this.notHovering}>
 				  <div className="work-info">
 					  <div className="work-text">
 					  	    <h1>{this.props.project.text.title}<span className="project-number">{(this.props.project.index + 1) + '/' + (this.props.totalProjects)}</span></h1>

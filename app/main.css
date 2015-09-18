@@ -932,11 +932,11 @@ section {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: height ease .2s;
-  -moz-transition: height ease .2s;
-  -o-transition: height ease .2s;
-  -ms-transition: height ease .2s;
-  transition: height ease .2s;
+  -webkit-transition: height ease .4s;
+  -moz-transition: height ease .4s;
+  -o-transition: height ease .4s;
+  -ms-transition: height ease .4s;
+  transition: height ease .4s;
 }
 /* line 833, preprocessor/main.scss */
 .hpWorkItem:before, .hpWorkItem:after {
