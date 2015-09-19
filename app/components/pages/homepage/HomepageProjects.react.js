@@ -6,7 +6,6 @@ var mixin = require('baobab-react/mixins').branch
 var HomepageWorkItems = React.createClass({
 	mixins: [mixin],
     cursors: {
-        windowHeight: ['resize', 'currentHeight'],
         insideWorkPosts: ['homepage', 'insideWorkPosts'],
         isMobile: ['resize', 'isMobile'],
         isTablet: ['resize', 'isTablet'],
@@ -17,7 +16,7 @@ var HomepageWorkItems = React.createClass({
 		var styles = {
 			opacity: null
 		}
-		
+
 		if (this.state.insideWorkPosts) {
 			styles.opacity = 1;
 		} else {

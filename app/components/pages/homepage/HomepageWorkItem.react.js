@@ -1,4 +1,5 @@
 var React = require('react');
+var TweenMax = require('gsap');
 var mixin = require('baobab-react/mixins').branch;
 var ViewBtn = require('./HomepageViewBtn.react.js');
 
@@ -22,9 +23,12 @@ var HpWorkItem = React.createClass({
 		}
 	},
 	componentWillMount: function() {
+		var self = this
 		$(window).on({
 			scroll: this.handleScroll,
-			resize: this.pushPosToState
+			resize: function() {
+				self.pushPosToState(true)
+			}
 		})
 	},
 	componentWillUnmount: function() {
@@ -65,20 +69,53 @@ var HpWorkItem = React.createClass({
 			bottomPos: bottomPos
 		}
 	},
-	pushPosToState: function() {
+	pushPosToState: function(resize) {
 		var liPosition = this.getPosForState();
 
-		hpPostActions.updatePosts(liPosition);
+		if (resize == true && this.props.project.index == 0) {
+			hpPostActions.removePostDataAndReset();
+		}
+		hpPostActions.pushPostData(liPosition);
 	},
 	checkPosition: function() {
 		var midWindowScroll = this.state.scrollPos + (this.state.windowHeight / 2)
 		var myPosition = this.state.posts[this.props.project.index];
+		var node = React.findDOMNode(this.refs.hpWorkItem);
 
 		if (midWindowScroll > myPosition.topPos && midWindowScroll < myPosition.bottomPos) {
-			console.log(myPosition.id + 'is active');
 			this.setState({isActive: true});
+			this.runActivateAnim(node);
 		} else {
 			this.setState({isActive: false});
+			this.runDeactivateAnim(node);
+		}
+	},
+	runActivateAnim: function(DOMObject) {
+		if (this.state.isActive) {
+			if (this.state.isDesktop || this.state.isTablet) {
+				TweenMax.to(DOMObject, 1, {
+					ease: Back.easeOut.config(2),
+					height: '45vh'
+				});
+			} else if (this.state.isMobile) {
+				TweenMax.to(DOMObject, 1, {
+					ease: Back.easeOut.config(2),
+					height: '65vh'
+				});
+			}
+		}
+	},
+	runDeactivateAnim: function(DOMObject) {
+		if (!this.state.isActive) {
+			if (this.state.isDesktop || this.state.isTablet) {
+				TweenMax.to(DOMObject, 0, {
+					height: '25vh'
+				});
+			} else if (this.state.isMobile) {
+				TweenMax.to(DOMObject, 0, {
+					height: '45vh'
+				});
+			}
 		}
 	},
 	getStyles: function() {
@@ -127,10 +164,5 @@ var HpWorkItem = React.createClass({
 		}
 	}
 });
-
-                        /*<h3>Client</h3>
-                        <h2>{this.props.project.text.client}</h2>
-                        <h3>Fields</h3>
-                        <h2>{this.props.project.text.fields}</h2>*/
 
 module.exports = HpWorkItem
