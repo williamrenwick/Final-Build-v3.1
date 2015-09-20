@@ -11,10 +11,10 @@ var Contact = React.createClass({
 		scrollPos: ['scrolling', 'scrollPosition']
 	},
 	willBeActive: function() {
-		var windowH = $(window).height();
+		var windowHeight = this.state.windowHeight;
 		var docH = $(document).height();
-		var scrollBtmPos = this.state.scrollPos + windowH;
-		var btmTrigger = docH - (windowH/2);
+		var scrollBtmPos = this.state.scrollPos + windowHeight;
+		var btmTrigger = docH - (windowHeight/2);
 
 		if (scrollBtmPos < btmTrigger) {
 			return false
@@ -49,6 +49,6 @@ var Contact = React.createClass({
 			</section>
 		)
 	}
-})	
+})
 
 module.exports = Contact
