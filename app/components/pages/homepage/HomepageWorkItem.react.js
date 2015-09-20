@@ -1,5 +1,6 @@
 var React = require('react');
 var TweenMax = require('gsap');
+var PureMixin = require('react-pure-render/mixin');
 var mixin = require('baobab-react/mixins').branch;
 var ViewBtn = require('./HomepageViewBtn.react.js');
 var classNames = require('classnames');
@@ -8,7 +9,7 @@ var HpWorkItem = React.createClass({
 	propTypes: {
 		isActive: React.PropTypes.bool.isRequired,
 	},
-	mixins: [mixin],
+	mixins: [mixin, PureMixin],
 	cursors: {
 		isMobile: ['resize', 'isMobile'],
 		isTablet: ['resize', 'isTablet'],

@@ -1,11 +1,11 @@
-var React = require('react')
+var React = require('react');
+var PureMixin = require('react-pure-render/mixin');
 var mixin = require('baobab-react/mixins').branch;
-
 
 var introText = "WIRE Design is a studio founded and run by William Renwick. I offer bespoke and personal designs tailored to meet each clients needs, with several years experience working for clients ranging from start-ups to many Fortune 500 companies - there's no project too big or small. I specialise in producing high quality digital solutions with a heavy focus on usability and integration of modern web practises in both design and development.";
 
 var HomepageIntro = React.createClass({
-    mixins: [mixin],
+    mixins: [mixin, PureMixin],
     cursors: {
         insideWorkPosts: ['homepage', 'insideWorkPosts'],
         windowHeight: ['resize', 'currentHeight'],

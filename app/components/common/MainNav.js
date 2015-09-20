@@ -1,11 +1,12 @@
 var React = require('react');
 var mixin = require('baobab-react/mixins').branch;
+var PureMixin = require('react-pure-render/mixin');
 var menuActions = require('../../actions/actions.js');
 var PROJECTS = require('../../data/projects.js');
 var classNames = require('classnames');
 
 var MainNav = React.createClass({
-	mixins: [mixin],
+	mixins: [mixin, PureMixin],
 	cursors: {
 		isClicked: ['menu', 'isOpen'],
 		isOnDark: ['menu', 'isOnDark'],

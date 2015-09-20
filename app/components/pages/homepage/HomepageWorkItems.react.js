@@ -1,11 +1,12 @@
 var React = require('react');
+var PureMixin = require('react-pure-render/mixin');
 var HomepageWorkItem = require('./HomepageWorkItem.react.js');
 var debounce = require('lodash.debounce');
 var mixin = require('baobab-react/mixins').branch;
 var hpPostActions = require('../../../actions/hpPostActions.js');
 
 var HomepageWorkItems = React.createClass({
-	mixins: [mixin],
+	mixins: [mixin, PureMixin],
     cursors: {
         windowHeight: ['resize', 'currentHeight'],
         insideWorkPosts: ['homepage', 'insideWorkPosts'],

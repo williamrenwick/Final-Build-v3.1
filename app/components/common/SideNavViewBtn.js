@@ -1,6 +1,8 @@
 var React = require('react');
+var PureMixin = require('react-pure-render/mixin');
 
 var ViewBtn = React.createClass({
+	mixins: [PureMixin],
 	render: function() {
 		return (
 			<div className="view-proj">
