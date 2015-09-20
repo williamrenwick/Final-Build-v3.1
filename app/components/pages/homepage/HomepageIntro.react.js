@@ -18,16 +18,16 @@ var HomepageIntro = React.createClass({
         var styles = {
             opacity: null
         }
-        
+
         if (this.state.scrollPos == 0) {
             styles.opacity = 1;
         } else if (this.state.scrollPos > 0 && this.state.scrollPos < (this.state.windowHeight/2)) {
-                var percentageScrolled = this.state.scrollPos / (this.state.windowHeight/2);
-                var opacity = 1 - percentageScrolled;
+            var percentageScrolled = this.state.scrollPos / (this.state.windowHeight/2);
+            var opacity = 1 - percentageScrolled;
 
-                styles.opacity = opacity;
+            styles.opacity = opacity;
         } else {
-                styles.opacity = 0;
+            styles.opacity = 0;
         }
 
         return styles
@@ -38,23 +38,23 @@ var HomepageIntro = React.createClass({
         }
 
         if (this.state.insideWorkPosts) {
-                styles.opacity = 0;
+            styles.opacity = 0;
         } else if (!this.state.insideWorkPosts) {
-                styles.opacity = 1;
+            styles.opacity = 1;
         }
         return styles
     },
     render: function() {
 
-	return (
-	    <section id="intro">
-                <div id="intro-text" style={ this.introTextStyle() }>
+    	return (
+    	    <section id="intro">
+                <div id="intro-text" style={this.introTextStyle()}>
                     <h1>{introText}</h1>
                 </div>
-                <div id="projects-indicator" style={ this.indicatorStyle() }>Projects</div>
-                <div id="intro-arrow" className="down-arrow" style={ this.indicatorStyle() }></div>
+                <div id="projects-indicator" style={this.indicatorStyle()}>Projects</div>
+                <div id="intro-arrow" className="down-arrow" style={this.indicatorStyle()}></div>
             </section>
-        )
+        );
     }
 });
 
