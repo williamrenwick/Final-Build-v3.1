@@ -151,10 +151,21 @@ var HpWorkItem = React.createClass({
 	},
 	render: function() {
 		return (
-			<section ref="hpWorkItem" className={ classNames(this.getClasses())} style={this.getStyles()} onMouseEnter={this.hover} onMouseLeave={this.notHovering}>
+			<section
+				ref="hpWorkItem"
+				className={classNames(this.getClasses())}
+				style={this.getStyles()}
+				onMouseEnter={this.hover}
+				onMouseLeave={this.notHovering}
+			>
 			  	<div className="work-info">
 				  	<div className="work-text">
-				  	    <h1>{this.props.project.text.title}<span className="project-number">{(this.props.project.index + 1) + '/' + (this.props.totalProjects)}</span></h1>
+				  	    <h1>
+				  	    	{this.props.project.text.title}
+				  	    	<span className="project-number">
+				  	    		{(this.props.project.index + 1) + '/' + (this.props.totalProjects)}
+				  	    	</span>
+				  	    </h1>
                         {this.renderInner()}
 				  	</div>
 			  	</div>
