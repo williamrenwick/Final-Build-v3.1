@@ -8,10 +8,9 @@ var ProjectActions = require('../../actions/projectActions.js');
 var Link = Router.Link;
 
 
-var LiProjItem = React.createClass({
+var SideNavProject = React.createClass({
 	mixins: [mixin],
     cursors: {
-
         projSideOpen: ['menu', 'projSideOpen'],
         menuActive: ['menu', 'isOpen']
     },
@@ -64,4 +63,4 @@ var LiProjItem = React.createClass({
 	}
 });
 
-module.exports = LiProjItem;
+module.exports = SideNavProject;
