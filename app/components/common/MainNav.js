@@ -4,9 +4,6 @@ var menuActions = require('../../actions/actions.js');
 var PROJECTS = require('../../data/projects.js');
 var classNames = require('classnames');
 
-var bumpAmount = 0;
-var body = $('body');
-
 var MainNav = React.createClass({
 	mixins: [mixin],
 	cursors: {
@@ -41,7 +38,7 @@ var MainNav = React.createClass({
 			styleObj.OTransform = 'translateX(' + -80 + '%)';
 			styleObj.msTransform = 'translateX(' + -80 + '%)';
 			styleObj.transform = 'translateX(' + -80 + '%)';
-		} 
+		}
 		return styleObj;
 	},
 	tabletStyles: function() {
@@ -78,8 +75,15 @@ var MainNav = React.createClass({
 	},
 	render: function() {
 		return (
-			<nav className={ classNames({fixedNav: true, menuActive: this.state.isClicked, onDark: this.state.isOnDark || this.state.isInProjects }) } style={ this.getStyles() }>
-	          <div id="menu-button" onClick={this.menuToggle} ref="menu-btn">     
+			<nav
+				className={classNames({
+					fixedNav: true,
+					menuActive: this.state.isClicked,
+					onDark: this.state.isOnDark || this.state.isInProjects
+				})}
+				style={this.getStyles()}
+			>
+	          <div id="menu-button" onClick={this.menuToggle} ref="menu-btn">
 	              <span className="menu-line"></span>
 	          </div>
 	          <div className="site-title"></div>
