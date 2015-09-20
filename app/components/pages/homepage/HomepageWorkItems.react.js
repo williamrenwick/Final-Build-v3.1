@@ -1,6 +1,6 @@
 var React = require('react');
 var HomepageWorkItem = require('./HomepageWorkItem.react.js');
-var throttle = require('lodash.throttle');
+var debounce = require('lodash.debounce');
 var mixin = require('baobab-react/mixins').branch;
 var hpPostActions = require('../../../actions/hpPostActions.js');
 
@@ -17,7 +17,7 @@ var HomepageWorkItems = React.createClass({
     },
     getWindowEventHandlers: function() {
         return {
-            scroll: this.throttledHandleScroll,
+            scroll: this.debouncedHandleScroll,
             resize: this.handleResize,
         };
     },
@@ -28,7 +28,7 @@ var HomepageWorkItems = React.createClass({
         $(window).off(this.getWindowEventHandlers());
     },
     componentWillMount: function() {
-        this.throttledHandleScroll = throttle(this.handleScroll, 300);
+        this.debouncedHandleScroll = debounce(this.handleScroll, 100);
     },
     componentDidMount: function() {
         this.listenToWindowEvents();
