@@ -1,5 +1,5 @@
 var React = require('react');
-var HpWorkItem = require('./HomepageWorkItem.react.js')
+var HomepageWorkItem = require('./HomepageWorkItem.react.js')
 
 var mixin = require('baobab-react/mixins').branch
 
@@ -24,17 +24,22 @@ var HomepageWorkItems = React.createClass({
 		}
 		return styles
 	},
+    renderWorkItems: function() {
+        return this.props.projects.map(function(project, i, array) {
+            return (
+                <HomepageWorkItem
+                    project={project}
+                    totalProjects={array.length}
+                    key={i}
+                />
+            );
+        });
+    },
 	render: function() {
-		var hpWorkItems = [];
-				
-		this.props.projects.forEach(function(project, i, array) {
-			hpWorkItems.push(<HpWorkItem project={project} totalProjects={array.length}/>);
-		})
-
 		return (
 			<div id="workItems" style={{height: '100%', padding: '10% 10%'}}>
 				<div id="hp-project-title" style={this.projectTitleStyle()}>Projects</div>
-				{hpWorkItems}
+				{this.renderWorkItems()}
 			</div>
 		)
 

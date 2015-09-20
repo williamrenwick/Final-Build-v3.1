@@ -1,6 +1,6 @@
 var React = require('react');
 var Intro = require('./HomepageIntro.react.js')
-var WorkItems = require('./HomepageProjects.react.js')
+var WorkItems = require('./HomepageWorkItems.react.js')
 var HomepageNav = require('./HomepageNav.js')
 var Contact = require('../../common/Contact.js')
 
