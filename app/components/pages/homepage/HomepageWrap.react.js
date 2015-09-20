@@ -1,7 +1,6 @@
 var React = require('react');
 var Intro = require('./HomepageIntro.react.js')
 var WorkItems = require('./HomepageWorkItems.react.js')
-var HomepageNav = require('./HomepageNav.js')
 var Contact = require('../../common/Contact.js')
 
 var mixin = require('baobab-react/mixins').branch
@@ -22,7 +21,6 @@ var HomepageWrap = React.createClass({
 	cursors: {
 		windowHeight: ['resize', 'currentHeight'],
 		isInHomepage: ['homepage', 'isInHomepage'],
-		workBGColor: ['homepage', 'workBGColor'],
 		isInProjects: ['project', 'isInProjects'],
 		scrollPos: ['scrolling', 'scrollPosition'],
 		menuActive: ['menu', 'isOpen'],
@@ -40,18 +38,15 @@ var HomepageWrap = React.createClass({
 		$(window).off('scroll', this.handleScroll);
 	},
 	componentDidMount: function() {
-		this.changeBGColor();
 		setTimeout(this.initiateAfterState, 20)
 	},
 	initiateAfterState: function() {
 		this.whereInHomepage();
 	},
-	changeBGColor: function() {
-		var colorData = HpColorAnim.workInfoBg(this.state.scrollPos);
-		HomepageActions.updateBGColor(colorData);
+	calculateBGColor: function() {
+		return HpColorAnim.workInfoBg(this.state.scrollPos);
 	},
 	handleScroll: function() {
-		this.changeBGColor();
 		this.whereInHomepage();
 	},
 	whereInHomepage: function() {
@@ -67,20 +62,20 @@ var HomepageWrap = React.createClass({
         }
 	},
 	otherStyles: function() {
-		var styleObj = {
-			backgroundColor: this.state.workBGColor
-		}
-		return styleObj;
+		return {
+			backgroundColor: this.calculateBGColor(),
+		};
 	},
 	mobileStyles: function() {
 		var styleObj = {
-			backgroundColor: this.state.workBGColor,
-			transform: null
-		}
+			backgroundColor: this.calculateBGColor(),
+			transform: null,
+		};
 
 		if (this.state.projSideOpen) {
 			styleObj.transform = 'translateX(10%)'
 		}
+
 		return styleObj;
 	},
 	getStyles: function() {

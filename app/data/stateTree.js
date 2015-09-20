@@ -20,7 +20,6 @@ var stateTree = new Baobab({
 		textTranslateAmount: null
 	},
 	homepage: {
-		workBGColor: null,
 		isInHomepage: null,
 		insideWorkPosts: null
 	},
