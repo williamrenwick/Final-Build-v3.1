@@ -101,7 +101,11 @@ var SideNav = React.createClass({
 	},
 	render: function() {
 		return (
-			<nav id="side-nav" className={ classNames(this.getClasses()) } style={ this.getStyles() }>
+			<nav
+				id="side-nav"
+				className={classNames(this.getClasses()) }
+				style={this.getStyles() }
+			>
 				<MainSide />
 				<SideNavProjects projects={this.props.projects}/>
 			</nav>
