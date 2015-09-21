@@ -1,23 +1,8 @@
 var ResizeActions = require('../actions/ResizeActions.js');
 var StateTree = require('../data/stateTree.js');
+var debounce = require('lodash.debounce');
 
 var $window = $(window);
-
-
-function debounce(func, wait, immediate) {
-	var timeout;
-	return function() {
-		var context = this, args = arguments;
-		var later = function() {
-			timeout = null;
-			if (!immediate) func.apply(context, args);
-		};
-		var callNow = immediate && !timeout;
-		clearTimeout(timeout);
-		timeout = setTimeout(later, wait);
-		if (callNow) func.apply(context, args);
-	};
-};
 
 var resizeFn = debounce(function() {
 	var windowW = $window.width();
@@ -25,7 +10,7 @@ var resizeFn = debounce(function() {
 
 	ResizeActions.updateWidth(windowW);
 	ResizeActions.updateHeight(windowH);
-	
+
 	if (windowW > 1024) {
 		ResizeActions.isDesktop(true);
 		ResizeActions.isTablet(false);

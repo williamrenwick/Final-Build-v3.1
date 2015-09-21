@@ -2,7 +2,7 @@ var React = require('react');
 var mixin = require('baobab-react/mixins').branch;
 var classNames = require('classnames');
 var MainSide = require('./SideNavMain.js');
-var ProjectSide = require('./SideNavProj.js');
+var SideNavProjects = require('./SideNavProjects.js');
 
 var SideNav = React.createClass({
 	mixins: [mixin],
@@ -37,9 +37,9 @@ var SideNav = React.createClass({
 				styleObj.left = -(this.state.windowW * 0.8);
 				styleObj.width = this.state.windowW * 1.8;
 			}
-			
+
 		}
-		
+
 		return styleObj
 	},
 	tabletStyles: function() {
@@ -101,9 +101,13 @@ var SideNav = React.createClass({
 	},
 	render: function() {
 		return (
-			<nav id="side-nav" className={ classNames(this.getClasses()) } style={ this.getStyles() }>
+			<nav
+				id="side-nav"
+				className={classNames(this.getClasses()) }
+				style={this.getStyles() }
+			>
 				<MainSide />
-				<ProjectSide projects={this.props.projects}/>
+				<SideNavProjects projects={this.props.projects}/>
 			</nav>
 		)
 	}
