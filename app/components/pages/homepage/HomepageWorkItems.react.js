@@ -46,8 +46,27 @@ var HomepageWorkItems = React.createClass({
         var workItemsWrapper = React.findDOMNode(this.refs.workItemsWrapper);
         var workItems = [...workItemsWrapper.childNodes]
 
+        function transitionEndEventName () {
+            var i,
+                undefined,
+                el = document.createElement('div'),
+                transitions = {
+                    'transition':'transitionend',
+                    'OTransition':'otransitionend',
+                    'MozTransition':'transitionend',
+                    'WebkitTransition':'webkitTransitionEnd'
+                };
+
+            for (i in transitions) {
+                if (transitions.hasOwnProperty(i) && el.style[i] !== undefined) {
+                    return transitions[i];
+                }
+            }
+        }
+        var transitionEnd = transitionEndEventName();
+
         workItems.map((workItem) => {
-            workItem.addEventListener('webkitTransitionEnd', function() {
+            workItem.addEventListener(transitionEnd, function() {
                 ResizeActions.updateDocHeight($(document).height())
             })
         })
