@@ -51,4 +51,4 @@ var Contact = React.createClass({
 		)
 	}
 })
-module.exports = Contact
+module.exports = Contact;

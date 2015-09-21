@@ -6,9 +6,10 @@ var mixin = require('baobab-react/mixins').branch;
 var hpPostActions = require('../../../actions/hpPostActions.js');
 
 var HomepageWorkItems = React.createClass({
-	mixins: [mixin, PureMixin],
+    mixins: [mixin, PureMixin],
     cursors: {
         windowHeight: ['resize', 'currentHeight'],
+        scrollPos: ['scrolling', 'scrollPosition'], // needed to update on scroll
         insideWorkPosts: ['homepage', 'insideWorkPosts'],
         isMobile: ['resize', 'isMobile'],
         isTablet: ['resize', 'isTablet'],
@@ -16,39 +17,15 @@ var HomepageWorkItems = React.createClass({
         scrollPos: ['scrolling', 'scrollPosition'],
         posts: ['posts'],
     },
-    getWindowEventHandlers: function() {
-        return {
-            scroll: this.debouncedHandleScroll,
-            resize: this.handleResize,
-        };
-    },
-    listenToWindowEvents: function() {
-        $(window).on(this.getWindowEventHandlers());
-    },
-    stopListeningToWindowEvents: function() {
-        $(window).off(this.getWindowEventHandlers());
-    },
-    componentWillMount: function() {
-        this.debouncedHandleScroll = debounce(this.handleScroll, 100);
-    },
     componentDidMount: function() {
-        this.listenToWindowEvents();
         this.updateWorkItemPositions();
     },
-    componentWillUnmount: function() {
-        this.stopListeningToWindowEvents();
-    },
-    handleScroll: function() {
-        this.updateWorkItemPositions();
-    },
-    handleResize: function() {
+    componentDidUpdate: function() {
         this.updateWorkItemPositions();
     },
     updateWorkItemPositions: function() {
         var workItemsWrapper = React.findDOMNode(this.refs.workItemsWrapper);
         var workItems = [...workItemsWrapper.childNodes]; // convert NodeList to array
-
-        console.log(...workItemsWrapper.childNodes)
 
         var workItemPositions = workItems.map((workItem) => {
             var height = workItem.clientHeight;
@@ -62,11 +39,11 @@ var HomepageWorkItems = React.createClass({
 
         hpPostActions.updatePositions(workItemPositions);
     },
-	projectTitleStyle: function() {
-		return {
-			opacity: this.state.insideWorkPosts ? 1 : 0
-		};
-	},
+    projectTitleStyle: function() {
+        return {
+            opacity: this.state.insideWorkPosts ? 1 : 0
+        };
+    },
     renderWorkItems: function() {
         var midWindowScroll = this.state.scrollPos + (this.state.windowHeight / 2);
         return this.props.projects.map((project, i, array) => {
@@ -89,17 +66,17 @@ var HomepageWorkItems = React.createClass({
             );
         });
     },
-	render: function() {
-		return (
-			<div id="workItems" style={{height: '100%', padding: '10% 10%'}}>
-				<div id="hp-project-title" style={this.projectTitleStyle()}>Projects</div>
+    render: function() {
+        return (
+            <div id="workItems" style={{height: '100%', padding: '10% 10%'}}>
+                <div id="hp-project-title" style={this.projectTitleStyle()}>Projects</div>
                 <div ref="workItemsWrapper">
-    				{this.renderWorkItems()}
+                    {this.renderWorkItems()}
                 </div>
-			</div>
-		)
+            </div>
+        )
 
-	}
+    }
 });
 
 module.exports = HomepageWorkItems

@@ -1,7 +1,5 @@
 var React = require('react');
 var PureMixin = require('react-pure-render/mixin');
-var Router = require('react-router');
-var Link = Router.Link;
 
 var ViewBtn = React.createClass({
 	mixins: [PureMixin],
@@ -11,7 +9,7 @@ var ViewBtn = React.createClass({
 			    <div className="view-plus"></div>
 			    <p>View Project</p>
 			</div>
-		)
+		);
 	}
 });
 

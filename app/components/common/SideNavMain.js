@@ -1,12 +1,13 @@
 var React = require('react');
 var Router = require('react-router');
 var mixin = require('baobab-react/mixins').branch;
+var PureMixin = require('react-pure-render/mixin');
 var menuActions = require('../../actions/actions.js');
 var classNames = require('classnames');
 var Link = Router.Link;
 
 var MainSide = React.createClass({
-    mixins: [mixin],
+    mixins: [mixin, PureMixin],
     cursors: {
         isInHomepage: ['homepage', 'isInHomepage'],
         projSideOpen: ['menu', 'projSideOpen'],

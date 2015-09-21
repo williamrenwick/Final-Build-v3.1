@@ -1,11 +1,12 @@
 var React = require('react');
 var mixin = require('baobab-react/mixins').branch;
+var PureMixin = require('react-pure-render/mixin');
 var classNames = require('classnames');
 var MainSide = require('./SideNavMain.js');
 var SideNavProjects = require('./SideNavProjects.js');
 
 var SideNav = React.createClass({
-	mixins: [mixin],
+	mixins: [mixin, PureMixin],
 	cursors: {
 		windowW: ['resize', 'currentWidth'],
 		isHovering: ['menu', 'isHovering'],
