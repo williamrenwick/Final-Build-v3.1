@@ -48,6 +48,8 @@ var HomepageWorkItems = React.createClass({
         var workItemsWrapper = React.findDOMNode(this.refs.workItemsWrapper);
         var workItems = [...workItemsWrapper.childNodes]; // convert NodeList to array
 
+        console.log(...workItemsWrapper.childNodes)
+
         var workItemPositions = workItems.map((workItem) => {
             var height = workItem.clientHeight;
             var topPos = workItem.offsetTop;

@@ -8,6 +8,7 @@ var classNames = require('classnames');
 var Animations = require('../../../animations/animations.js');
 var HpColorAnim = require('../../../animations/hpColorAnim.js');
 var HomepageActions = require('../../../actions/hpActions.js');
+var ResizeActions = require('../../../actions/ResizeActions.js');
 var MenuActions = require('../../../actions/actions.js');
 var ProjectActions = require('../../../actions/projectActions.js');
 var ScrollActions = require('../../../actions/scrollActions.js');
@@ -55,6 +56,9 @@ var HomepageWrap = React.createClass({
 		var topTrigger = this.state.windowHeight - triggerAmount;
 		var contactMid = this.state.documentHeight - (this.state.windowHeight / 2);
 		var scrollBtm = this.state.scrollPos + this.state.windowHeight;
+
+		console.log('scrollPos',this.state.scrollPos,'windowHeight', this.state.windowHeight, 'documentHeight', this.state.documentHeight)
+		console.log('scrollBtm < contactMid',scrollBtm < contactMid)
 
         if ((this.state.scrollPos > topTrigger) && (scrollBtm < contactMid)) {
             HomepageActions.insideWorkPosts();
