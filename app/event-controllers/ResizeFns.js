@@ -2,14 +2,17 @@ var ResizeActions = require('../actions/ResizeActions.js');
 var StateTree = require('../data/stateTree.js');
 var debounce = require('lodash.debounce');
 
-var $window = $(window);
+var $window = $(window),
+	$doc = $(document); 
 
 var resizeFn = debounce(function() {
-	var windowW = $window.width();
-	var windowH = $window.height();
+	var windowW = $window.width(),
+		windowH = $window.height(),
+		docH = $doc.height();
 
 	ResizeActions.updateWidth(windowW);
 	ResizeActions.updateHeight(windowH);
+	ResizeActions.updateDocHeight(docH);
 
 	if (windowW > 1024) {
 		ResizeActions.isDesktop(true);

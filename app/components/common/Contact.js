@@ -7,12 +7,13 @@ var Contact = React.createClass({
 	mixins: [mixin],
 	cursors: {
 		windowHeight: ['resize', 'currentHeight'],
+		documentHeight: ['resize', 'currentDocHeight'],
 		isInProjects: ['project', 'isInProjects'],
 		scrollPos: ['scrolling', 'scrollPosition']
 	},
 	willBeActive: function() {
 		var windowHeight = this.state.windowHeight;
-		var docH = $(document).height();
+		var docH = this.state.documentHeight;
 		var scrollBtmPos = this.state.scrollPos + windowHeight;
 		var btmTrigger = docH - (windowHeight/2);
 

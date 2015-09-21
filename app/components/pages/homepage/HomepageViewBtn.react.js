@@ -7,12 +7,10 @@ var ViewBtn = React.createClass({
 	mixins: [PureMixin],
 	render: function() {
 		return (
-			<Link to={this.props.project.link}>
-				<div className="view-proj">
-				    <div className="view-plus"></div>
-				    <p>View Project</p>
-				</div>
-			</Link>
+			<div className="view-proj">
+			    <div className="view-plus"></div>
+			    <p>View Project</p>
+			</div>
 		)
 	}
 });

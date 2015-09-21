@@ -4,6 +4,7 @@ var stateTree = new Baobab({
 	resize: {
 		currentWidth: null,
 		currentHeight: null,
+		currentDocHeight: null,
 		isMobile: null,
 		isTablet: null,
 		isDesktop: null

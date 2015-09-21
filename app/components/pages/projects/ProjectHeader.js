@@ -21,8 +21,6 @@ var ProjectHdr = React.createClass({
 		isDesktop: ['resize', 'isDesktop'],
 	},
 	componentWillMount: function() {
-		var scrollPos = $(window).scrollTop();
-
 		$(window).on('scroll', this.handleScroll)
 	},
 	componentWillUnmount: function() {
@@ -36,8 +34,7 @@ var ProjectHdr = React.createClass({
 		}, 30)
 	},
 	calcTranslate: function() {
-		var scrollPos = this.state.scrollPos,
-			translateAmount = -( scrollPos / 10 );
+		var translateAmount = -( this.state.scrollPos / 10 );
 
 		ScrollActions.textTranslateAmount(translateAmount);
 	},

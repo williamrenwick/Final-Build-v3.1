@@ -20,6 +20,7 @@ var HomepageWrap = React.createClass({
 	mixins: [mixin],
 	cursors: {
 		windowHeight: ['resize', 'currentHeight'],
+		documentHeight: ['resize', 'currentDocHeight'],
 		isInHomepage: ['homepage', 'isInHomepage'],
 		isInProjects: ['project', 'isInProjects'],
 		scrollPos: ['scrolling', 'scrollPosition'],
@@ -52,7 +53,7 @@ var HomepageWrap = React.createClass({
 	whereInHomepage: function() {
 		var triggerAmount = 150;
 		var topTrigger = this.state.windowHeight - triggerAmount;
-		var contactMid = $(document).height() - (this.state.windowHeight / 2);
+		var contactMid = this.state.documentHeight - (this.state.windowHeight / 2);
 		var scrollBtm = this.state.scrollPos + this.state.windowHeight;
 
         if ((this.state.scrollPos > topTrigger) && (scrollBtm < contactMid)) {

@@ -1,9 +1,13 @@
 var React = require('react');
-var TweenMax = require('gsap');
+const {Spring} = require("react-motion");
+var classNames = require('classnames');
+var Router = require('react-router');
+var Link = Router.Link;
+
 var PureMixin = require('react-pure-render/mixin');
 var mixin = require('baobab-react/mixins').branch;
-var ViewBtn = require('./HomepageViewBtn.react.js');
-var classNames = require('classnames');
+
+var HomepageWorkText = require('./HomepageWorkText.js');
 
 var HpWorkItem = React.createClass({
 	propTypes: {
@@ -15,7 +19,7 @@ var HpWorkItem = React.createClass({
 		isTablet: ['resize', 'isTablet'],
 		isDesktop: ['resize', 'isDesktop'],
 	},
-	componentWillReceiveProps: function(nextProps) {
+	/*componentWillReceiveProps: function(nextProps) {
 		if (nextProps.isActive && !this.props.isActive) {
 			this.runActivateAnim();
 		} else if (!nextProps.isActive && this.props.isActive) {
@@ -23,77 +27,107 @@ var HpWorkItem = React.createClass({
 		}
 	},
 	runActivateAnim: function() {
-		var node = React.findDOMNode(this);
+		var activeHeight;
+
 		if (this.state.isDesktop || this.state.isTablet) {
-			TweenMax.to(node, 1, {
-				ease: Back.easeOut.config(2),
-				height: '45vh'
-			});
-		} else if (this.state.isMobile) {
-			TweenMax.to(node, 1, {
-				ease: Back.easeOut.config(2),
-				height: '65vh'
-			});
+			activeHeight = 45;
+		} else {
+			activeHeight = 65;
 		}
+
 	},
 	runDeactivateAnim: function() {
-		var node = React.findDOMNode(this);
-		if (this.state.isDesktop || this.state.isTablet) {
-			TweenMax.to(node, 0, {
-				height: '25vh'
-			});
-		} else if (this.state.isMobile) {
-			TweenMax.to(node, 0, {
-				height: '45vh'
-			});
-		}
-	},
+		
+	},*/
 	getStyles: function() {
 		return {
 			backgroundImage: this.props.isActive ?
 				'url(' + this.props.project.images.header + ')' :
 				'none',
+			height: this.state.height + 'vh'
 		};
 	},
-	getClasses: function() {
+	getClasses: function(val) {
+		console.log(val)
+
 		return {
 			hpWorkItem: true,
 			active: this.props.isActive
 		};
 	},
+	startHeight: function() {
+		var startHeight;
+
+		if (this.state.isDesktop || this.state.isTablet) {
+			startHeight = 25
+		} else if (this.state.isMobile) {
+			startHeight = 40
+		}
+		return {
+			height: startHeight
+		}
+	},
+	endHeight: function() {
+		var endHeight;
+
+		if (this.props.isActive) {
+			if (this.state.isDesktop || this.state.isTablet) {
+				endHeight = 40
+			} else if (this.state.isMobile) {
+				endHeight = 65
+			}
+		} else if (!this.props.isActive) {
+			var startHeight = this.startHeight()
+
+			endHeight = startHeight.height;
+		}
+		
+		return {
+			height: endHeight
+		}
+	},
 	renderInner: function() {
 		if (this.props.isActive) {
-			return <ViewBtn project={this.props.project}/>;
+			return  (
+				<Link to={this.props.project.link}>
+					  	<div className="work-info">
+						  	<HomepageWorkText 
+						  		project={this.props.project}
+						  		totalProjects={this.props.totalProjects}
+						  		isActive={this.props.isActive}
+						  	/>
+					  	</div>
+				</Link>
+			)
+		} else {
+			return (
+				<div className="work-info">
+					<HomepageWorkText 
+				  		project={this.props.project}
+				  		totalProjects={this.props.totalProjects}
+				  		isActive={this.props.isActive}
+				  	/> 
+				</div>
+			)
 		}
-
-		return (
-			<div>
-				<h3>Fields</h3>
-                <h2>{this.props.project.text.fields}</h2>
-            </div>
-		);
 	},
 	render: function() {
 		return (
-			<section
-				ref="hpWorkItem"
-				className={classNames(this.getClasses())}
-				style={this.getStyles()}
-				onMouseEnter={this.hover}
-				onMouseLeave={this.notHovering}
-			>
-			  	<div className="work-info">
-				  	<div className="work-text">
-				  	    <h1>
-				  	    	{this.props.project.text.title}
-				  	    	<span className="project-number">
-				  	    		{(this.props.project.index + 1) + '/' + (this.props.totalProjects)}
-				  	    	</span>
-				  	    </h1>
-                        {this.renderInner()}
-				  	</div>
-			  	</div>
-			</section>
+			<Spring defaultValue={this.startHeight()} endValue={this.endHeight()}>
+			    {interpolated =>
+					<section
+						className={classNames(this.getClasses(interpolated))}
+						style={{
+							backgroundImage: this.props.isActive ? 'url(' + this.props.project.images.header + ')' : 'none', 
+							height: interpolated.height + 'vh'
+						}}
+						onMouseEnter={this.hover}
+						onMouseLeave={this.notHovering}
+					>
+						{this.renderInner()}
+					</section>
+				}
+			</Spring>
 		)
 	}
 });

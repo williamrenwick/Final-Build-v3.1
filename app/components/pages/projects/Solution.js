@@ -16,8 +16,19 @@ var Solution = React.createClass({
 		isTablet: ['resize', 'isTablet'],
 		isDesktop: ['resize', 'isDesktop'],
 	},
-	mobileTabletStyles: function() {
+	mobileStyles: function() {
 		var amount = -150;
+		var styleObj = {
+			WebkitTransform: 'translateY(' + amount + 'px)',
+			MozTransform: 'translateY(' + amount + 'px)',
+			OTransform: 'translateY(' + amount + 'px)',
+			msTransform: 'translateY(' + amount + 'px)',
+			transform: 'translateY(' + amount + 'px)'
+		}
+		return styleObj		
+	},
+	tabletStyles: function() {
+		var amount = -80;
 		var styleObj = {
 			WebkitTransform: 'translateY(' + amount + 'px)',
 			MozTransform: 'translateY(' + amount + 'px)',
@@ -41,9 +52,12 @@ var Solution = React.createClass({
 		if (this.state.isDesktop) {
 			var desktopStyles = this.desktopStyles();
 			return desktopStyles
-		} else if (!this.state.isDesktop) {
-			var mobileTabletStyles = this.mobileTabletStyles();
-			return mobileTabletStyles
+		} else if (this.state.isTablet) {
+			var tabletStyles = this.tabletStyles();
+			return tabletStyles
+		} else if (this.state.isMobile) {
+			var mobileStyles = this.mobileStyles();
+			return mobileStyles
 		}
 	},
 	render: function() {
