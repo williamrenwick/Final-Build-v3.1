@@ -3,12 +3,12 @@ var StateTree = require('../data/stateTree.js');
 var debounce = require('lodash.debounce');
 
 var $window = $(window),
-	doc = document.body; 
+	$doc = $(document); 
 
 var resizeFn = debounce(function() {
 	var windowW = $window.width(),
 		windowH = $window.height(),
-		docH = doc.scrollHeight;
+		docH = $doc.height();
 
 	ResizeActions.updateWindowDimensions(windowW, windowH, docH)
 

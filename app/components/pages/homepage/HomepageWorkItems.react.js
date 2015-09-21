@@ -4,6 +4,7 @@ var HomepageWorkItem = require('./HomepageWorkItem.react.js');
 var debounce = require('lodash.debounce');
 var mixin = require('baobab-react/mixins').branch;
 var hpPostActions = require('../../../actions/hpPostActions.js');
+var ResizeActions = require('../../../actions/ResizeActions.js');
 
 var HomepageWorkItems = React.createClass({
     mixins: [mixin, PureMixin],
@@ -19,6 +20,7 @@ var HomepageWorkItems = React.createClass({
     },
     componentDidMount: function() {
         this.updateWorkItemPositions();
+        this.addTransitionListeners();
     },
     componentDidUpdate: function() {
         this.updateWorkItemPositions();
@@ -30,6 +32,7 @@ var HomepageWorkItems = React.createClass({
         var workItemPositions = workItems.map((workItem) => {
             var height = workItem.clientHeight;
             var topPos = workItem.offsetTop;
+
             return {
                 height,
                 topPos,
@@ -38,6 +41,16 @@ var HomepageWorkItems = React.createClass({
         });
 
         hpPostActions.updatePositions(workItemPositions);
+    },
+    addTransitionListeners: function() {
+        var workItemsWrapper = React.findDOMNode(this.refs.workItemsWrapper);
+        var workItems = [...workItemsWrapper.childNodes]
+
+        workItems.map((workItem) => {
+            workItem.addEventListener('webkitTransitionEnd', function() {
+                ResizeActions.updateDocHeight($(document).height())
+            })
+        })
     },
     projectTitleStyle: function() {
         return {
