@@ -11,6 +11,7 @@ var Link = Router.Link;
 var ProjectHdr = React.createClass({
 	mixins: [mixin],
 	cursors: {
+		windowHeight: ['resize', 'currentHeight'],
 		scrollPos: ['scrolling', 'scrollPosition'],
 		textTranslate: ['scrolling', 'textTranslateAmount'],
 		menuHover: ['menu', 'isHovering'],
@@ -58,11 +59,21 @@ var ProjectHdr = React.createClass({
 		}
 	},
 	getArrowStyle: function() {
-		if (this.state.scrollPos > 50) {
-			return {
-				opacity: 0
-			}
-		}
+        var styles = {
+            opacity: null
+        }
+
+        if (this.state.scrollPos == 0) {
+            styles.opacity = 1;
+        } else if (this.state.scrollPos > 0 && this.state.scrollPos < (this.state.windowHeight/2)) {
+            var percentageScrolled = this.state.scrollPos / (this.state.windowHeight/2);
+            var opacity = 1 - percentageScrolled;
+
+            styles.opacity = opacity;
+        } else {
+            styles.opacity = 0;
+        }
+        return styles
 	},
 	render: function() {
 		var activeProject = this.props.activeProject;
