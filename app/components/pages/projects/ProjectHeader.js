@@ -63,7 +63,7 @@ var ProjectHdr = React.createClass({
             opacity: null
         }
 
-        if (this.state.scrollPos == 0) {
+        if (this.state.scrollPos <= 0) {
             styles.opacity = 1;
         } else if (this.state.scrollPos > 0 && this.state.scrollPos < (this.state.windowHeight/2)) {
             var percentageScrolled = this.state.scrollPos / (this.state.windowHeight/2);
