@@ -57,6 +57,13 @@ var ProjectHdr = React.createClass({
 			return desktopStyles
 		}
 	},
+	getArrowStyle: function() {
+		if (this.state.scrollPos > 50) {
+			return {
+				opacity: 0
+			}
+		}
+	},
 	render: function() {
 		var activeProject = this.props.activeProject;
 		return (
@@ -75,6 +82,7 @@ var ProjectHdr = React.createClass({
 				    <h3>Fields</h3>
 				    <h2>{activeProject.text.fields}</h2>
 				</div>
+				<div id="header-arrow" className="down-arrow" style={this.getArrowStyle()}></div>
 			</div>
 		)
 	}

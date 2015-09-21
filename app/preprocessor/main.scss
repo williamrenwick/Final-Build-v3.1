@@ -821,11 +821,6 @@ section {
     overflow: hidden;
     background-size: cover;
     background-attachment: fixed;
-    -webkit-transition: height ease .6s;
-    -moz-transition: height ease .6s;
-    -o-transition: height ease .6s;
-    -ms-transition: height ease .6s;
-    transition: height ease .6s;
     @include bg-image(center);
     @include box-sizing(border-box);
     &:before, &:after {
@@ -997,6 +992,21 @@ section {
     -o-transition: opacity ease .2s .5s;
     -ms-transition: opacity ease .2s .5s;
     transition: opacity ease .2s .5s;
+}
+#header-arrow {
+    position: absolute;
+    width: 12px;
+    height: 20px;
+    bottom: 20px;
+    @include horizontal-align;
+    background-image: url(../public/img/header-down-arrow.png);
+    @include bg-image(center);
+    background-size: contain;
+    -webkit-transition: opacity ease .2s;
+    -moz-transition: opacity ease .2s;
+    -o-transition: opacity ease .2s;
+    -ms-transition: opacity ease .2s;
+    transition: opacity ease .2s;
 }
 .project-nav {
     position: fixed;
@@ -1364,7 +1374,7 @@ section {
     }
 }
 
-@media screen and (max-width: 768px) and (min-width: 421px) {
+@media screen and (max-width: 768px) and (min-width: 421px) and (orientation: portrait) {
     .sideMenuActive {
         -webkit-transform: translateX(90%);
         -moz-transform: translateX(90%);
@@ -1582,9 +1592,228 @@ section {
     } 
 
 }
+@media screen and (max-width: 768px) and (min-width: 421px) and (orientation: landscape) {
+    .sideMenuActive {
+        -webkit-transform: translateX(90%);
+        -moz-transform: translateX(90%);
+        -o-transform: translateX(90%);
+        -ms-transform: translateX(90%);
+        transform: translateX(90%);   
+    }
+    #side-nav {
+        left: -90%;
+        width: 90%;
+        font-size: 20px;
+    }
+    #side-nav.projectMenu {
+        width: 180%;
+    }
+    #side-nav.projectMenu #project-side{
+        opacity: 1;
+    }
+    #side-nav.projectMenu #main-side {
+        width: 50%;
+    }
+    #view-all-btn {
+        right: 0px;
+        height: 20px;
+        width: 20px;
+    }
+
+    #intro-text {
+        position: relative;
+        width: 80%;
+    }
+    #intro-text h1 {
+        font-size: 14px;
+    }
+    #projects-indicator {
+        font-size: 12px
+    }
+    .hpWorkItem {
+        height: 45vh;
+        @include bg-image(center);
+        background-size: cover;
+        background-attachment: scroll;
+    }
+    #hp-project-title {
+        left: 0%;
+        font-size: 12px;
+    }
+    .work-info {
+        width: 100%;
+        height: 100%;
+    }
+    .work-text {
+        width: 100%;
+        top: 50%;
+    }
+    .work-text h1 {
+        margin-bottom: 1.2rem;
+        font-weight: 400;
+        font-size: 38px;
+        line-height: 1.2em;
+    }
+    .work-text h2 {
+        font-size: 14px;
+    }
+    .work-text h3 {
+        font-size: 10px;
+    }
+    #solution-text {
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 1); 
+    }
 
 
-@media screen and (max-width: 420px) {
+
+    #project-hdr-text {
+        left: 13%;
+        bottom: 15%;
+        width: 60%;
+        -webkit-transition: opacity ease .2s .5s;
+        -moz-transition: opacity ease .2s .5s;
+        -o-transition: opacity ease .2s .5s;
+        -ms-transition: opacity ease .2s .5s;
+        transition: opacity ease .2s .5s;
+    }
+    #project-wrap.loadAnim #project-hdr-img {
+        top: 12%;
+        left: 16%;
+        right: 16%;
+        bottom: 12%;
+    }
+    #next-project {
+        right: -14px;
+
+    }
+    #prev-project {
+        left: -14px;
+    }
+    #project-hdr-text h1 {
+        font-size: 38px;
+        line-height: 1.2em;
+        margin-bottom: 2.2rem;
+    }
+    #project-hdr-text h2 {
+        text-transform: lowercase;
+        font-size: 14px;
+        margin-bottom: 1.2rem;
+    }
+    #project-hdr-text h3 {
+        font-size: 10px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+    #overview-text {
+        position: relative;
+        float: none;
+        left: 0;
+        margin-top: 20px;
+        padding: 0 5%;
+        width: 100%;
+        @include box-sizing(border-box)
+    }
+    .overview-img-wrap {
+        position: relative;
+        float: none;
+        width: 100%;
+    }
+    .project-section {
+        padding: 7% 10% 0;
+    }
+    #solution-text {
+        position: relative;
+        float: none;
+        left: 0;
+        padding: 0 5%;
+        top: 140px;
+        margin-top: 40px;
+        width: 100%;
+        @include box-sizing(border-box);
+    }
+    #s2-img1-wrap {
+        position: relative;
+        float: none;
+    }
+    .s2-img-wrap {
+        width: 100%;
+    }
+    #s2-img2-wrap {
+        position: relative;
+        float: none;
+    }
+
+
+
+
+
+    #contact-wrap {
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0 2%;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -o-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        @include box-sizing(border-box)
+    }
+    #contact-left, #contact-right {
+        position: relative;
+        display: block;
+        height: 50%;
+        @include box-sizing(border-box);
+        @include vertical-align();
+    }
+    #contact-left {
+        float: left;
+        width: 50%;
+        -webkit-transition: all .2s .2s;
+        -moz-transition: all .2s .2s;
+        -o-transition: all .2s .2s;
+        -ms-transition: all .2s .2s;
+        transition: all .2s .2s;
+    }
+    #contact-right {
+        float: left;
+        width: 50%;
+        -webkit-transition: all .2s;
+        -moz-transition: all .2s;
+        -o-transition: all .2s;
+        -ms-transition: all .2s;
+        transition: all .2s;
+    }
+    #contact-right p {
+        display: none;
+    }
+    #contact h1 {
+        font-size: 40px;
+
+        &::before {
+            bottom: -10px;
+            width:80px;
+        }
+    }
+    #contact h2 {
+        font-size: 14px;
+        margin: 0 0 20px 0;
+    }
+    #contact h3 {
+        margin: 0;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    #contact li {
+        font-size: 14px;
+        margin-bottom: 0.2rem;
+    } 
+
+}
+
+
+@media screen and (max-width: 420px) and (orientation: portrait) {
     .sideMenuActive {
         -webkit-transform: translateX(90%);
         -moz-transform: translateX(90%);
@@ -1801,7 +2030,223 @@ section {
     } 
 
 }
+@media screen and (max-width: 420px) and (orientation: landscape) {
+    .sideMenuActive {
+        -webkit-transform: translateX(90%);
+        -moz-transform: translateX(90%);
+        -o-transform: translateX(90%);
+        -ms-transform: translateX(90%);
+        transform: translateX(90%);   
+    }
+    #side-nav {
+        left: -90%;
+        width: 90%;
+        font-size: 20px;
+    }
+    #side-nav.projectMenu {
+        width: 180%;
+    }
+    #side-nav.projectMenu #project-side{
+        opacity: 1;
+    }
+    #side-nav.projectMenu #main-side {
+        width: 50%;
+    }
+    #view-all-btn {
+        right: 0px;
+        height: 20px;
+        width: 20px;
+    }
+    .projLink h1 {
+        font-size: 18px;
+    }
 
+    #intro-text {
+        position: relative;
+        width: 80%;
+    }
+    #intro-text h1 {
+        font-size: 14px;
+    }
+    #hp-project-title {
+        left: -10px;
+        font-size: 12px;
+    }
+    .hpWorkItem {
+        height: 40vh;
+        @include bg-image(center);
+        background-size: cover;
+        background-attachment: scroll;
+    }
+    .work-info {
+        width: 100%;
+        height: 100%;
+    }
+    .work-text {
+        width: 100%;
+        top: 50%;
+    }
+    .work-text h1 {
+        margin-bottom: 1.6rem;
+        font-size: 32px;
+        line-height: 1.2em;
+    }
+    .work-text h2 {
+        font-size: 14px;
+    }
+    .work-text h3 {
+        font-size: 10px;
+
+    }
+
+
+    #project-hdr-text {
+        left: 13%;
+        bottom: 15%;
+        width: 60%;
+        -webkit-transition: opacity ease .2s .5s;
+        -moz-transition: opacity ease .2s .5s;
+        -o-transition: opacity ease .2s .5s;
+        -ms-transition: opacity ease .2s .5s;
+        transition: opacity ease .2s .5s;
+    }
+    #project-wrap.loadAnim #project-hdr-img {
+        top: 12%;
+        left: 16%;
+        right: 16%;
+        bottom: 12%;
+    }
+    #next-project {
+        right: -14px;
+
+    }
+    #prev-project {
+        left: -14px;
+    }
+    #project-hdr-text h1 {
+        font-size: 38px;
+        line-height: 1.2em;
+        margin-bottom: 2.2rem;
+    }
+    #project-hdr-text h2 {
+        text-transform: lowercase;
+        font-size: 14px;
+        margin-bottom: 1.2rem;
+    }
+    #project-hdr-text h3 {
+        font-size: 10px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+    #overview-text {
+        position: relative;
+        float: none;
+        left: 0;
+        margin-top: 20px;
+        padding: 0 5%;
+        width: 100%;
+        @include box-sizing(border-box)
+    }
+    .overview-img-wrap {
+        position: relative;
+        float: none;
+        width: 100%;
+    }
+    .project-section {
+        padding: 7% 15% 0;
+    }
+    #solution-text {
+        position: relative;
+        float: none;
+        left: 0;
+        top: 140px;
+        padding: 0 5%;
+        margin-top: 40px;
+        width: 100%;
+        @include box-sizing(border-box);
+    }
+    #s2-img1-wrap {
+        position: relative;
+        float: none;
+    }
+    .s2-img-wrap {
+        width: 100%;
+    }
+    #s2-img2-wrap {
+        position: relative;
+        float: none;
+    }
+
+
+
+
+
+    #contact-wrap {
+        top: 0;
+        width: 100%;
+        height:100%;
+        padding: 0 2%;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -o-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        @include box-sizing(border-box)
+    }
+    #contact-left, #contact-right {
+        position: relative;
+        display: block;
+        height: 40%;
+        @include box-sizing(border-box)
+    }
+    #contact-left {
+        float: right;
+        top: 43%;
+        width: 100%;
+        -webkit-transition: all .2s .2s;
+        -moz-transition: all .2s .2s;
+        -o-transition: all .2s .2s;
+        -ms-transition: all .2s .2s;
+        transition: all .2s .2s;
+    }
+    #contact-right {
+        float: left;
+        top: -40%;
+        width: 100%;
+        padding-top: 34%;
+        -webkit-transition: all .2s;
+        -moz-transition: all .2s;
+        -o-transition: all .2s;
+        -ms-transition: all .2s;
+        transition: all .2s;
+    }
+    #contact-right p {
+        display: none;
+    }
+    #contact h1 {
+        font-size: 40px;
+
+        &::before {
+            bottom: -10px;
+            width:80px;
+        }
+    }
+    #contact h2 {
+        font-size: 14px;
+        margin: 0 0 40px 0;
+    }
+    #contact h3 {
+        margin: 0;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    #contact li {
+        font-size: 14px;
+        margin-bottom: 0.2rem;
+    } 
+
+}
 @media print,
        (-o-min-device-pixel-ratio: 5/4),
        (-webkit-min-device-pixel-ratio: 1.25),
