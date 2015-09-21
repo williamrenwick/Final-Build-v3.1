@@ -821,6 +821,11 @@ section {
     overflow: hidden;
     background-size: cover;
     background-attachment: fixed;
+    -webkit-transition: height ease .6s;
+    -moz-transition: height ease .6s;
+    -o-transition: height ease .6s;
+    -ms-transition: height ease .6s;
+    transition: height ease .6s;
     @include bg-image(center);
     @include box-sizing(border-box);
     &:before, &:after {
