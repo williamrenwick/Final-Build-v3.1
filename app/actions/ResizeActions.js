@@ -9,7 +9,6 @@ var ResizeActions = {
 		ResizeCursor.set('currentHeight', windowHeight);
 	},
 	updateDocHeight: function(documentHeight) {
-		console.log('updating documentHeight', documentHeight)
 		ResizeCursor.set('currentDocHeight', documentHeight);
 	},
 	updateWindowDimensions: function(windowWidth,windowHeight,documentHeight) {
