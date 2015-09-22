@@ -57,9 +57,6 @@ var HomepageWrap = React.createClass({
 		var contactMid = this.state.documentHeight - (this.state.windowHeight / 2);
 		var scrollBtm = this.state.scrollPos + this.state.windowHeight;
 
-		console.log('scrollPos',this.state.scrollPos,'windowHeight', this.state.windowHeight, 'documentHeight', this.state.documentHeight)
-		console.log('scrollBtm < contactMid',scrollBtm < contactMid)
-
         if ((this.state.scrollPos > topTrigger) && (scrollBtm < contactMid)) {
             HomepageActions.insideWorkPosts();
         } else {
