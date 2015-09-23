@@ -35,7 +35,7 @@ function Color(colourString) {
 function changeItemBg(scrollPos) {
 	var animationBeginPos = 0,
 		animationEndPos = $(document).height(),
-		beginningColor = new Color('rgb(251, 242, 210)'),
+		beginningColor = new Color('rgb(197, 240, 247)'),
 		endingColor = new Color('rgb(255, 228, 201)');
 
 

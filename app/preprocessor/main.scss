@@ -90,6 +90,10 @@ a:active {
   src: url('../public/fonts/apercu-bold-webfont.woff') format('woff');
 }
 
+$swift-ease-out-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+$swift-ease-in-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+$swift-ease-in-out-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+
 
 * {
     font-family: 'apercu';
@@ -156,6 +160,15 @@ section {
     -o-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
 }
+@mixin center-align {
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
 @mixin bg-image($position) {
     background-repeat: no-repeat;
     background-position: $position;
@@ -190,11 +203,11 @@ section {
     -ms-transform:translateZ(0);
     -o-transform:translateZ(0);
     transform:translateZ(0);
-    -webkit-transition: -webkit-transform .2s;
-    -moz-transition: -moz-transform .2s;
-    -o-transition: -o-transform .2s;
-    -ms-transition: -ms-transform .2s;
-    transition: transform .2s;
+    -webkit-transition: -webkit-transform $swift-ease-in-timing-function .2s;
+    -moz-transition: -moz-transform $swift-ease-in-timing-function .2s;
+    -o-transition: -o-transform $swift-ease-in-timing-function .2s;
+    -ms-transition: -ms-transform $swift-ease-in-timing-function .2s;
+    transition: transform $swift-ease-in-timing-function .2s;
 }
 .fixedNav.menuActive .site-title {
     opacity: 0;
@@ -209,11 +222,11 @@ section {
     height: 18px;
     width: 18px;
     cursor: pointer;
-    -webkit-transition: width .2s;
-    -moz-transition: width .2s;
-    -o-transition: width .2s;
-    -ms-transition: width .2s;
-    transition: width .2s;
+    -webkit-transition: width $swift-ease-in-timing-function .2s;
+    -moz-transition: width $swift-ease-in-timing-function .2s;
+    -o-transition: width $swift-ease-in-timing-function .2s;
+    -ms-transition: width $swift-ease-in-timing-function .2s;
+    transition: width $swift-ease-in-timing-function .2s;
 
     &::after {
         position: absolute;
@@ -223,11 +236,11 @@ section {
         width: 0px;
         height: 100%;
         background-color: #000000;
-        -webkit-transition: width .2s;
-        -moz-transition: width .2s;
-        -o-transition: width .2s;
-        -ms-transition: width .2s;
-        transition: width .2s;
+        -webkit-transition: width  .2s;
+        -moz-transition: width  .2s;
+        -o-transition: width  .2s;
+        -ms-transition: width  .2s;
+        transition: width  .2s;
     }
     &::before {
         position: absolute;
@@ -242,11 +255,11 @@ section {
         -ms-transform: translateX(-100%);
         transform: translateX(-100%);
         opacity: 0;
-        -webkit-transition: -webkit-transform .2s, opacity .2s;
-        -moz-transition: -moz-transform .2s, opacity .2s;
-        -o-transition: -o-transform .2s, opacity .2s;
-        -ms-transition: -ms-transform .2s, opacity .2s;
-        transition: transform .2s, opacity .2s;
+        -webkit-transition: -webkit-transform $swift-ease-out-timing-function .2s, opacity .2s;
+        -moz-transition: -moz-transform $swift-ease-out-timing-function .2s, opacity .2s;
+        -o-transition: -o-transform $swift-ease-out-timing-function .2s, opacity .2s;
+        -ms-transition: -ms-transform $swift-ease-out-timing-function .2s, opacity .2s;
+        transition: transform $swift-ease-out-timing-function .2s, opacity .2s;
     }
 } 
 #menu-button:hover {
@@ -262,7 +275,7 @@ section {
     margin-top: -1px;
     height: 2px;
     width: 100%;
-    background-color: #000000;
+    background-color: #404040;
     -webkit-transition: width .2s;
     -moz-transition: width .2s;
     -o-transition: width .2s;
@@ -275,7 +288,7 @@ section {
         top: -6px;
         width: 80%;
         height: 2px;
-        background-color: #000000;
+        background-color: #404040;
         -webkit-transition: width .2s;
         -moz-transition: width .2s;
         -o-transition: width .2s;
@@ -288,7 +301,7 @@ section {
         top: 6px;
         width: 100%;
         height: 2px;
-        background-color: #000000;
+        background-color: #404040;
         -webkit-transition: width .2s;
         -moz-transition: width .2s;
         -o-transition: width .2s;
@@ -361,11 +374,11 @@ section {
     height: 100%;
     font-size: 20px;
     font-weight: 400;
-    -webkit-transition: left .2s;
-    -moz-transition: left .2s;
-    -o-transition: left .2s;
-    -ms-transition: left .2s;
-    transition: left .2s;
+    -webkit-transition: left $swift-ease-in-timing-function .2s;
+    -moz-transition: left $swift-ease-in-timing-function .2s;
+    -o-transition: left $swift-ease-in-timing-function .2s;
+    -ms-transition: left $swift-ease-in-timing-function .2s;
+    transition: left $swift-ease-in-timing-function .2s;
     //set to force hardware acceleration
     -webkit-transform:translateZ(0);
     -moz-transform:translateZ(0);
@@ -389,11 +402,11 @@ section {
     height: 100%;
     background-color: rgba(0,0,0,0.8);
     opacity: 0;
-    -webkit-transition: opacity .2s;
-    -moz-transition: opacity .2s;
-    -o-transition: opacity .2s;
-    -ms-transition: opacity .2s;
-    transition: opacity .2s;
+    -webkit-transition: opacity $swift-ease-out-timing-function .2s;
+    -moz-transition: opacity $swift-ease-out-timing-function .2s;
+    -o-transition: opacity $swift-ease-out-timing-function .2s;
+    -ms-transition: opacity $swift-ease-out-timing-function .2s;
+    transition: opacity $swift-ease-out-timing-function .2s;
 }
 #side-nav.menu-clicked {
     left: 0;
@@ -430,11 +443,11 @@ section {
         height: 1px;
         background-color: #000000;
         z-index: 2;
-        -webkit-transition: all .2s;
-        -moz-transition: all .2s;
-        -o-transition: all .2s;
-        -ms-transition: all .2s;
-        transition: all .2s;
+        -webkit-transition: all $swift-ease-in-timing-function .2s;
+        -moz-transition: all $swift-ease-in-timing-function .2s;
+        -o-transition: all $swift-ease-in-timing-function .2s;
+        -ms-transition: all $swift-ease-in-timing-function .2s;
+        transition: all $swift-ease-in-timing-function .2s;
     }
 }
 #side-nav li.active {
@@ -458,11 +471,11 @@ section {
     margin-top: -10px;
     z-index: 100;
     cursor: pointer;
-    -webkit-transition: all ease .4s;
-    -moz-transition: all ease .4s;
-    -o-transition: all ease .4s;
-    -ms-transition: all ease .4s;
-    transition: all ease .4s;
+    -webkit-transition: all $swift-ease-out-timing-function .4s;
+    -moz-transition: all $swift-ease-out-timing-function .4s;
+    -o-transition: all $swift-ease-out-timing-function .4s;
+    -ms-transition: all $swift-ease-out-timing-function .4s;
+    transition: all $swift-ease-out-timing-function .4s;
     -webkit-backface-visibility: hidden;
     &:before, &:after {
         content: '';
@@ -506,11 +519,11 @@ section {
     background-size: cover;
     @include box-sizing(border-box);
     background-color: #222222;
-    -webkit-transition: -webkit-transform ease .1s, opacity .1s;
-    -moz-transition: -moz-transform ease .1s, opacity .1s;
-    -o-transition: -o-transform ease .1s, opacity .1s;
-    -ms-transition: -ms-transform ease .1s, opacity .1s;
-    transition: transform ease .1s, opacity .1s;
+    -webkit-transition: -webkit-transform $swift-ease-in-timing-function .2s, opacity .2s;
+    -moz-transition: -moz-transform $swift-ease-in-timing-function .2s, opacity .2s;
+    -o-transition: -o-transform $swift-ease-in-timing-function .2s, opacity .2s;
+    -ms-transition: -ms-transform $swift-ease-in-timing-function .2s, opacity .2s;
+    transition: transform $swift-ease-in-timing-function .2s, opacity .2s;
 }
 .projLi {
     @include fadeInLeft(-100%);
@@ -561,11 +574,11 @@ section {
         top: 50%;
         height: 1px;
         width: 0;
-        -webkit-transition: width 0s ease, background .2s ease;
-        -moz-transition: width 0s ease, background .2s ease;
-        -ms-transition: width 0s ease, background .2s ease;
-        -o-transition: width 0s ease, background .2s ease;
-        transition: width 0s ease, background .2s ease;
+        -webkit-transition: width 0s $swift-ease-in-timing-function , background .2s ease;
+        -moz-transition: width 0s $swift-ease-in-timing-function , background .2s ease;
+        -ms-transition: width 0s $swift-ease-in-timing-function , background .2s ease;
+        -o-transition: width 0s $swift-ease-in-timing-function , background .2s ease;
+        transition: width 0s $swift-ease-in-timing-function , background .2s ease;
     }
     &:after {
         content: '';
@@ -576,31 +589,31 @@ section {
         height: 1px;
         width: 0;
         background: #FFFFB0;
-        -webkit-transition: width .2s ease;
-        -moz-transition: width .2s ease;
-        -ms-transition: width .2s ease;
-        -o-transition: width .2s ease;
-        transition: width .2s ease;
+        -webkit-transition: width .2s $swift-ease-in-timing-function;
+        -moz-transition: width .2s $swift-ease-in-timing-function;
+        -ms-transition: width .2s $swift-ease-in-timing-function;
+        -o-transition: width .2s $swift-ease-in-timing-function;
+        transition: width .2s $swift-ease-in-timing-function;
     }
 }
 .projLink:hover .strikethrough {
     &:before {
         width: 100%;
         background: #FFFFB0;
-        -webkit-transition: width .2s ease;
-        -moz-transition: width .2s ease;
-        -ms-transition: width .2s ease;
-        -o-transition: width .2s ease;
-        transition: width .2s ease;
+        -webkit-transition: width .2s $swift-ease-in-timing-function;
+        -moz-transition: width .2s $swift-ease-in-timing-function;
+        -ms-transition: width .2s $swift-ease-in-timing-function;
+        -o-transition: width .2s $swift-ease-in-timing-function;
+        transition: width .2s $swift-ease-in-timing-function;
     }
     &:after {
         width: 100%;
         background: transparent;
-        -webkit-transition: width .0s ease;
-        -moz-transition: width .0s ease;
-        -ms-transition: width .0s ease;
-        -o-transition: width .0s ease;
-        transition: width .0s ease;
+        -webkit-transition: width .0s $swift-ease-in-timing-function;
+        -moz-transition: width .0s $swift-ease-in-timing-function;
+        -ms-transition: width .0s $swift-ease-in-timing-function;
+        -o-transition: width .0s $swift-ease-in-timing-function;
+        transition: width .0s $swift-ease-in-timing-function;
     }
 }
 .projectMenu .projLink h1 {
@@ -628,11 +641,11 @@ section {
     -ms-transform: translate(-50%, 0);
     -o-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
-    -webkit-transition: all ease .3s;
-    -moz-transition: all ease .3s;
-    -o-transition: all ease .3s;
-    -ms-transition: all ease .3s;
-    transition: all ease .3s;
+    -webkit-transition: all $swift-ease-in-timing-function .3s;
+    -moz-transition: all $swift-ease-in-timing-function .3s;
+    -o-transition: all $swift-ease-in-timing-function .3s;
+    -ms-transition: all $swift-ease-in-timing-function .3s;
+    transition: all $swift-ease-in-timing-function .3s;
     @include box-sizing(border-box);
     z-index: 2;
 }
@@ -648,11 +661,11 @@ section {
     float: left;
     width: 18px;
     height: 18px;
-    -webkit-transition: all ease .3s;
-    -moz-transition: all ease .3s;
-    -o-transition: all ease .3s;
-    -ms-transition: all ease .3s;
-    transition: all ease .3s;
+    -webkit-transition: all $swift-ease-in-timing-function .3s;
+    -moz-transition: all $swift-ease-in-timing-function .3s;
+    -o-transition: all $swift-ease-in-timing-function .3s;
+    -ms-transition: all $swift-ease-in-timing-function .3s;
+    transition: all $swift-ease-in-timing-function .3s;
 
     &:after,
     &:before {
@@ -701,18 +714,44 @@ section {
     height: 100%;
     width: 100%;
     background-color: #FBF2D2;
-    -webkit-transition: -webkit-transform .2s;
-    -moz-transition: -moz-transform .2s;
-    -o-transition: -o-transform .2s;
-    -ms-transition: -ms-transform .2s;
-    transition: transform .2s;
+    -webkit-transition: -webkit-transform $swift-ease-in-timing-function .2s;
+    -moz-transition: -moz-transform $swift-ease-in-timing-function .2s;
+    -o-transition: -o-transform $swift-ease-in-timing-function .2s;
+    -ms-transition: -ms-transform $swift-ease-in-timing-function .2s;
+    transition: transform $swift-ease-in-timing-function .2s;
 }
 #intro {
     height: 100vh;
     width: 100%;
     z-index: 99;
 }
-#intro-text {
+#main-intro-text {
+    position: absolute;
+    width: 40%;
+    @include center-align;
+}
+#main-intro-text h1 {
+    position: relative;
+    font-size: 50px;
+    font-weight: 600;
+    margin: 0;
+    color: #404040;
+    z-index: 20;
+}
+h1 span.active {
+    &:after {
+        content: '';
+        display: block;
+        position: relative;
+        left: 2.3em;
+        bottom: 0.6em;
+        width: 70%;
+        height: 20px;
+        background-color: #6dcff6;
+        z-index: -1;        
+    }
+}
+#more-text {
     position: relative;
     width: 50%;
     max-width: 900px;
@@ -720,7 +759,7 @@ section {
     text-align: center;
     @include vertical-align;
 }
-#intro-text h1 {
+#more-text h2 {
     font-size: 20px;
     font-weight: 400;
     margin: 0;
@@ -790,15 +829,15 @@ section {
 #hp-projects-nav #next {
     margin-right: 5%;
 }
-#hp-project-title {
+#section-title {
     position: fixed;
     top: 50%;
-    left: 2%;
+    width: 100px;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
+    text-align: center;
     color: #404040;
-    border-bottom: #404040 2px solid;
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
@@ -809,6 +848,9 @@ section {
     -o-transition: opacity .2s .2s;
     -ms-transition: opacity .2s .2s;
     transition: opacity .2s .2s;
+}
+#section-title span {
+    border-bottom: #404040 2px solid;
 }
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>> ---- HOMEPAGE NAV END---- <<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -824,11 +866,11 @@ section {
     background-attachment: fixed;
     @include bg-image(center);
     @include box-sizing(border-box);
-    -webkit-transition: height .5s;
-    -moz-transition: height .5s;
-    -o-transition: height .5s;
-    -ms-transition: height .5s;
-    transition: height .5s;
+    -webkit-transition: height cubic-bezier(.55,0,.1,1) .5s;
+    -moz-transition: height cubic-bezier(.55,0,.1,1) .5s;
+    -o-transition: height cubic-bezier(.55,0,.1,1) .5s;
+    -ms-transition: height cubic-bezier(.55,0,.1,1) .5s;
+    transition: height cubic-bezier(.55,0,.1,1) .5s;
     &:before, &:after {
         content: '';
         position: absolute;
@@ -1341,6 +1383,7 @@ section {
     margin: 0 0 40px 0;
 }
 #contact h3 {
+    color: rgba(64,64,64,0.3);
     margin: 0;
     font-size: 12px;
     text-transform: uppercase;
@@ -1403,11 +1446,11 @@ section {
         width: 20px;
     }
 
-    #intro-text {
+    #more-text {
         position: relative;
         width: 80%;
     }
-    #intro-text h1 {
+    #more-text h2 {
         font-size: 18px;
     }
     .hpWorkItem {
@@ -1621,11 +1664,11 @@ section {
         width: 20px;
     }
 
-    #intro-text {
+    #more-text {
         position: relative;
         width: 80%;
     }
-    #intro-text h1 {
+    #more-text h2 {
         font-size: 14px;
     }
     #projects-indicator {
@@ -1845,11 +1888,11 @@ section {
         font-size: 18px;
     }
 
-    #intro-text {
+    #more-text {
         position: relative;
         width: 80%;
     }
-    #intro-text h1 {
+    #more-text h2 {
         font-size: 14px;
     }
     #hp-project-title {
@@ -2062,11 +2105,11 @@ section {
         font-size: 18px;
     }
 
-    #intro-text {
+    #more-text {
         position: relative;
         width: 80%;
     }
-    #intro-text h1 {
+    #more-text h2 {
         font-size: 14px;
     }
     #hp-project-title {

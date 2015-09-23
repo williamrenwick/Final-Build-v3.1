@@ -23,6 +23,7 @@ var HomepageWrap = React.createClass({
 		windowHeight: ['resize', 'currentHeight'],
 		documentHeight: ['resize', 'currentDocHeight'],
 		isInHomepage: ['homepage', 'isInHomepage'],
+		insideWorkPosts: ['homepage', 'insideWorkPosts'],
 		isInProjects: ['project', 'isInProjects'],
 		scrollPos: ['scrolling', 'scrollPosition'],
 		menuActive: ['menu', 'isOpen'],
@@ -30,6 +31,11 @@ var HomepageWrap = React.createClass({
 		isMobile: ['resize', 'isMobile'],
 		isTablet: ['resize', 'isTablet'],
 		isDesktop: ['resize', 'isDesktop']
+	},
+	getInitialState: function() {
+		return {
+			inContact: false
+		}
 	},
 	componentWillMount: function() {
 		HomepageActions.isInHomepage();
@@ -59,8 +65,13 @@ var HomepageWrap = React.createClass({
 
         if ((this.state.scrollPos > topTrigger) && (scrollBtm < contactMid)) {
             HomepageActions.insideWorkPosts();
-        } else {
+            this.setState({inContact: false})
+        } else if (this.state.scrollPos < topTrigger) {
             HomepageActions.outsideWorkPosts();
+            this.setState({inContact: false})
+        } else if (scrollBtm > contactMid) {
+        	HomepageActions.outsideWorkPosts();
+			this.setState({inContact: true})
         }
 	},
 	otherStyles: function() {
@@ -80,6 +91,19 @@ var HomepageWrap = React.createClass({
 
 		return styleObj;
 	},
+	sectionTitleStyle: function() {
+		var text;
+
+		if (!this.state.insideWorkPosts && !this.state.inContact) {
+			text = 'About'
+		} else if (this.state.insideWorkPosts) {
+			text = 'Projects'
+		} else if (this.state.inContact) {
+			text = 'Contact'
+		}
+
+		return text
+	},
 	getStyles: function() {
 		if (this.state.isMobile) {
 			var mobileStyles = this.mobileStyles();
@@ -94,6 +118,7 @@ var HomepageWrap = React.createClass({
 	render: function() {
 		return (
 			<div data-page='hp' id="wrap" className={ classNames({ menuHover: this.state.menuHover, sideMenuActive: this.state.menuActive }) } style={ this.getStyles() }>
+				<div id="section-title"><span>{this.sectionTitleStyle()}</span></div>
 				<Intro />
 				<WorkItems projects={this.props.projects}/>
 				<Contact />

@@ -101,7 +101,6 @@ var HomepageWorkItems = React.createClass({
     render: function() {
         return (
             <div id="workItems" style={{height: '100%', padding: '10% 10%'}}>
-                <div id="hp-project-title" style={this.projectTitleStyle()}>Projects</div>
                 <div ref="workItemsWrapper">
                     {this.renderWorkItems()}
                 </div>

@@ -32,13 +32,13 @@ var HpWorkItem = React.createClass({
 		if (nextProps.isActive && !this.props.isActive) {
 			this.runActivateAnim();
 		} else if (!nextProps.isActive && this.props.isActive) {
-			this.setSpecificState();
+			this.setInactiveState();
 		}
 	},
 	waitForState: function() {
 		setTimeout(this.setSpecificState, 40);
 	},
-	setSpecificState: function() {
+	setInactiveState: function() {
 		if (this.state.isDesktop || this.state.isTablet) {
 			this.setState({height: 25});
 		} else if (this.state.isMobile) {
@@ -72,6 +72,7 @@ var HpWorkItem = React.createClass({
 				<Link to={this.props.project.link}>
 					  	<div className="work-info">
 						  	<HomepageWorkText 
+						  		isActive={this.props.isActive}
 						  		project={this.props.project}
 						  		totalProjects={this.props.totalProjects}
 						  	/>
@@ -82,6 +83,7 @@ var HpWorkItem = React.createClass({
 			return (
 				<div className="work-info">
 					<HomepageWorkText 
+						isActive={this.props.isActive}
 				  		project={this.props.project}
 				  		totalProjects={this.props.totalProjects}
 				  	/> 

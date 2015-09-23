@@ -16,6 +16,7 @@ var WorkText = React.createClass({
 		isDesktop: ['resize', 'isDesktop'],
 	},
 	renderInner: function() {
+		console.log('renderInner', this.props.isActive)
 		if (this.props.isActive) {
 			return <ViewBtn project={this.props.project}/>;
 		}
