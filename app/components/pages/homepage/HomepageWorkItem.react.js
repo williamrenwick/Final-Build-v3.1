@@ -8,6 +8,7 @@ var PureMixin = require('react-pure-render/mixin');
 var mixin = require('baobab-react/mixins').branch;
 
 var HomepageWorkText = require('./HomepageWorkText.js');
+var ViewBtn = require('./HomepageViewBtn.react.js');
 
 
 var HpWorkItem = React.createClass({
@@ -52,12 +53,16 @@ var HpWorkItem = React.createClass({
 			this.setState({height: 65});;
 		}
 	},
-	getStyles: function() {
+	getWrapperStyle: function() {
+		return {
+			height: this.state.height + 'vh'
+		}
+	},
+	getImageStyle: function() {
 		return {
 			backgroundImage: this.props.isActive ?
 				'url(' + this.props.project.images.header + ')' :
-				'none',
-			height: this.state.height + 'vh'
+				'none'
 		};
 	},
 	getClasses: function() {
@@ -71,6 +76,7 @@ var HpWorkItem = React.createClass({
 			return  (
 				<Link to={this.props.project.link}>
 					  	<div className="work-info">
+					  		<ViewBtn project={this.props.project}/>
 						  	<HomepageWorkText 
 						  		isActive={this.props.isActive}
 						  		project={this.props.project}
@@ -96,11 +102,13 @@ var HpWorkItem = React.createClass({
 				<section
 					ref="hpWorkItem"
 					className={classNames(this.getClasses())}
-					style={this.getStyles()}
+					style={this.getWrapperStyle()}
 					onMouseEnter={this.hover}
 					onMouseLeave={this.notHovering}
 				>
-					{this.renderInner()}
+					<div className="hp-project-image" style={this.getImageStyle()}>
+						{this.renderInner()}
+					</div>
 				</section>
 		)
 	}

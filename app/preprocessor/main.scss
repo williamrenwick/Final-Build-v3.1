@@ -89,6 +89,21 @@ a:active {
   font-weight: 600;
   src: url('../public/fonts/apercu-bold-webfont.woff') format('woff');
 }
+@font-face {
+  font-family: 'wire-logotype';
+  font-weight: 600;
+  src: url('../public/fonts/wire-logotype-bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'wire-logotype';
+  font-weight: 800;
+  src: url('../public/fonts/wire-logotype-black.woff') format('woff');
+}
+@font-face {
+  font-family: 'walsh';
+  font-weight: 500;
+  src: url('../public/fonts/GTWalsheimProTrial-Medium.woff') format('woff');
+}
 
 $swift-ease-out-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
 $swift-ease-in-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
@@ -727,8 +742,26 @@ section {
 }
 #main-intro-text {
     position: absolute;
-    width: 40%;
-    @include center-align;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: -webkit-transform $swift-ease-in-timing-function .2s, opacity $swift-ease-in-timing-function .2s;
+    -moz-transition: -moz-transform $swift-ease-in-timing-function .2s, opacity $swift-ease-in-timing-function .2s;
+    -o-transition: -o-transform $swift-ease-in-timing-function .2s, opacity $swift-ease-in-timing-function .2s;
+    -ms-transition: -ms-transform $swift-ease-in-timing-function .2s, opacity $swift-ease-in-timing-function .2s;
+    transition: transform $swift-ease-in-timing-function .2s, opacity $swift-ease-in-timing-function .2s;
+}
+#main-intro-text.inactive {
+    -webkit-transform: translate(-70%, -60%);
+    -moz-transform: translate(-70%, -60%);
+    -ms-transform: translate(-70%, -60%);
+    -o-transform: translate(-70%, -60%);
+    transform: translate(-70%, -60%);    
 }
 #main-intro-text h1 {
     position: relative;
@@ -738,32 +771,155 @@ section {
     color: #404040;
     z-index: 20;
 }
-h1 span.active {
+#logotype-wrap {
+    position: relative;
+    margin: 0 auto;
+    width: 30%;
+    max-width: 292px;
+    padding-bottom: 10%;
+}
+#intro-logotype {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../public/img/wire-logotype.png);
+    @include bg-image(center);
+    background-size: contain;
+}
+#service-text {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 110px;
+    text-align: center;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 0.9em;
+}
+#service-text-span {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    font-family: 'wire-logotype' !important;
+    border-bottom: 20px solid #6dcff6;
+
+    &:after {
+        position: absolute;
+        content: '';
+        bottom:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #6dcff6;
+        -webkit-transition: height $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s;
+        -moz-transition: height $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s;
+        -ms-transition: height $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s;
+        -o-transition: height $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s;
+        transition: height $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s;    
+    }
+}
+#service-text-span.active {
+    border-bottom: 20px solid #6dcff6;
+
+    &:after {
+        height: 0%;
+    }
+}
+#find-out-more {
+    position: absolute;
+    left: 60%;
+    margin-top: 20px;
+    padding-bottom: 2px;
+    text-align: right;
+    color: #6dcff6;
+    cursor: pointer;
+
     &:after {
         content: '';
-        display: block;
-        position: relative;
-        left: 2.3em;
-        bottom: 0.6em;
-        width: 70%;
-        height: 20px;
+        position: absolute;
+        top: -2px;
+        left: 0;
+        height: 2px;
+        width: 20px;
         background-color: #6dcff6;
-        z-index: -1;        
+        -webkit-transition: top $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s .3s;
+        -moz-transition: top $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s .3s;
+        -o-transition: top $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s .3s;
+        -ms-transition: top $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s .3s;
+        transition: top $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s .3s;
+    }
+}
+#find-out-more:hover {
+    &:after {
+        top: 1.3em;
+        width: 100%;
     }
 }
 #more-text {
-    position: relative;
-    width: 50%;
+    position: absolute;
+    top:50%;
+    left: 40%;
+    width: 41%;
     max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-    @include vertical-align;
+    -webkit-transform: translate(50%, -40%);
+    -moz-transform: translate(50%, -40%);
+    -ms-transform: translate(50%, -40%);
+    -o-transform: translate(50%, -40%);
+    transform: translate(50%, -40%);
+    z-index: -1;
+    -webkit-transition: -webkit-transform $swift-ease-in-timing-function .2s, opacity $swift-ease-in-timing-function .1s .1s;
+    -moz-transition: -moz-transform $swift-ease-in-timing-function .2s, opacity $swift-ease-in-timing-function .1s .1s;
+    -o-transition: -o-transform $swift-ease-in-timing-function .2s, opacity $swift-ease-in-timing-function .1s .1s;
+    -ms-transition: -ms-transform $swift-ease-in-timing-function .2s, opacity $swift-ease-in-timing-function .1s .1s;
+    transition: transform $swift-ease-in-timing-function .2s, opacity $swift-ease-in-timing-function .1s .1s;
+}
+#more-text.active {
+    z-index: 2;
+    -webkit-transform: translate(0, -40%);
+    -moz-transform: translate(0, -40%);
+    -ms-transform: translate(0, -40%);
+    -o-transform: translate(0, -40%);
+    transform: translate(0, -40%); 
 }
 #more-text h2 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     margin: 0;
     color: #404040;
+}
+#more-text-close {
+    position: absolute;
+    bottom: -45px;
+    left: 0%;
+    margin: 0px;
+    padding-bottom: 2px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: right;
+    color: #6dcff6;
+    cursor: pointer;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        height: 2px;
+        width: 20px;
+        background-color: #6dcff6;
+        -webkit-transition: top $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s .3s;
+        -moz-transition: top $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s .3s;
+        -o-transition: top $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s .3s;
+        -ms-transition: top $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s .3s;
+        transition: top $swift-ease-in-timing-function .2s, width $swift-ease-in-timing-function .2s .3s;
+    }
+}
+#more-text-close:hover {
+    &:after {
+        top: 1.3em;
+        width: 100%;
+    }
 }
 #projects-indicator {
     position: absolute;
@@ -850,7 +1006,7 @@ h1 span.active {
     transition: opacity .2s .2s;
 }
 #section-title span {
-    border-bottom: #404040 2px solid;
+    //border-bottom: #404040 2px solid;
 }
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>> ---- HOMEPAGE NAV END---- <<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -860,7 +1016,7 @@ h1 span.active {
 .hpWorkItem {
     width: 100%;
     height: 25vh;
-    min-height: 160px;
+    min-height: 250px;
     overflow: hidden;
     background-size: cover;
     background-attachment: fixed;
@@ -871,6 +1027,13 @@ h1 span.active {
     -o-transition: height cubic-bezier(.55,0,.1,1) .5s;
     -ms-transition: height cubic-bezier(.55,0,.1,1) .5s;
     transition: height cubic-bezier(.55,0,.1,1) .5s;
+}
+.hp-project-image {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    background-size: cover;
+    @include bg-image(center);
     &:before, &:after {
         content: '';
         position: absolute;
@@ -882,13 +1045,14 @@ h1 span.active {
         height:101%;
     }
 }
-.hpWorkItem.active {
+.hpWorkItem.active .hp-project-image {
     &:before {
         background-color: rgba(240,240,240,0);
         z-index: 3;
     }
     &:after {
-        background-color: rgba(0,0,0,0.7);
+        background-color: #3C71C1;
+        opacity: 0.2;
         z-index: 2;
     }
 }
@@ -912,59 +1076,176 @@ h1 span.active {
     }
 }
 .work-text {
-    position: relative;
-    color: #404040;
-    @include vertical-align;
+    position: absolute;
+    color: #ffffff;
     @include clearfix;
 }
 .hpWorkItem.active .work-text {
-    color: #F0F0F0;
+    color: #FFFFFF;
+}
+.fields {
+    margin-left: 9em;
 }
 .work-text h2 {
     margin-bottom: 1rem;
     margin-top: 0;
-    text-transform: lowercase;
-    font-weight: 100;
+    text-transform: uppercase;
+    font-weight: 600;
     font-size: 18px;
 }
 .work-text h1 {
-    margin-bottom: 2rem;
-    margin-top: 0px;
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 1.2em;
+    margin-bottom: 0.4em;
+    margin-top: 0.6em;
+    font-size: 74px;
+    line-height: 1em;
     text-align: left;
-}
-.work-text h3 {
-    font-size: 12px;
-    margin: 0;
     text-transform: uppercase;
 }
+.fields h3 {
+    position: relative;
+    font-size: 12px;
+    margin: 0 0 0 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #6dcff6;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0.5em;
+        left: -30px;
+        width: 20px;
+        height: 2px;
+        background-color: #6dcff6;
+    }
+}
+.hp-project-title-indicator {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    text-align: right;
+}
+.hp-project-title-indicator h3 {
+    position: relative;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 0 30px;
+    text-transform: uppercase;
+    color: #6dcff6;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 1.9em;
+        left: 20%;
+        width: 20px;
+        height: 2px;
+        background-color: #6dcff6;
+    }
+}
+.hp-project-title {
+    position: relative;
+    display: inline-block;
+    font-family: 'wire-logotype';
+    margin-top: 0px;
+    font-weight: 600;
+
+    &:after {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 5px;
+    }
+}
+.hpWorkItem:nth-of-type(odd) .hp-project-image {
+    left: 15%;
+}
+.hpWorkItem:nth-of-type(odd) .work-text {
+    left: -15%;
+}
+.hpWorkItem:nth-of-type(odd) .view-proj {
+    right: 5%;
+}
+.hpWorkItem:nth-of-type(even) .hp-project-image {
+    left: 15%;
+}
+.hpWorkItem:nth-of-type(even) .work-text {
+    right: -15%;
+}
+.hpWorkItem:nth-of-type(odd) .view-proj {
+    right: 5%;
+}
+.hpWorkItem:nth-of-type(1) .hp-project-title {
+    &:after {
+        background-color: #769ac4;
+    }
+}
+.hpWorkItem:nth-of-type(2) .hp-project-title {
+    &:after {
+        background-color: #4d58e9;
+    }
+}
+.hpWorkItem:nth-of-type(3) .hp-project-title {
+    &:after {
+        background-color: #ffdc95;
+    }
+}
+.hpWorkItem:nth-of-type(4) .hp-project-title {
+    &:after {
+        background-color: #0072bc;
+    }
+}
+.hpWorkItem:nth-of-type(5) .hp-project-title {
+    &:after {
+        background-color: #99c9d5;
+    }
+}
+.hpWorkItem:nth-of-type(6) .hp-project-title {
+    &:after {
+        background-color: #fa907b;
+    }
+}
+.hpWorkItem:nth-of-type(7) .hp-project-title {
+    &:after {
+        background-color: #3243db;
+    }
+}
 .project-number {
+    display: none;
     position: relative;
     top: -1em;
     margin-left: 0.6em;
     font-weight: 600;
     font-size: 0.5em;
+    color: #6dcff6;
+    border-bottom: 2px solid #ffffff;
+}
+.hpWorkItem.active .project-number {
+    color: #404040;
 }
 .hpWorkItem .view-proj {
-    position: relative;
+    position: absolute;
     display: block;
     width: 100px;
-    bottom: 0px;
     border: none;
+    color: #ffffff;
     text-decoration: none;
     background-color: transparent;
     font-family: inherit;
     font-size: 12px;
     cursor: pointer;
     @include box-sizing(border-box);
+    @include vertical-align;
+}
+.view-proj p {
+    margin-left: 30px;
 }
 .hpWorkItem .view-plus {
     position: absolute;
     float: left;
     width: 18px;
     height: 18px;
+    @include vertical-align;
 
     &:after,
     &:before {
@@ -989,13 +1270,10 @@ h1 span.active {
 .hpWorkItem.active .view-plus {
     &:after,
     &:before {
-        background-color: #F0F0F0;
+        background-color: #FFFFFF;
     }
 }
-.hpWorkItem .view-proj p {
-    margin-left: 30px;
-    margin-bottom: 0;
-}
+
 .work-info {
     background-color: rgba(255,255,255,0);
 }
@@ -1356,6 +1634,7 @@ h1 span.active {
     margin-top: 0;
     font-size: 60px;
     font-weight: 200;
+    color: #404040;
 
     &::before {
         position: absolute;
@@ -1364,7 +1643,7 @@ h1 span.active {
         width:100px;
         height: 1px;
         margin-left: 0.1em;
-        background-color: #000000;
+        background-color: #ffffff;
         -webkit-transition: all .2s;
         -moz-transition: all .2s;
         -o-transition: all .2s;
@@ -1383,7 +1662,7 @@ h1 span.active {
     margin: 0 0 40px 0;
 }
 #contact h3 {
-    color: rgba(64,64,64,0.3);
+    color: rgb(255,255,255);
     margin: 0;
     font-size: 12px;
     text-transform: uppercase;
@@ -1445,10 +1724,32 @@ h1 span.active {
         height: 20px;
         width: 20px;
     }
-
+    #section-title {
+        -webkit-transform: translateX(-10px) rotate(-90deg);
+        -moz-transform: translateX(-10px) rotate(-90deg);
+        -o-transform: translateX(-10px) rotate(-90deg);
+        -ms-transform: translateX(-10px) rotate(-90deg);
+        transform: translateX(-10px) rotate(-90deg);
+    }
+    #service-text {
+        font-size: 60px;
+    }
     #more-text {
-        position: relative;
-        width: 80%;
+        position: absolute;
+        left: 50%;
+        width: 60%;
+        -webkit-transform: translate(50%, -50%);
+        -moz-transform: translate(50%, -50%);
+        -ms-transform: translate(50%, -50%);
+        -o-transform: translate(50%, -50%);
+        transform: translate(50%, -50%);
+    }
+    #more-text.active {
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); 
     }
     #more-text h2 {
         font-size: 18px;
@@ -1663,10 +1964,50 @@ h1 span.active {
         height: 20px;
         width: 20px;
     }
-
+    #section-title {
+        -webkit-transform: translateX(-10px) rotate(-90deg);
+        -moz-transform: translateX(-10px) rotate(-90deg);
+        -o-transform: translateX(-10px) rotate(-90deg);
+        -ms-transform: translateX(-10px) rotate(-90deg);
+        transform: translateX(-10px) rotate(-90deg);
+    }
+    #service-text {
+        font-size: 60px;
+    }
     #more-text {
-        position: relative;
-        width: 80%;
+        position: absolute;
+        left: 50%;
+        width: 60%;
+        -webkit-transform: translate(50%, -50%);
+        -moz-transform: translate(50%, -50%);
+        -ms-transform: translate(50%, -50%);
+        -o-transform: translate(50%, -50%);
+        transform: translate(50%, -50%);
+    }
+    #more-text.active {
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); 
+    }
+    #more-text-close {
+        position: absolute;
+        top: 50%;
+        left: 110%;
+        margin-top: 0px;
+        padding-bottom: 2px;
+        font-size: 16px;
+    }
+    #find-out-more {
+        top: 50%;
+        left: 100%;
+        margin-top: 10px;
+        -webkit-transform: translate(0%, -50%);
+        -moz-transform: translate(0%, -50%);
+        -ms-transform: translate(0%, -50%);
+        -o-transform: translate(0%, -50%);
+        transform: translate(0%, -50%); 
     }
     #more-text h2 {
         font-size: 14px;
@@ -1887,13 +2228,45 @@ h1 span.active {
     .projLink h1 {
         font-size: 18px;
     }
-
+    #section-title {
+        font-size: 12px;
+        -webkit-transform: translateX(-30px) rotate(-90deg);
+        -moz-transform: translateX(-30px) rotate(-90deg);
+        -o-transform: translateX(-30px) rotate(-90deg);
+        -ms-transform: translateX(-30px) rotate(-90deg);
+        transform: translateX(-30px) rotate(-90deg);
+    }
+    #service-text {
+        font-size: 42px;
+    }
+    #service-text span {
+        border-bottom: 12px solid #6dcff6;
+    }
+    #find-out-more {
+        left: 56%;
+    }
     #more-text {
-        position: relative;
-        width: 80%;
+        position: absolute;
+        left: 50%;
+        width: 60%;
+        -webkit-transform: translate(50%, -50%);
+        -moz-transform: translate(50%, -50%);
+        -ms-transform: translate(50%, -50%);
+        -o-transform: translate(50%, -50%);
+        transform: translate(50%, -50%);
+    }
+    #more-text.active {
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); 
     }
     #more-text h2 {
         font-size: 14px;
+    }
+    #projects-indicator {
+        font-size: 12px;
     }
     #hp-project-title {
         left: -10px;
@@ -2104,10 +2477,32 @@ h1 span.active {
     .projLink h1 {
         font-size: 18px;
     }
-
+     #section-title {
+        -webkit-transform: translateX(-20px) rotate(-90deg);
+        -moz-transform: translateX(-20px) rotate(-90deg);
+        -o-transform: translateX(-20px) rotate(-90deg);
+        -ms-transform: translateX(-20px) rotate(-90deg);
+        transform: translateX(-20px) rotate(-90deg);
+    }
+    #service-text {
+        font-size: 60px;
+    }
     #more-text {
-        position: relative;
-        width: 80%;
+        position: absolute;
+        left: 50%;
+        width: 60%;
+        -webkit-transform: translate(50%, -50%);
+        -moz-transform: translate(50%, -50%);
+        -ms-transform: translate(50%, -50%);
+        -o-transform: translate(50%, -50%);
+        transform: translate(50%, -50%);
+    }
+    #more-text.active {
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); 
     }
     #more-text h2 {
         font-size: 14px;

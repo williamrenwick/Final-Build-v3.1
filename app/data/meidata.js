@@ -13,7 +13,7 @@ var brief = "Mei-Li Rose is a British Jeweller who learnt her trade in Birmingha
 var solution = "We collaborated to achieve a logotype that she was happy with and it was then applied to a website design. Since then the designers at Sharpener Agency have created a fine website, meaning the design below was never used. The logo however still remains the same and is still sits well within the updated brand."
 
 var text = {
-	title: 'Mei li Rose',
+	title: 'Mei-li Rose',
 	client: 'Innocellence',
 	fields: 'UX, Design',
 	brief: brief,

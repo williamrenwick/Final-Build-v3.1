@@ -3,8 +3,6 @@ var React = require('react');
 var PureMixin = require('react-pure-render/mixin');
 var mixin = require('baobab-react/mixins').branch;
 
-var ViewBtn = require('./HomepageViewBtn.react.js');
-
 var WorkText = React.createClass({
 	propTypes: {
 		isActive: React.PropTypes.bool.isRequired,
@@ -16,13 +14,8 @@ var WorkText = React.createClass({
 		isDesktop: ['resize', 'isDesktop'],
 	},
 	renderInner: function() {
-		console.log('renderInner', this.props.isActive)
-		if (this.props.isActive) {
-			return <ViewBtn project={this.props.project}/>;
-		}
-
 		return (
-			<div>
+			<div className='fields'>
 				<h3>Fields</h3>
                 <h2>{this.props.project.text.fields}</h2>
             </div>
@@ -31,8 +24,11 @@ var WorkText = React.createClass({
 	render: function() {
 		return (
 			<div className="work-text">
+				<div className="hp-project-title-indicator">
+					<h3>Project Title</h3>
+				</div>
 		  	    <h1>
-		  	    	{this.props.project.text.title}
+		  	    	<span className="hp-project-title">{this.props.project.text.title}</span>
 		  	    	<span className="project-number">
 		  	    		{(this.props.project.index + 1) + '/' + (this.props.totalProjects)}
 		  	    	</span>
