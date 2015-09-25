@@ -794,8 +794,8 @@ section {
     font-size: 110px;
     text-align: center;
     font-weight: 800;
-    color: #ffffff;
     line-height: 0.9em;
+    color: #ffffff;
 }
 #service-text-span {
     position: relative;
@@ -1052,7 +1052,7 @@ section {
     }
     &:after {
         background-color: #3C71C1;
-        opacity: 0.2;
+        opacity: 0.4;
         z-index: 2;
     }
 }
