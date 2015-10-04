@@ -25,12 +25,8 @@ var SideNavProject = React.createClass({
         $(window).scrollTop(postPosition);
     },
     calculateHeight: function(numLis) {
-        var optimalHeight = 170;
-        var totalLiHeight = numLis * optimalHeight;
-
-        return totalLiHeight < this.state.windowHeight ?
-            newHeight :
-            optimalHeight;
+        var minHeight = 170;
+        return Math.max(this.state.windowHeight / numLis, minHeight);
     },
     getStyles: function() {
         return {

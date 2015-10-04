@@ -1,6 +1,7 @@
 var directory = 'img/mei/';
 
 var images = {
+	headerfade: directory + 'mainfade.jpg',
 	header: directory + 'main.jpg',
 	overview: directory + '2.jpg',
 	brief1: directory + '3.jpg',

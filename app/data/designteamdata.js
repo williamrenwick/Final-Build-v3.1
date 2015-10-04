@@ -1,6 +1,7 @@
 var directory = 'img/designteam/';
 
 var images = {
+	headerfade: directory + 'mainfade.jpg',
 	header: directory + 'main.jpg',
 	overview: directory + '1.jpg',
 	brief1: directory + '2.gif',

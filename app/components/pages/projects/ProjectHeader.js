@@ -77,9 +77,12 @@ var ProjectHdr = React.createClass({
 	},
 	render: function() {
 		var activeProject = this.props.activeProject;
+
 		return (
 			<div id="project-hdr">
-				<div id="project-hdr-img" style={{backgroundImage: 'url(' + activeProject.images.header + ')'}}></div>
+				<div id="project-hdr-img" style={{backgroundImage: 'url(' + activeProject.images.headerfade + ')'}}>
+					<div id="project-hdr-orig-img" style={{backgroundImage: 'url(' + activeProject.images.header + ')'}}></div>
+				</div>
 				<PrevProject projects={this.props.projects} activeProject={activeProject}/>
 				<NextProject projects={this.props.projects} activeProject={activeProject}/>
 				<div id="project-hdr-text" style={ this.getTextStyles() }>

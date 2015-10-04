@@ -1,7 +1,8 @@
 var directory = 'img/roche/';
 
 var images = {
-	header: directory + 'main.jpg',
+	headerfade: directory + 'maindfade.jpg',
+	header: directory + 'maind.jpg',
 	overview: directory + '1.jpg',
 	brief1: directory + '2.jpg',
 	brief2: directory + '3.jpg',

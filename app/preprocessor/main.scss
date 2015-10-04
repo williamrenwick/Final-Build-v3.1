@@ -876,11 +876,11 @@ section {
 }
 #more-text.active {
     z-index: 2;
-    -webkit-transform: translate(0, -40%);
-    -moz-transform: translate(0, -40%);
-    -ms-transform: translate(0, -40%);
-    -o-transform: translate(0, -40%);
-    transform: translate(0, -40%); 
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%); 
 }
 #more-text h2 {
     font-size: 18px;
@@ -1051,8 +1051,8 @@ section {
         z-index: 3;
     }
     &:after {
-        background-color: #3C71C1;
-        opacity: 0.4;
+        background-color: #769AC4;
+        opacity: 0.6;
         z-index: 2;
     }
 }
@@ -1144,7 +1144,7 @@ section {
 .hp-project-title {
     position: relative;
     display: inline-block;
-    font-family: 'wire-logotype';
+    //font-family: 'wire-logotype';
     margin-top: 0px;
     font-weight: 600;
 
@@ -1386,6 +1386,21 @@ section {
     -ms-transition: all .2s .3s;
     transition: all .2s .3s;
 }
+#project-hdr-orig-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include bg-image(center);
+    background-size: cover;
+    -webkit-transition: all .2s .3s;
+    -moz-transition: all .2s .3s;
+    -o-transition: all .2s .3s;
+    -ms-transition: all .2s .3s;
+    transition: all .2s .3s;
+}
+#projectWrap.loadAnim #project-hdr-orig-img {
+    opacity: 0;
+}
 #projectWrap.loadAnim #project-hdr-img {
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
@@ -1394,21 +1409,32 @@ section {
     transform: scale(0.8);
 }
 #project-hdr-text h1 {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 50px;
     line-height: 1.2em;
     margin-bottom: 2.2rem;
+    text-transform: uppercase;
 }
 #project-hdr-text h2 {
-    text-transform: lowercase;
-    font-weight: 100;
+    text-transform: uppercase;
+    font-weight: 600;
     font-size: 18px;
     margin-bottom: 1.2rem;
 }
 #project-hdr-text h3 {
+    position: relative;
     font-size: 12px;
-    margin: 0;
+    margin: 0 0 0 30px;
     text-transform: uppercase;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0.5em;
+        left: -2.4em;
+        width: 20px;
+        height: 2px;
+        background-color: #ffffff;
+    }
 }
 .close-proj {
     position: relative;
