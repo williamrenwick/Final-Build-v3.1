@@ -36,7 +36,7 @@ function changeItemBg(scrollPos) {
 	var animationBeginPos = 0,
 		animationEndPos = $(document).height(),
 		beginningColor = new Color('rgb(245, 240, 233)'),
-		endingColor = new Color('rgb(240, 225, 226)');
+		endingColor = new Color('rgb(217, 225, 226)');
 
 
 	if (scrollPos >= animationBeginPos && scrollPos <= animationEndPos ) { 
