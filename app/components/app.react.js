@@ -43,6 +43,7 @@ var App = React.createClass({
 	render: function() {
 		return (
 			<div id="reactWrap">
+				<Loader />
 				<MainNav ref="main-nav"/>
 				<SideNav projects={PROJECTS} ref="side-nav" />
 				<RouteHandler projects={PROJECTS} {...this.props} ref="content" />

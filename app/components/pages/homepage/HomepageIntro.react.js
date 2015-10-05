@@ -8,6 +8,7 @@ var moreText = "WIRE Design is a studio founded and run by William Renwick. We o
 var HomepageIntro = React.createClass({
     mixins: [mixin, PureMixin],
     cursors: {
+        isPreloaded: ['general', 'isPreloaded'],
         insideWorkPosts: ['homepage', 'insideWorkPosts'],
         windowHeight: ['resize', 'currentHeight'],
         isMobile: ['resize', 'isMobile'],
@@ -23,7 +24,11 @@ var HomepageIntro = React.createClass({
         }
     },
     componentDidMount: function() {
-        this.changeText()
+        if (this.state.isPreloaded) {
+            this.changeText()
+        } else {
+            setTimeout(this.changeText, 6000);
+        }
     },
     handleMoreClick: function() {
         if (!this.state.viewingMore) {
@@ -39,22 +44,6 @@ var HomepageIntro = React.createClass({
         var translateAmount = -( this.state.scrollPos / 10 );
 
         ScrollActions.textTranslateAmount(translateAmount);
-    },
-    scrollFade: function() {
-        var opacityStyle;
-
-        if (this.state.scrollPos <= 0) {
-            styles.opacity = 1;
-        } else if (this.state.scrollPos > 0 && this.state.scrollPos < (this.state.windowHeight/2)) {
-            var percentageScrolled = this.state.scrollPos / (this.state.windowHeight/2);
-            var opacity = 1 - percentageScrolled;
-
-            opacityStyle = opacity;
-        } else {
-            opacityStyle = 0;
-        }
-
-        return opacityStyle
     },
     changeText: function() {
         var self = this;

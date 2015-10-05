@@ -206,10 +206,99 @@ section {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: black;
+    opacity: 1;
+    background-color: #769ac4;
     z-index: 10000;
+    -webkit-transition: height $swift-ease-out-timing-function 0.6s;
+    -moz-transition: height $swift-ease-out-timing-function 0.6s;
+    -o-transition: height $swift-ease-out-timing-function 0.6s;
+    -ms-transition: height $swift-ease-out-timing-function 0.6s;
+    transition: height $swift-ease-out-timing-function 0.6s;
+}
+#loader-logo {
+    position: absolute;
+    width: 51.5px;
+    height: 26px;
+    opacity: 1;
+    background-image: url(../public/img/wire-wiggle-white.png);
+    background-size: contain;
+    @include bg-image(center);
+    @include center-align;
+    -webkit-transition: opacity $swift-ease-out-timing-function 0.6s;
+    -moz-transition: opacity $swift-ease-out-timing-function 0.6s;
+    -o-transition: opacity $swift-ease-out-timing-function 0.6s;
+    -ms-transition: opacity $swift-ease-out-timing-function 0.6s;
+    transition: opacity $swift-ease-out-timing-function 0.6s;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: -1px;
+        width: 54.5px;
+        height: 2px;
+        top: 13.5px;
+        background-color: white;
+        border-radius: 2px;
+        -webkit-animation: logoLineWidth 2s $swift-ease-in-out-timing-function 0.5s infinite;
+        -moz-animation: logoLineWidth 2s $swift-ease-in-out-timing-function 0.5s infinite;
+        -o-animation: logoLineWidth 2s $swift-ease-in-out-timing-function 0.5s infinite;
+        -ms-animation: logoLineWidth 2s $swift-ease-in-out-timing-function 0.5s infinite;
+        animation: logoLineWidth 2s $swift-ease-in-out-timing-function 0.5s infinite;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        left: 54%;
+        width: 4px;
+        height: 4px;
+        border-radius: 10px;
+        border: 2px solid #ffffff;
+        -webkit-animation: logoBallTop 1s $swift-ease-in-out-timing-function 0.5s alternate infinite;
+        -moz-animation: logoBallTop 1s $swift-ease-in-out-timing-function 0.5s alternate infinite;
+        -o-animation: logoBallTop 1s $swift-ease-in-out-timing-function 0.5s alternate infinite;
+        -ms-animation: logoBallTop 1s $swift-ease-in-out-timing-function 0.5s alternate infinite;
+        animation: logoBallTop 1s $swift-ease-in-out-timing-function 0.5s alternate infinite;
+    } 
+}
+@-webkit-keyframes logoLineWidth {
+    0% {
+        left: -1%;
+        width: 0px;
+        right: 101%;
+    }
+    40% {
+        left: -1%;
+        width: 54.5px;
+        right: 1%;
+
+    }
+    60% {
+        left: -1%;
+        width: 54.5px;
+        right: 1%;
+
+    }
+    100% {
+        left: 101%;
+        width: 0px;
+        right: 1%;
+
+    }
+}
+@-webkit-keyframes logoBallTop {
+    0% {top: 0%;}
+    100% {top: 100%}
 }
 
+
+
+
+#loader.loaded {
+    height: 0%;
+}
+#loader.loaded #loader-logo {
+    opacity: 0;
+}
 ////////////////////////////// ---- NAV ---- //////////////////////////////
 
 .fixedNav {

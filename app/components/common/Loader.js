@@ -3,11 +3,23 @@ var React = require('react');
 var mixin = require('baobab-react/mixins').branch
 var classNames = require('classnames');
 
-var Loader = React.createClass({
-	render: function() {
-		return (
-			<div id="loader">
+var AppActions = require('../../actions/appActions.js')
 
+var Loader = React.createClass({
+	mixins: [mixin], 
+	cursors: {
+		isPreloaded: ['general', 'isPreloaded']
+	},
+	componentDidMount: function() {
+		setTimeout(function() {
+			AppActions.isPreloaded();
+		}, 6000)
+	},
+	render: function() {
+		console.log(this.state.isPreloaded)
+		return (
+			<div id="loader" className={classNames({loaded: this.state.isPreloaded})}>
+				<div id='loader-logo'></div>
 			</div>
 		)
 	}
