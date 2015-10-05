@@ -2,6 +2,7 @@ var React = require('react');
 
 var mixin = require('baobab-react/mixins').branch
 var classNames = require('classnames');
+var ResizeActions = require('../../actions/ResizeActions.js');
 
 var Contact = React.createClass({
 	mixins: [mixin],
@@ -10,6 +11,10 @@ var Contact = React.createClass({
 		documentHeight: ['resize', 'currentDocHeight'],
 		isInProjects: ['project', 'isInProjects'],
 		scrollPos: ['scrolling', 'scrollPosition']
+	},
+	componentDidMount: function() {
+		var docH = $(document).height();
+		ResizeActions.updateDocHeight(docH);
 	},
 	willBeActive: function() {
 		var windowHeight = this.state.windowHeight;
