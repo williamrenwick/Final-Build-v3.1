@@ -6,7 +6,19 @@ var images = {
 	overview: directory + '2.jpg',
 	brief1: directory + '3.jpg',
 	brief2: directory + '4.jpg',
-	section3: directory + '1.jpg'
+	section3: directory + '1.jpg',
+	arrayForPreload: function() {
+		var self = this;
+
+		return [
+			self.headerfade,
+			self.header,
+			self.overview,
+			self.brief1,
+			self.brief2,
+			self.section3
+		]
+	}
 }
 
 
