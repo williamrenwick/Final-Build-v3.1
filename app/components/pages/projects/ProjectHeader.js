@@ -13,6 +13,7 @@ var ProjectHdr = React.createClass({
 	cursors: {
 		windowHeight: ['resize', 'currentHeight'],
 		scrollPos: ['scrolling', 'scrollPosition'],
+		showSideClose: ['scrolling', 'showSideClose'],
 		textTranslate: ['scrolling', 'textTranslateAmount'],
 		menuHover: ['menu', 'isHovering'],
 		menuActive: ['menu', 'isOpen'],
@@ -41,6 +42,12 @@ var ProjectHdr = React.createClass({
 	},
 	handleScroll: function() {
 		this.calcTranslate();
+
+		if (this.state.scrollPos > this.state.windowHeight * 0.2) {
+			ScrollActions.showSideClose();
+		} else {
+			ScrollActions.hideSideClose();
+		}
 	},
 	desktopStyles: function() {
 		var styleObj = {
@@ -75,19 +82,35 @@ var ProjectHdr = React.createClass({
         }
         return styles
 	},
+	sideCloseText: function() {
+		var activeProject = this.props.activeProject;
+
+		if (this.state.isDesktop) {
+			return 'Viewing: ' + activeProject.text.title
+		} else if (this.state.isTablet) {
+			return 'Close'
+		} else if (this.state.isMobile) {
+			return 'Close'
+		}
+	},
 	render: function() {
 		var activeProject = this.props.activeProject;
 
 		return (
 			<div id="project-hdr">
+
 				<div id="project-hdr-img" style={{backgroundImage: 'url(' + activeProject.images.headerfade + ')'}}>
 					<div id="project-hdr-orig-img" style={{backgroundImage: 'url(' + activeProject.images.header + ')'}}></div>
 				</div>
+
+				<div id="closeProjSide" className={classNames({hide: !this.state.showSideClose})}>
+			        <Link to="home"><p>{this.sideCloseText()}</p></Link>
+				</div>
 				<PrevProject projects={this.props.projects} activeProject={activeProject}/>
 				<NextProject projects={this.props.projects} activeProject={activeProject}/>
+
 				<div id="project-hdr-text" style={ this.getTextStyles() }>
-				    <div className="close-proj">
-				        <div className="view-close"></div>
+				    <div className={classNames({closeProj: true, hide: this.state.showSideClose})}>
 				        <Link to="home"><p>Close Project</p></Link>
 				    </div>
 				    <h1>{activeProject.text.title}</h1>
@@ -96,6 +119,7 @@ var ProjectHdr = React.createClass({
 				    <h3>Fields</h3>
 				    <h2>{activeProject.text.fields}</h2>
 				</div>
+
 				<div id="header-arrow" className="down-arrow" style={this.getArrowStyle()}></div>
 			</div>
 		)

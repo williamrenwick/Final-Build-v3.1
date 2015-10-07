@@ -1,6 +1,10 @@
 var React = require('react');
+var SectionThreeVideo = require('./SectionThreeVideo.js');
+
+var Youtube = require('react-youtube');
 var mixin = require('baobab-react/mixins').branch;
 var classNames = require('classnames');
+
 
 
 var SectionThree = React.createClass({
@@ -13,15 +17,27 @@ var SectionThree = React.createClass({
 	render: function() {
 		var activeProject = this.props.activeProject;
 
-		return (
-			<div id="section3" className="project-section">
-				<div className="s3-img-wrap">
-					<div id="s3-img">
-						<div style={{backgroundImage: 'url(' + activeProject.images.section3 + ')'}}></div>
+		if (activeProject.video !== undefined) {
+			return (
+				<div id="section3" className="project-section">
+					<div ref='videowrap' className="s3-img-wrap">
+						<SectionThreeVideo activeProject={activeProject} />
 					</div>
 				</div>
-			</div>
-		)
+			)
+		} else {
+			return (
+				<div id="section3" className="project-section">
+					<div className="s3-img-wrap">
+						<div id="s3-img">
+							<div style={{backgroundImage: 'url(' + activeProject.images.section3 + ')'}}></div>
+						</div>
+					</div>
+				</div>
+			)
+		}
+
+
 	}
 });
 

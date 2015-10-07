@@ -1,9 +1,12 @@
 var React = require('react');
+var Router = require('react-router');
 var mixin = require('baobab-react/mixins').branch;
 var PureMixin = require('react-pure-render/mixin');
 var menuActions = require('../../actions/actions.js');
 var PROJECTS = require('../../data/projects.js');
 var classNames = require('classnames');
+
+var Link = Router.Link;
 
 var MainNav = React.createClass({
 	mixins: [mixin, PureMixin],
@@ -87,7 +90,9 @@ var MainNav = React.createClass({
 	          <div id="menu-button" onClick={this.menuToggle} ref="menu-btn">
 	              <span className="menu-line"></span>
 	          </div>
-	          <div className="site-title"></div>
+	          <Link to='home'>
+	          	<div className="site-title"></div>
+	          </Link>
 	        </nav>
 		)
 	}

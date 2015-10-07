@@ -14,6 +14,12 @@ var scrollingActions = {
 	textTranslateAmount: function(amount) {
 		ScrollCursor.set('textTranslateAmount', amount);
 		StateTree.commit();
+	},
+	showSideClose: function() {
+		ScrollCursor.set('showSideClose', true);
+	},
+	hideSideClose: function() {
+		ScrollCursor.set('showSideClose', false);
 	}
 }
 

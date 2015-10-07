@@ -12,6 +12,7 @@ var Mount = require('../components/pages/projects/mountkimbie.js');
 var Snap = require('../components/pages/projects/snap.js');
 var Prism = require('../components/pages/projects/prism.js');
 var Design = require('../components/pages/projects/designteam.js');
+var Homemade = require('../components/pages/projects/panasonic.js');
 
 module.exports = (
   <Route handler={App}>
@@ -23,5 +24,6 @@ module.exports = (
   	<Route name="snap" path="snap" handler={Snap}/>
   	<Route name="prism" path="prism" handler={Prism}/>
   	<Route name="design-team" path="design-team" handler={Design}/>
+    <Route name="better-homemade" path="better-homemade" handler={Homemade}/>
   </Route>
 );
