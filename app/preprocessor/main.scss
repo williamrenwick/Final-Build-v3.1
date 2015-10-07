@@ -1308,7 +1308,7 @@ section {
 .work-text h1 {
     margin-bottom: 0.4em;
     margin-top: 0.6em;
-    font-size: 74px;
+    font-size: 68px;
     line-height: 1em;
     text-align: left;
     text-transform: uppercase;
@@ -1419,6 +1419,11 @@ section {
 .hpWorkItem:nth-of-type(7) .hp-project-title {
     &:after {
         background-color: #3243db;
+    }
+}
+.hpWorkItem:nth-of-type(8) .hp-project-title {
+    &:after {
+        background-color: #769ac4;
     }
 }
 .project-number {
