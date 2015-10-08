@@ -15,6 +15,10 @@ var scrollingActions = {
 		ScrollCursor.set('textTranslateAmount', amount);
 		StateTree.commit();
 	},
+	imgTranslateAmount: function(amount) {
+		ScrollCursor.set('imgTranslateAmount', amount);
+		StateTree.commit();
+	},
 	showSideClose: function() {
 		ScrollCursor.set('showSideClose', true);
 	},

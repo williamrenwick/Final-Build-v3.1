@@ -22,6 +22,7 @@ var stateTree = new Baobab({
 		scrollPosition: null,
 		isScrolling: null,
 		textTranslateAmount: null,
+		imgTranslateAmount: null,
 		showSideClose: false
 	},
 	homepage: {

@@ -1,5 +1,7 @@
 var React = require('react');
+
 var classNames = require('classnames');
+var ScrollActions = require('../../../actions/scrollActions.js');
 var PureMixin = require('react-pure-render/mixin');
 var mixin = require('baobab-react/mixins').branch;
 
@@ -13,44 +15,66 @@ var IntroBackground = React.createClass({
         isTablet: ['resize', 'isTablet'],
         isDesktop: ['resize', 'isDesktop'],
         scrollPos: ['scrolling', 'scrollPosition'],
+        imgTranslate: ['scrolling', 'imgTranslateAmount'],
         isPreloaded: ['general', 'isPreloaded']
     },
-    getTransformStyle: function(translateFactor, rotateAmount) {
+    componentWillMount: function() {
+        $(window).on('scroll', this.handleScroll)
+    },
+    componentWillUnmount: function() {
+        $(window).off('scroll', this.handleScroll)
+    },
+    componentDidMount: function() {
+        var self = this;
+
+        setTimeout(function() {
+            self.calcTranslate();
+        }, 30)
+    },
+    calcTranslate: function() {
+        var translateAmount = -( this.state.scrollPos * 0.3 );
+
+        ScrollActions.imgTranslateAmount(translateAmount);
+    },
+    handleScroll: function() {
+        this.calcTranslate();
+    },
+    getTransformStyle: function(rotateAmount) {
         var styles = {
-            WebkitTransform: 'translateY(' + (this.state.scrollPos * translateFactor) + 'px) rotate(' + rotateAmount + 'deg)',
-            MozTransform: 'translateY(' + (this.state.scrollPos * translateFactor) + 'px) rotate(' + rotateAmount + 'deg)',
-            OTransform: 'translateY(' + (this.state.scrollPos * translateFactor) + 'px) rotate(' + rotateAmount + 'deg)',
-            msTransform: 'translateY(' + (this.state.scrollPos * translateFactor) + 'px) rotate(' + rotateAmount + 'deg)',
-            transform: 'translateY(' + (this.state.scrollPos * translateFactor) + 'px) rotate(' + rotateAmount + 'deg)'
-        }   
+                WebkitTransform: 'translateY(' + this.state.imgTranslate + 'px) rotate(' + rotateAmount + 'deg)',
+                MozTransform: 'translateY(' + this.state.imgTranslate + 'px) rotate(' + rotateAmount + 'deg)',
+                OTransform: 'translateY(' + this.state.imgTranslate + 'px) rotate(' + rotateAmount + 'deg)',
+                msTransform: 'translateY(' + this.state.imgTranslate + 'px) rotate(' + rotateAmount + 'deg)',
+                transform: 'translateY(' + this.state.imgTranslate + 'px) rotate(' + rotateAmount + 'deg)'
+            }
 
         return styles
     },
     render: function() {
     	return (
     	    <section id="intro-background" className={classNames({notLoaded: !this.state.isPreloaded})}>
-                <div id='wiggle-blue' className={classNames({wiggle: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0.1, -40)}>
+                <div id='wiggle-blue' className={classNames({wiggle: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(-40)}>
                     <div className='content'></div>
                 </div>
-                <div id='wiggle-green' className={classNames({wiggle: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0.05, 30)}>
+                <div id='wiggle-green' className={classNames({wiggle: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(30)}>
                     <div className='content'></div>
                 </div>
-                <div id='line-orange' className={classNames({line: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0.3, -117)}>
+                <div id='line-orange' className={classNames({line: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(-117)}>
                     <div className='content'></div>
                 </div>
-                <div id='line-blue' className={classNames({line: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0.02, -60)}>
+                <div id='line-blue' className={classNames({line: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(-60)}>
                     <div className='content'></div>
                 </div>       
-                 <div id='dot-blue' className={classNames({dot: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0.2, 0)}>
+                 <div id='dot-blue' className={classNames({dot: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0)}>
                     <div className='content'></div>
                 </div> 
-                <div id='dot-yellow' className={classNames({dot: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0.2, 0)}>
+                <div id='dot-yellow' className={classNames({dot: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0)}>
                     <div className='content'></div>
                 </div> 
-                <div id='dot-black' className={classNames({dot: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0.07, 0)}>
+                <div id='dot-black' className={classNames({dot: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0)}>
                     <div className='content'></div>
                 </div>    
-                <div id='dot-black-2' className={classNames({dot: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0.3, 0)}>
+                <div id='dot-black-2' className={classNames({dot: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0)}>
                     <div className='content'></div>
                 </div>                      
             </section>
