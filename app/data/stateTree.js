@@ -31,7 +31,9 @@ var stateTree = new Baobab({
 	project: {
 		isInProjects: null,
 		nextProjectLink: null,
-		prevProjectLink: null
+		prevProjectLink: null, 
+		viewingBrief: true,
+		viewingSolution: false
 	},
 	posts: []
 })

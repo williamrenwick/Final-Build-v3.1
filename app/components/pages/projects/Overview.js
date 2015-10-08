@@ -2,6 +2,7 @@ var React = require('react');
 var mixin = require('baobab-react/mixins').branch;
 var classNames = require('classnames');
 var ScrollActions = require('../../../actions/scrollActions.js');
+var ProjectActions = require('../../../actions/projectActions.js');
 
 var Overview = React.createClass({
 	mixins: [mixin],
@@ -10,13 +11,14 @@ var Overview = React.createClass({
 		menuHover: ['menu', 'isHovering'],
 		menuActive: ['menu', 'isOpen'],
 		loadAnimation: ['project', 'loadAnimation'],
+		viewingBrief: ['project', 'viewingBrief'],
 		textTranslate: ['scrolling', 'textTranslateAmount'],
 		isMobile: ['resize', 'isMobile'],
 		isTablet: ['resize', 'isTablet'],
 		isDesktop: ['resize', 'isDesktop'],
 	},
 	mobileTabletStyles: function() {
-		var amount = -40;
+		var amount = 0;
 		var styleObj = {
 			WebkitTransform: 'translateY(' + amount + 'px)',
 			MozTransform: 'translateY(' + amount + 'px)',
@@ -45,12 +47,20 @@ var Overview = React.createClass({
 			return mobileTabletStyles
 		}
 	},
+	handleClick: function() {
+		console.log('clicked brief')
+		if (this.state.viewingBrief) {
+			ProjectActions.isViewingSolution();
+		} else {
+			ProjectActions.isViewingBrief();
+		}
+	},
 	render: function() {
 		var activeProject = this.props.activeProject;
 		
 		return (
-			<div id="overview-text" style={ this.getTextStyles() }>
-				<h2 className="project-subhead">Brief</h2>
+			<div id="overview-text" className={ classNames({ hide: !this.state.viewingBrief }) } onClick={this.handleClick} style={ this.getTextStyles() }>
+				<h2 className="project-subhead"><span>Brief</span></h2>
 				<p>{activeProject.text.brief}</p>
 			</div>
 		)

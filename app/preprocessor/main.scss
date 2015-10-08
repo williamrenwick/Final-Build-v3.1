@@ -1,4 +1,4 @@
-wr/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
 html,
 button,
@@ -1806,14 +1806,21 @@ section {
     font-weight: 600;
     text-transform: uppercase;
     padding-left: 30px;
+    margin: 0;
+
+}
+.project-subhead span {
+    position: relative;
+    display: inline-block;
+    width: auto;
 
     &::after {
         position: absolute;
         content: '';
-        left: 0;
+        left: -30px;
         top: 50%;
         width: 16px;
-        height:1px;
+        height: 1px;
         background-color: #ffffff;
     }
 }
@@ -1904,8 +1911,14 @@ section {
     margin-top: 40px;
     width: 40%;
     z-index: 2;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+    padding: 2%;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); 
+    @include box-sizing(border-box);
 }
+#solution-text:hover {
+    background-color: rgba(34,34,34,0.95);
+}
+
 #projectWrap.loadAnim #brief-text {
     opacity: 1;
 }
@@ -1988,7 +2001,7 @@ section {
     position: relative;
     margin-top: 0;
     font-size: 60px;
-    font-weight: 200;
+    font-weight: 400;
     color: #404040;
 
     &::before {
@@ -2049,6 +2062,57 @@ section {
         @include bg-image(center);
         background-size: cover;
         background-attachment: scroll;
+    }
+    #all-text {
+        position: relative;
+        float: left;
+        top: 0px;
+        left: 0;
+        width: 36%;
+        z-index: 2;
+    }
+    #overview-text {
+        position: relative;
+        float: none;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        margin-top: 0;
+        padding: 0;
+        z-index: 2;
+    }
+    #solution-text {
+        position: relative;
+        float: none;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        margin-top: 26px;
+        padding: 0;
+        z-index: 2;
+    }
+    #overview-text h2, #solution-text h2 {
+        -webkit-transition: padding $swift-ease-out-timing-function .2s;
+        -moz-transition: padding $swift-ease-out-timing-function .2s;
+        -o-transition: padding $swift-ease-out-timing-function .2s;
+        -ms-transition: padding $swift-ease-out-timing-function .2s;
+        transition: padding $swift-ease-out-timing-function .2s;       
+    }
+    #overview-text.hide, #solution-text.hide {
+        height: 1.1em;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    #overview-text.hide .project-subhead, #solution-text.hide .project-subhead {
+        padding-left: 0;
+    }
+    #overview-text.hide span, #solution-text.hide span {
+        
+        &::after {
+            top: 100%;
+            left: 0;
+            width: 100%;
+        }
     }
 }
 

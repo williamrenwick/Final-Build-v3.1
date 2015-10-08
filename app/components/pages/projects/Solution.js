@@ -2,6 +2,7 @@ var React = require('react');
 var mixin = require('baobab-react/mixins').branch;
 var classNames = require('classnames');
 var ScrollActions = require('../../../actions/scrollActions.js');
+var ProjectActions = require('../../../actions/projectActions.js');
 
 
 var Solution = React.createClass({
@@ -11,6 +12,7 @@ var Solution = React.createClass({
 		menuHover: ['menu', 'isHovering'],
 		menuActive: ['menu', 'isOpen'],
 		loadAnimation: ['project', 'loadAnimation'],
+		viewingSolution: ['project', 'viewingSolution'],
 		textTranslate: ['scrolling', 'textTranslateAmount'],
 		isMobile: ['resize', 'isMobile'],
 		isTablet: ['resize', 'isTablet'],
@@ -28,13 +30,7 @@ var Solution = React.createClass({
 		return styleObj		
 	},
 	tabletStyles: function() {
-		var amount = -80;
 		var styleObj = {
-			WebkitTransform: 'translateY(' + amount + 'px)',
-			MozTransform: 'translateY(' + amount + 'px)',
-			OTransform: 'translateY(' + amount + 'px)',
-			msTransform: 'translateY(' + amount + 'px)',
-			transform: 'translateY(' + amount + 'px)'
 		}
 		return styleObj		
 	},
@@ -60,12 +56,19 @@ var Solution = React.createClass({
 			return mobileStyles
 		}
 	},
+	handleClick: function() {
+		if (this.state.viewingSolution) {
+			ProjectActions.isViewingBrief();
+		} else {
+			ProjectActions.isViewingSolution();
+		}
+	},
 	render: function() {
 		var activeProject = this.props.activeProject;
 
 		return (
-			<div id="solution-text" style={ this.getTextStyles() } >
-				<h2 className="project-subhead">Solution</h2>
+			<div id="solution-text" className={ classNames({ hide: !this.state.viewingSolution }) } onClick={this.handleClick} style={ this.getTextStyles() } >
+				<h2 className="project-subhead"><span>Solution</span></h2>
 				<p>{this.props.activeProject.text.solution}</p>
 			</div>
 		)

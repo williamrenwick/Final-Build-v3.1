@@ -18,6 +18,14 @@ var projectActions = {
 	notInProjects: function() {
 		ProjectCursor.set('isInProjects', false);
 		StateTree.commit();
+	},
+	isViewingBrief: function() {
+		ProjectCursor.set('viewingBrief', true);
+		ProjectCursor.set('viewingSolution', false);
+	}, 
+	isViewingSolution: function() {
+		ProjectCursor.set('viewingBrief', false);
+		ProjectCursor.set('viewingSolution', true);
 	}
 }
 
