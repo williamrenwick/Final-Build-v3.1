@@ -7,11 +7,16 @@ var mixin = require('baobab-react/mixins').branch;
 
 var moreText = "WIRE Design is a studio founded and run by William Renwick. We offer bespoke and personal designs tailored to meet each client's needs, with several years experience working for clients ranging from start-ups to many Fortune 500 companies - there's no project too big or small. WIRE Design specialises in producing high quality digital solutions with a heavy focus on usability and integration of modern web practises in both design and development.";
 
+
+var homepageLooper;
+
 var HomepageIntro = React.createClass({
     mixins: [mixin, PureMixin],
     cursors: {
         isPreloaded: ['general', 'isPreloaded'],
+        isInHomepage: ['homepage', 'isInHomepage'],
         insideWorkPosts: ['homepage', 'insideWorkPosts'],
+        isInProjects: ['project', 'isInProjects'],
         windowHeight: ['resize', 'currentHeight'],
         isMobile: ['resize', 'isMobile'],
         isTablet: ['resize', 'isTablet'],
@@ -31,6 +36,9 @@ var HomepageIntro = React.createClass({
         } else {
             setTimeout(this.changeText, 6000);
         }
+    },
+    componentDidUnmount: function() {
+        this.stopChangingText();
     },
     handleMoreClick: function() {
         if (!this.state.viewingMore) {
@@ -53,8 +61,10 @@ var HomepageIntro = React.createClass({
         var i = 0;
 
         function myLoop () {           
-            setTimeout(function () {    
-                var text = textArray[i]; 
+            homepageLooper = setTimeout(toLoop, 3000);
+        };
+        function toLoop() {
+            var text = textArray[i]; 
 
                 animationTimeline(text);
 
@@ -66,8 +76,7 @@ var HomepageIntro = React.createClass({
                     i = 0
                     myLoop(); 
                 }            
-            }, 3000)
-        }
+        };
         function animationTimeline(text) {
             self.setState({spanIsActive: true});
 
@@ -77,8 +86,10 @@ var HomepageIntro = React.createClass({
                 self.setState({spanIsActive: false})
             }, 2600)
         }   
-
         myLoop();
+    },
+    stopChangingText: function() {
+        clearTimeout(homepageLooper);
     },
     moreTextStyle: function() {
         if (!this.state.viewingMore) {
@@ -90,7 +101,7 @@ var HomepageIntro = React.createClass({
     mainTextStyle: function() {
         if (this.state.viewingMore) {
             return {
-                opacity: 0.2
+                opacity: 0
             }
         }      
     },
