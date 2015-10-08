@@ -11,7 +11,12 @@ var images = {
 		var self = this;
 
 		return [
-			self.headerfade
+			self.headerfade,
+			self.header,
+			self.overview,
+			self.brief1,
+			self.brief2,
+			self.section3
 		]
 	}
 }
