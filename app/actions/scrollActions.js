@@ -5,7 +5,7 @@ var ScrollCursor = StateTree.select('scrolling');
 var scrollingActions = {
 	scrollPosUpdate: function(livePosition) {
 		ScrollCursor.set('scrollPosition', livePosition)
-		StateTree.commit();
+		//StateTree.commit();
 	},
 	isScrolling: function(bool) {
 		ScrollCursor.set('isScrolling', bool);

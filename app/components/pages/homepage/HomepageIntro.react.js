@@ -1,4 +1,6 @@
 var React = require('react');
+var IntroBackground = require('./HomepageIntroBackground.js');
+
 var classNames = require('classnames');
 var PureMixin = require('react-pure-render/mixin');
 var mixin = require('baobab-react/mixins').branch;
@@ -115,6 +117,7 @@ var HomepageIntro = React.createClass({
     render: function() {
     	return (
     	    <section id="intro">
+                <IntroBackground/>
                 <div id="main-intro-text" className={classNames({inactive: this.state.viewingMore})} style={this.mainTextStyle()}>
                     <div id="logotype-wrap"><div id="intro-logotype"></div></div>
                     <div id="service-text"><span id="service-text-span" className={classNames({active: this.state.spanIsActive})}>{this.state.introText}</span></div>
