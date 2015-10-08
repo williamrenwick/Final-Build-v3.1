@@ -24,7 +24,7 @@ var brief = 'At Catalysis we were asked by Panasonic to create a campaign that w
 var solution = 'We only had a day to create the brand and the web design for the pitch document but had dicussed what we wanted to do - the campaign would link from peoples social media so that they could easily show off their homemade designs using just a hashtag. Our website would then moderate and aggregate the results right into the page.'
 
 var text = {
-	title: 'Better Homemade',
+	title: 'The Makers',
 	client: 'Panasonic',
 	fields: 'Concept, Design, UX',
 	brief: brief,

@@ -24,6 +24,6 @@ module.exports = (
   	<Route name="snap" path="snap" handler={Snap}/>
   	<Route name="prism" path="prism" handler={Prism}/>
   	<Route name="design-team" path="design-team" handler={Design}/>
-    <Route name="better-homemade" path="better-homemade" handler={Homemade}/>
+    <Route name="the-makers" path="the-makers" handler={Homemade}/>
   </Route>
 );

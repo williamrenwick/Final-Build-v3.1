@@ -28,7 +28,7 @@ var ProjectWrap = React.createClass({
 		scrollPos: ['scrolling', 'scrollPosition']
 	},
 	getDataIdx: function() {
-		var currentPath = '/better-homemade';
+		var currentPath = '/the-makers';
 		var props = this.props;
 
 
