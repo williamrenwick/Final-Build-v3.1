@@ -6,7 +6,6 @@ var buildPath = path.resolve(__dirname, 'public', 'build');
 var mainPath = path.resolve(__dirname, 'app', 'main.js');
 
 module.exports = {
-  devtool: 'source-map',
   entry: [ 
     mainPath
   ],
@@ -33,6 +32,17 @@ module.exports = {
     ]
   },
   plugins: [
+      new webpack.optimize.OccuranceOrderPlugin(),
+      new webpack.DefinePlugin({
+        'process.env' : {
+          'NODE_ENV': JSON.stringify('production')
+        }
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        compressor: {
+          warnings: false
+        }
+      }),
       new webpack.ProvidePlugin({
         $ : "jquery",
         jQuery : "jquery",

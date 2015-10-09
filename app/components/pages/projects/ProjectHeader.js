@@ -103,14 +103,14 @@ var ProjectHdr = React.createClass({
 					<div id="project-hdr-orig-img" style={{backgroundImage: 'url(' + activeProject.images.header + ')'}}></div>
 				</div>
 
-				<div id="closeProjSide" className={classNames({hide: !this.state.showSideClose})}>
+				<div id="closeProjSide">
 			        <Link to="home"><p>{this.sideCloseText()}</p></Link>
 				</div>
 				<PrevProject projects={this.props.projects} activeProject={activeProject}/>
 				<NextProject projects={this.props.projects} activeProject={activeProject}/>
 
 				<div id="project-hdr-text" style={ this.getTextStyles() }>
-				    <div className={classNames({closeProj: true, hide: this.state.showSideClose})}>
+				    <div className={classNames({closeProj: true})}>
 				        <Link to="home"><p>Close Project</p></Link>
 				    </div>
 				    <h1>{activeProject.text.title}</h1>

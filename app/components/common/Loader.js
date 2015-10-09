@@ -13,7 +13,7 @@ var Loader = React.createClass({
 	componentDidMount: function() {
 		setTimeout(function() {
 			AppActions.isPreloaded();
-		}, 6000)
+		}, 3000)
 	},
 	render: function() {
 		console.log(this.state.isPreloaded)
