@@ -39,12 +39,12 @@ var Contact = React.createClass({
 			            <h3>Telephone</h3>
 			            <h2>+44 (0)7850083174</h2>
 			            <h3>Email</h3>
-			            <h2>william.r.renwick@gmail.com</h2>
+			            <h2><a href="mailto:william.r.renwick@gmail.com?Subject=Hello%20">william.r.renwick@gmail.com</a></h2>
 			            <h3>Connect With Me</h3>
 			            <ul>
-			                <li>LinkedIn</li>
-			                <li>Facebook</li>
-			                <li>Google+</li>
+			                <li><a href="https://uk.linkedin.com/pub/william-renwick/37/6b2/934">LinkedIn</a></li>
+			                <li><a href="https://www.facebook.com/william.renwick">Facebook</a></li>
+			                <li><a href="https://plus.google.com/u/0/110911607273359768683/posts">Google+</a></li>
 			            </ul>
 			        </div>
 			        <div id="contact-right">
