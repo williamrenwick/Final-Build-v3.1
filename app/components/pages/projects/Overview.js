@@ -17,7 +17,18 @@ var Overview = React.createClass({
 		isTablet: ['resize', 'isTablet'],
 		isDesktop: ['resize', 'isDesktop'],
 	},
-	mobileTabletStyles: function() {
+	mobileStyles: function() {
+		var amount = -40;
+		var styleObj = {
+			WebkitTransform: 'translateY(' + amount + 'px)',
+			MozTransform: 'translateY(' + amount + 'px)',
+			OTransform: 'translateY(' + amount + 'px)',
+			msTransform: 'translateY(' + amount + 'px)',
+			transform: 'translateY(' + amount + 'px)'
+		}
+		return styleObj		
+	},
+	tabletStyles: function() {
 		var amount = 0;
 		var styleObj = {
 			WebkitTransform: 'translateY(' + amount + 'px)',
@@ -42,13 +53,15 @@ var Overview = React.createClass({
 		if (this.state.isDesktop) {
 			var desktopStyles = this.desktopStyles();
 			return desktopStyles
-		} else if (!this.state.isDesktop) {
-			var mobileTabletStyles = this.mobileTabletStyles();
+		} else if (this.state.isTablet) {
+			var tabletStyles = this.tabletStyles();
+			return mobileTabletStyles
+		} else if (this.state.isMobile) {
+			var tabletStyles = this.mobileStyles();
 			return mobileTabletStyles
 		}
 	},
 	handleClick: function() {
-		console.log('clicked brief')
 		if (this.state.viewingBrief) {
 			ProjectActions.isViewingSolution();
 		} else {
