@@ -437,7 +437,7 @@ section {
     width: 100%;
     padding: 20px 0;
     @include box-sizing(border-box);
-    z-index: 100;
+    z-index: 1000;
     //set to force hardware acceleration
     -webkit-transform:translateZ(0);
     -moz-transform:translateZ(0);
@@ -628,7 +628,7 @@ section {
     -ms-transform:translateZ(0);
     -o-transform:translateZ(0);
     transform:translateZ(0);
-    z-index: 50;
+    z-index: 101;
 }
 #side-nav > div {
     float: left;
@@ -2015,7 +2015,6 @@ section {
     font-size: 12px;
     margin-bottom: 20px;
     padding-left: 20px;
-    z-index: 1000;
     opacity: 1;
     visibility: visible;
     -webkit-transition: -webkit-transform ease .2s, opacity ease .2s;
@@ -2075,7 +2074,7 @@ section {
     font-weight: 800;
     padding-bottom: 0.2rem;
     padding-left: 20px;
-    z-index: 100;
+    z-index: 1;
     text-align: left;
     opacity: 1;
     cursor: pointer;

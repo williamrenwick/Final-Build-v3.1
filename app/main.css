@@ -468,7 +468,7 @@ section {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  z-index: 100;
+  z-index: 1000;
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -689,7 +689,7 @@ section {
   -ms-transform: translateZ(0);
   -o-transform: translateZ(0);
   transform: translateZ(0);
-  z-index: 50;
+  z-index: 101;
 }
 
 /* line 633, preprocessor/main.scss */
@@ -2441,7 +2441,6 @@ section {
   font-size: 12px;
   margin-bottom: 20px;
   padding-left: 20px;
-  z-index: 1000;
   opacity: 1;
   visibility: visible;
   -webkit-transition: -webkit-transform ease .2s, opacity ease .2s;
@@ -2450,7 +2449,7 @@ section {
   -ms-transition: -ms-transform ease .2s, opacity ease .2s;
   transition: transform ease .2s, opacity ease .2s;
 }
-/* line 2027, preprocessor/main.scss */
+/* line 2026, preprocessor/main.scss */
 .closeProj:before, .closeProj:after {
   content: '';
   position: absolute;
@@ -2466,7 +2465,7 @@ section {
   transition: transform ease .2s;
 }
 
-/* line 2043, preprocessor/main.scss */
+/* line 2042, preprocessor/main.scss */
 .closeProj:hover:before {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -2474,7 +2473,7 @@ section {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 2050, preprocessor/main.scss */
+/* line 2049, preprocessor/main.scss */
 .closeProj:hover:after {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -2483,7 +2482,7 @@ section {
   transform: rotate(-45deg);
 }
 
-/* line 2058, preprocessor/main.scss */
+/* line 2057, preprocessor/main.scss */
 .closeProj.hide {
   visibility: hidden;
   opacity: 0;
@@ -2494,7 +2493,7 @@ section {
   transform: translateX(-20px);
 }
 
-/* line 2067, preprocessor/main.scss */
+/* line 2066, preprocessor/main.scss */
 #closeProjSide {
   position: fixed;
   top: 121px;
@@ -2506,7 +2505,7 @@ section {
   font-weight: 800;
   padding-bottom: 0.2rem;
   padding-left: 20px;
-  z-index: 100;
+  z-index: 1;
   text-align: left;
   opacity: 1;
   cursor: pointer;
@@ -2521,7 +2520,7 @@ section {
   -ms-transition: all ease .2s;
   transition: all ease .2s;
 }
-/* line 2093, preprocessor/main.scss */
+/* line 2092, preprocessor/main.scss */
 #closeProjSide:before, #closeProjSide:after {
   content: '';
   position: absolute;
@@ -2536,7 +2535,7 @@ section {
   -ms-transition: -ms-transform ease .2s;
   transition: transform ease .2s;
 }
-/* line 2107, preprocessor/main.scss */
+/* line 2106, preprocessor/main.scss */
 #closeProjSide:before {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -2544,7 +2543,7 @@ section {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 2114, preprocessor/main.scss */
+/* line 2113, preprocessor/main.scss */
 #closeProjSide:after {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -2553,7 +2552,7 @@ section {
   transform: rotate(-45deg);
 }
 
-/* line 2122, preprocessor/main.scss */
+/* line 2121, preprocessor/main.scss */
 #closeProjSide.hide {
   opacity: 0;
   -webkit-transform: rotate(90deg) translateX(-20px);
@@ -2563,12 +2562,12 @@ section {
   transform: rotate(90deg) translateX(-20px);
 }
 
-/* line 2130, preprocessor/main.scss */
+/* line 2129, preprocessor/main.scss */
 #closeProjSide p {
   margin: 0;
 }
 
-/* line 2133, preprocessor/main.scss */
+/* line 2132, preprocessor/main.scss */
 .project-section {
   position: relative;
   padding: 7% 10% 0;
@@ -2584,12 +2583,12 @@ section {
   clear: both;
 }
 
-/* line 2139, preprocessor/main.scss */
+/* line 2138, preprocessor/main.scss */
 #section3 {
   padding-bottom: 7%;
 }
 
-/* line 2142, preprocessor/main.scss */
+/* line 2141, preprocessor/main.scss */
 .project-subhead {
   position: relative;
   color: #ffffff;
@@ -2600,13 +2599,13 @@ section {
   margin: 0;
 }
 
-/* line 2152, preprocessor/main.scss */
+/* line 2151, preprocessor/main.scss */
 .project-subhead span {
   position: relative;
   display: inline-block;
   width: auto;
 }
-/* line 2157, preprocessor/main.scss */
+/* line 2156, preprocessor/main.scss */
 .project-subhead span::after {
   position: absolute;
   content: '';
@@ -2617,14 +2616,14 @@ section {
   background-color: #ffffff;
 }
 
-/* line 2167, preprocessor/main.scss */
+/* line 2166, preprocessor/main.scss */
 .project-section p {
   color: #ffffff;
   font-size: 14px;
   font-weight: 400;
 }
 
-/* line 2172, preprocessor/main.scss */
+/* line 2171, preprocessor/main.scss */
 #overview-text {
   position: absolute;
   float: left;
@@ -2635,19 +2634,19 @@ section {
   z-index: 2;
 }
 
-/* line 2181, preprocessor/main.scss */
+/* line 2180, preprocessor/main.scss */
 #projectWrap.loadAnim #overview-text {
   opacity: 1;
 }
 
-/* line 2184, preprocessor/main.scss */
+/* line 2183, preprocessor/main.scss */
 .overview-img-wrap {
   position: relative;
   float: right;
   width: 60%;
 }
 
-/* line 2189, preprocessor/main.scss */
+/* line 2188, preprocessor/main.scss */
 #overview-img {
   position: relative;
   float: right;
@@ -2655,7 +2654,7 @@ section {
   padding-bottom: 65%;
 }
 
-/* line 2196, preprocessor/main.scss */
+/* line 2195, preprocessor/main.scss */
 #overview-img > div,
 #s2-img1 > div, #s2-img2 > div, #s3-img > div {
   position: absolute;
@@ -2668,55 +2667,55 @@ section {
   background-size: cover;
 }
 
-/* line 2205, preprocessor/main.scss */
+/* line 2204, preprocessor/main.scss */
 .s2-img-wrap {
   width: 45%;
 }
 
-/* line 2208, preprocessor/main.scss */
+/* line 2207, preprocessor/main.scss */
 #s3-img-wrap {
   width: 100%;
 }
 
-/* line 2212, preprocessor/main.scss */
+/* line 2211, preprocessor/main.scss */
 #s2-img1-wrap {
   position: relative;
   float: left;
 }
 
-/* line 2216, preprocessor/main.scss */
+/* line 2215, preprocessor/main.scss */
 #s2-img2-wrap {
   position: relative;
   float: right;
   margin-top: 10%;
 }
 
-/* line 2221, preprocessor/main.scss */
+/* line 2220, preprocessor/main.scss */
 #s2-img1, #s2-img2 {
   position: relative;
   width: 100%;
   padding-bottom: 70%;
 }
 
-/* line 2226, preprocessor/main.scss */
+/* line 2225, preprocessor/main.scss */
 #s3-img {
   position: relative;
   width: 100%;
   padding-bottom: 70%;
 }
 
-/* line 2231, preprocessor/main.scss */
+/* line 2230, preprocessor/main.scss */
 .projectvideo {
   width: 100%;
   height: inherit;
 }
 
-/* line 2235, preprocessor/main.scss */
+/* line 2234, preprocessor/main.scss */
 #s3-video {
   position: relative;
 }
 
-/* line 2238, preprocessor/main.scss */
+/* line 2237, preprocessor/main.scss */
 #videoPoster {
   position: absolute;
   top: 0;
@@ -2727,7 +2726,7 @@ section {
   background-size: cover;
 }
 
-/* line 2246, preprocessor/main.scss */
+/* line 2245, preprocessor/main.scss */
 #solution-text {
   position: absolute;
   float: left;
@@ -2746,12 +2745,12 @@ section {
 /*#solution-text:hover {
     background-color: rgba(34,34,34,0.95);
 }*/
-/* line 2262, preprocessor/main.scss */
+/* line 2261, preprocessor/main.scss */
 #projectWrap.loadAnim #brief-text {
   opacity: 1;
 }
 
-/* line 2270, preprocessor/main.scss */
+/* line 2269, preprocessor/main.scss */
 #contact {
   width: 100%;
   height: 100vh;
@@ -2771,12 +2770,12 @@ section {
   clear: both;
 }
 
-/* line 2280, preprocessor/main.scss */
+/* line 2279, preprocessor/main.scss */
 #contact.isInProjects {
   background-color: #222222;
 }
 
-/* line 2287, preprocessor/main.scss */
+/* line 2286, preprocessor/main.scss */
 #contact.isInProjects h1,
 #contact.isInProjects h2,
 #contact.isInProjects h3,
@@ -2785,7 +2784,7 @@ section {
   color: #ffffff;
 }
 
-/* line 2290, preprocessor/main.scss */
+/* line 2289, preprocessor/main.scss */
 #contact-wrap {
   width: 100%;
   height: 60%;
@@ -2798,7 +2797,7 @@ section {
   transform: translateY(-50%);
 }
 
-/* line 2301, preprocessor/main.scss */
+/* line 2300, preprocessor/main.scss */
 #contact-left {
   -webkit-transition: all .2s;
   -moz-transition: all .2s;
@@ -2807,7 +2806,7 @@ section {
   transition: all .2s;
 }
 
-/* line 2308, preprocessor/main.scss */
+/* line 2307, preprocessor/main.scss */
 #contact-right {
   -webkit-transition: all .2s .2s;
   -moz-transition: all .2s .2s;
@@ -2816,7 +2815,7 @@ section {
   transition: all .2s .2s;
 }
 
-/* line 2316, preprocessor/main.scss */
+/* line 2315, preprocessor/main.scss */
 #contact-left,
 #contact-right {
   display: block;
@@ -2835,7 +2834,7 @@ section {
   transform: translateY(0px);
 }
 
-/* line 2331, preprocessor/main.scss */
+/* line 2330, preprocessor/main.scss */
 #contact.notActive #contact-left,
 #contact.notActive #contact-right {
   opacity: 0;
@@ -2846,7 +2845,7 @@ section {
   transform: translateY(50px);
 }
 
-/* line 2340, preprocessor/main.scss */
+/* line 2339, preprocessor/main.scss */
 #contact h1 {
   position: relative;
   margin-top: 0;
@@ -2854,7 +2853,7 @@ section {
   font-weight: 400;
   color: #404040;
 }
-/* line 2347, preprocessor/main.scss */
+/* line 2346, preprocessor/main.scss */
 #contact h1::before {
   position: absolute;
   content: '';
@@ -2870,19 +2869,19 @@ section {
   transition: all .2s;
 }
 
-/* line 2363, preprocessor/main.scss */
+/* line 2362, preprocessor/main.scss */
 #contact.isInProjects h1::before {
   background-color: #ffffff;
 }
 
-/* line 2367, preprocessor/main.scss */
+/* line 2366, preprocessor/main.scss */
 #contact h2 {
   font-size: 18px;
   font-weight: 400;
   margin: 0 0 40px 0;
 }
 
-/* line 2372, preprocessor/main.scss */
+/* line 2371, preprocessor/main.scss */
 #contact h3 {
   color: #ffffff;
   margin: 0;
@@ -2890,25 +2889,25 @@ section {
   text-transform: uppercase;
 }
 
-/* line 2378, preprocessor/main.scss */
+/* line 2377, preprocessor/main.scss */
 #contact p {
   font-size: 12px;
 }
 
-/* line 2381, preprocessor/main.scss */
+/* line 2380, preprocessor/main.scss */
 #contact ul {
   padding: 0;
   margin-top: 0;
   list-style: none;
 }
 
-/* line 2386, preprocessor/main.scss */
+/* line 2385, preprocessor/main.scss */
 #contact li {
   font-size: 18px;
   font-weight: 400;
 }
 
-/* line 2390, preprocessor/main.scss */
+/* line 2389, preprocessor/main.scss */
 #contact-right p {
   position: absolute;
   bottom: 0;
@@ -2918,28 +2917,28 @@ section {
    Media Queries
    ========================================================================== */
 @media screen and (min-width: 1600px) {
-  /* line 2400, preprocessor/main.scss */
+  /* line 2399, preprocessor/main.scss */
   .page-title {
     font-size: 1.2em;
   }
 
-  /* line 2403, preprocessor/main.scss */
+  /* line 2402, preprocessor/main.scss */
   .number-wrap {
     font-size: 0.8em;
   }
 
-  /* line 2406, preprocessor/main.scss */
+  /* line 2405, preprocessor/main.scss */
   #logotype-wrap {
     padding-bottom: 5%;
   }
 
-  /* line 2410, preprocessor/main.scss */
+  /* line 2409, preprocessor/main.scss */
   .project-section p {
     font-size: 17px;
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 769px) {
-  /* line 2416, preprocessor/main.scss */
+  /* line 2415, preprocessor/main.scss */
   .hpWorkItem {
     background-repeat: no-repeat;
     background-position: center;
@@ -2947,7 +2946,7 @@ section {
     background-attachment: scroll;
   }
 
-  /* line 2421, preprocessor/main.scss */
+  /* line 2420, preprocessor/main.scss */
   #all-text {
     position: relative;
     float: left;
@@ -2957,7 +2956,7 @@ section {
     z-index: 2;
   }
 
-  /* line 2429, preprocessor/main.scss */
+  /* line 2428, preprocessor/main.scss */
   #overview-text {
     position: relative;
     float: none;
@@ -2969,7 +2968,7 @@ section {
     z-index: 2;
   }
 
-  /* line 2439, preprocessor/main.scss */
+  /* line 2438, preprocessor/main.scss */
   #solution-text {
     position: relative;
     float: none;
@@ -2981,7 +2980,7 @@ section {
     z-index: 2;
   }
 
-  /* line 2449, preprocessor/main.scss */
+  /* line 2448, preprocessor/main.scss */
   #overview-text h2, #solution-text h2 {
     -webkit-transition: padding cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s;
     -moz-transition: padding cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s;
@@ -2990,19 +2989,19 @@ section {
     transition: padding cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s;
   }
 
-  /* line 2456, preprocessor/main.scss */
+  /* line 2455, preprocessor/main.scss */
   #overview-text.hide, #solution-text.hide {
     height: 1.1em;
     overflow: hidden;
     cursor: pointer;
   }
 
-  /* line 2461, preprocessor/main.scss */
+  /* line 2460, preprocessor/main.scss */
   #overview-text.hide .project-subhead, #solution-text.hide .project-subhead {
     padding-left: 0;
   }
 
-  /* line 2466, preprocessor/main.scss */
+  /* line 2465, preprocessor/main.scss */
   #overview-text.hide span::after, #solution-text.hide span::after {
     top: 100%;
     left: 0;
@@ -3010,7 +3009,7 @@ section {
   }
 }
 @media screen and (max-width: 768px) and (min-width: 421px) and (orientation: portrait) {
-  /* line 2475, preprocessor/main.scss */
+  /* line 2474, preprocessor/main.scss */
   .sideMenuActive {
     -webkit-transform: translateX(90%);
     -moz-transform: translateX(90%);
@@ -3019,36 +3018,36 @@ section {
     transform: translateX(90%);
   }
 
-  /* line 2482, preprocessor/main.scss */
+  /* line 2481, preprocessor/main.scss */
   #side-nav {
     left: -90%;
     width: 90%;
     font-size: 20px;
   }
 
-  /* line 2487, preprocessor/main.scss */
+  /* line 2486, preprocessor/main.scss */
   #side-nav.projectMenu {
     width: 180%;
   }
 
-  /* line 2490, preprocessor/main.scss */
+  /* line 2489, preprocessor/main.scss */
   #side-nav.projectMenu #project-side {
     opacity: 1;
   }
 
-  /* line 2493, preprocessor/main.scss */
+  /* line 2492, preprocessor/main.scss */
   #side-nav.projectMenu #main-side {
     width: 50%;
   }
 
-  /* line 2496, preprocessor/main.scss */
+  /* line 2495, preprocessor/main.scss */
   #view-all-btn {
     right: 0px;
     height: 20px;
     width: 20px;
   }
 
-  /* line 2501, preprocessor/main.scss */
+  /* line 2500, preprocessor/main.scss */
   #section-title {
     -webkit-transform: translateX(-10px) rotate(-90deg);
     -moz-transform: translateX(-10px) rotate(-90deg);
@@ -3057,12 +3056,12 @@ section {
     transform: translateX(-10px) rotate(-90deg);
   }
 
-  /* line 2508, preprocessor/main.scss */
+  /* line 2507, preprocessor/main.scss */
   #service-text {
     font-size: 60px;
   }
 
-  /* line 2511, preprocessor/main.scss */
+  /* line 2510, preprocessor/main.scss */
   #more-text {
     position: absolute;
     left: 50%;
@@ -3074,7 +3073,7 @@ section {
     transform: translate(50%, -50%);
   }
 
-  /* line 2521, preprocessor/main.scss */
+  /* line 2520, preprocessor/main.scss */
   #more-text.active {
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -3083,12 +3082,12 @@ section {
     transform: translate(-50%, -50%);
   }
 
-  /* line 2528, preprocessor/main.scss */
+  /* line 2527, preprocessor/main.scss */
   #more-text h2 {
     font-size: 18px;
   }
 
-  /* line 2531, preprocessor/main.scss */
+  /* line 2530, preprocessor/main.scss */
   .hpWorkItem {
     height: 45vh;
     background-repeat: no-repeat;
@@ -3097,25 +3096,25 @@ section {
     background-attachment: scroll;
   }
 
-  /* line 2537, preprocessor/main.scss */
+  /* line 2536, preprocessor/main.scss */
   #hp-project-title {
     left: 0%;
     font-size: 12px;
   }
 
-  /* line 2541, preprocessor/main.scss */
+  /* line 2540, preprocessor/main.scss */
   .work-info {
     width: 100%;
     height: 100%;
   }
 
-  /* line 2545, preprocessor/main.scss */
+  /* line 2544, preprocessor/main.scss */
   .work-text {
     width: 100%;
     top: 20%;
   }
 
-  /* line 2549, preprocessor/main.scss */
+  /* line 2548, preprocessor/main.scss */
   .work-text h1 {
     margin-bottom: 1.2rem;
     font-weight: 400;
@@ -3123,27 +3122,27 @@ section {
     line-height: 1.2em;
   }
 
-  /* line 2555, preprocessor/main.scss */
+  /* line 2554, preprocessor/main.scss */
   .work-text h2 {
     font-size: 14px;
   }
 
-  /* line 2558, preprocessor/main.scss */
+  /* line 2557, preprocessor/main.scss */
   .work-text h3 {
     font-size: 10px;
   }
 
-  /* line 2562, preprocessor/main.scss */
+  /* line 2561, preprocessor/main.scss */
   .hp-project-title-indicator:after {
     top: 1.3em;
   }
 
-  /* line 2567, preprocessor/main.scss */
+  /* line 2566, preprocessor/main.scss */
   #solution-text {
     text-shadow: 0px 0px 10px black;
   }
 
-  /* line 2573, preprocessor/main.scss */
+  /* line 2572, preprocessor/main.scss */
   #project-hdr-text {
     left: 13%;
     bottom: 15%;
@@ -3155,7 +3154,7 @@ section {
     transition: opacity ease .2s .5s;
   }
 
-  /* line 2583, preprocessor/main.scss */
+  /* line 2582, preprocessor/main.scss */
   #project-wrap.loadAnim #project-hdr-img {
     top: 12%;
     left: 16%;
@@ -3163,7 +3162,7 @@ section {
     bottom: 12%;
   }
 
-  /* line 2590, preprocessor/main.scss */
+  /* line 2589, preprocessor/main.scss */
   #project-hdr-img:after {
     content: '';
     position: absolute;
@@ -3172,43 +3171,43 @@ section {
     background-color: rgba(0, 0, 0, 0.2);
   }
 
-  /* line 2598, preprocessor/main.scss */
+  /* line 2597, preprocessor/main.scss */
   #next-project {
     right: -14px;
   }
 
-  /* line 2602, preprocessor/main.scss */
+  /* line 2601, preprocessor/main.scss */
   #prev-project {
     left: -14px;
   }
 
-  /* line 2605, preprocessor/main.scss */
+  /* line 2604, preprocessor/main.scss */
   #closeProjSide {
     right: -65px;
     width: 150px;
   }
 
-  /* line 2609, preprocessor/main.scss */
+  /* line 2608, preprocessor/main.scss */
   #project-hdr-text h1 {
     font-size: 38px;
     line-height: 1.2em;
     margin-bottom: 2.2rem;
   }
 
-  /* line 2614, preprocessor/main.scss */
+  /* line 2613, preprocessor/main.scss */
   #project-hdr-text h2 {
     font-size: 14px;
     margin-bottom: 1.2rem;
   }
 
-  /* line 2618, preprocessor/main.scss */
+  /* line 2617, preprocessor/main.scss */
   #project-hdr-text h3 {
     font-size: 10px;
     margin: 0 0 0 30px;
     text-transform: uppercase;
   }
 
-  /* line 2624, preprocessor/main.scss */
+  /* line 2623, preprocessor/main.scss */
   #overview-text {
     position: relative;
     float: none;
@@ -3221,19 +3220,19 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 2633, preprocessor/main.scss */
+  /* line 2632, preprocessor/main.scss */
   .overview-img-wrap {
     position: relative;
     float: none;
     width: 100%;
   }
 
-  /* line 2638, preprocessor/main.scss */
+  /* line 2637, preprocessor/main.scss */
   .project-section {
     padding: 7% 10% 0;
   }
 
-  /* line 2641, preprocessor/main.scss */
+  /* line 2640, preprocessor/main.scss */
   #solution-text {
     position: relative;
     float: none;
@@ -3247,24 +3246,24 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 2651, preprocessor/main.scss */
+  /* line 2650, preprocessor/main.scss */
   #s2-img1-wrap {
     position: relative;
     float: none;
   }
 
-  /* line 2655, preprocessor/main.scss */
+  /* line 2654, preprocessor/main.scss */
   .s2-img-wrap {
     width: 100%;
   }
 
-  /* line 2658, preprocessor/main.scss */
+  /* line 2657, preprocessor/main.scss */
   #s2-img2-wrap {
     position: relative;
     float: none;
   }
 
-  /* line 2667, preprocessor/main.scss */
+  /* line 2666, preprocessor/main.scss */
   #contact-wrap {
     top: 0;
     width: 100%;
@@ -3280,7 +3279,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 2679, preprocessor/main.scss */
+  /* line 2678, preprocessor/main.scss */
   #contact-left, #contact-right {
     position: relative;
     display: block;
@@ -3290,7 +3289,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 2685, preprocessor/main.scss */
+  /* line 2684, preprocessor/main.scss */
   #contact-left {
     float: right;
     top: 50%;
@@ -3302,7 +3301,7 @@ section {
     transition: all .2s .2s;
   }
 
-  /* line 2695, preprocessor/main.scss */
+  /* line 2694, preprocessor/main.scss */
   #contact-right {
     float: left;
     top: -50%;
@@ -3315,42 +3314,42 @@ section {
     transition: all .2s;
   }
 
-  /* line 2706, preprocessor/main.scss */
+  /* line 2705, preprocessor/main.scss */
   #contact-right p {
     display: none;
   }
 
-  /* line 2709, preprocessor/main.scss */
+  /* line 2708, preprocessor/main.scss */
   #contact h1 {
     font-size: 40px;
   }
-  /* line 2712, preprocessor/main.scss */
+  /* line 2711, preprocessor/main.scss */
   #contact h1::before {
     bottom: -10px;
     width: 80px;
   }
 
-  /* line 2717, preprocessor/main.scss */
+  /* line 2716, preprocessor/main.scss */
   #contact h2 {
     font-size: 14px;
     margin: 0 0 40px 0;
   }
 
-  /* line 2721, preprocessor/main.scss */
+  /* line 2720, preprocessor/main.scss */
   #contact h3 {
     margin: 0;
     font-size: 10px;
     text-transform: uppercase;
   }
 
-  /* line 2727, preprocessor/main.scss */
+  /* line 2726, preprocessor/main.scss */
   #contact li {
     font-size: 14px;
     margin-bottom: 0.2rem;
   }
 }
 @media screen and (max-width: 768px) and (min-width: 421px) and (orientation: landscape) {
-  /* line 2734, preprocessor/main.scss */
+  /* line 2733, preprocessor/main.scss */
   .sideMenuActive {
     -webkit-transform: translateX(90%);
     -moz-transform: translateX(90%);
@@ -3359,36 +3358,36 @@ section {
     transform: translateX(90%);
   }
 
-  /* line 2741, preprocessor/main.scss */
+  /* line 2740, preprocessor/main.scss */
   #side-nav {
     left: -90%;
     width: 90%;
     font-size: 20px;
   }
 
-  /* line 2746, preprocessor/main.scss */
+  /* line 2745, preprocessor/main.scss */
   #side-nav.projectMenu {
     width: 180%;
   }
 
-  /* line 2749, preprocessor/main.scss */
+  /* line 2748, preprocessor/main.scss */
   #side-nav.projectMenu #project-side {
     opacity: 1;
   }
 
-  /* line 2752, preprocessor/main.scss */
+  /* line 2751, preprocessor/main.scss */
   #side-nav.projectMenu #main-side {
     width: 50%;
   }
 
-  /* line 2755, preprocessor/main.scss */
+  /* line 2754, preprocessor/main.scss */
   #view-all-btn {
     right: 0px;
     height: 20px;
     width: 20px;
   }
 
-  /* line 2760, preprocessor/main.scss */
+  /* line 2759, preprocessor/main.scss */
   #section-title {
     -webkit-transform: translateX(-10px) rotate(-90deg);
     -moz-transform: translateX(-10px) rotate(-90deg);
@@ -3397,12 +3396,12 @@ section {
     transform: translateX(-10px) rotate(-90deg);
   }
 
-  /* line 2767, preprocessor/main.scss */
+  /* line 2766, preprocessor/main.scss */
   #service-text {
     font-size: 60px;
   }
 
-  /* line 2770, preprocessor/main.scss */
+  /* line 2769, preprocessor/main.scss */
   #more-text {
     position: absolute;
     left: 50%;
@@ -3414,7 +3413,7 @@ section {
     transform: translate(50%, -50%);
   }
 
-  /* line 2780, preprocessor/main.scss */
+  /* line 2779, preprocessor/main.scss */
   #more-text.active {
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -3423,7 +3422,7 @@ section {
     transform: translate(-50%, -50%);
   }
 
-  /* line 2787, preprocessor/main.scss */
+  /* line 2786, preprocessor/main.scss */
   #more-text-close {
     position: absolute;
     top: 50%;
@@ -3433,7 +3432,7 @@ section {
     font-size: 16px;
   }
 
-  /* line 2795, preprocessor/main.scss */
+  /* line 2794, preprocessor/main.scss */
   #find-out-more {
     top: 50%;
     left: 100%;
@@ -3445,17 +3444,17 @@ section {
     transform: translate(0%, -50%);
   }
 
-  /* line 2805, preprocessor/main.scss */
+  /* line 2804, preprocessor/main.scss */
   #more-text h2 {
     font-size: 14px;
   }
 
-  /* line 2808, preprocessor/main.scss */
+  /* line 2807, preprocessor/main.scss */
   #projects-indicator {
     font-size: 12px;
   }
 
-  /* line 2811, preprocessor/main.scss */
+  /* line 2810, preprocessor/main.scss */
   .hpWorkItem {
     height: 45vh;
     background-repeat: no-repeat;
@@ -3464,35 +3463,35 @@ section {
     background-attachment: scroll;
   }
 
-  /* line 2817, preprocessor/main.scss */
+  /* line 2816, preprocessor/main.scss */
   .hpWorkItem:nth-of-type(even) .work-text {
     right: -10%;
   }
 
-  /* line 2820, preprocessor/main.scss */
+  /* line 2819, preprocessor/main.scss */
   .hpWorkItem:nth-of-type(even) .hp-project-title-indicator {
     right: 40%;
   }
 
-  /* line 2823, preprocessor/main.scss */
+  /* line 2822, preprocessor/main.scss */
   #hp-project-title {
     left: 0%;
     font-size: 12px;
   }
 
-  /* line 2827, preprocessor/main.scss */
+  /* line 2826, preprocessor/main.scss */
   .work-info {
     width: 100%;
     height: 100%;
   }
 
-  /* line 2831, preprocessor/main.scss */
+  /* line 2830, preprocessor/main.scss */
   .work-text {
     width: 100%;
     top: 20%;
   }
 
-  /* line 2835, preprocessor/main.scss */
+  /* line 2834, preprocessor/main.scss */
   .work-text h1 {
     margin-bottom: 1.2rem;
     font-weight: 400;
@@ -3500,42 +3499,42 @@ section {
     line-height: 1.2em;
   }
 
-  /* line 2841, preprocessor/main.scss */
+  /* line 2840, preprocessor/main.scss */
   .work-text h2 {
     font-size: 14px;
   }
 
-  /* line 2844, preprocessor/main.scss */
+  /* line 2843, preprocessor/main.scss */
   .work-text h3 {
     font-size: 10px;
   }
 
-  /* line 2847, preprocessor/main.scss */
+  /* line 2846, preprocessor/main.scss */
   .hp-project-title-indicator {
     top: -10px;
     width: 60px;
   }
-  /* line 2850, preprocessor/main.scss */
+  /* line 2849, preprocessor/main.scss */
   .hp-project-title-indicator:after {
     top: 1.3em;
     left: 20%;
   }
 
-  /* line 2855, preprocessor/main.scss */
+  /* line 2854, preprocessor/main.scss */
   .hp-project-title-indicator h3 {
     margin: 0 0 0 20px;
   }
-  /* line 2857, preprocessor/main.scss */
+  /* line 2856, preprocessor/main.scss */
   .hp-project-title-indicator h3:after {
     left: -30%;
   }
 
-  /* line 2861, preprocessor/main.scss */
+  /* line 2860, preprocessor/main.scss */
   .fields {
     margin-left: 6em;
   }
 
-  /* line 2864, preprocessor/main.scss */
+  /* line 2863, preprocessor/main.scss */
   .hpWorkItem .view-proj {
     top: 85%;
     left: 50%;
@@ -3546,12 +3545,12 @@ section {
     transform: translate(-50%, 0);
   }
 
-  /* line 2870, preprocessor/main.scss */
+  /* line 2869, preprocessor/main.scss */
   #solution-text {
     text-shadow: 0px 0px 10px black;
   }
 
-  /* line 2875, preprocessor/main.scss */
+  /* line 2874, preprocessor/main.scss */
   #project-hdr-text {
     left: 13%;
     bottom: 15%;
@@ -3563,7 +3562,7 @@ section {
     transition: opacity ease .2s .5s;
   }
 
-  /* line 2885, preprocessor/main.scss */
+  /* line 2884, preprocessor/main.scss */
   #project-wrap.loadAnim #project-hdr-img {
     top: 12%;
     left: 16%;
@@ -3571,7 +3570,7 @@ section {
     bottom: 12%;
   }
 
-  /* line 2892, preprocessor/main.scss */
+  /* line 2891, preprocessor/main.scss */
   #project-hdr-img:after {
     content: '';
     position: absolute;
@@ -3580,43 +3579,43 @@ section {
     background-color: rgba(0, 0, 0, 0.2);
   }
 
-  /* line 2900, preprocessor/main.scss */
+  /* line 2899, preprocessor/main.scss */
   #next-project {
     right: -14px;
   }
 
-  /* line 2904, preprocessor/main.scss */
+  /* line 2903, preprocessor/main.scss */
   #prev-project {
     left: -14px;
   }
 
-  /* line 2907, preprocessor/main.scss */
+  /* line 2906, preprocessor/main.scss */
   #closeProjSide {
     right: -65px;
     width: 150px;
   }
 
-  /* line 2911, preprocessor/main.scss */
+  /* line 2910, preprocessor/main.scss */
   #project-hdr-text h1 {
     font-size: 38px;
     line-height: 1.2em;
     margin-bottom: 2.2rem;
   }
 
-  /* line 2916, preprocessor/main.scss */
+  /* line 2915, preprocessor/main.scss */
   #project-hdr-text h2 {
     font-size: 14px;
     margin-bottom: 1.2rem;
   }
 
-  /* line 2920, preprocessor/main.scss */
+  /* line 2919, preprocessor/main.scss */
   #project-hdr-text h3 {
     font-size: 10px;
     margin: 0 0 0 30px;
     text-transform: uppercase;
   }
 
-  /* line 2925, preprocessor/main.scss */
+  /* line 2924, preprocessor/main.scss */
   #overview-text {
     position: relative;
     float: none;
@@ -3629,19 +3628,19 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 2934, preprocessor/main.scss */
+  /* line 2933, preprocessor/main.scss */
   .overview-img-wrap {
     position: relative;
     float: none;
     width: 100%;
   }
 
-  /* line 2939, preprocessor/main.scss */
+  /* line 2938, preprocessor/main.scss */
   .project-section {
     padding: 7% 10% 0;
   }
 
-  /* line 2942, preprocessor/main.scss */
+  /* line 2941, preprocessor/main.scss */
   #solution-text {
     position: relative;
     float: none;
@@ -3655,24 +3654,24 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 2952, preprocessor/main.scss */
+  /* line 2951, preprocessor/main.scss */
   #s2-img1-wrap {
     position: relative;
     float: none;
   }
 
-  /* line 2956, preprocessor/main.scss */
+  /* line 2955, preprocessor/main.scss */
   .s2-img-wrap {
     width: 100%;
   }
 
-  /* line 2959, preprocessor/main.scss */
+  /* line 2958, preprocessor/main.scss */
   #s2-img2-wrap {
     position: relative;
     float: none;
   }
 
-  /* line 2968, preprocessor/main.scss */
+  /* line 2967, preprocessor/main.scss */
   #contact-wrap {
     top: 0;
     width: 100%;
@@ -3688,7 +3687,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 2980, preprocessor/main.scss */
+  /* line 2979, preprocessor/main.scss */
   #contact-left, #contact-right {
     position: relative;
     display: block;
@@ -3704,7 +3703,7 @@ section {
     transform: translate(0, -50%);
   }
 
-  /* line 2987, preprocessor/main.scss */
+  /* line 2986, preprocessor/main.scss */
   #contact-left {
     float: left;
     width: 50%;
@@ -3715,7 +3714,7 @@ section {
     transition: all .2s .2s;
   }
 
-  /* line 2996, preprocessor/main.scss */
+  /* line 2995, preprocessor/main.scss */
   #contact-right {
     float: left;
     width: 50%;
@@ -3726,42 +3725,42 @@ section {
     transition: all .2s;
   }
 
-  /* line 3005, preprocessor/main.scss */
+  /* line 3004, preprocessor/main.scss */
   #contact-right p {
     display: none;
   }
 
-  /* line 3008, preprocessor/main.scss */
+  /* line 3007, preprocessor/main.scss */
   #contact h1 {
     font-size: 40px;
   }
-  /* line 3011, preprocessor/main.scss */
+  /* line 3010, preprocessor/main.scss */
   #contact h1::before {
     bottom: -10px;
     width: 80px;
   }
 
-  /* line 3016, preprocessor/main.scss */
+  /* line 3015, preprocessor/main.scss */
   #contact h2 {
     font-size: 14px;
     margin: 0 0 20px 0;
   }
 
-  /* line 3020, preprocessor/main.scss */
+  /* line 3019, preprocessor/main.scss */
   #contact h3 {
     margin: 0;
     font-size: 10px;
     text-transform: uppercase;
   }
 
-  /* line 3026, preprocessor/main.scss */
+  /* line 3025, preprocessor/main.scss */
   #contact li {
     font-size: 14px;
     margin-bottom: 0.2rem;
   }
 }
 @media screen and (max-width: 420px) and (orientation: portrait) {
-  /* line 3035, preprocessor/main.scss */
+  /* line 3034, preprocessor/main.scss */
   .sideMenuActive {
     -webkit-transform: translateX(90%);
     -moz-transform: translateX(90%);
@@ -3770,41 +3769,41 @@ section {
     transform: translateX(90%);
   }
 
-  /* line 3042, preprocessor/main.scss */
+  /* line 3041, preprocessor/main.scss */
   #side-nav {
     left: -90%;
     width: 90%;
     font-size: 20px;
   }
 
-  /* line 3047, preprocessor/main.scss */
+  /* line 3046, preprocessor/main.scss */
   #side-nav.projectMenu {
     width: 180%;
   }
 
-  /* line 3050, preprocessor/main.scss */
+  /* line 3049, preprocessor/main.scss */
   #side-nav.projectMenu #project-side {
     opacity: 1;
   }
 
-  /* line 3053, preprocessor/main.scss */
+  /* line 3052, preprocessor/main.scss */
   #side-nav.projectMenu #main-side {
     width: 50%;
   }
 
-  /* line 3056, preprocessor/main.scss */
+  /* line 3055, preprocessor/main.scss */
   #view-all-btn {
     right: 0px;
     height: 20px;
     width: 20px;
   }
 
-  /* line 3061, preprocessor/main.scss */
+  /* line 3060, preprocessor/main.scss */
   .projLink h1 {
     font-size: 18px;
   }
 
-  /* line 3064, preprocessor/main.scss */
+  /* line 3063, preprocessor/main.scss */
   #section-title {
     font-size: 12px;
     -webkit-transform: translateX(-30px) rotate(-90deg);
@@ -3814,17 +3813,17 @@ section {
     transform: translateX(-30px) rotate(-90deg);
   }
 
-  /* line 3072, preprocessor/main.scss */
+  /* line 3071, preprocessor/main.scss */
   #service-text {
     font-size: 42px;
   }
 
-  /* line 3075, preprocessor/main.scss */
+  /* line 3074, preprocessor/main.scss */
   #find-out-more {
     left: 30%;
   }
 
-  /* line 3078, preprocessor/main.scss */
+  /* line 3077, preprocessor/main.scss */
   #more-text {
     position: absolute;
     left: 50%;
@@ -3836,7 +3835,7 @@ section {
     transform: translate(50%, -50%);
   }
 
-  /* line 3088, preprocessor/main.scss */
+  /* line 3087, preprocessor/main.scss */
   #more-text.active {
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -3845,23 +3844,23 @@ section {
     transform: translate(-50%, -50%);
   }
 
-  /* line 3095, preprocessor/main.scss */
+  /* line 3094, preprocessor/main.scss */
   #more-text h2 {
     font-size: 14px;
   }
 
-  /* line 3098, preprocessor/main.scss */
+  /* line 3097, preprocessor/main.scss */
   #projects-indicator {
     font-size: 12px;
   }
 
-  /* line 3101, preprocessor/main.scss */
+  /* line 3100, preprocessor/main.scss */
   #hp-project-title {
     left: -10px;
     font-size: 12px;
   }
 
-  /* line 3105, preprocessor/main.scss */
+  /* line 3104, preprocessor/main.scss */
   .hpWorkItem {
     height: 40vh;
     background-repeat: no-repeat;
@@ -3870,12 +3869,12 @@ section {
     background-attachment: scroll;
   }
 
-  /* line 3111, preprocessor/main.scss */
+  /* line 3110, preprocessor/main.scss */
   .hp-project-image {
     width: 80%;
   }
 
-  /* line 3115, preprocessor/main.scss */
+  /* line 3114, preprocessor/main.scss */
   .hpWorkItem:nth-of-type(even) .hp-project-image,
   .hpWorkItem:nth-of-type(odd) .hp-project-image {
     left: 0;
@@ -3887,70 +3886,70 @@ section {
     transform: translate(-50%, 0);
   }
 
-  /* line 3119, preprocessor/main.scss */
+  /* line 3118, preprocessor/main.scss */
   .hpWorkItem:nth-of-type(odd) .work-text {
     left: -10%;
   }
 
-  /* line 3122, preprocessor/main.scss */
+  /* line 3121, preprocessor/main.scss */
   .hpWorkItem:nth-of-type(even) .hp-project-title-indicator {
     right: 40%;
   }
 
-  /* line 3125, preprocessor/main.scss */
+  /* line 3124, preprocessor/main.scss */
   .work-info {
     width: 100%;
     height: 100%;
   }
 
-  /* line 3129, preprocessor/main.scss */
+  /* line 3128, preprocessor/main.scss */
   .work-text {
     width: 100%;
     top: 20%;
   }
 
-  /* line 3133, preprocessor/main.scss */
+  /* line 3132, preprocessor/main.scss */
   .work-text h1 {
     margin-bottom: 1.6rem;
     font-size: 32px;
     line-height: 1.2em;
   }
 
-  /* line 3138, preprocessor/main.scss */
+  /* line 3137, preprocessor/main.scss */
   .work-text h2 {
     font-size: 14px;
   }
 
-  /* line 3141, preprocessor/main.scss */
+  /* line 3140, preprocessor/main.scss */
   .work-text h3 {
     font-size: 10px;
   }
 
-  /* line 3144, preprocessor/main.scss */
+  /* line 3143, preprocessor/main.scss */
   .hp-project-title-indicator {
     top: -10px;
     width: 60px;
   }
-  /* line 3147, preprocessor/main.scss */
+  /* line 3146, preprocessor/main.scss */
   .hp-project-title-indicator:after {
     left: 20%;
   }
 
-  /* line 3151, preprocessor/main.scss */
+  /* line 3150, preprocessor/main.scss */
   .hp-project-title-indicator h3 {
     margin: 0 0 0 20px;
   }
-  /* line 3153, preprocessor/main.scss */
+  /* line 3152, preprocessor/main.scss */
   .hp-project-title-indicator h3:after {
     left: -30%;
   }
 
-  /* line 3157, preprocessor/main.scss */
+  /* line 3156, preprocessor/main.scss */
   .fields {
     margin-left: 6em;
   }
 
-  /* line 3160, preprocessor/main.scss */
+  /* line 3159, preprocessor/main.scss */
   .hpWorkItem .view-proj {
     top: 85%;
     left: 50%;
@@ -3961,7 +3960,7 @@ section {
     transform: translate(-50%, 0);
   }
 
-  /* line 3166, preprocessor/main.scss */
+  /* line 3165, preprocessor/main.scss */
   #project-hdr-text {
     left: 13%;
     bottom: 15%;
@@ -3973,7 +3972,7 @@ section {
     transition: opacity ease .2s .5s;
   }
 
-  /* line 3176, preprocessor/main.scss */
+  /* line 3175, preprocessor/main.scss */
   #project-wrap.loadAnim #project-hdr-img {
     top: 12%;
     left: 16%;
@@ -3981,7 +3980,7 @@ section {
     bottom: 12%;
   }
 
-  /* line 3183, preprocessor/main.scss */
+  /* line 3182, preprocessor/main.scss */
   #project-hdr-img:after {
     content: '';
     position: absolute;
@@ -3990,43 +3989,43 @@ section {
     background-color: rgba(0, 0, 0, 0.2);
   }
 
-  /* line 3191, preprocessor/main.scss */
+  /* line 3190, preprocessor/main.scss */
   #next-project {
     right: -14px;
   }
 
-  /* line 3195, preprocessor/main.scss */
+  /* line 3194, preprocessor/main.scss */
   #prev-project {
     left: -14px;
   }
 
-  /* line 3198, preprocessor/main.scss */
+  /* line 3197, preprocessor/main.scss */
   #closeProjSide {
     right: -65px;
     width: 150px;
   }
 
-  /* line 3202, preprocessor/main.scss */
+  /* line 3201, preprocessor/main.scss */
   #project-hdr-text h1 {
     font-size: 38px;
     line-height: 1.2em;
     margin-bottom: 2.2rem;
   }
 
-  /* line 3207, preprocessor/main.scss */
+  /* line 3206, preprocessor/main.scss */
   #project-hdr-text h2 {
     font-size: 14px;
     margin-bottom: 1.2rem;
   }
 
-  /* line 3211, preprocessor/main.scss */
+  /* line 3210, preprocessor/main.scss */
   #project-hdr-text h3 {
     font-size: 10px;
     margin: 0 0 0 30px;
     text-transform: uppercase;
   }
 
-  /* line 3216, preprocessor/main.scss */
+  /* line 3215, preprocessor/main.scss */
   #overview-text {
     position: relative;
     float: none;
@@ -4039,19 +4038,19 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 3225, preprocessor/main.scss */
+  /* line 3224, preprocessor/main.scss */
   .overview-img-wrap {
     position: relative;
     float: none;
     width: 100%;
   }
 
-  /* line 3230, preprocessor/main.scss */
+  /* line 3229, preprocessor/main.scss */
   .project-section {
     padding: 7% 15% 0;
   }
 
-  /* line 3233, preprocessor/main.scss */
+  /* line 3232, preprocessor/main.scss */
   #solution-text {
     position: relative;
     float: none;
@@ -4065,24 +4064,24 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 3243, preprocessor/main.scss */
+  /* line 3242, preprocessor/main.scss */
   #s2-img1-wrap {
     position: relative;
     float: none;
   }
 
-  /* line 3247, preprocessor/main.scss */
+  /* line 3246, preprocessor/main.scss */
   .s2-img-wrap {
     width: 100%;
   }
 
-  /* line 3250, preprocessor/main.scss */
+  /* line 3249, preprocessor/main.scss */
   #s2-img2-wrap {
     position: relative;
     float: none;
   }
 
-  /* line 3259, preprocessor/main.scss */
+  /* line 3258, preprocessor/main.scss */
   #contact-wrap {
     top: 0;
     width: 100%;
@@ -4098,7 +4097,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 3271, preprocessor/main.scss */
+  /* line 3270, preprocessor/main.scss */
   #contact-left, #contact-right {
     position: relative;
     display: block;
@@ -4108,7 +4107,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 3277, preprocessor/main.scss */
+  /* line 3276, preprocessor/main.scss */
   #contact-left {
     float: right;
     top: 43%;
@@ -4120,7 +4119,7 @@ section {
     transition: all .2s .2s;
   }
 
-  /* line 3287, preprocessor/main.scss */
+  /* line 3286, preprocessor/main.scss */
   #contact-right {
     float: left;
     top: -40%;
@@ -4133,42 +4132,42 @@ section {
     transition: all .2s;
   }
 
-  /* line 3298, preprocessor/main.scss */
+  /* line 3297, preprocessor/main.scss */
   #contact-right p {
     display: none;
   }
 
-  /* line 3301, preprocessor/main.scss */
+  /* line 3300, preprocessor/main.scss */
   #contact h1 {
     font-size: 40px;
   }
-  /* line 3304, preprocessor/main.scss */
+  /* line 3303, preprocessor/main.scss */
   #contact h1::before {
     bottom: -10px;
     width: 80px;
   }
 
-  /* line 3309, preprocessor/main.scss */
+  /* line 3308, preprocessor/main.scss */
   #contact h2 {
     font-size: 14px;
     margin: 0 0 40px 0;
   }
 
-  /* line 3313, preprocessor/main.scss */
+  /* line 3312, preprocessor/main.scss */
   #contact h3 {
     margin: 0;
     font-size: 10px;
     text-transform: uppercase;
   }
 
-  /* line 3319, preprocessor/main.scss */
+  /* line 3318, preprocessor/main.scss */
   #contact li {
     font-size: 14px;
     margin-bottom: 0.2rem;
   }
 }
 @media screen and (max-width: 568px) and (orientation: landscape) {
-  /* line 3326, preprocessor/main.scss */
+  /* line 3325, preprocessor/main.scss */
   .sideMenuActive {
     -webkit-transform: translateX(90%);
     -moz-transform: translateX(90%);
@@ -4177,41 +4176,41 @@ section {
     transform: translateX(90%);
   }
 
-  /* line 3333, preprocessor/main.scss */
+  /* line 3332, preprocessor/main.scss */
   #side-nav {
     left: -90%;
     width: 90%;
     font-size: 20px;
   }
 
-  /* line 3338, preprocessor/main.scss */
+  /* line 3337, preprocessor/main.scss */
   #side-nav.projectMenu {
     width: 180%;
   }
 
-  /* line 3341, preprocessor/main.scss */
+  /* line 3340, preprocessor/main.scss */
   #side-nav.projectMenu #project-side {
     opacity: 1;
   }
 
-  /* line 3344, preprocessor/main.scss */
+  /* line 3343, preprocessor/main.scss */
   #side-nav.projectMenu #main-side {
     width: 50%;
   }
 
-  /* line 3347, preprocessor/main.scss */
+  /* line 3346, preprocessor/main.scss */
   #view-all-btn {
     right: 0px;
     height: 20px;
     width: 20px;
   }
 
-  /* line 3352, preprocessor/main.scss */
+  /* line 3351, preprocessor/main.scss */
   .projLink h1 {
     font-size: 18px;
   }
 
-  /* line 3355, preprocessor/main.scss */
+  /* line 3354, preprocessor/main.scss */
   #section-title {
     -webkit-transform: translateX(-20px) rotate(-90deg);
     -moz-transform: translateX(-20px) rotate(-90deg);
@@ -4220,12 +4219,12 @@ section {
     transform: translateX(-20px) rotate(-90deg);
   }
 
-  /* line 3362, preprocessor/main.scss */
+  /* line 3361, preprocessor/main.scss */
   #service-text {
     font-size: 60px;
   }
 
-  /* line 3365, preprocessor/main.scss */
+  /* line 3364, preprocessor/main.scss */
   #more-text {
     position: absolute;
     left: 50%;
@@ -4237,7 +4236,7 @@ section {
     transform: translate(50%, -50%);
   }
 
-  /* line 3375, preprocessor/main.scss */
+  /* line 3374, preprocessor/main.scss */
   #more-text.active {
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -4246,18 +4245,18 @@ section {
     transform: translate(-50%, -50%);
   }
 
-  /* line 3382, preprocessor/main.scss */
+  /* line 3381, preprocessor/main.scss */
   #more-text h2 {
     font-size: 14px;
   }
 
-  /* line 3385, preprocessor/main.scss */
+  /* line 3384, preprocessor/main.scss */
   #hp-project-title {
     left: -10px;
     font-size: 12px;
   }
 
-  /* line 3389, preprocessor/main.scss */
+  /* line 3388, preprocessor/main.scss */
   .hpWorkItem {
     height: 40vh;
     background-repeat: no-repeat;
@@ -4266,66 +4265,66 @@ section {
     background-attachment: scroll;
   }
 
-  /* line 3395, preprocessor/main.scss */
+  /* line 3394, preprocessor/main.scss */
   .hpWorkItem:nth-of-type(even) .work-text {
     right: -10%;
   }
 
-  /* line 3398, preprocessor/main.scss */
+  /* line 3397, preprocessor/main.scss */
   .work-info {
     width: 100%;
     height: 100%;
   }
 
-  /* line 3402, preprocessor/main.scss */
+  /* line 3401, preprocessor/main.scss */
   .work-text {
     width: 100%;
     top: 20%;
   }
 
-  /* line 3406, preprocessor/main.scss */
+  /* line 3405, preprocessor/main.scss */
   .work-text h1 {
     margin-bottom: 1.6rem;
     font-size: 32px;
     line-height: 1.2em;
   }
 
-  /* line 3411, preprocessor/main.scss */
+  /* line 3410, preprocessor/main.scss */
   .work-text h2 {
     font-size: 14px;
   }
 
-  /* line 3414, preprocessor/main.scss */
+  /* line 3413, preprocessor/main.scss */
   .work-text h3 {
     font-size: 10px;
   }
 
-  /* line 3417, preprocessor/main.scss */
+  /* line 3416, preprocessor/main.scss */
   .hp-project-title-indicator {
     top: -10px;
     width: 60px;
   }
-  /* line 3420, preprocessor/main.scss */
+  /* line 3419, preprocessor/main.scss */
   .hp-project-title-indicator:after {
     top: 1.3em;
     left: 20%;
   }
 
-  /* line 3425, preprocessor/main.scss */
+  /* line 3424, preprocessor/main.scss */
   .hp-project-title-indicator h3 {
     margin: 0 0 0 20px;
   }
-  /* line 3427, preprocessor/main.scss */
+  /* line 3426, preprocessor/main.scss */
   .hp-project-title-indicator h3:after {
     left: -30%;
   }
 
-  /* line 3431, preprocessor/main.scss */
+  /* line 3430, preprocessor/main.scss */
   .fields {
     margin-left: 6em;
   }
 
-  /* line 3434, preprocessor/main.scss */
+  /* line 3433, preprocessor/main.scss */
   .hpWorkItem .view-proj {
     top: 85%;
     left: 50%;
@@ -4336,7 +4335,7 @@ section {
     transform: translate(-50%, 0);
   }
 
-  /* line 3439, preprocessor/main.scss */
+  /* line 3438, preprocessor/main.scss */
   #project-hdr-text {
     left: 13%;
     bottom: 15%;
@@ -4348,7 +4347,7 @@ section {
     transition: opacity ease .2s .5s;
   }
 
-  /* line 3449, preprocessor/main.scss */
+  /* line 3448, preprocessor/main.scss */
   #project-wrap.loadAnim #project-hdr-img {
     top: 12%;
     left: 16%;
@@ -4356,7 +4355,7 @@ section {
     bottom: 12%;
   }
 
-  /* line 3456, preprocessor/main.scss */
+  /* line 3455, preprocessor/main.scss */
   #project-hdr-img:after {
     content: '';
     position: absolute;
@@ -4365,43 +4364,43 @@ section {
     background-color: rgba(0, 0, 0, 0.2);
   }
 
-  /* line 3464, preprocessor/main.scss */
+  /* line 3463, preprocessor/main.scss */
   #next-project {
     right: -14px;
   }
 
-  /* line 3468, preprocessor/main.scss */
+  /* line 3467, preprocessor/main.scss */
   #prev-project {
     left: -14px;
   }
 
-  /* line 3471, preprocessor/main.scss */
+  /* line 3470, preprocessor/main.scss */
   #closeProjSide {
     right: -65px;
     width: 150px;
   }
 
-  /* line 3475, preprocessor/main.scss */
+  /* line 3474, preprocessor/main.scss */
   #project-hdr-text h1 {
     font-size: 38px;
     line-height: 1.2em;
     margin-bottom: 2.2rem;
   }
 
-  /* line 3480, preprocessor/main.scss */
+  /* line 3479, preprocessor/main.scss */
   #project-hdr-text h2 {
     font-size: 14px;
     margin-bottom: 1.2rem;
   }
 
-  /* line 3484, preprocessor/main.scss */
+  /* line 3483, preprocessor/main.scss */
   #project-hdr-text h3 {
     font-size: 10px;
     margin: 0 0 0 30px;
     text-transform: uppercase;
   }
 
-  /* line 3489, preprocessor/main.scss */
+  /* line 3488, preprocessor/main.scss */
   #overview-text {
     position: relative;
     float: none;
@@ -4414,19 +4413,19 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 3498, preprocessor/main.scss */
+  /* line 3497, preprocessor/main.scss */
   .overview-img-wrap {
     position: relative;
     float: none;
     width: 100%;
   }
 
-  /* line 3503, preprocessor/main.scss */
+  /* line 3502, preprocessor/main.scss */
   .project-section {
     padding: 7% 15% 0;
   }
 
-  /* line 3506, preprocessor/main.scss */
+  /* line 3505, preprocessor/main.scss */
   #solution-text {
     position: relative;
     float: none;
@@ -4440,24 +4439,24 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 3516, preprocessor/main.scss */
+  /* line 3515, preprocessor/main.scss */
   #s2-img1-wrap {
     position: relative;
     float: none;
   }
 
-  /* line 3520, preprocessor/main.scss */
+  /* line 3519, preprocessor/main.scss */
   .s2-img-wrap {
     width: 100%;
   }
 
-  /* line 3523, preprocessor/main.scss */
+  /* line 3522, preprocessor/main.scss */
   #s2-img2-wrap {
     position: relative;
     float: none;
   }
 
-  /* line 3532, preprocessor/main.scss */
+  /* line 3531, preprocessor/main.scss */
   #contact-wrap {
     top: 0;
     width: 100%;
@@ -4473,7 +4472,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 3544, preprocessor/main.scss */
+  /* line 3543, preprocessor/main.scss */
   #contact-left, #contact-right {
     position: relative;
     display: block;
@@ -4483,7 +4482,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* line 3550, preprocessor/main.scss */
+  /* line 3549, preprocessor/main.scss */
   #contact-left {
     float: right;
     top: 43%;
@@ -4495,7 +4494,7 @@ section {
     transition: all .2s .2s;
   }
 
-  /* line 3560, preprocessor/main.scss */
+  /* line 3559, preprocessor/main.scss */
   #contact-right {
     float: left;
     top: -40%;
@@ -4508,35 +4507,35 @@ section {
     transition: all .2s;
   }
 
-  /* line 3571, preprocessor/main.scss */
+  /* line 3570, preprocessor/main.scss */
   #contact-right p {
     display: none;
   }
 
-  /* line 3574, preprocessor/main.scss */
+  /* line 3573, preprocessor/main.scss */
   #contact h1 {
     font-size: 40px;
   }
-  /* line 3577, preprocessor/main.scss */
+  /* line 3576, preprocessor/main.scss */
   #contact h1::before {
     bottom: -10px;
     width: 80px;
   }
 
-  /* line 3582, preprocessor/main.scss */
+  /* line 3581, preprocessor/main.scss */
   #contact h2 {
     font-size: 14px;
     margin: 0 0 40px 0;
   }
 
-  /* line 3586, preprocessor/main.scss */
+  /* line 3585, preprocessor/main.scss */
   #contact h3 {
     margin: 0;
     font-size: 10px;
     text-transform: uppercase;
   }
 
-  /* line 3592, preprocessor/main.scss */
+  /* line 3591, preprocessor/main.scss */
   #contact li {
     font-size: 14px;
     margin-bottom: 0.2rem;
@@ -4545,7 +4544,7 @@ section {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-/* line 3609, preprocessor/main.scss */
+/* line 3608, preprocessor/main.scss */
 .ir {
   background-color: transparent;
   border: 0;
@@ -4553,7 +4552,7 @@ section {
   *text-indent: -9999px;
 }
 
-/* line 3616, preprocessor/main.scss */
+/* line 3615, preprocessor/main.scss */
 .ir:before {
   content: "";
   display: block;
@@ -4561,13 +4560,13 @@ section {
   height: 150%;
 }
 
-/* line 3623, preprocessor/main.scss */
+/* line 3622, preprocessor/main.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
-/* line 3628, preprocessor/main.scss */
+/* line 3627, preprocessor/main.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -4579,7 +4578,7 @@ section {
   width: 1px;
 }
 
-/* line 3640, preprocessor/main.scss */
+/* line 3639, preprocessor/main.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -4590,24 +4589,24 @@ section {
   width: auto;
 }
 
-/* line 3649, preprocessor/main.scss */
+/* line 3648, preprocessor/main.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 3654, preprocessor/main.scss */
+/* line 3653, preprocessor/main.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
 
-/* line 3659, preprocessor/main.scss */
+/* line 3658, preprocessor/main.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 3663, preprocessor/main.scss */
+/* line 3662, preprocessor/main.scss */
 .clearfix {
   *zoom: 1;
 }
@@ -4616,7 +4615,7 @@ section {
    Print styles
    ========================================================================== */
 @media print {
-  /* line 3672, preprocessor/main.scss */
+  /* line 3671, preprocessor/main.scss */
   * {
     background: transparent !important;
     color: #000 !important;
@@ -4624,48 +4623,48 @@ section {
     text-shadow: none !important;
   }
 
-  /* line 3680, preprocessor/main.scss */
+  /* line 3679, preprocessor/main.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 3684, preprocessor/main.scss */
+  /* line 3683, preprocessor/main.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 3688, preprocessor/main.scss */
+  /* line 3687, preprocessor/main.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
-  /* line 3694, preprocessor/main.scss */
+  /* line 3693, preprocessor/main.scss */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
 
-  /* line 3699, preprocessor/main.scss */
+  /* line 3698, preprocessor/main.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 3704, preprocessor/main.scss */
+  /* line 3703, preprocessor/main.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 3709, preprocessor/main.scss */
+  /* line 3708, preprocessor/main.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 3713, preprocessor/main.scss */
+  /* line 3712, preprocessor/main.scss */
   img {
     max-width: 100% !important;
   }
@@ -4674,7 +4673,7 @@ section {
     margin: 0.5cm;
 }
 
-  /* line 3723, preprocessor/main.scss */
+  /* line 3722, preprocessor/main.scss */
   p,
   h2,
   h3 {
@@ -4682,7 +4681,7 @@ section {
     widows: 3;
   }
 
-  /* line 3729, preprocessor/main.scss */
+  /* line 3728, preprocessor/main.scss */
   h2,
   h3 {
     page-break-after: avoid;

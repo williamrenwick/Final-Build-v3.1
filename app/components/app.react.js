@@ -41,8 +41,6 @@ var App = React.createClass({
 	    });
 	},
 	render: function() {
-		console.log('all project data', PROJECTS);
-
 		return (
 			<div id="reactWrap">
 				<Loader />
