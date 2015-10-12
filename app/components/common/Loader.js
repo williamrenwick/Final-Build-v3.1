@@ -12,9 +12,9 @@ var Loader = React.createClass({
 		isPreloaded: ['general', 'isPreloaded']
 	},
 	componentDidMount: function() {
-		setTimeout(function() {
+	
 			AppActions.isPreloaded();
-		}, 4000)
+
 	},
 	render: function() {
 		return (
