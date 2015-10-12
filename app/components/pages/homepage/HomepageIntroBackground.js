@@ -8,15 +8,14 @@ var mixin = require('baobab-react/mixins').branch;
 var IntroBackground = React.createClass({
     mixins: [mixin, PureMixin],
     cursors: {
-        isPreloaded: ['general', 'isPreloaded'],
+        isLoaded: ['general', 'isNowLoaded'],
         insideWorkPosts: ['homepage', 'insideWorkPosts'],
         windowHeight: ['resize', 'currentHeight'],
         isMobile: ['resize', 'isMobile'],
         isTablet: ['resize', 'isTablet'],
         isDesktop: ['resize', 'isDesktop'],
         scrollPos: ['scrolling', 'scrollPosition'],
-        imgTranslate: ['scrolling', 'imgTranslateAmount'],
-        isPreloaded: ['general', 'isPreloaded']
+        imgTranslate: ['scrolling', 'imgTranslateAmount']
     },
     componentWillMount: function() {
         $(window).on('scroll', this.handleScroll)
@@ -51,30 +50,32 @@ var IntroBackground = React.createClass({
         return styles
     },
     render: function() {
+        var loaded = this.state.isLoaded;
+
     	return (
-    	    <section id="intro-background" className={classNames({notLoaded: !this.state.isPreloaded})}>
-                <div id='wiggle-blue' className={classNames({wiggle: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(-40)}>
+    	    <section id="intro-background" className={classNames({notLoaded: !loaded})}>
+                <div id='wiggle-blue' className={classNames({wiggle: true, notLoaded: !loaded})} style={this.getTransformStyle(-40)}>
                     <div className='content'></div>
                 </div>
-                <div id='wiggle-green' className={classNames({wiggle: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(30)}>
+                <div id='wiggle-green' className={classNames({wiggle: true, notLoaded: !loaded})} style={this.getTransformStyle(30)}>
                     <div className='content'></div>
                 </div>
-                <div id='line-orange' className={classNames({line: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(-117)}>
+                <div id='line-orange' className={classNames({line: true, notLoaded: !loaded})} style={this.getTransformStyle(-117)}>
                     <div className='content'></div>
                 </div>
-                <div id='line-blue' className={classNames({line: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(-60)}>
+                <div id='line-blue' className={classNames({line: true, notLoaded: !loaded})} style={this.getTransformStyle(-60)}>
                     <div className='content'></div>
                 </div>       
-                 <div id='dot-blue' className={classNames({dot: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0)}>
+                 <div id='dot-blue' className={classNames({dot: true, notLoaded: !loaded})} style={this.getTransformStyle(0)}>
                     <div className='content'></div>
                 </div> 
-                <div id='dot-yellow' className={classNames({dot: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0)}>
+                <div id='dot-yellow' className={classNames({dot: true, notLoaded: !loaded})} style={this.getTransformStyle(0)}>
                     <div className='content'></div>
                 </div> 
-                <div id='dot-black' className={classNames({dot: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0)}>
+                <div id='dot-black' className={classNames({dot: true, notLoaded: !loaded})} style={this.getTransformStyle(0)}>
                     <div className='content'></div>
                 </div>    
-                <div id='dot-black-2' className={classNames({dot: true, notLoaded: !this.state.isPreloaded})} style={this.getTransformStyle(0)}>
+                <div id='dot-black-2' className={classNames({dot: true, notLoaded: !loaded})} style={this.getTransformStyle(0)}>
                     <div className='content'></div>
                 </div>                      
             </section>

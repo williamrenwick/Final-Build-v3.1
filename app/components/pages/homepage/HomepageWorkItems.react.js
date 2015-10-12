@@ -15,7 +15,6 @@ var HomepageWorkItems = React.createClass({
         isMobile: ['resize', 'isMobile'],
         isTablet: ['resize', 'isTablet'],
         isDesktop: ['resize', 'isDesktop'],
-        scrollPos: ['scrolling', 'scrollPosition'],
         posts: ['posts'],
     },
     componentDidMount: function() {
