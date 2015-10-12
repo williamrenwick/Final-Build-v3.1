@@ -9,12 +9,10 @@ var AppActions = require('../../actions/appActions.js')
 var Loader = React.createClass({
 	mixins: [mixin, PureMixin], 
 	cursors: {
-		isPreloaded: ['general', 'isPreloaded']
+		isLoaded: ['general', 'isNowLoaded']
 	},
 	componentWillMount: function() {
-	
-			AppActions.isLoaded();
-
+		AppActions.isLoaded();
 	},
 	render: function() {
 		return (
