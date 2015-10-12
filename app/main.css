@@ -1451,11 +1451,11 @@ section {
   -o-transform: rotate(-40deg);
   -ms-transform: rotate(-40deg);
   transform: rotate(-40deg);
-  -webkit-animation: blueWiggle 2s ease 0s 1;
-  -moz-animation: blueWiggle 2s ease 0s 1;
-  -ms-animation: blueWiggle 2s ease 0s 1;
-  -o-animation: blueWiggle 2s ease 0s 1;
-  animation: blueWiggle 2s ease 0s 1;
+  -webkit-animation: blueWiggle 2s ease 0.2s 1;
+  -moz-animation: blueWiggle 2s ease 0.2s 1;
+  -ms-animation: blueWiggle 2s ease 0.2s 1;
+  -o-animation: blueWiggle 2s ease 0.2s 1;
+  animation: blueWiggle 2s ease 0.2s 1;
 }
 
 @-webkit-keyframes blueWiggle {
@@ -1552,11 +1552,11 @@ section {
   -o-transform: rotate(30deg);
   -ms-transform: rotate(30deg);
   transform: rotate(30deg);
-  -webkit-animation: greenWiggle 2s ease 0s 1;
-  -moz-animation: greenWiggle 2s ease 0s 1;
-  -ms-animation: greenWiggle 2s ease 0s 1;
-  -o-animation: greenWiggle 2s ease 0s 1;
-  animation: greenWiggle 2s ease 0s 1;
+  -webkit-animation: greenWiggle 2s ease 0.2s 1;
+  -moz-animation: greenWiggle 2s ease 0.2s 1;
+  -ms-animation: greenWiggle 2s ease 0.2s 1;
+  -o-animation: greenWiggle 2s ease 0.2s 1;
+  animation: greenWiggle 2s ease 0.2s 1;
 }
 
 @-webkit-keyframes greenWiggle {
@@ -1669,11 +1669,11 @@ section {
   -o-transform: rotate(-117deg);
   -ms-transform: rotate(-117deg);
   transform: rotate(-117deg);
-  -webkit-animation: orangeLine 2s ease 0s 1;
-  -moz-animation: orangeLine 2s ease 0s 1;
-  -ms-animation: orangeLine 2s ease 0s 1;
-  -o-animation: orangeLine 2s ease 0s 1;
-  animation: orangeLine 2s ease 0s 1;
+  -webkit-animation: orangeLine 2s ease 0.2s 1;
+  -moz-animation: orangeLine 2s ease 0.2s 1;
+  -ms-animation: orangeLine 2s ease 0.2s 1;
+  -o-animation: orangeLine 2s ease 0.2s 1;
+  animation: orangeLine 2s ease 0.2s 1;
 }
 
 @-webkit-keyframes orangeLine {
@@ -1770,11 +1770,11 @@ section {
   -o-transform: rotate(-60deg);
   -ms-transform: rotate(-60deg);
   transform: rotate(-60deg);
-  -webkit-animation: blueLine 2s ease 0s 1;
-  -moz-animation: blueLine 2s ease 0s 1;
-  -ms-animation: blueLine 2s ease 0s 1;
-  -o-animation: blueLine 2s ease 0s 1;
-  animation: blueLine 2s ease 0s 1;
+  -webkit-animation: blueLine 2s ease 0.2s 1;
+  -moz-animation: blueLine 2s ease 0.2s 1;
+  -ms-animation: blueLine 2s ease 0.2s 1;
+  -o-animation: blueLine 2s ease 0.2s 1;
+  animation: blueLine 2s ease 0.2s 1;
 }
 
 @-webkit-keyframes blueLine {
@@ -1890,44 +1890,44 @@ section {
 #dot-yellow {
   top: 30%;
   left: 40%;
-  -webkit-animation: yellowDot 2s ease 0s 1;
-  -moz-animation: yellowDot 2s ease 0s 1;
-  -ms-animation: yellowDot 2s ease 0s 1;
-  -o-animation: yellowDot 2s ease 0s 1;
-  animation: yellowDot 2s ease 0s 1;
+  -webkit-animation: yellowDot 2s ease 0.2s 1;
+  -moz-animation: yellowDot 2s ease 0.2s 1;
+  -ms-animation: yellowDot 2s ease 0.2s 1;
+  -o-animation: yellowDot 2s ease 0.2s 1;
+  animation: yellowDot 2s ease 0.2s 1;
 }
 
 /* line 1528, preprocessor/main.scss */
 #dot-blue {
   top: 50%;
   right: 20%;
-  -webkit-animation: blueDot 2s ease 0s 1;
-  -moz-animation: blueDot 2s ease 0s 1;
-  -ms-animation: blueDot 2s ease 0s 1;
-  -o-animation: blueDot 2s ease 0s 1;
-  animation: blueDot 2s ease 0s 1;
+  -webkit-animation: blueDot 2s ease 0.2s 1;
+  -moz-animation: blueDot 2s ease 0.2s 1;
+  -ms-animation: blueDot 2s ease 0.2s 1;
+  -o-animation: blueDot 2s ease 0.2s 1;
+  animation: blueDot 2s ease 0.2s 1;
 }
 
 /* line 1537, preprocessor/main.scss */
 #dot-black {
   bottom: 20%;
   left: 8%;
-  -webkit-animation: blackDot 2s ease 0s 1;
-  -moz-animation: blackDot 2s ease 0s 1;
-  -ms-animation: blackDot 2s ease 0s 1;
-  -o-animation: blackDot 2s ease 0s 1;
-  animation: blackDot 2s ease 0s 1;
+  -webkit-animation: blackDot 2s ease 0.2s 1;
+  -moz-animation: blackDot 2s ease 0.2s 1;
+  -ms-animation: blackDot 2s ease 0.2s 1;
+  -o-animation: blackDot 2s ease 0.2s 1;
+  animation: blackDot 2s ease 0.2s 1;
 }
 
 /* line 1546, preprocessor/main.scss */
 #dot-black-2 {
   top: 0;
   right: 10%;
-  -webkit-animation: blackDot2 2s ease 0s 1;
-  -moz-animation: blackDot2 2s ease 0s 1;
-  -ms-animation: blackDot2 2s ease 0s 1;
-  -o-animation: blackDot2 2s ease 0s 1;
-  animation: blackDot2 2s ease 0s 1;
+  -webkit-animation: blackDot2 2s ease 0.2s 1;
+  -moz-animation: blackDot2 2s ease 0.2s 1;
+  -ms-animation: blackDot2 2s ease 0.2s 1;
+  -o-animation: blackDot2 2s ease 0.2s 1;
+  animation: blackDot2 2s ease 0.2s 1;
 }
 
 @-webkit-keyframes yellowDot {
