@@ -16,7 +16,7 @@ var Loader = React.createClass({
 	},
 	render: function() {
 		return (
-			<div id="loader" className={classNames({loaded: this.state.isPreloaded})}>
+			<div id="loader" className={classNames({loaded: this.state.isLoaded})}>
 				<div id='loader-logo'></div>
 			</div>
 		)
