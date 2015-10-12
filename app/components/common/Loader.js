@@ -12,7 +12,9 @@ var Loader = React.createClass({
 		isLoaded: ['general', 'isNowLoaded']
 	},
 	componentWillMount: function() {
-		AppActions.isLoaded();
+		setTimeout(function() {
+			AppActions.isLoaded();
+		}, 4000)
 	},
 	render: function() {
 		return (

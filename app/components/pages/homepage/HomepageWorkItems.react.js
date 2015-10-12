@@ -10,11 +10,11 @@ var HomepageWorkItems = React.createClass({
     mixins: [mixin, PureMixin],
     cursors: {
         windowHeight: ['resize', 'currentHeight'],
-        scrollPos: ['scrolling', 'scrollPosition'], // needed to update on scroll
         insideWorkPosts: ['homepage', 'insideWorkPosts'],
         isMobile: ['resize', 'isMobile'],
         isTablet: ['resize', 'isTablet'],
         isDesktop: ['resize', 'isDesktop'],
+        scrollPos: ['scrolling', 'scrollPosition'],
         posts: ['posts'],
     },
     componentDidMount: function() {
