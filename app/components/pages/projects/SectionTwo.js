@@ -18,6 +18,8 @@ var SectionTwo = React.createClass({
 	renderInner: function() {
 		var activeProject = this.props.activeProject;
 
+		console.log(this.state.isTablet);
+
 		if (this.state.isDesktop || this.state.isMobile) {
 			return (
 				<div>

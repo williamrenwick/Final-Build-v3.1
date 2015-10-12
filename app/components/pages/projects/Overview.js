@@ -55,10 +55,10 @@ var Overview = React.createClass({
 			return desktopStyles
 		} else if (this.state.isTablet) {
 			var tabletStyles = this.tabletStyles();
-			return mobileTabletStyles
+			return tabletStyles
 		} else if (this.state.isMobile) {
-			var tabletStyles = this.mobileStyles();
-			return mobileTabletStyles
+			var mobileStyles = this.mobileStyles();
+			return mobileStyles
 		}
 	},
 	handleClick: function() {
