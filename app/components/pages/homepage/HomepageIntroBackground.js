@@ -31,9 +31,7 @@ var IntroBackground = React.createClass({
         }, 30)
     },
     calcTranslate: function() {
-        var translateAmount = -( this.state.scrollPos * 0.15 );
-
-        console.log(this.state.scrollPos);
+        var translateAmount = -( this.state.scrollPos * 0.05 );
 
         ScrollActions.imgTranslateAmount(translateAmount);
     },
