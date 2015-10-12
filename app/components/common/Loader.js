@@ -11,9 +11,9 @@ var Loader = React.createClass({
 	cursors: {
 		isPreloaded: ['general', 'isPreloaded']
 	},
-	componentDidMount: function() {
+	componentWillMount: function() {
 	
-			AppActions.isPreloaded();
+			AppActions.isLoaded();
 
 	},
 	render: function() {

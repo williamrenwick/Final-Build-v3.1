@@ -2,7 +2,7 @@ var Baobab = require('baobab');
 
 var stateTree = new Baobab({
 	general: {
-		isPreloaded: false
+		isNowLoaded: false
 	},
 	resize: {
 		currentWidth: null,
